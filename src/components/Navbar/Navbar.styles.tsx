@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+import { zIndex } from '../../shared/styles/styleConstants';
 
 export const InvisibleLink = styled(Link)`
   text-decoration: none;
@@ -7,11 +8,21 @@ export const InvisibleLink = styled(Link)`
 
 export const NavbarWrapper = styled.nav`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-self: center;
   align-items: center;
-  justify-content: space-between;
   margin-bottom: 2rem;
-  z-index: 999;
+  z-index: ${zIndex.AlwaysAtFront};
+
+  max-width: 1280px;
+`;
+
+export const NavbarBackground = styled.div`
+  position: fixed;
+  background-color: #222831;
+  min-width: 100%;
+  min-height: 15%;
+  z-index: ${zIndex.AlwaysAtBack};
 `;
 
 export const NavbarList = styled.ul`
@@ -35,7 +46,7 @@ export const NavbarList = styled.ul`
 
 export const NavbarLink = styled(Link)<{ $selected?: boolean }>`
   text-decoration: none;
-  color: white;
+  color: var(--soft-white);
   font-weight: 700;
   font-size: 1.2rem;
   padding: 0.3rem;
@@ -73,14 +84,11 @@ export const NavbarButton = styled.button`
   }
 `;
 
-export const TitleText = styled.h1<{ $color?: string }>`
-  font-size: 1.2rem;
-
-  ${(props) =>
-    props.$color &&
-    css`
-      color: ${props.$color};
-    `}
+export const TitleText = styled.h1`
+  font-size: 3rem;
+  margin: 0;
+  padding: 1rem;
+  color: var(--soft-white);
 `;
 
 export const TitleWrapper = styled.div`

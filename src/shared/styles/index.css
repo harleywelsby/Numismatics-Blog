@@ -1,7 +1,11 @@
 :root {
   --title-orange: #ffaa4c;
-  --background-black: #242424;
+  --soft-black: #242424;
+  --soft-white: #f4f5f6;
+  --header-grey: #222831;
   --scroll-track-grey: #3c3d37;
+
+  --max-page-width: 1280px;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -9,7 +13,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #f4f5f6;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,8 +21,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
+/* Custom scrollbar ::-webkit-scrollbar {
   width: 0.8rem;
 }
 
@@ -33,7 +36,7 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #ffaa4c;
-}
+} */
 
 /* TODO: Default CSS from template */
 /* a {
