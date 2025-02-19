@@ -1,4 +1,8 @@
 :root {
+  --title-orange: #ffaa4c;
+  --background-black: #242424;
+  --scroll-track-grey: #3c3d37;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -13,7 +17,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scroll-track-grey);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--title-orange);
+  border-radius: 0.2rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffaa4c;
+}
+
+/* TODO: Default CSS from template */
+/* a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
@@ -65,4 +88,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
