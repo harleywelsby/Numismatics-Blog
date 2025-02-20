@@ -11,18 +11,26 @@ export const NavbarWrapper = styled.nav`
   flex-direction: column;
   justify-self: center;
   align-items: center;
-  margin-bottom: 2rem;
-  z-index: ${zIndex.AlwaysAtFront};
 
+  z-index: ${zIndex.AlwaysAtFront};
   max-width: 1280px;
+
+  margin-bottom: 2rem;
+  padding-bottom: clamp(0.2rem, 3vh + 0.5rem, 2rem);
 `;
 
-export const NavbarBackground = styled.div`
+export const NavbarBackground = styled.div<{ $height?: number | null }>`
   position: fixed;
   background-color: #222831;
   min-width: 100%;
   min-height: 15%;
   z-index: ${zIndex.AlwaysAtBack};
+
+  ${(props) =>
+    props.$height &&
+    css`
+      min-height: ${props.$height}px;
+    `}
 `;
 
 export const NavbarList = styled.ul`
@@ -33,15 +41,6 @@ export const NavbarList = styled.ul`
   gap: 2rem;
   padding: 0;
   margin: 0;
-
-  @media (max-width: 35em) {
-    position: fixed;
-    inset: 0 0 0 50%;
-    background: #5a639c;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
-  }
 `;
 
 export const NavbarLink = styled(Link)<{ $selected?: boolean }>`
@@ -52,7 +51,7 @@ export const NavbarLink = styled(Link)<{ $selected?: boolean }>`
   padding: 0.3rem;
 
   @media (max-width: 35rem) {
-    font-size: 1.5rem;
+    font-size: clamp(0.5rem, 3vw + 0.5rem, 3rem);
   }
 
   ${(props) =>
@@ -89,6 +88,11 @@ export const TitleText = styled.h1`
   margin: 0;
   padding: 1rem;
   color: var(--soft-white);
+
+  @media (max-width: 35em) {
+    font-size: clamp(2rem, 3vw + 0.25rem, 4rem);
+    padding: 1rem 0.5rem;
+  }
 `;
 
 export const TitleWrapper = styled.div`
