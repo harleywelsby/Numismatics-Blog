@@ -91,7 +91,7 @@ export const TitleText = styled.h1`
   color: var(--soft-white);
 
   @media (max-width: 35em) {
-    font-size: clamp(2rem, 3vw + 0.25rem, 4rem);
+    font-size: clamp(1.8rem, 3vw + 0.25rem, 4rem);
     padding: 0.5rem 0 0 0;
   }
 `;
