@@ -9,11 +9,16 @@ export const CollectionPageWrapper = styled.div`
 export const HeaderText = styled.h1`
   color: var(--soft-white);
   font-size: clamp(2rem, 3vw + 0.5rem, 3rem);
-  border-bottom: solid;
-  font-weight: bold;
+  font-weight: 500;
 `;
 
-export const SearchBar = styled.input`
-  min-width: 60%;
-  min-height: 2vh;
+export const HeaderSeparator = styled.div`
+  border-bottom: solid;
+  min-width: 40vw;
+
+  justify-self: center;
+
+  @media (min-width: 35rem) {
+    min-width: 15vw;
+  }
 `;

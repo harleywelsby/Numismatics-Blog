@@ -1,10 +1,10 @@
-import { CollectionPageWrapper, HeaderText, SearchBar } from './Collection.styles';
+import { CollectionPageWrapper, HeaderSeparator, HeaderText } from './Collection.styles';
 
 export const Collection = () => {
   return (
     <CollectionPageWrapper>
       <HeaderText>The Collection</HeaderText>
-      <SearchBar></SearchBar>
+      <HeaderSeparator />
     </CollectionPageWrapper>
   );
 };

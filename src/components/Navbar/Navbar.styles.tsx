@@ -17,6 +17,10 @@ export const NavbarWrapper = styled.nav`
 
   margin-bottom: 2rem;
   padding-bottom: clamp(0.2rem, 3vh + 0.5rem, 2rem);
+
+  @media (max-width: 35em) {
+    margin-bottom: 0;
+  }
 `;
 
 export const NavbarBackground = styled.div<{ $height?: number | null }>`
@@ -46,7 +50,7 @@ export const NavbarList = styled.ul`
 export const NavbarLink = styled(Link)<{ $selected?: boolean }>`
   text-decoration: none;
   color: var(--soft-white);
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1.2rem;
   padding: 0.3rem;
 
@@ -107,6 +111,7 @@ export const TitleWrapper = styled.div`
   margin: 0;
 
   @media (max-width: 35em) {
+    padding-top: 0.5rem;
     padding-bottom: 0.5rem;
   }
 `;
