@@ -7,8 +7,10 @@ import {
   TitleWrapper,
   InvisibleLink,
   NavbarBackground,
+  LogoImage,
 } from './Navbar.styles';
 import { Routes } from '../../shared/utils/router';
+import { useMediaQuery } from 'react-responsive';
 
 export const Navbar = () => {
   const [selectedRoute, setSelectedRoute] = useState(window.location.pathname);
@@ -27,13 +29,16 @@ export const Navbar = () => {
     setSelectedRoute(route);
   };
 
+  const isBigScreen = useMediaQuery({ query: '(min-width: 35em)' });
+  const logoSize = isBigScreen ? 200 : 150;
+
   return (
     <>
       <NavbarBackground $height={navbarHeight} />
       <NavbarWrapper ref={navbarRef}>
         <InvisibleLink to={Routes.Home}>
+          <LogoImage src="Logo.png" width={logoSize} height={logoSize} />
           <TitleWrapper>
-            <img src="vite.svg" />
             <TitleText>Niho Numismatics</TitleText>
           </TitleWrapper>
         </InvisibleLink>
