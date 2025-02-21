@@ -21,7 +21,7 @@ export const NavbarWrapper = styled.nav`
 
 export const NavbarBackground = styled.div<{ $height?: number | null }>`
   position: fixed;
-  background-color: #222831;
+  background-color: var(--navbar-black);
   min-width: 100%;
   min-height: 15%;
   z-index: ${zIndex.AlwaysAtBack};
@@ -85,13 +85,14 @@ export const NavbarButton = styled.button`
 
 export const TitleText = styled.h1`
   font-size: 3rem;
+  font-family: 'Times New Roman', Times, serif;
   margin: 0;
   padding: 0 1rem 1rem 1rem;
   color: var(--soft-white);
 
   @media (max-width: 35em) {
     font-size: clamp(2rem, 3vw + 0.25rem, 4rem);
-    padding: 0 0.5rem 1rem 0.5rem;
+    padding: 0.5rem 0 0 0;
   }
 `;
 
@@ -104,6 +105,10 @@ export const TitleWrapper = styled.div`
   align-items: center;
   padding: 0;
   margin: 0;
+
+  @media (max-width: 35em) {
+    padding-bottom: 0.5rem;
+  }
 `;
 
 export const LogoImage = styled.img`

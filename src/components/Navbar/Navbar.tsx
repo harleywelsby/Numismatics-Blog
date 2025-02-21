@@ -5,7 +5,6 @@ import {
   NavbarWrapper,
   TitleText,
   TitleWrapper,
-  InvisibleLink,
   NavbarBackground,
   LogoImage,
 } from './Navbar.styles';
@@ -30,18 +29,21 @@ export const Navbar = () => {
   };
 
   const isBigScreen = useMediaQuery({ query: '(min-width: 35em)' });
-  const logoSize = isBigScreen ? 200 : 150;
+  const logoSize = isBigScreen ? 200 : 70;
+
+  const getLogo = () => {
+    return <LogoImage src="Logo.png" width={logoSize} height={logoSize} />;
+  };
 
   return (
     <>
       <NavbarBackground $height={navbarHeight} />
       <NavbarWrapper ref={navbarRef}>
-        <InvisibleLink to={Routes.Home}>
-          <LogoImage src="Logo.png" width={logoSize} height={logoSize} />
-          <TitleWrapper>
-            <TitleText>Niho Numismatics</TitleText>
-          </TitleWrapper>
-        </InvisibleLink>
+        {isBigScreen && getLogo()}
+        <TitleWrapper>
+          {!isBigScreen && getLogo()}
+          <TitleText>Niho Numismatics</TitleText>
+        </TitleWrapper>
         <NavbarList className="navbar-list">
           <li>
             <NavbarLink
