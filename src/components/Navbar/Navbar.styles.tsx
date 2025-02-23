@@ -12,8 +12,10 @@ export const NavbarWrapper = styled.nav`
   justify-self: center;
   align-items: center;
 
+  background-color: var(--navbar-black);
+  min-width: 100%;
+
   z-index: ${zIndex.AlwaysAtFront};
-  max-width: 1280px;
 
   margin-bottom: 2rem;
   padding-bottom: clamp(0.2rem, 3vh + 0.5rem, 2rem);
@@ -21,20 +23,6 @@ export const NavbarWrapper = styled.nav`
   @media (max-width: 35em) {
     margin-bottom: 0;
   }
-`;
-
-export const NavbarBackground = styled.div<{ $height?: number | null }>`
-  position: fixed;
-  background-color: var(--navbar-black);
-  min-width: 100%;
-  min-height: 15%;
-  z-index: ${zIndex.AlwaysAtBack};
-
-  ${(props) =>
-    props.$height &&
-    css`
-      min-height: ${props.$height}px;
-    `}
 `;
 
 export const NavbarList = styled.ul`
