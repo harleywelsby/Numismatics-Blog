@@ -19,7 +19,6 @@ export const CardWrapper = styled.button`
   color: inherit;
   border: none;
   font: inherit;
-  cursor: pointer;
   outline: inherit;
 
   padding: 1.2rem;
@@ -110,7 +109,6 @@ export const CloseModalButton = styled.button`
   color: inherit;
   border: none;
   font: inherit;
-  cursor: pointer;
   outline: inherit;
 
   position: fixed;

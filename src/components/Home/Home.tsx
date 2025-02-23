@@ -1,8 +1,10 @@
 import { PageWrapper } from '../../shared/styles/sharedStyles';
+import { Routes } from '../../shared/utils/router';
 import {
   BlogButton,
   ButtonGrid,
-  CollectionButton,
+  ButtonText,
+  CollectionLink,
   HomepageHeader,
   HomepageParagraph,
   TextWrapper,
@@ -19,9 +21,9 @@ export const Home = () => {
           numismatist, and all notes are from my own, amateur research.
         </HomepageParagraph>
         <ButtonGrid>
-          <CollectionButton>
-            <HomepageParagraph>Browse the Collection</HomepageParagraph>
-          </CollectionButton>
+          <CollectionLink to={Routes.Collection}>
+            <ButtonText>Browse the Collection</ButtonText>
+          </CollectionLink>
           <BlogButton>Latest Blog Post</BlogButton>
           <BlogButton>Featured Post</BlogButton>
         </ButtonGrid>

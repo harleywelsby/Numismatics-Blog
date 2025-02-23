@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const TextWrapper = styled.div`
@@ -37,25 +38,39 @@ export const ButtonGrid = styled.div`
   }
 `;
 
-export const CollectionButton = styled.button`
-  /* Remove default button styling */
-  background: none;
+export const CollectionLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Remove default styling */
   color: inherit;
-  border: none;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
+  text-decoration: none;
 
   border-radius: 15px;
-  border: solid;
   min-width: 100%;
   min-height: 20vh;
 
-  grid-column: 1 / 3;
+  grid-column: 1;
 
-  @media (max-width: 100em) {
-    grid-column: 1;
+  background-image: url('silverCoinsBackground.jpeg');
+
+  @media (min-width: 35em) {
+    &:hover {
+      filter: brightness(70%);
+    }
   }
+
+  @media (min-width: 100em) {
+    grid-column: 1 / 3;
+  }
+`;
+
+export const ButtonText = styled.h2`
+  font-size: clamp(1.5rem, 3vw + 0.25rem, 2.5rem);
+  margin: 0;
+  padding: 0 0 1rem 0;
 `;
 
 export const BlogButton = styled.button`
