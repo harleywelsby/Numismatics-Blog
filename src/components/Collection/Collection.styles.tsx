@@ -1,3 +1,4 @@
+import { Modal } from '@mui/material';
 import styled from 'styled-components';
 
 export const CollectionPageWrapper = styled.div`
@@ -12,7 +13,7 @@ export const HeaderText = styled.h1`
   font-weight: 500;
 
   margin: 0;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
 `;
 
 export const HeaderSeparator = styled.div`
@@ -39,7 +40,15 @@ export const CoinCardGrid = styled.div`
   }
 `;
 
-export const CardWrapper = styled.div`
+export const CardWrapper = styled.button`
+  /* Remove default button styling */
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+
   padding: 2rem;
 
   @media (max-width: 35em) {
@@ -60,4 +69,31 @@ export const CardText = styled.h2`
   padding: 0;
   font-size: clamp(1rem, 3vw + 0.25rem, 1.5rem);
   font-weight: 300;
+`;
+
+export const CardInspectModal = styled(Modal)`
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ModalContent = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 90vw;
+  min-height: 90vh;
+
+  background-color: var(--deep-black);
+  opacity: 0.95;
+  border-radius: 20px;
+
+  @media (max-width: 35em) {
+    flex-direction: column;
+  }
 `;

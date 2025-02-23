@@ -12,7 +12,7 @@ export const NavbarWrapper = styled.nav`
   justify-self: center;
   align-items: center;
 
-  background-color: var(--navbar-black);
+  background-color: var(--deep-black);
   min-width: 100%;
 
   z-index: ${zIndex.AlwaysAtFront};

@@ -1,4 +1,4 @@
-import { Card } from './Card';
+import { CoinCard } from './CoinCard';
 import {
   CoinCardGrid,
   CollectionPageWrapper,
@@ -33,7 +33,7 @@ export const Collection = () => {
       <HeaderSeparator />
       <CoinCardGrid>
         {TestCardList.map((x) => (
-          <Card title={x.title} imagePath={x.imgPath} />
+          <CoinCard title={x.title} imagePath={x.imgPath} />
         ))}
       </CoinCardGrid>
     </CollectionPageWrapper>
