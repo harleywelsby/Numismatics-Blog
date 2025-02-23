@@ -54,7 +54,7 @@ export const NavbarLink = styled(Link)<{ $selected?: boolean }>`
   font-size: 1.2rem;
   padding: 0.3rem;
 
-  @media (max-width: 35rem) {
+  @media (max-width: 35em) {
     font-size: clamp(0.5rem, 3vw + 0.5rem, 3rem);
   }
 
