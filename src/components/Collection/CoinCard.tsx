@@ -1,19 +1,39 @@
 import { useMediaQuery } from 'react-responsive';
 import {
-  CardInspectModal,
   CardText,
-  CardThumbnail,
   CardWrapper,
+  ModalBodyWrapper,
   ModalContent,
+  ModalHeader,
+  ModalText,
+  ModalTextWrapper,
 } from './Collection.styles';
 import { useState } from 'react';
+import { Modal } from '@mui/material';
 
 export type CardProps = {
   title: string;
   imagePath: string;
+  ruler: string;
+  authority: string;
+  mintLocation: string;
+  mintDate: string;
+  obverseDescription: string;
+  reverseDescription: string;
+  catalogueNumber: string;
 };
 
-export const CoinCard = ({ title, imagePath }: CardProps) => {
+export const CoinCard = ({
+  title,
+  imagePath,
+  ruler,
+  authority,
+  mintLocation,
+  mintDate,
+  obverseDescription,
+  reverseDescription,
+  catalogueNumber,
+}: CardProps) => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 35em)' });
   const thumbnailDimensions = isBigScreen
     ? { width: 500, height: 250 }
@@ -23,27 +43,54 @@ export const CoinCard = ({ title, imagePath }: CardProps) => {
     ? { width: 1000, height: 500 }
     : { width: 300, height: 150 };
 
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
 
   const inspectModal = (
-    <CardInspectModal open={showModal} onClose={() => setShowModal(false)}>
+    <Modal open={showModal} onClose={() => setShowModal(false)}>
       <ModalContent>
         <img src={imagePath} width={inspectDimensions.width} height={inspectDimensions.height} />
-        <CardText>Hello world</CardText>
+        <ModalTextWrapper>
+          <ModalHeader>{title}</ModalHeader>
+          <ModalBodyWrapper>
+            <ModalText>
+              <b>Ruler: </b>
+              {ruler}
+            </ModalText>
+            <ModalText>
+              <b>Minted: </b>
+              {`${mintLocation} (${mintDate})`}
+            </ModalText>
+            <ModalText>
+              <b>Obv: </b>
+              {obverseDescription}
+            </ModalText>
+            <ModalText>
+              <b>Rev: </b>
+              {reverseDescription}
+            </ModalText>
+            <ModalText>
+              <b>Ref: </b>
+              {catalogueNumber}
+            </ModalText>
+          </ModalBodyWrapper>
+        </ModalTextWrapper>
       </ModalContent>
-    </CardInspectModal>
+    </Modal>
   );
+
+  // Include some more info when not in the inspect modal.
+  const expandedTitle = `${authority} | ${title} (${mintDate})`;
 
   return (
     <>
       {showModal && inspectModal}
       <CardWrapper onClick={() => setShowModal(true)}>
-        <CardThumbnail
+        <img
           src={imagePath}
           width={thumbnailDimensions.width}
           height={thumbnailDimensions.height}
         />
-        <CardText>{title}</CardText>
+        <CardText>{expandedTitle}</CardText>
       </CardWrapper>
     </>
   );
