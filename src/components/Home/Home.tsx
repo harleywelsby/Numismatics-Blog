@@ -1,5 +1,12 @@
 import { PageWrapper } from '../../shared/styles/sharedStyles';
-import { HomepageHeader, HomepageParagraph, TextWrapper } from './Home.styles';
+import {
+  BlogButton,
+  ButtonGrid,
+  CollectionButton,
+  HomepageHeader,
+  HomepageParagraph,
+  TextWrapper,
+} from './Home.styles';
 
 export const Home = () => {
   return (
@@ -11,6 +18,13 @@ export const Home = () => {
           history behind my coins. Please note that I am in no way a professional historian or
           numismatist, and all notes are from my own, amateur research.
         </HomepageParagraph>
+        <ButtonGrid>
+          <CollectionButton>
+            <HomepageParagraph>Browse the Collection</HomepageParagraph>
+          </CollectionButton>
+          <BlogButton>Latest Blog Post</BlogButton>
+          <BlogButton>Featured Post</BlogButton>
+        </ButtonGrid>
       </TextWrapper>
     </PageWrapper>
   );

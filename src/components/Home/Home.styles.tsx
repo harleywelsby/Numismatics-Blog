@@ -23,3 +23,52 @@ export const HomepageParagraph = styled.p`
   text-align: left;
   font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);
 `;
+
+export const ButtonGrid = styled.div`
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 3rem;
+
+  margin-top: 2rem;
+
+  @media (max-width: 100em) {
+    grid-template-columns: 100%;
+    gap: 1rem;
+  }
+`;
+
+export const CollectionButton = styled.button`
+  /* Remove default button styling */
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+
+  border-radius: 15px;
+  border: solid;
+  min-width: 100%;
+  min-height: 20vh;
+
+  grid-column: 1 / 3;
+
+  @media (max-width: 100em) {
+    grid-column: 1;
+  }
+`;
+
+export const BlogButton = styled.button`
+  /* Remove default button styling */
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+
+  border-radius: 15px;
+  border: solid;
+  min-width: 50%;
+  min-height: 20vh;
+`;
