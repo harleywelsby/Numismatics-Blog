@@ -87,6 +87,7 @@ export const CoinCard = ({
       <CardWrapper onClick={() => setShowModal(true)}>
         <img
           src={imagePath}
+          alt={expandedTitle}
           width={thumbnailDimensions.width}
           height={thumbnailDimensions.height}
         />

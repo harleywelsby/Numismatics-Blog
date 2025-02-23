@@ -7,7 +7,6 @@ export const CollectionPageWrapper = styled.div`
 `;
 
 export const HeaderText = styled.h1`
-  color: var(--soft-white);
   font-size: clamp(2rem, 3vw + 0.5rem, 3rem);
   font-weight: 500;
 
