@@ -103,3 +103,26 @@ export const ModalHeader = styled.h2`
 export const ModalText = styled.p`
   margin: 0.8rem 0;
 `;
+
+export const CloseModalButton = styled.button`
+  /* Remove default button styling */
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  padding: 0.5rem;
+
+  @media (min-width: 35em) {
+    &:hover {
+      filter: brightness(50%);
+      transition: 0.5s;
+    }
+  }
+`;

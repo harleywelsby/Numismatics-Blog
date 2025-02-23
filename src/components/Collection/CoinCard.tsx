@@ -2,6 +2,7 @@ import { useMediaQuery } from 'react-responsive';
 import {
   CardText,
   CardWrapper,
+  CloseModalButton,
   ModalBodyWrapper,
   ModalContent,
   ModalHeader,
@@ -10,6 +11,8 @@ import {
 } from './Collection.styles';
 import { useState } from 'react';
 import { Modal } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 export type CardProps = {
   title: string;
@@ -74,6 +77,9 @@ export const CoinCard = ({
             </ModalText>
           </ModalBodyWrapper>
         </ModalTextWrapper>
+        <CloseModalButton onClick={() => setShowModal(false)}>
+          <FontAwesomeIcon icon={faXmark} size="2x" />
+        </CloseModalButton>
       </ModalContent>
     </Modal>
   );
