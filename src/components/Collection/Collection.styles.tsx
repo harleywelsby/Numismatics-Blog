@@ -54,7 +54,7 @@ export const CardWrapper = styled.button`
     padding: 1.2rem;
   }
 
-  :hover {
+  &:hover {
     filter: brightness(50%);
     transform: scale(1.05);
     transition: 0.5s;

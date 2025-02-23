@@ -43,7 +43,7 @@ export const CoinCard = ({
     ? { width: 1000, height: 500 }
     : { width: 300, height: 150 };
 
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const inspectModal = (
     <Modal open={showModal} onClose={() => setShowModal(false)}>
