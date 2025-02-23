@@ -48,16 +48,16 @@ export const CardWrapper = styled.button`
   cursor: pointer;
   outline: inherit;
 
-  padding: 2rem;
+  padding: 1.2rem;
 
-  @media (max-width: 35em) {
-    padding: 1.2rem;
-  }
+  @media (min-width: 35em) {
+    padding: 2rem;
 
-  &:hover {
-    filter: brightness(50%);
-    transform: scale(1.05);
-    transition: 0.5s;
+    &:hover {
+      filter: brightness(50%);
+      transform: scale(1.05);
+      transition: 0.5s;
+    }
   }
 `;
 
