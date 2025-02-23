@@ -1,15 +1,11 @@
 import { CollectionData } from '../../assets/DummyCollectionData';
 import { CoinCard } from './CoinCard';
-import {
-  CoinCardGrid,
-  CollectionPageWrapper,
-  HeaderSeparator,
-  HeaderText,
-} from './Collection.styles';
+import { CoinCardGrid } from './Collection.styles';
+import { HeaderSeparator, HeaderText, PageWrapper } from '../../shared/styles/sharedStyles';
 
 export const Collection = () => {
   return (
-    <CollectionPageWrapper>
+    <PageWrapper>
       <HeaderText>The Collection</HeaderText>
       <HeaderSeparator />
       <CoinCardGrid>
@@ -27,6 +23,6 @@ export const Collection = () => {
           />
         ))}
       </CoinCardGrid>
-    </CollectionPageWrapper>
+    </PageWrapper>
   );
 };
