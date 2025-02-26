@@ -71,6 +71,8 @@ export const ButtonText = styled.h2`
   font-size: clamp(1.5rem, 3vw + 0.25rem, 2.5rem);
   margin: 0;
   padding: 0 0 1rem 0;
+
+  white-space: pre-wrap;
 `;
 
 export const BlogButton = styled.button`
@@ -79,11 +81,17 @@ export const BlogButton = styled.button`
   color: inherit;
   border: none;
   font: inherit;
-  cursor: pointer;
+  // cursor: pointer;
   outline: inherit;
 
   border-radius: 15px;
-  border: solid;
   min-width: 50%;
   min-height: 20vh;
+
+  /* TODO: Remove when button implemented */
+  cursor: not-allowed;
+  background-image: url('ComingSoonPlaceholder.jpg');
+  background-size: cover;
+  filter: grayscale(0.8);
+  opacity: 0.8;
 `;
