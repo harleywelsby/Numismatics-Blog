@@ -94,4 +94,7 @@ export const BlogButton = styled.button`
   background-size: cover;
   filter: grayscale(0.8);
   opacity: 0.8;
+  @media (min-width: 100em) {
+    grid-column: 1 / 3;
+  }
 `;

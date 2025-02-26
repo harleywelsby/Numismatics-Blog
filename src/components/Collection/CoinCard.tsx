@@ -51,7 +51,12 @@ export const CoinCard = ({
   const inspectModal = (
     <Modal open={showModal} onClose={() => setShowModal(false)}>
       <ModalContent>
-        <img src={imagePath} width={inspectDimensions.width} height={inspectDimensions.height} />
+        <img
+          src={imagePath}
+          width={inspectDimensions.width}
+          height={inspectDimensions.height}
+          loading="lazy"
+        />
         <ModalTextWrapper>
           <ModalHeader>{title}</ModalHeader>
           <ModalBodyWrapper>
@@ -100,6 +105,7 @@ export const CoinCard = ({
           alt={expandedTitle}
           width={thumbnailDimensions.width}
           height={thumbnailDimensions.height}
+          loading="lazy"
         />
         <CardText>{expandedTitle}</CardText>
       </CardWrapper>
