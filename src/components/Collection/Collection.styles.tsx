@@ -20,6 +20,7 @@ export const CardWrapper = styled.button`
   border: none;
   font: inherit;
   outline: inherit;
+  cursor: pointer;
 
   padding: 1.2rem;
 
@@ -60,7 +61,7 @@ export const ModalContent = styled.div`
 
   @media (min-width: 100em) {
     flex-direction: row;
-    min-width: 80vw;
+    min-width: 70vw;
   }
 `;
 
@@ -110,6 +111,7 @@ export const CloseModalButton = styled.button`
   border: none;
   font: inherit;
   outline: inherit;
+  cursor: pointer;
 
   position: fixed;
   top: 0;

@@ -1,4 +1,4 @@
-import { CollectionData } from '../../assets/DummyCollectionData';
+import { CollectionData } from '../../assets/CollectionData';
 import { CoinCard } from './CoinCard';
 import { CoinCardGrid } from './Collection.styles';
 import { HeaderSeparator, HeaderText, PageWrapper } from '../../shared/styles/sharedStyles';

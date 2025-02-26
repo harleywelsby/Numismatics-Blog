@@ -60,6 +60,10 @@ export const CoinCard = ({
               {ruler}
             </ModalText>
             <ModalText>
+              <b>Authority: </b>
+              {authority}
+            </ModalText>
+            <ModalText>
               <b>Minted: </b>
               {`${mintLocation} (${mintDate})`}
             </ModalText>
@@ -85,7 +89,7 @@ export const CoinCard = ({
   );
 
   // Include some more info when not in the inspect modal.
-  const expandedTitle = `${authority} | ${title} (${mintDate})`;
+  const expandedTitle = `${title} (${mintDate})`;
 
   return (
     <>
