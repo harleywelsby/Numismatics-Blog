@@ -16,6 +16,8 @@
   color: var(--soft-white);
   background-color: var(--soft-black);
 
+  overflow-x: hidden;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

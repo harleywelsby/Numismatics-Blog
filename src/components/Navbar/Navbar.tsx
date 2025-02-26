@@ -19,7 +19,7 @@ export const Navbar = () => {
   };
 
   const logoSize = isBigScreen ? 200 : 70;
-  const logo = <LogoImage src="Logo.png" width={logoSize} height={logoSize} />;
+  const logo = <LogoImage src="Logo.webp" width={logoSize} height={logoSize} />;
 
   return (
     <>

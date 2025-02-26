@@ -39,7 +39,7 @@ export const CoinCard = ({
 }: CardProps) => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 35em)' });
   const thumbnailDimensions = isBigScreen
-    ? { width: 500, height: 250 }
+    ? { width: 450, height: 225 }
     : { width: 300, height: 150 };
 
   const inspectDimensions = isBigScreen

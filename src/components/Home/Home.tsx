@@ -1,7 +1,6 @@
 import { PageWrapper } from '../../shared/styles/sharedStyles';
 import { Routes } from '../../shared/utils/router';
 import {
-  BlogButton,
   ButtonGrid,
   ButtonText,
   CollectionLink,
@@ -24,8 +23,9 @@ export const Home = () => {
           <CollectionLink to={Routes.Collection}>
             <ButtonText>Browse the Collection</ButtonText>
           </CollectionLink>
-          <BlogButton>Latest Blog Post</BlogButton>
-          <BlogButton>Featured Post</BlogButton>
+          {/* TODO: Re-add when Blog is complete */}
+          {/* <BlogButton>Latest Blog Post</BlogButton>
+          <BlogButton>Featured Post</BlogButton> */}
         </ButtonGrid>
       </TextWrapper>
     </PageWrapper>
