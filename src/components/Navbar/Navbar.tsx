@@ -9,6 +9,7 @@ import {
 } from './Navbar.styles';
 import { Routes } from '../../shared/utils/router';
 import { useMediaQuery } from 'react-responsive';
+import { getFullImagePath } from '../../shared/utils/imageHelper';
 
 export const Navbar = () => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 35em)' });
@@ -19,7 +20,9 @@ export const Navbar = () => {
   };
 
   const logoSize = isBigScreen ? 200 : 70;
-  const logo = <LogoImage src="Images/Logo.webp" width={logoSize} height={logoSize} />;
+  const logo = (
+    <LogoImage src={getFullImagePath('Images/Logo.webp')} width={logoSize} height={logoSize} />
+  );
 
   return (
     <>
