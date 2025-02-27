@@ -3,7 +3,7 @@ import { CollectionItem } from '../components/Collection/Collection.types';
 export const CollectionData: CollectionItem[] = [
   {
     title: 'Septimius Severus Denarius',
-    imgPath: 'Collection/SeptimiusSeverusDenarius.webp',
+    imgPath: 'Images/Collection/SeptimiusSeverusDenarius.webp',
     ruler: 'Septimius Severus (193-211 AD)',
     authority: 'Roman Empire',
     mintLocation: 'Rome',
@@ -15,7 +15,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     title: 'Julia Domna Denarius',
-    imgPath: 'Collection/JuliaDomnaDenarius.webp',
+    imgPath: 'Images/Collection/JuliaDomnaDenarius.webp',
     ruler: 'Caracalla (198-217 AD)',
     authority: 'Roman Empire',
     mintLocation: 'Rome',
@@ -26,7 +26,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     title: 'Geta Denarius',
-    imgPath: 'Collection/GetaDenarius.webp',
+    imgPath: 'Images/Collection/GetaDenarius.webp',
     ruler: 'Septimius Geta (209-211 AD)',
     authority: 'Roman Empire',
     mintLocation: 'Rome',
@@ -38,7 +38,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     title: 'Caracalla Denarius',
-    imgPath: 'Collection/CaracallaDenarius.webp',
+    imgPath: 'Images/Collection/CaracallaDenarius.webp',
     ruler: 'Caracalla (198-217 AD)',
     authority: 'Roman Empire',
     mintLocation: 'Rome',
@@ -50,7 +50,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     title: 'Septimius Severus Denarius',
-    imgPath: 'Collection/SeverusSalusDenarius.webp',
+    imgPath: 'Images/Collection/SeverusSalusDenarius.webp',
     ruler: 'Septimius Severus (193-211 AD)',
     authority: 'Roman Empire',
     mintLocation: 'Rome',
@@ -62,7 +62,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     title: 'Constantine I Nummus',
-    imgPath: 'Collection/ConstantineNummus.webp',
+    imgPath: 'Images/Collection/ConstantineNummus.webp',
     ruler: 'Constantine I "The Great" (306-337 AD)',
     authority: 'Roman Empire',
     mintLocation: 'Rome',
@@ -75,7 +75,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     title: 'Claudius As',
-    imgPath: 'Collection/ClaudiusAs.webp',
+    imgPath: 'Images/Collection/ClaudiusAs.webp',
     ruler: 'Claudius (41-50 AD)',
     authority: 'Roman Empire',
     mintLocation: 'Rome',
@@ -86,7 +86,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     title: 'Constantius II Nummus',
-    imgPath: 'Collection/ConstantiusIINummus.webp',
+    imgPath: 'Images/Collection/ConstantiusIINummus.webp',
     ruler: 'Constantius II (337-361 AD)',
     authority: 'Roman Empire',
     mintLocation: 'Nicomedia',
@@ -98,7 +98,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     title: 'Alexander The Great Diobol',
-    imgPath: 'Collection/AlexanderDiobol.webp',
+    imgPath: 'Images/Collection/AlexanderDiobol.webp',
     ruler: 'Alexander III "The Great" (336-323 BC)',
     authority: 'Kingdom of Macedon',
     mintLocation: 'Kaunos, Karia',
@@ -109,7 +109,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     title: 'Aurelian Antoninianus',
-    imgPath: 'Collection/AurelianAntoninianus.webp',
+    imgPath: 'Images/Collection/AurelianAntoninianus.webp',
     ruler: 'Aurelian (270-275 AD)',
     authority: 'Roman Empire',
     mintLocation: 'Rome',
@@ -121,7 +121,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     title: 'Constantine I Nummus',
-    imgPath: 'Collection/ConstantineCampGates.webp',
+    imgPath: 'Images/Collection/ConstantineCampGates.webp',
     ruler: 'Constantine I "The Great" (306-337 AD)',
     authority: 'Roman Empire',
     mintLocation: 'Nicomedia',
@@ -133,7 +133,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     title: 'Constans Nummus',
-    imgPath: 'Collection/ConstansNummus.webp',
+    imgPath: 'Images/Collection/ConstansNummus.webp',
     ruler: 'Constans (337-350 AD)',
     authority: 'Roman Empire',
     mintLocation: 'Constantinople',
@@ -145,7 +145,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     title: 'Valentinian I Nummus',
-    imgPath: 'Collection/ValentinianVictory.webp',
+    imgPath: 'Images/Collection/ValentinianVictory.webp',
     ruler: 'Valentinian I (364-375 AD)',
     authority: 'Roman Empire',
     mintLocation: 'Siscia',
@@ -157,7 +157,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     title: 'Valentinian I Nummus',
-    imgPath: 'Collection/ValentinianCaptive.webp',
+    imgPath: 'Images/Collection/ValentinianCaptive.webp',
     ruler: 'Valentinian I (364-375 AD)',
     authority: 'Roman Empire',
     mintLocation: 'Siscia',
@@ -169,7 +169,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     title: 'Valentinian II Nummus',
-    imgPath: 'Collection/ValentinianIINummus.webp',
+    imgPath: 'Images/Collection/ValentinianIINummus.webp',
     ruler: 'Valentinian II (375-392 AD)',
     authority: 'Roman Empire',
     mintLocation: 'Aquileia',
@@ -180,7 +180,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     title: 'William III Shilling',
-    imgPath: 'Collection/WilliamIIIShilling.webp',
+    imgPath: 'Images/Collection/WilliamIIIShilling.webp',
     ruler: 'William III (1689-1702 AD)',
     authority: 'United Kingdom',
     mintLocation: 'England',
