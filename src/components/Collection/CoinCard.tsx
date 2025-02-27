@@ -13,6 +13,7 @@ import { useState } from 'react';
 import { Modal } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { getFullImagePath } from '../../shared/utils/imageHelper';
 
 export type CardProps = {
   title: string;
@@ -52,7 +53,7 @@ export const CoinCard = ({
     <Modal open={showModal} onClose={() => setShowModal(false)}>
       <ModalContent>
         <img
-          src={imagePath}
+          src={getFullImagePath(imagePath)}
           width={inspectDimensions.width}
           height={inspectDimensions.height}
           loading="lazy"

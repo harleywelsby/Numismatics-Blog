@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { getFullImagePath } from '../../shared/utils/imageHelper';
 
 export const TextWrapper = styled.div`
   justify-self: center;
@@ -54,7 +55,7 @@ export const CollectionLink = styled(Link)`
 
   grid-column: 1;
 
-  background-image: url('Images/SilverCoinsBackground.jpg');
+  background-image: url(${getFullImagePath('Images/SilverCoinsBackground.jpg')});
 
   @media (min-width: 35em) {
     &:hover {
@@ -90,7 +91,7 @@ export const BlogButton = styled.button`
 
   /* TODO: Remove when button implemented */
   cursor: not-allowed;
-  background-image: url('Images/ComingSoonPlaceholder.jpg');
+  background-image: url(${getFullImagePath('Images/ComingSoonPlaceholder.jpg')});
   background-size: cover;
   filter: grayscale(0.8);
   opacity: 0.8;
