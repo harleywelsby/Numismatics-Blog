@@ -49,6 +49,18 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IV #238A',
   },
   {
+    title: 'Elagabalus Denarius',
+    imgPath: 'Images/Collection/Elagabalus.webp',
+    ruler: 'Elagabalus (218-222 AD)',
+    authority: 'Roman Empire',
+    mintLocation: 'Rome',
+    mintDate: '218-222 AD',
+    obverseDescription:
+      'Diademed and cuirassed bust of Elagabalus facing right. "IMP CAES ANTONINVS AVG"',
+    reverseDescription: 'Victory advancing right with wreath and trophy. "VICTOR ANTONINI AVG"',
+    catalogueNumber: 'RIC IV.2 #153',
+  },
+  {
     title: 'Septimius Severus Denarius',
     imgPath: 'Images/Collection/SeverusSalusDenarius.webp',
     ruler: 'Septimius Severus (193-211 AD)',
