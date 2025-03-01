@@ -61,18 +61,6 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IV.2 #153',
   },
   {
-    title: 'Septimius Severus Denarius',
-    imgPath: 'Images/Collection/SeverusSalusDenarius.webp',
-    ruler: 'Septimius Severus (193-211 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Rome',
-    mintDate: '197-198 AD',
-    obverseDescription: 'Diademed bust of Severus facing right. "L SEPT SEV PERT AVG IMP X"',
-    reverseDescription:
-      'Salus, seated left, feeding serpent on an altar from a patera. "SALVTI AVGG"',
-    catalogueNumber: 'RIC IV #119A',
-  },
-  {
     title: 'Constantine I Nummus',
     imgPath: 'Images/Collection/ConstantineNummus.webp',
     ruler: 'Constantine I "The Great" (306-337 AD)',
@@ -84,6 +72,29 @@ export const CollectionData: CollectionItem[] = [
     reverseDescription:
       'Two military standards, flanked by a soldier on each side. Mint mark "RBP" in exergue. "GLORIA EXERCITVS"',
     catalogueNumber: 'RIC VII #335',
+  },
+  {
+    title: 'Alexander The Great Diobol',
+    imgPath: 'Images/Collection/AlexanderDiobol.webp',
+    ruler: 'Alexander III "The Great" (336-323 BC)',
+    authority: 'Kingdom of Macedon',
+    mintLocation: 'Kaunos, Karia',
+    mintDate: '300-200 BC',
+    obverseDescription: 'Diademed bust of Alexander III "The Great"',
+    reverseDescription: 'Two cornucopiae bound together. "K A"',
+    catalogueNumber: 'SNG Helsinki I #76',
+  },
+  {
+    title: 'Septimius Severus Denarius',
+    imgPath: 'Images/Collection/SeverusSalusDenarius.webp',
+    ruler: 'Septimius Severus (193-211 AD)',
+    authority: 'Roman Empire',
+    mintLocation: 'Rome',
+    mintDate: '197-198 AD',
+    obverseDescription: 'Diademed bust of Severus facing right. "L SEPT SEV PERT AVG IMP X"',
+    reverseDescription:
+      'Salus, seated left, feeding serpent on an altar from a patera. "SALVTI AVGG"',
+    catalogueNumber: 'RIC IV #119A',
   },
   {
     title: 'Claudius As',
@@ -109,15 +120,16 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC VIII #189',
   },
   {
-    title: 'Alexander The Great Diobol',
-    imgPath: 'Images/Collection/AlexanderDiobol.webp',
-    ruler: 'Alexander III "The Great" (336-323 BC)',
-    authority: 'Kingdom of Macedon',
-    mintLocation: 'Kaunos, Karia',
-    mintDate: '300-200 BC',
-    obverseDescription: 'Diademed bust of Alexander III "The Great"',
-    reverseDescription: 'Two cornucopiae bound together. "K A"',
-    catalogueNumber: 'SNG Helsinki I #76',
+    title: 'William III Shilling',
+    imgPath: 'Images/Collection/WilliamIIIShilling.webp',
+    ruler: 'William III (1689-1702 AD)',
+    authority: 'United Kingdom',
+    mintLocation: 'England',
+    mintDate: '1696 AD',
+    obverseDescription: 'Bust of William III facing right. "GVLIELMVS III DEI GRA"',
+    reverseDescription:
+      'Crowned shields of each kingdom of the union (Britain, France and Ireland) around central Nassau Lion. "MAG BR FRA ET HIB REX 1696"',
+    catalogueNumber: 'KM #485.1',
   },
   {
     title: 'Aurelian Antoninianus',
@@ -189,17 +201,5 @@ export const CollectionData: CollectionItem[] = [
     obverseDescription: 'Diademed bust of Valentinian facing right. "DN VALENTINIANVS PF AVG"',
     reverseDescription: 'Wreath containing text. "SMAQ" mint mark in exergue. "VOT X MVLT XX"',
     catalogueNumber: 'RIC IX #19',
-  },
-  {
-    title: 'William III Shilling',
-    imgPath: 'Images/Collection/WilliamIIIShilling.webp',
-    ruler: 'William III (1689-1702 AD)',
-    authority: 'United Kingdom',
-    mintLocation: 'England',
-    mintDate: '1696 AD',
-    obverseDescription: 'Bust of William III facing right. "GVLIELMVS III DEI GRA"',
-    reverseDescription:
-      'Crowned shields of each kingdom of the union (Britain, France and Ireland) around central Nassau Lion. "MAG BR FRA ET HIB REX 1696"',
-    catalogueNumber: 'KM #485.1',
   },
 ];
