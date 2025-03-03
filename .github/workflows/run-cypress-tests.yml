@@ -1,0 +1,28 @@
+name: run-cypress-tests
+on: push
+
+jobs:
+  chrome:
+    runs-on: ubuntu-24.04
+    name: E2E on Chrome
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+  firefox:
+    runs-on: ubuntu-24.04
+    name: E2E on Firefox
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cypress-io/github-action@v6
+        with:
+          browser: firefox
+  edge:
+    runs-on: ubuntu-24.04
+    name: E2E on Edge
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cypress-io/github-action@v6
+        with:
+          browser: edge
