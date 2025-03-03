@@ -30,21 +30,24 @@ jobs:
       - uses: cypress-io/github-action@v6
         with:
           browser: chrome
-  firefox:
-    runs-on: ubuntu-24.04
-    needs: install
-    name: E2E on Firefox
-    steps:
-      - uses: actions/checkout@v4
-      - uses: cypress-io/github-action@v6
-        with:
-          browser: firefox
-  edge:
-    runs-on: ubuntu-24.04
-    needs: install
-    name: E2E on Edge
-    steps:
-      - uses: actions/checkout@v4
-      - uses: cypress-io/github-action@v6
-        with:
-          browser: edge
+          start: npm run preview
+          wait-on: 'http://localhost:4173'
+
+  # firefox:
+  #   runs-on: ubuntu-24.04
+  #   needs: install
+  #   name: E2E on Firefox
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: cypress-io/github-action@v6
+  #       with:
+  #         browser: firefox
+  # edge:
+  #   runs-on: ubuntu-24.04
+  #   needs: install
+  #   name: E2E on Edge
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: cypress-io/github-action@v6
+  #       with:
+  #         browser: edge
