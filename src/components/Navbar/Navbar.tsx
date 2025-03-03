@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import {
   NavbarLink,
   NavbarList,
@@ -10,10 +10,11 @@ import {
 import { Routes } from '../../shared/utils/router';
 import { useMediaQuery } from 'react-responsive';
 import { getFullImagePath } from '../../shared/utils/imageHelper';
+import { NavigationContext } from '../NavigationContext/NavigationContext';
 
 export const Navbar = () => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 35em)' });
-  const [selectedRoute, setSelectedRoute] = useState(window.location.pathname);
+  const { selectedRoute, setSelectedRoute } = useContext(NavigationContext);
 
   const handleListItemClick = (route: string) => {
     setSelectedRoute(route);

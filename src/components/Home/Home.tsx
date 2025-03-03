@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { PageWrapper } from '../../shared/styles/sharedStyles';
 import { Routes } from '../../shared/utils/router';
 import {
@@ -9,8 +10,11 @@ import {
   HomepageParagraph,
   TextWrapper,
 } from './Home.styles';
+import { NavigationContext } from '../NavigationContext/NavigationContext';
 
 export const Home = () => {
+  const { setSelectedRoute } = useContext(NavigationContext);
+
   return (
     <PageWrapper>
       <TextWrapper>
@@ -21,7 +25,10 @@ export const Home = () => {
           numismatist, and all notes are from my own, amateur research.
         </HomepageParagraph>
         <ButtonGrid>
-          <CollectionLink to={Routes.Collection}>
+          <CollectionLink
+            to={Routes.Collection}
+            onClick={() => setSelectedRoute(Routes.Collection)}
+          >
             <ButtonText>Browse the Collection</ButtonText>
           </CollectionLink>
           <BlogButton>
