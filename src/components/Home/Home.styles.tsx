@@ -24,6 +24,10 @@ export const HomepageHeader = styled.h2`
 export const HomepageParagraph = styled.p`
   text-align: left;
   font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);
+
+  @media (max-width: 35em) {
+    text-align: center;
+  }
 `;
 
 export const ButtonGrid = styled.div`
