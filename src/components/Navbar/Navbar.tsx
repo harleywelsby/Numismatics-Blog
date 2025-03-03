@@ -36,6 +36,7 @@ export const Navbar = () => {
         <NavbarList className="navbar-list">
           <li>
             <NavbarLink
+              data-test-id="navbar-home-link"
               to={Routes.Home}
               onClick={() => handleListItemClick(Routes.Home)}
               $selected={selectedRoute === Routes.Home}

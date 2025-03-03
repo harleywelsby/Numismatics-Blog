@@ -2,8 +2,27 @@ name: run-cypress-tests
 on: push
 
 jobs:
+  install:
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cypress install
+        uses: cypress-io/github-action@v6
+        with:
+          # Disable running of tests within install job
+          runTests: false
+          build: npm run build
+
+      - name: Save build folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          if-no-files-found: error
+          path: build
   chrome:
     runs-on: ubuntu-24.04
+    needs: install
     name: E2E on Chrome
     steps:
       - uses: actions/checkout@v4
@@ -12,6 +31,7 @@ jobs:
           browser: chrome
   firefox:
     runs-on: ubuntu-24.04
+    needs: install
     name: E2E on Firefox
     steps:
       - uses: actions/checkout@v4
@@ -20,6 +40,7 @@ jobs:
           browser: firefox
   edge:
     runs-on: ubuntu-24.04
+    needs: install
     name: E2E on Edge
     steps:
       - uses: actions/checkout@v4
