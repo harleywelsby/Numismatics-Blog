@@ -22,7 +22,6 @@ jobs:
           name: build
           if-no-files-found: error
           path: dist
-          start: npm run preview
   chrome:
     runs-on: ubuntu-24.04
     needs: install
@@ -32,6 +31,8 @@ jobs:
       - uses: cypress-io/github-action@v6
         with:
           browser: chrome
+          start: npm run preview
+          wait-on: 'http-get://localhost:4173'
 
   # firefox:
   #   runs-on: ubuntu-24.04
