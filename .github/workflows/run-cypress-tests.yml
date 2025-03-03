@@ -32,7 +32,7 @@ jobs:
         with:
           browser: chrome
           start: npm run preview
-          wait-on: 'http-get://localhost:4173'
+          wait-on: 'http://[::1]:4173'
 
   # firefox:
   #   runs-on: ubuntu-24.04
