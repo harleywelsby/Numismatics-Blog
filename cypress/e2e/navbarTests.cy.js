@@ -1,4 +1,5 @@
 import { localUrl, Routes } from '../support/constants';
+import { runOnAllViewports } from '../support/e2e';
 
 describe('Navbar Regression Tests', () => {
   beforeEach(() => {
@@ -6,16 +7,19 @@ describe('Navbar Regression Tests', () => {
   });
 
   it('Navbar header is visible', () => {
-    // Header logo & text visible
-    cy.get('[data-test-id="navbar-logo"').should('be.visible');
-    cy.get('[data-test-id="navbar-title"').should('be.visible');
+    runOnAllViewports(() => {
+      cy.get('[data-test-id="navbar-logo"').should('be.visible');
+      cy.get('[data-test-id="navbar-title"').should('be.visible');
+    });
   });
 
   it('Navbar items route correctly', () => {
-    cy.get('[data-test-id="navbar-collection-link"').should('be.visible').click();
-    cy.url().should('eq', `${localUrl}${Routes.Collection}`);
+    runOnAllViewports(() => {
+      cy.get('[data-test-id="navbar-collection-link"').should('be.visible').click();
+      cy.url().should('eq', `${localUrl}${Routes.Collection}`);
 
-    cy.get('[data-test-id="navbar-home-link"').should('be.visible').click();
-    cy.url().should('eq', `${localUrl}${Routes.Home}`);
+      cy.get('[data-test-id="navbar-home-link"').should('be.visible').click();
+      cy.url().should('eq', `${localUrl}${Routes.Home}`);
+    });
   });
 });

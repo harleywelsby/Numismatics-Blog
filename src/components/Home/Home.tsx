@@ -18,8 +18,10 @@ export const Home = () => {
   return (
     <PageWrapper>
       <TextWrapper>
-        <HomepageHeader>Kia ora, and welcome to Niho Numismatics!</HomepageHeader>
-        <HomepageParagraph>
+        <HomepageHeader data-test-id="home-welcome-header">
+          Kia ora, and welcome to Niho Numismatics!
+        </HomepageHeader>
+        <HomepageParagraph data-test-id="home-welcome-paragraph">
           This website documents my personal coin collection. It's also where I'll be blogging about
           the history behind my coins. Please note that I am in no way a professional historian or
           numismatist, and all notes are from my own, amateur research.
@@ -28,6 +30,7 @@ export const Home = () => {
           <CollectionLink
             to={Routes.Collection}
             onClick={() => setSelectedRoute(Routes.Collection)}
+            data-test-id="home-collection-link"
           >
             <ButtonText>Browse the Collection</ButtonText>
           </CollectionLink>

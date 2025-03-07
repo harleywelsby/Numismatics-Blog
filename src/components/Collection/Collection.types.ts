@@ -1,4 +1,5 @@
 export type CollectionItem = {
+  id: number;
   title: string;
   imgPath: string;
   ruler: string;

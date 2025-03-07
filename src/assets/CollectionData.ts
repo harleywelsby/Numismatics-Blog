@@ -2,6 +2,7 @@ import { CollectionItem } from '../components/Collection/Collection.types';
 
 export const CollectionData: CollectionItem[] = [
   {
+    id: 1,
     title: 'Septimius Severus Denarius',
     imgPath: 'Images/Collection/SeptimiusSeverusDenarius.webp',
     ruler: 'Septimius Severus (193-211 AD)',
@@ -14,6 +15,7 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IV #233',
   },
   {
+    id: 2,
     title: 'Julia Domna Denarius',
     imgPath: 'Images/Collection/JuliaDomnaDenarius.webp',
     ruler: 'Caracalla (198-217 AD)',
@@ -25,6 +27,7 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IV #390',
   },
   {
+    id: 3,
     title: 'Geta Denarius',
     imgPath: 'Images/Collection/GetaDenarius.webp',
     ruler: 'Septimius Geta (209-211 AD)',
@@ -37,6 +40,7 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IV.1 #51',
   },
   {
+    id: 4,
     title: 'Caracalla Denarius',
     imgPath: 'Images/Collection/CaracallaDenarius.webp',
     ruler: 'Caracalla (198-217 AD)',
@@ -49,6 +53,7 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IV #238A',
   },
   {
+    id: 5,
     title: 'Elagabalus Denarius',
     imgPath: 'Images/Collection/Elagabalus.webp',
     ruler: 'Elagabalus (218-222 AD)',
@@ -61,6 +66,7 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IV.2 #153',
   },
   {
+    id: 6,
     title: 'Constantine I Nummus',
     imgPath: 'Images/Collection/ConstantineNummus.webp',
     ruler: 'Constantine I "The Great" (306-337 AD)',
@@ -74,6 +80,7 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC VII #335',
   },
   {
+    id: 7,
     title: 'Alexander The Great Diobol',
     imgPath: 'Images/Collection/AlexanderDiobol.webp',
     ruler: 'Alexander III "The Great" (336-323 BC)',
@@ -85,6 +92,7 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'SNG Helsinki I #76',
   },
   {
+    id: 8,
     title: 'Septimius Severus Denarius',
     imgPath: 'Images/Collection/SeverusSalusDenarius.webp',
     ruler: 'Septimius Severus (193-211 AD)',
@@ -97,6 +105,7 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IV #119A',
   },
   {
+    id: 9,
     title: 'Claudius As',
     imgPath: 'Images/Collection/ClaudiusAs.webp',
     ruler: 'Claudius (41-50 AD)',
@@ -108,6 +117,7 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC I #97',
   },
   {
+    id: 10,
     title: 'Constantius II Nummus',
     imgPath: 'Images/Collection/ConstantiusIINummus.webp',
     ruler: 'Constantius II (337-361 AD)',
@@ -120,6 +130,7 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC VIII #189',
   },
   {
+    id: 11,
     title: 'William III Shilling',
     imgPath: 'Images/Collection/WilliamIIIShilling.webp',
     ruler: 'William III (1689-1702 AD)',
@@ -132,6 +143,7 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'KM #485.1',
   },
   {
+    id: 12,
     title: 'Aurelian Antoninianus',
     imgPath: 'Images/Collection/AurelianAntoninianus.webp',
     ruler: 'Aurelian (270-275 AD)',
@@ -144,6 +156,7 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC V #38',
   },
   {
+    id: 13,
     title: 'Constantine I Nummus',
     imgPath: 'Images/Collection/ConstantineCampGates.webp',
     ruler: 'Constantine I "The Great" (306-337 AD)',
@@ -156,6 +169,7 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC VII #90',
   },
   {
+    id: 14,
     title: 'Constans Nummus',
     imgPath: 'Images/Collection/ConstansNummus.webp',
     ruler: 'Constans (337-350 AD)',
@@ -168,6 +182,7 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC VII #140',
   },
   {
+    id: 15,
     title: 'Valentinian I Nummus',
     imgPath: 'Images/Collection/ValentinianVictory.webp',
     ruler: 'Valentinian I (364-375 AD)',
@@ -180,6 +195,7 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IX #7A',
   },
   {
+    id: 16,
     title: 'Valentinian I Nummus',
     imgPath: 'Images/Collection/ValentinianCaptive.webp',
     ruler: 'Valentinian I (364-375 AD)',
@@ -192,6 +208,7 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IX #14A',
   },
   {
+    id: 17,
     title: 'Valentinian II Nummus',
     imgPath: 'Images/Collection/ValentinianIINummus.webp',
     ruler: 'Valentinian II (375-392 AD)',

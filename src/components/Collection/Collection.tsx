@@ -11,8 +11,9 @@ export const Collection = () => {
       <CoinCardGrid>
         {CollectionData.map((x) => (
           <CoinCard
+            id={x.id}
             title={x.title}
-            imagePath={x.imgPath}
+            imgPath={x.imgPath}
             ruler={x.ruler}
             authority={x.authority}
             mintLocation={x.mintLocation}

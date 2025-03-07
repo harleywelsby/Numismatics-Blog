@@ -15,3 +15,21 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands';
+
+const viewports = [
+  'iphone-6',
+  'iphone-x',
+  'samsung-s10',
+  'macbook-11',
+  'macbook-13',
+  'macbook-15',
+  'ipad-2',
+];
+
+export const runOnAllViewports = (test: () => void) => {
+  viewports.forEach((viewport) => {
+    // @ts-expect-error ViewportPreset type is inaccessible. This will always match anyway.
+    cy.viewport(viewport);
+    test();
+  });
+};

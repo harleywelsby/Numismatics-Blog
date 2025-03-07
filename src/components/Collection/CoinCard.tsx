@@ -14,22 +14,12 @@ import { Modal } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { getFullImagePath } from '../../shared/utils/imageHelper';
-
-export type CardProps = {
-  title: string;
-  imagePath: string;
-  ruler: string;
-  authority: string;
-  mintLocation: string;
-  mintDate: string;
-  obverseDescription: string;
-  reverseDescription: string;
-  catalogueNumber: string;
-};
+import { CollectionItem } from './Collection.types';
 
 export const CoinCard = ({
+  id,
   title,
-  imagePath,
+  imgPath,
   ruler,
   authority,
   mintLocation,
@@ -37,23 +27,27 @@ export const CoinCard = ({
   obverseDescription,
   reverseDescription,
   catalogueNumber,
-}: CardProps) => {
-  const isBigScreen = useMediaQuery({ query: '(min-width: 35em)' });
+}: CollectionItem) => {
+  // TODO #8: These media queries are hacky and bad. Clean this up
+  const isBigScreen = useMediaQuery({ query: '(min-width: 86em)' });
+  const isMedScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
+
   const thumbnailDimensions = isBigScreen
     ? { width: 450, height: 225 }
     : { width: 300, height: 150 };
 
-  const inspectDimensions = isBigScreen
-    ? { width: 1000, height: 500 }
-    : { width: 300, height: 150 };
+  let inspectDimensions = { width: 300, height: 150 };
+  if (isMedScreenOrLarger) {
+    inspectDimensions = isBigScreen ? { width: 1000, height: 500 } : { width: 500, height: 250 };
+  }
 
   const [showModal, setShowModal] = useState(false);
 
   const inspectModal = (
     <Modal open={showModal} onClose={() => setShowModal(false)}>
-      <ModalContent>
+      <ModalContent data-test-id={`coin-card-${id}-modal-content`}>
         <img
-          src={getFullImagePath(imagePath)}
+          src={getFullImagePath(imgPath)}
           width={inspectDimensions.width}
           height={inspectDimensions.height}
           loading="lazy"
@@ -87,7 +81,10 @@ export const CoinCard = ({
             </ModalText>
           </ModalBodyWrapper>
         </ModalTextWrapper>
-        <CloseModalButton onClick={() => setShowModal(false)}>
+        <CloseModalButton
+          onClick={() => setShowModal(false)}
+          data-test-id={`coin-card-${id}-modal-close`}
+        >
           <FontAwesomeIcon icon={faXmark} size="2x" />
         </CloseModalButton>
       </ModalContent>
@@ -100,9 +97,9 @@ export const CoinCard = ({
   return (
     <>
       {showModal && inspectModal}
-      <CardWrapper onClick={() => setShowModal(true)}>
+      <CardWrapper onClick={() => setShowModal(true)} data-test-id={`coin-card-${id}`}>
         <img
-          src={imagePath}
+          src={imgPath}
           alt={expandedTitle}
           width={thumbnailDimensions.width}
           height={thumbnailDimensions.height}
