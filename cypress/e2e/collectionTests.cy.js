@@ -1,5 +1,4 @@
-import { localUrl, Routes } from '../support/constants';
-import { runOnAllViewports } from '../support/e2e';
+import { localUrl, Routes, runOnAllViewports } from '../support/e2e';
 
 describe('Collection Regression Tests', () => {
   it('List items are visible and modal functions correctly', () => {

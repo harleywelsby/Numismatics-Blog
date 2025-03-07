@@ -1,5 +1,4 @@
-import { localUrl, Routes } from '../support/constants';
-import { runOnAllViewports } from '../support/e2e';
+import { localUrl, Routes, runOnAllViewports } from '../support/e2e';
 
 describe('Homepage Regression Tests', () => {
   it('Welcome text is visible', () => {
