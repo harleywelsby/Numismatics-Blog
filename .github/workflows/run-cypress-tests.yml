@@ -25,7 +25,7 @@ jobs:
   chrome:
     runs-on: ubuntu-24.04
     needs: install
-    name: E2E on Chrome
+    name: Regression Test | Chrome
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,22 +41,41 @@ jobs:
         with:
           start: npm run preview
           browser: chrome
+  firefox:
+    runs-on: ubuntu-24.04
+    needs: install
+    name: Regression Test | Firefox
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-  # firefox:
-  #   runs-on: ubuntu-24.04
-  #   needs: install
-  #   name: E2E on Firefox
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: cypress-io/github-action@v6
-  #       with:
-  #         browser: firefox
-  # edge:
-  #   runs-on: ubuntu-24.04
-  #   needs: install
-  #   name: E2E on Edge
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: cypress-io/github-action@v6
-  #       with:
-  #         browser: edge
+      - name: Download the Build
+        uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: dist
+
+      - name: Cypress | Firefox
+        uses: cypress-io/github-action@v6
+        with:
+          start: npm run preview
+          browser: firefox
+  edge:
+    runs-on: ubuntu-24.04
+    needs: install
+    name: Regression Test | Edge
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download the Build
+        uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: dist
+
+      - name: Cypress | Edge
+        uses: cypress-io/github-action@v6
+        with:
+          start: npm run preview
+          browser: edge
