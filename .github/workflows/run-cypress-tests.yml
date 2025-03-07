@@ -31,7 +31,7 @@ jobs:
       - uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          start: npm run preview
+          start: npm start
           wait-on: 'http://[::1]:4173'
 
   # firefox:
