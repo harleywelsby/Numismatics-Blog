@@ -32,7 +32,7 @@ export const CoinCard = ({
   const isBigScreen = useMediaQuery({ query: '(min-width: 86em)' });
   const isMedScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
 
-  const thumbnailDimensions = isBigScreen
+  const thumbnailDimensions = isMedScreenOrLarger
     ? { width: 450, height: 225 }
     : { width: 300, height: 150 };
 

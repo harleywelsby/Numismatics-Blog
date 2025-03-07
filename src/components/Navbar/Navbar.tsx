@@ -49,7 +49,7 @@ export const Navbar = () => {
               Home
             </NavbarLink>
           </li>
-          {/* TODO: Re-add when blog implemented */}
+          {/* TODO #4: Re-add when blog implemented */}
           {/* <li>
             <NavbarLink
               to={Routes.Blog}
