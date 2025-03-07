@@ -22,7 +22,12 @@ export const Navbar = () => {
 
   const logoSize = isBigScreen ? 200 : 70;
   const logo = (
-    <LogoImage src={getFullImagePath('Images/Logo.webp')} width={logoSize} height={logoSize} />
+    <LogoImage
+      src={getFullImagePath('Images/Logo.webp')}
+      width={logoSize}
+      height={logoSize}
+      data-test-id="navbar-logo"
+    />
   );
 
   return (
@@ -31,7 +36,7 @@ export const Navbar = () => {
         {isBigScreen && logo}
         <TitleWrapper>
           {!isBigScreen && logo}
-          <TitleText>Niho Numismatics</TitleText>
+          <TitleText data-test-id="navbar-title">Niho Numismatics</TitleText>
         </TitleWrapper>
         <NavbarList className="navbar-list">
           <li>
@@ -56,6 +61,7 @@ export const Navbar = () => {
           </li> */}
           <li>
             <NavbarLink
+              data-test-id="navbar-collection-link"
               to={Routes.Collection}
               onClick={() => handleListItemClick(Routes.Collection)}
               $selected={selectedRoute === Routes.Collection}
