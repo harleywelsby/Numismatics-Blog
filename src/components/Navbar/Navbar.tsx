@@ -49,7 +49,8 @@ export const Navbar = () => {
               Home
             </NavbarLink>
           </li>
-          <li>
+          {/* TODO #4 */}
+          {/* <li>
             <NavbarLink
               to={Routes.Blog}
               onClick={() => handleListItemClick(Routes.Blog)}
@@ -57,7 +58,7 @@ export const Navbar = () => {
             >
               Blog
             </NavbarLink>
-          </li>
+          </li> */}
           <li>
             <NavbarLink
               data-test-id="navbar-collection-link"
