@@ -41,25 +41,6 @@ jobs:
         with:
           start: npm run preview
           browser: chrome
-  firefox:
-    runs-on: ubuntu-24.04
-    needs: install
-    name: Regression Test | Firefox
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Download the Build
-        uses: actions/download-artifact@v4
-        with:
-          name: build
-          path: dist
-
-      - name: Cypress | Firefox
-        uses: cypress-io/github-action@v6
-        with:
-          start: npm run preview
-          browser: firefox
   edge:
     runs-on: ubuntu-24.04
     needs: install

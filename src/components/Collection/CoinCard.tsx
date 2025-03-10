@@ -15,6 +15,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { getFullImagePath } from '../../shared/utils/imageHelper';
 import { CollectionItem } from './Collection.types';
+import { ScreenSize } from '../../shared/types';
+
+const getThumbnailDimensions = (screenSize: ScreenSize) => {
+  switch (screenSize) {
+    case ScreenSize.Small:
+      return { width: 300, height: 150 };
+    case ScreenSize.Medium:
+    case ScreenSize.Large:
+      return { width: 450, height: 225 };
+  }
+};
+
+const getInspectDimensions = (screenSize: ScreenSize) => {
+  switch (screenSize) {
+    case ScreenSize.Small:
+      return { width: 300, height: 150 };
+    case ScreenSize.Medium:
+      return { width: 700, height: 350 };
+    case ScreenSize.Large:
+      return { width: 1000, height: 500 };
+  }
+};
 
 export const CoinCard = ({
   id,
@@ -28,18 +50,18 @@ export const CoinCard = ({
   reverseDescription,
   catalogueNumber,
 }: CollectionItem) => {
-  // TODO #8: These media queries are hacky and bad. Clean this up
-  const isBigScreen = useMediaQuery({ query: '(min-width: 86em)' });
-  const isMedScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
+  const isMediumScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
+  const isLargeScreen = useMediaQuery({ query: '(min-width: 86em)' });
 
-  const thumbnailDimensions = isMedScreenOrLarger
-    ? { width: 450, height: 225 }
-    : { width: 300, height: 150 };
-
-  let inspectDimensions = { width: 300, height: 150 };
-  if (isMedScreenOrLarger) {
-    inspectDimensions = isBigScreen ? { width: 1000, height: 500 } : { width: 500, height: 250 };
+  // Default to small (mobile). If the screen is at least a 'medium' size,
+  // then check the size and adjust accordingly.
+  let screenSize = ScreenSize.Small;
+  if (isMediumScreenOrLarger) {
+    screenSize = isLargeScreen ? ScreenSize.Large : ScreenSize.Medium;
   }
+
+  const thumbnailDimensions = getThumbnailDimensions(screenSize);
+  const inspectDimensions = getInspectDimensions(screenSize);
 
   const [showModal, setShowModal] = useState(false);
 
