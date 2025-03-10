@@ -2,12 +2,11 @@ import { useContext } from 'react';
 import { PageWrapper } from '../../shared/styles/sharedStyles';
 import { Routes } from '../../shared/utils/router';
 import {
-  BlogButton,
   ButtonGrid,
-  ButtonText,
   CollectionLink,
   HomepageHeader,
   HomepageParagraph,
+  LinkButtonText,
   TextWrapper,
 } from './Home.styles';
 import { NavigationContext } from '../NavigationContext/NavigationContext';
@@ -32,14 +31,14 @@ export const Home = () => {
             onClick={() => setSelectedRoute(Routes.Collection)}
             data-test-id="home-collection-link"
           >
-            <ButtonText>Browse the Collection</ButtonText>
+            <LinkButtonText>Browse the Collection</LinkButtonText>
           </CollectionLink>
-          <BlogButton>
-            <ButtonText>{'Read the Blog\n(Coming soon!)'}</ButtonText>
-          </BlogButton>
-          {/* TODO: Re-add when Blog is complete */}
-          {/* <BlogButton>Latest Blog Post</BlogButton>
-          <BlogButton>Featured Post</BlogButton> */}
+          {/* <BlogCard to={Routes.Blog} onClick={() => setSelectedRoute(Routes.Blog)}>
+            <LinkButtonText>Featured Post</LinkButtonText>
+          </BlogCard>
+          <BlogCard to={Routes.Blog} onClick={() => setSelectedRoute(Routes.Blog)}>
+            <LinkButtonText>Latest Post</LinkButtonText>
+          </BlogCard> */}
         </ButtonGrid>
       </TextWrapper>
     </PageWrapper>

@@ -37,7 +37,7 @@ export const ButtonGrid = styled.div`
 
   margin-top: 2rem;
 
-  @media (max-width: 100em) {
+  @media (max-width: 35em) {
     grid-template-columns: 100%;
     gap: 1rem;
   }
@@ -67,12 +67,12 @@ export const CollectionLink = styled(Link)`
     }
   }
 
-  @media (min-width: 100em) {
+  @media (min-width: 35em) {
     grid-column: 1 / 3;
   }
 `;
 
-export const ButtonText = styled.h2`
+export const LinkButtonText = styled.h2`
   font-size: clamp(1.5rem, 3vw + 0.25rem, 2.5rem);
   margin: 0;
   padding: 0 0 1rem 0;
@@ -86,20 +86,18 @@ export const BlogButton = styled.button`
   color: inherit;
   border: none;
   font: inherit;
-  // cursor: pointer;
+  cursor: pointer;
   outline: inherit;
 
   border-radius: 15px;
-  min-width: 50%;
-  min-height: 20vh;
+  min-height: 30vh;
 
-  /* TODO: Remove when button implemented */
-  cursor: not-allowed;
+  @media (min-width: 35em) {
+    &:hover {
+      filter: brightness(70%);
+    }
+  }
+
   background-image: url(${getFullImagePath('Images/ComingSoonPlaceholder.jpg')});
   background-size: cover;
-  filter: grayscale(0.8);
-  opacity: 0.8;
-  @media (min-width: 100em) {
-    grid-column: 1 / 3;
-  }
 `;

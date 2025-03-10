@@ -7,3 +7,8 @@ export const FooterWrapper = styled.footer`
 
   background-color: var(--deep-black);
 `;
+
+export const FooterLink = styled.a`
+  text-decoration: none;
+  font-weight: 500;
+`;
