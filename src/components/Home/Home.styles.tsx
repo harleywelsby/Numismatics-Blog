@@ -59,7 +59,7 @@ export const CollectionLink = styled(Link)`
 
   grid-column: 1;
 
-  background-image: url(${getFullImagePath('Images/SilverCoinsBackground.jpg')});
+  background-image: url(${getFullImagePath('/Images/SilverCoinsBackground.jpg')});
 
   @media (min-width: 35em) {
     &:hover {
@@ -98,6 +98,6 @@ export const BlogButton = styled.button`
     }
   }
 
-  background-image: url(${getFullImagePath('Images/ComingSoonPlaceholder.jpg')});
+  background-image: url(${getFullImagePath('/Images/ComingSoonPlaceholder.jpg')});
   background-size: cover;
 `;

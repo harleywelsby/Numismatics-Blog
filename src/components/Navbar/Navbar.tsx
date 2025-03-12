@@ -23,7 +23,7 @@ export const Navbar = () => {
   const logoSize = isBigScreen ? 200 : 70;
   const logo = (
     <LogoImage
-      src={getFullImagePath('Images/Logo.webp')}
+      src={getFullImagePath('/Images/Logo.webp')}
       width={logoSize}
       height={logoSize}
       data-test-id="navbar-logo"
