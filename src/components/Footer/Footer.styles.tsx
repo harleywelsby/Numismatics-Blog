@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const FooterWrapper = styled.footer`
@@ -8,7 +9,6 @@ export const FooterWrapper = styled.footer`
   background-color: var(--deep-black);
 `;
 
-export const FooterLink = styled.a`
-  text-decoration: none;
+export const FooterLink = styled(Link)`
   font-weight: 500;
 `;

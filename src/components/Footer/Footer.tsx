@@ -1,11 +1,26 @@
-import { FooterWrapper } from './Footer.styles';
+import { useContext } from 'react';
+import { Routes } from '../../shared/utils/router';
+import { NavigationContext } from '../NavigationContext/NavigationContext';
+import { FooterLink, FooterWrapper } from './Footer.styles';
 
 export const Footer = () => {
-  const year = new Date(Date.now()).getFullYear();
+  const { selectedRoute, setSelectedRoute } = useContext(NavigationContext);
+
+  if (selectedRoute === Routes.CopyrightNotice) {
+    return;
+  }
 
   return (
     <FooterWrapper>
-      <p>© {year} Niho Numismatics | BSD 3-Clause License</p>
+      <p>
+        2025 © Niho Numismatics |{' '}
+        <FooterLink
+          to={Routes.CopyrightNotice}
+          onClick={() => setSelectedRoute(Routes.CopyrightNotice)}
+        >
+          License
+        </FooterLink>
+      </p>
     </FooterWrapper>
   );
 };
