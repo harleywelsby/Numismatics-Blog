@@ -22,12 +22,8 @@ export const HomepageHeader = styled.h2`
 `;
 
 export const HomepageParagraph = styled.p`
-  text-align: left;
+  text-align: center;
   font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);
-
-  @media (max-width: 35em) {
-    text-align: center;
-  }
 `;
 
 export const ButtonGrid = styled.div`
@@ -100,4 +96,8 @@ export const BlogButton = styled.button`
 
   background-image: url(${getFullImagePath('/Images/ComingSoonPlaceholder.jpg')});
   background-size: cover;
+`;
+
+export const ShowcaseImage = styled.img`
+  padding: 1rem;
 `;
