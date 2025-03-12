@@ -39,12 +39,6 @@ export const PostSummaryHeaderText = styled.h2`
   text-align: center;
 `;
 
-export const PostSummaryParagraph = styled.p`
-  margin: 0;
-  padding: 0;
-  text-align: left;
-`;
-
 export const PostSummaryThumbnail = styled.img`
   padding: 1rem 0;
 `;

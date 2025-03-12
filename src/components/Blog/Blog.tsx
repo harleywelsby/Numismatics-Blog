@@ -13,7 +13,6 @@ export const Blog = () => {
           <PostSummary
             postId={summary.postId}
             title={summary.title}
-            date={summary.date}
             imagePath={summary.imagePath}
             imageAltText={summary.imageAltText}
             filePath={summary.filePath}
