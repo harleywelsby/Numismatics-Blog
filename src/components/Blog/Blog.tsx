@@ -1,4 +1,4 @@
-import { BlogPostData } from '../../assets/DummyBlogPostData';
+import { BlogPostSummaryData } from '../../assets/BlogPostSummaryData';
 import { HeaderSeparator, HeaderText, PageWrapper } from '../../shared/styles/sharedStyles';
 import { PostGrid } from './Blog.styles';
 import { PostSummary } from './PostSummary';
@@ -9,27 +9,16 @@ export const Blog = () => {
       <HeaderText>Blog</HeaderText>
       <HeaderSeparator />
       <PostGrid>
-        <PostSummary
-          title={BlogPostData.title}
-          date={BlogPostData.date}
-          imagePath={BlogPostData.imagePath}
-          imageAltText={BlogPostData.imageAltText}
-          description={BlogPostData.description}
-        />
-        <PostSummary
-          title={BlogPostData.title}
-          date={BlogPostData.date}
-          imagePath={BlogPostData.imagePath}
-          imageAltText={BlogPostData.imageAltText}
-          description={BlogPostData.description}
-        />
-        <PostSummary
-          title={BlogPostData.title}
-          date={BlogPostData.date}
-          imagePath={BlogPostData.imagePath}
-          imageAltText={BlogPostData.imageAltText}
-          description={BlogPostData.description}
-        />
+        {BlogPostSummaryData.map((summary) => (
+          <PostSummary
+            postId={summary.postId}
+            title={summary.title}
+            date={summary.date}
+            imagePath={summary.imagePath}
+            imageAltText={summary.imageAltText}
+            filePath={summary.filePath}
+          />
+        ))}
       </PostGrid>
     </PageWrapper>
   );

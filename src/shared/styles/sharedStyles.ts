@@ -7,8 +7,9 @@ export const PageWrapper = styled.div`
 `;
 
 export const HeaderText = styled.h1`
+  font-family: 'Times New Roman', Times, serif;
   font-size: clamp(2rem, 3vw + 0.5rem, 3rem);
-  font-weight: 500;
+  font-weight: 700;
 
   margin: 0;
   padding: 1rem 0;

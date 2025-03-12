@@ -49,7 +49,6 @@ export const Navbar = () => {
               Home
             </NavbarLink>
           </li>
-          {/* TODO #4 */}
           {/* <li>
             <NavbarLink
               to={Routes.Blog}
