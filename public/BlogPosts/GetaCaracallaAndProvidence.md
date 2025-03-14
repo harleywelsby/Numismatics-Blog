@@ -1,5 +1,5 @@
 # Geta, Caracalla and "Divine Providence"
 
-![GetaDenarius](Images/GetaDenariusSmall.webp)
+[/Images/Collection/GetaDenarius.webp]
 
 Publius Septimius Geta

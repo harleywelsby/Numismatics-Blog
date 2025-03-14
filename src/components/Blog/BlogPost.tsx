@@ -18,8 +18,12 @@ export const BlogPost = () => {
 
     fetch(filePath)
       .then((res) => res.text())
-      .then((text) => setContent(text));
+      .then((text) => handleContentImport(text));
   }, [filePath]);
+
+  const handleContentImport = (content: string) => {
+    setContent(content);
+  };
 
   return (
     <PageWrapper>
