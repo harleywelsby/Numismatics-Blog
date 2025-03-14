@@ -4,4 +4,5 @@ export type BlogPostSummary = {
   title: string;
   imagePath: string;
   imageAltText: string;
+  imageCredit?: string | null;
 };

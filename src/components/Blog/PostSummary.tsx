@@ -1,9 +1,21 @@
 import { useMediaQuery } from 'react-responsive';
-import { PostSummaryHeaderText, PostSummaryThumbnail, PostSummaryWrapper } from './Blog.styles';
+import {
+  PostSummaryCreditText,
+  PostSummaryHeaderText,
+  PostSummaryNoCreditSpacer,
+  PostSummaryThumbnail,
+  PostSummaryWrapper,
+} from './Blog.styles';
 import { getBlogPostRoute } from '../../shared/utils/router';
 import { BlogPostSummary } from './Blog.types';
 
-export const PostSummary = ({ postId, title, imagePath, imageAltText }: BlogPostSummary) => {
+export const PostSummary = ({
+  postId,
+  title,
+  imagePath,
+  imageAltText,
+  imageCredit,
+}: BlogPostSummary) => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 35em)' });
   const thumbnailDimensions = isBigScreen
     ? { width: 500, height: 250 }
@@ -18,6 +30,8 @@ export const PostSummary = ({ postId, title, imagePath, imageAltText }: BlogPost
         width={thumbnailDimensions.width}
         height={thumbnailDimensions.height}
       />
+      {imageCredit && <PostSummaryCreditText>Photo: {imageCredit}</PostSummaryCreditText>}
+      {!imageCredit && <PostSummaryNoCreditSpacer />}
     </PostSummaryWrapper>
   );
 };

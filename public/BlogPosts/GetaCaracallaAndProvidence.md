@@ -1,3 +1,5 @@
-# Geta, Caracalla and the "Providence of the Gods"
+# Geta, Caracalla and "Divine Providence"
 
-TODO
+![GetaDenarius](Images/GetaDenariusSmall.webp)
+
+Publius Septimius Geta

@@ -11,11 +11,13 @@ export const Blog = () => {
       <PostGrid>
         {BlogPostSummaryData.map((summary) => (
           <PostSummary
+            key={summary.postId}
             postId={summary.postId}
             title={summary.title}
             imagePath={summary.imagePath}
             imageAltText={summary.imageAltText}
             filePath={summary.filePath}
+            imageCredit={summary.imageCredit ?? null}
           />
         ))}
       </PostGrid>

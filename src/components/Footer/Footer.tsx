@@ -3,10 +3,16 @@ import { Routes } from '../../shared/utils/router';
 import { NavigationContext } from '../NavigationContext/NavigationContext';
 import { FooterLink, FooterWrapper } from './Footer.styles';
 
+const disallowedRoutes = [
+  Routes.CopyrightNotice,
+  Routes.Blog, // TODO: Temp until style issues fixed
+  Routes.Home, // TODO: Temp until style issues fixed
+];
+
 export const Footer = () => {
   const { selectedRoute, setSelectedRoute } = useContext(NavigationContext);
 
-  if (selectedRoute === Routes.CopyrightNotice) {
+  if (disallowedRoutes.includes(selectedRoute)) {
     return;
   }
 
