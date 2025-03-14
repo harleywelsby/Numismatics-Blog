@@ -1,5 +1,13 @@
-# Geta, Caracalla and "Divine Providence"
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a elementum lectus. Pellentesque molestie mollis dictum. Vestibulum augue orci, facilisis quis laoreet eget, mollis ac ante. Curabitur congue, felis in dignissim iaculis, dui orci vulputate odio, quis tincidunt magna nibh at quam. Duis id nisl varius, lacinia ante ut, pharetra felis. Mauris fringilla, lorem eu cursus accumsan, metus mi rhoncus justo, id aliquam ex diam at tellus. Aenean non eleifend velit. Etiam eu odio vel lectus consectetur lobortis. Morbi vel elit diam. Vivamus dignissim semper ante, ut viverra elit. Curabitur tempus molestie purus, sed congue ipsum dictum nec.
 
-[/Images/Collection/GetaDenarius.webp]
+||/Images/Collection/GetaDenarius.webp||
 
-Publius Septimius Geta
+Aenean maximus consequat eros, eget maximus nibh tempor ac. Suspendisse eu ligula erat. Nulla condimentum tristique nulla, ut posuere dolor fermentum vel. Duis porta turpis et libero sollicitudin, vitae euismod arcu lacinia. Ut sit amet mattis justo. Nunc justo nisl, luctus consequat nunc at, tristique vestibulum est. Donec nec diam rhoncus, finibus urna quis, congue dui. Curabitur laoreet magna ac aliquam pretium. Nunc commodo fermentum hendrerit.
+
+Donec ac velit sodales, pellentesque velit sed, viverra ligula. Nam sit amet dolor pharetra, hendrerit urna et, consectetur ipsum. Aliquam efficitur dolor vel sodales pellentesque. Morbi finibus iaculis nisl, vel fermentum elit viverra in. Proin imperdiet sed ligula quis vestibulum. Duis gravida augue ex, congue tempus lacus aliquet et. Curabitur diam nunc, vestibulum eget fermentum eu, dictum a metus. Nam pulvinar, tellus scelerisque luctus posuere, metus metus porta ipsum, sit amet bibendum turpis risus at dolor. Nunc interdum quam lacus, et sodales augue consectetur ut. Curabitur vel risus sem. Praesent ac purus ac mi egestas venenatis. Ut et ultrices ipsum, vel dictum est. Nam urna libero, tempor id neque ut, dictum molestie metus. Quisque eu dui egestas, euismod risus vitae, dictum nibh. Donec placerat, ante et cursus venenatis, erat sapien ultrices lacus, vitae tincidunt augue nisl sit amet risus. Vestibulum mattis urna vel leo cursus, feugiat accumsan tellus semper.
+
+||/Images/Blog/CaracallaGetaAssassination.webp||
+
+Vivamus ut ex tincidunt, congue orci a, elementum nulla. Nunc sit amet porttitor nibh, vitae vehicula leo. Nunc tortor magna, malesuada placerat nulla et, pulvinar ultrices sapien. Sed ac sapien in metus scelerisque aliquet eget condimentum dui. Etiam suscipit, turpis eget dignissim facilisis, ante dolor volutpat nibh, id mollis tellus nisl at augue. Donec varius at massa vel euismod. Vivamus eget eros eget nulla hendrerit facilisis. Mauris rhoncus tristique libero, ut finibus diam viverra id. Nam a augue risus. Mauris vehicula, eros eget vestibulum mattis, quam neque fringilla lorem, at dignissim enim dolor at magna.
+
+Nulla commodo risus vel mi blandit, at tincidunt est tristique. Nunc ac lacus eu lectus aliquet venenatis vel vel tortor. Duis nec tortor nisi. Quisque justo mi, pulvinar ac pellentesque nec, vehicula eu est. Cras efficitur quis tellus a tristique. Ut sed augue nec ante aliquet maximus. Nullam eros est, eleifend in justo a, bibendum lobortis mauris.

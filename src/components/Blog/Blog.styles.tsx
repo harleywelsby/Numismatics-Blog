@@ -68,3 +68,32 @@ export const PostSummaryNoCreditSpacer = styled.div`
   margin: 0;
   height: 1.5rem;
 `;
+
+export const BlogPostSection = styled.div`
+  max-width: 90%;
+  align-self: center;
+  justify-self: center;
+
+  text-align: left;
+
+  @media (min-width: 100em) {
+    max-width: 60%;
+  }
+`;
+
+export const BlogPostImageWrapper = styled.div`
+  justify-self: center;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+`;
+
+export const BlogPostImageCaption = styled.p`
+  text-align: center;
+  font-size: clamp(0.5rem, 3vw + 0.25rem, 0.8rem);
+
+  padding: 0.2rem 0 0 0;
+  margin: 0;
+`;

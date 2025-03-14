@@ -6,3 +6,8 @@ export type BlogPostSummary = {
   imageAltText: string;
   imageCredit?: string | null;
 };
+
+export type BlogPostImage = {
+  path: string;
+  caption?: string;
+};

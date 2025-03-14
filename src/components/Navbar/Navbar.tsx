@@ -53,7 +53,7 @@ export const Navbar = () => {
             <NavbarLink
               to={Routes.Blog}
               onClick={() => handleListItemClick(Routes.Blog)}
-              $selected={selectedRoute === Routes.Blog}
+              $selected={selectedRoute.includes(Routes.Blog)}
             >
               Blog
             </NavbarLink>

@@ -25,3 +25,11 @@ export const HeaderSeparator = styled.div`
     margin-bottom: 2rem;
   }
 `;
+
+export const Spacer = styled.div`
+  padding: 1rem;
+
+  @media (min-width: 35em) {
+    padding: 0.5rem;
+  }
+`;
