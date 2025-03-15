@@ -51,21 +51,21 @@ export const Navbar = () => {
           </li>
           <li>
             <NavbarLink
-              to={Routes.Blog}
-              onClick={() => handleListItemClick(Routes.Blog)}
-              $selected={selectedRoute.includes(Routes.Blog)}
-            >
-              Blog
-            </NavbarLink>
-          </li>
-          <li>
-            <NavbarLink
               data-test-id="navbar-collection-link"
               to={Routes.Collection}
               onClick={() => handleListItemClick(Routes.Collection)}
               $selected={selectedRoute === Routes.Collection}
             >
               Collection
+            </NavbarLink>
+          </li>
+          <li>
+            <NavbarLink
+              to={Routes.Blog}
+              onClick={() => handleListItemClick(Routes.Blog)}
+              $selected={selectedRoute.includes(Routes.Blog)}
+            >
+              Blog
             </NavbarLink>
           </li>
         </NavbarList>

@@ -1,4 +1,9 @@
-import { HeaderSeparator, HeaderText, PageWrapper, Spacer } from '../../shared/styles/sharedStyles';
+import {
+  HeaderSeparator,
+  HeaderText,
+  MobileOnlySpacer,
+  PageWrapper,
+} from '../../shared/styles/sharedStyles';
 import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useParams } from 'react-router-dom';
@@ -102,7 +107,7 @@ export const BlogPost = () => {
     <PageWrapper>
       <HeaderText>{postSummary?.title}</HeaderText>
       <HeaderSeparator />
-      <Spacer />
+      <MobileOnlySpacer />
       {content.map((section) => renderContentSection(section))}
     </PageWrapper>
   );

@@ -8,4 +8,9 @@ export const ImageCaptionData = [
     path: '/Images/Collection/GetaDenarius.webp',
     caption: 'Denarius depicting Geta on the obverse, and Providentia on the reverse.',
   },
+  {
+    path: '/Images/Blog/SeveranFamily.webp',
+    caption:
+      'Our cast of characters, from the Niho Numismatics Collection. Left to right: Septimius Severus, Julia Domna, Caracalla, Geta',
+  },
 ];

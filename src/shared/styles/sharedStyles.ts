@@ -26,10 +26,10 @@ export const HeaderSeparator = styled.div`
   }
 `;
 
-export const Spacer = styled.div`
-  padding: 1rem;
+export const MobileOnlySpacer = styled.div`
+  padding: 0.5rem;
 
   @media (min-width: 35em) {
-    padding: 0.5rem;
+    padding: 0;
   }
 `;
