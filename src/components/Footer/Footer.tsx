@@ -8,7 +8,6 @@ export const Footer = () => {
 
   const disallowedRoutes = [
     Routes.Blog, // TODO: Temp until style issues fixed
-    Routes.Home, // TODO: Temp until style issues fixed
   ];
 
   if (disallowedRoutes.includes(selectedRoute)) {
