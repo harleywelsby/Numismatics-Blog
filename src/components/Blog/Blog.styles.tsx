@@ -97,3 +97,27 @@ export const BlogPostImageCaption = styled.p`
   padding: 0.2rem 0 0 0;
   margin: 0;
 `;
+
+export const BlogPostBackLink = styled(Link)`
+  /* Remove default styling */
+  text-decoration: none;
+  color: inherit;
+
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 1rem;
+
+  @media (min-width: 35em) {
+    &:hover {
+      filter: brightness(50%);
+      transition: 0.5s;
+    }
+
+    padding: 0.5rem 2rem;
+  }
+`;

@@ -13,6 +13,9 @@ export const HeaderText = styled.h1`
 
   margin: 0;
   padding: 1rem 0;
+  max-width: 90%;
+  text-align: center;
+  justify-self: center;
 `;
 
 export const HeaderSeparator = styled.div`

@@ -10,9 +10,17 @@ import { useParams } from 'react-router-dom';
 import { BlogPostSummaryData } from '../../assets/BlogPostSummaryData';
 import { useMediaQuery } from 'react-responsive';
 import { ScreenSize } from '../../shared/types';
-import { BlogPostImageCaption, BlogPostImageWrapper, BlogPostSection } from './Blog.styles';
+import {
+  BlogPostBackLink,
+  BlogPostImageCaption,
+  BlogPostImageWrapper,
+  BlogPostSection,
+} from './Blog.styles';
 import { ImageCaptionData } from '../../assets/ImageCaptionData';
 import { BlogPostImage } from './Blog.types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { Routes } from '../../shared/utils/router';
 
 const getImageDimensions = (screenSize: ScreenSize) => {
   switch (screenSize) {
@@ -105,6 +113,16 @@ export const BlogPost = () => {
 
   return (
     <PageWrapper>
+      {screenSize === ScreenSize.Small && (
+        <>
+          <BlogPostBackLink to={Routes.Blog}>
+            <FontAwesomeIcon icon={faArrowLeft} size="1x" />
+            Back
+          </BlogPostBackLink>
+          <br />
+          <br />
+        </>
+      )}
       <HeaderText>{postSummary?.title}</HeaderText>
       <HeaderSeparator />
       <MobileOnlySpacer />
