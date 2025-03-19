@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const PageWrapper = styled.div`
   max-width: 1800px;
@@ -18,7 +18,7 @@ export const HeaderText = styled.h1`
   justify-self: center;
 `;
 
-export const HeaderSeparator = styled.div`
+export const HeaderSeparator = styled.div<{ $noSpacing?: boolean }>`
   border-bottom: solid;
   min-width: 40vw;
   justify-self: center;
@@ -26,6 +26,12 @@ export const HeaderSeparator = styled.div`
   @media (min-width: 35em) {
     min-width: 15vw;
     margin-bottom: 2rem;
+
+    ${(props) =>
+      props.$noSpacing &&
+      css`
+        margin-bottom: 0;
+      `}
   }
 `;
 
