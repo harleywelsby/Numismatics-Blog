@@ -1,8 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const CoinCardGrid = styled.div`
+export const CoinCardGrid = styled.div<{ $columnsOverride?: string }>`
   display: grid;
   grid-template-columns: 33% 33% 33%;
+
+  ${(props) =>
+    props.$columnsOverride &&
+    css`
+      grid-template-columns: ${props.$columnsOverride};
+    `}
 
   @media (max-width: 100em) {
     grid-template-columns: 50% 50%;

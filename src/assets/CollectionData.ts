@@ -2,6 +2,19 @@ import { CollectionItem } from '../components/Collection/Collection.types';
 
 export const CollectionData: CollectionItem[] = [
   {
+    id: 0,
+    title: 'Alexander III Tetradrachm',
+    imgPath: '/Images/Collection/AlexanderTetradrachm.webp',
+    ruler: "Akexander III 'the Great' (336-323 BC)",
+    authority: 'Kingdom of Macedon',
+    mintLocation: 'Unknown',
+    mintDate: '333-323 BC',
+    obverseDescription: 'Bust of Heracles facing right, wearing lion skin headdress.',
+    reverseDescription:
+      'Zeus, enthroned and holding a sceptre and eagle. Faint mint mark in bottom left, and two test cuts in the exergue. "ΑΛΕΞΑΝΔΡΟΥ ΒΑΣΙΛΕΩΣ"',
+    catalogueNumber: 'Unknown',
+  },
+  {
     id: 1,
     title: 'Septimius Severus Denarius',
     imgPath: '/Images/Collection/SeptimiusSeverusDenarius.webp',

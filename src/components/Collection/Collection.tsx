@@ -73,6 +73,18 @@ export const Collection = () => {
     }
   });
 
+  // If only 1 or 2 items are in the list, let the columns adjust.
+  const getColumnOverride = () => {
+    switch (filteredCollectionData.length) {
+      case 1:
+        return '100%';
+      case 2:
+        return '50% 50%';
+      default:
+        return;
+    }
+  };
+
   return (
     <PageWrapper>
       <HeaderText>The Collection</HeaderText>
@@ -105,7 +117,7 @@ export const Collection = () => {
           </FilterSelectBox>
         </FilterItem>
       </FilterSection>
-      <CoinCardGrid>
+      <CoinCardGrid $columnsOverride={getColumnOverride()}>
         {filteredCollectionData.map((x) => (
           <CoinCard
             key={x.id}
