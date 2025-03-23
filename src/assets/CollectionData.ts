@@ -5,14 +5,15 @@ export const CollectionData: CollectionItem[] = [
     id: 0,
     title: 'Alexander III Tetradrachm',
     imgPath: '/Images/Collection/AlexanderTetradrachm.webp',
-    ruler: "Akexander III 'the Great' (336-323 BC)",
-    authority: 'Kingdom of Macedon',
-    mintLocation: 'Unknown',
-    mintDate: '333-323 BC',
-    obverseDescription: 'Bust of Heracles facing right, wearing lion skin headdress.',
+    ruler: "Seleucus I' (305-281 BC)",
+    authority: 'Seleucid Empire',
+    mintLocation: 'Seleucia on the Tigris, Babylon',
+    mintDate: '300-295 BC',
+    obverseDescription:
+      'Posthumous issue of Alexander the Great types. Bust of Heracles facing right, wearing lion skin headdress.',
     reverseDescription:
-      'Zeus, enthroned and holding a sceptre and eagle. Faint mint mark in bottom left, and two test cuts in the exergue. "ΑΛΕΞΑΝΔΡΟΥ ΒΑΣΙΛΕΩΣ"',
-    catalogueNumber: 'Unknown',
+      'Zeus, enthroned and holding a sceptre and eagle. Monogram mint mark in left field, and two test cuts in the exergue. "ΣΕΛΕΥΚΟΥ ΒΑΣΙΛΕΩΣ"',
+    catalogueNumber: 'SC 117.4',
   },
   {
     id: 1,
