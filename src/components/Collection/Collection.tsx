@@ -14,7 +14,7 @@ import { AuthorityGroup, SortType } from './Collection.types';
 const AuthorityGroups: AuthorityGroup[] = [
   {
     name: 'Ancient Greece',
-    includedAuthorities: ['Kingdom of Macedon'],
+    includedAuthorities: ['Kingdom of Macedon', 'Seleucid Empire'],
   },
   {
     name: 'Roman Empire',
