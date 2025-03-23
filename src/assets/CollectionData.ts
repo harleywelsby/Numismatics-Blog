@@ -5,7 +5,7 @@ export const CollectionData: CollectionItem[] = [
     id: 0,
     title: 'Alexander III Tetradrachm',
     imgPath: '/Images/Collection/AlexanderTetradrachm.webp',
-    ruler: "Seleucus I' (305-281 BC)",
+    ruler: 'Seleucus I (305-281 BC)',
     authority: 'Seleucid Empire',
     mintLocation: 'Seleucia on the Tigris, Babylon',
     mintDate: '300-295 BC',
