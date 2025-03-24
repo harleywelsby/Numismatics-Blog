@@ -65,6 +65,8 @@ export const ModalContent = styled.div`
   opacity: 0.95;
   border-radius: 20px;
 
+  width: 85%;
+
   @media (min-width: 100em) {
     flex-direction: row;
     min-width: 70vw;
@@ -94,7 +96,7 @@ export const ModalBodyWrapper = styled.div`
 
 export const ModalHeader = styled.h2`
   font-weight: 400;
-  font-size: clamp(1.5rem, 3vw + 0.25rem, 2rem);
+  font-size: clamp(1.2rem, 3vw + 0.25rem, 2rem);
   margin: 0;
   padding: 0.5rem 0;
 
@@ -108,6 +110,7 @@ export const ModalHeader = styled.h2`
 
 export const ModalText = styled.p`
   margin: 0.8rem 0;
+  font-size: clamp(0.5rem, 3vw + 0.1rem, 1rem);
 `;
 
 export const CloseModalButton = styled.button`

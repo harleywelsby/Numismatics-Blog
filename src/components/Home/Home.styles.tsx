@@ -99,5 +99,7 @@ export const BlogButton = styled.button`
 `;
 
 export const ShowcaseImage = styled.img`
+  width: 90%;
+  height: 90%;
   padding: 1rem;
 `;

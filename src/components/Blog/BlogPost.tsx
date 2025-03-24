@@ -1,4 +1,5 @@
 import {
+  FullSizeImage,
   HeaderSeparator,
   HeaderText,
   MobileOnlySpacer,
@@ -22,17 +23,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Routes } from '../../shared/utils/router';
 
-const getImageDimensions = (screenSize: ScreenSize) => {
-  switch (screenSize) {
-    case ScreenSize.Small:
-      return { width: 300, height: 150 };
-    case ScreenSize.Medium:
-      return { width: 700, height: 350 };
-    case ScreenSize.Large:
-      return { width: 1000, height: 500 };
-  }
-};
-
 export const BlogPost = () => {
   const { postId } = useParams();
   const postSummary = BlogPostSummaryData.find((x) => x.postId == postId);
@@ -46,8 +36,6 @@ export const BlogPost = () => {
   if (isMediumScreenOrLarger) {
     screenSize = isLargeScreen ? ScreenSize.Large : ScreenSize.Medium;
   }
-
-  const imageDimensions = getImageDimensions(screenSize);
 
   const [content, setContent] = useState<string[]>([]);
   const [images, setImages] = useState<BlogPostImage[]>([]);
@@ -98,12 +86,7 @@ export const BlogPost = () => {
         <ReactMarkdown children={section} />
         {image && (
           <BlogPostImageWrapper>
-            <img
-              src={image.path}
-              alt={image?.caption}
-              width={imageDimensions.width}
-              height={imageDimensions.height}
-            />
+            <FullSizeImage src={image.path} alt={image?.caption} />
             {image?.caption && <BlogPostImageCaption>{image?.caption}</BlogPostImageCaption>}
           </BlogPostImageWrapper>
         )}

@@ -42,3 +42,8 @@ export const MobileOnlySpacer = styled.div`
     padding: 0;
   }
 `;
+
+export const FullSizeImage = styled.img`
+  width: 100%;
+  height: 100%;
+`;

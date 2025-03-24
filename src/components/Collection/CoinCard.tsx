@@ -16,6 +16,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { getFullImagePath } from '../../shared/utils/imageHelper';
 import { CollectionItem } from './Collection.types';
 import { ScreenSize } from '../../shared/types';
+import { FullSizeImage } from '../../shared/styles/sharedStyles';
 
 const getThumbnailDimensions = (screenSize: ScreenSize) => {
   switch (screenSize) {
@@ -24,17 +25,6 @@ const getThumbnailDimensions = (screenSize: ScreenSize) => {
     case ScreenSize.Medium:
     case ScreenSize.Large:
       return { width: 450, height: 225 };
-  }
-};
-
-const getInspectDimensions = (screenSize: ScreenSize) => {
-  switch (screenSize) {
-    case ScreenSize.Small:
-      return { width: 300, height: 150 };
-    case ScreenSize.Medium:
-      return { width: 700, height: 350 };
-    case ScreenSize.Large:
-      return { width: 1000, height: 500 };
   }
 };
 
@@ -61,19 +51,13 @@ export const CoinCard = ({
   }
 
   const thumbnailDimensions = getThumbnailDimensions(screenSize);
-  const inspectDimensions = getInspectDimensions(screenSize);
 
   const [showModal, setShowModal] = useState(false);
 
   const inspectModal = (
     <Modal open={showModal} onClose={() => setShowModal(false)}>
       <ModalContent data-test-id={`coin-card-${id}-modal-content`}>
-        <img
-          src={getFullImagePath(imgPath)}
-          width={inspectDimensions.width}
-          height={inspectDimensions.height}
-          loading="lazy"
-        />
+        <FullSizeImage src={getFullImagePath(imgPath)} loading="lazy" />
         <ModalTextWrapper>
           <ModalHeader>{title}</ModalHeader>
           <ModalBodyWrapper>
