@@ -6,6 +6,7 @@ import {
   ModalBodyWrapper,
   ModalContent,
   ModalHeader,
+  ModalImage,
   ModalText,
   ModalTextWrapper,
 } from './Collection.styles';
@@ -16,7 +17,6 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { getFullImagePath } from '../../shared/utils/imageHelper';
 import { CollectionItem } from './Collection.types';
 import { ScreenSize } from '../../shared/types';
-import { FullSizeImage } from '../../shared/styles/sharedStyles';
 
 const getThumbnailDimensions = (screenSize: ScreenSize) => {
   switch (screenSize) {
@@ -57,7 +57,7 @@ export const CoinCard = ({
   const inspectModal = (
     <Modal open={showModal} onClose={() => setShowModal(false)}>
       <ModalContent data-test-id={`coin-card-${id}-modal-content`}>
-        <FullSizeImage src={getFullImagePath(imgPath)} loading="lazy" />
+        <ModalImage src={getFullImagePath(imgPath)} loading="lazy" />
         <ModalTextWrapper>
           <ModalHeader>{title}</ModalHeader>
           <ModalBodyWrapper>

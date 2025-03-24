@@ -24,9 +24,9 @@ export const Home = () => {
         <ShowcaseImage src={'/Images/HomepageDisplay.webp'} loading="lazy" />
         <HomepageParagraph data-test-id="home-welcome-paragraph">
           This website documents my personal coin collection, consisting mostly of Ancient Roman
-          pieces. It's also where I'll be blogging about the history behind my coins. Note that I am
-          in no way a professional historian or numismatist, and all historical notes are from my
-          own amateur research.
+          pieces. It's also where I blog about the history behind my coins. Note that I am in no way
+          a professional historian or numismatist, and all historical notes are from my own amateur
+          research.
         </HomepageParagraph>
         <ButtonGrid>
           <CollectionLink

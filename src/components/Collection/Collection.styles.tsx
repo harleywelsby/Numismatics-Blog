@@ -113,6 +113,16 @@ export const ModalText = styled.p`
   font-size: clamp(0.5rem, 3vw + 0.1rem, 1rem);
 `;
 
+export const ModalImage = styled.img`
+  width: 100%;
+  height: 100%;
+
+  // On larger screens, 100% is far too big. Cap at 90%.
+  @media (min-width: 100em) {
+    max-width: 80%;
+  }
+`;
+
 export const CloseModalButton = styled.button`
   /* Remove default button styling */
   background: none;
