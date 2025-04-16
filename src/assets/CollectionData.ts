@@ -1,8 +1,9 @@
-import { CollectionItem } from '../components/Collection/Collection.types';
+import { CollectionItem, Grade } from '../components/Collection/Collection.types';
 
 export const CollectionData: CollectionItem[] = [
   {
-    id: 0,
+    id: 18,
+    grade: Grade.VeryFine,
     title: 'Alexander III Tetradrachm',
     imgPath: '/Images/Collection/AlexanderTetradrachm.webp',
     ruler: 'Seleucus I (305-281 BC)',
@@ -16,7 +17,8 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'SC 117.4',
   },
   {
-    id: 1,
+    id: 8,
+    grade: Grade.VeryFine,
     title: 'Septimius Severus Denarius',
     imgPath: '/Images/Collection/SeptimiusSeverusDenarius.webp',
     ruler: 'Septimius Severus (193-211 AD)',
@@ -29,7 +31,8 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IV #233',
   },
   {
-    id: 2,
+    id: 13,
+    grade: Grade.VeryFine,
     title: 'Julia Domna Denarius',
     imgPath: '/Images/Collection/JuliaDomnaDenarius.webp',
     ruler: 'Caracalla (198-217 AD)',
@@ -41,7 +44,8 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IV #390',
   },
   {
-    id: 3,
+    id: 11,
+    grade: Grade.ExtremelyFine,
     title: 'Geta Denarius',
     imgPath: '/Images/Collection/GetaDenarius.webp',
     ruler: 'Septimius Geta (209-211 AD)',
@@ -54,7 +58,8 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IV.1 #51',
   },
   {
-    id: 4,
+    id: 7,
+    grade: Grade.VeryFine,
     title: 'Caracalla Denarius',
     imgPath: '/Images/Collection/CaracallaDenarius.webp',
     ruler: 'Caracalla (198-217 AD)',
@@ -67,7 +72,8 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IV #238A',
   },
   {
-    id: 5,
+    id: 17,
+    grade: Grade.AsStruck,
     title: 'Elagabalus Denarius',
     imgPath: '/Images/Collection/Elagabalus.webp',
     ruler: 'Elagabalus (218-222 AD)',
@@ -80,7 +86,8 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IV.2 #153',
   },
   {
-    id: 6,
+    id: 4,
+    grade: Grade.ExtremelyFine,
     title: 'Constantine I Nummus',
     imgPath: '/Images/Collection/ConstantineNummus.webp',
     ruler: 'Constantine I "The Great" (306-337 AD)',
@@ -94,7 +101,8 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC VII #335',
   },
   {
-    id: 7,
+    id: 5,
+    grade: Grade.VeryFine,
     title: 'Alexander The Great Diobol',
     imgPath: '/Images/Collection/AlexanderDiobol.webp',
     ruler: 'Alexander III "The Great" (336-323 BC)',
@@ -106,7 +114,8 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'SNG Helsinki I #76',
   },
   {
-    id: 8,
+    id: 6,
+    grade: Grade.VeryFine,
     title: 'Septimius Severus Denarius',
     imgPath: '/Images/Collection/SeverusSalusDenarius.webp',
     ruler: 'Septimius Severus (193-211 AD)',
@@ -120,6 +129,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     id: 9,
+    grade: Grade.Good,
     title: 'Claudius As',
     imgPath: '/Images/Collection/ClaudiusAs.webp',
     ruler: 'Claudius (41-50 AD)',
@@ -131,7 +141,8 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC I #97',
   },
   {
-    id: 10,
+    id: 1,
+    grade: Grade.Fine,
     title: 'Constantius II Nummus',
     imgPath: '/Images/Collection/ConstantiusIINummus.webp',
     ruler: 'Constantius II (337-361 AD)',
@@ -144,7 +155,8 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC VIII #189',
   },
   {
-    id: 11,
+    id: 14,
+    grade: Grade.VeryGood,
     title: 'William III Shilling',
     imgPath: '/Images/Collection/WilliamIIIShilling.webp',
     ruler: 'William III (1689-1702 AD)',
@@ -157,7 +169,8 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'KM #485.1',
   },
   {
-    id: 12,
+    id: 16,
+    grade: Grade.Good,
     title: 'Aurelian Antoninianus',
     imgPath: '/Images/Collection/AurelianAntoninianus.webp',
     ruler: 'Aurelian (270-275 AD)',
@@ -170,7 +183,8 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC V #38',
   },
   {
-    id: 13,
+    id: 12,
+    grade: Grade.Good,
     title: 'Constantine I Nummus',
     imgPath: '/Images/Collection/ConstantineCampGates.webp',
     ruler: 'Constantine I "The Great" (306-337 AD)',
@@ -183,7 +197,8 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC VII #90',
   },
   {
-    id: 14,
+    id: 2,
+    grade: Grade.Good,
     title: 'Constans Nummus',
     imgPath: '/Images/Collection/ConstansNummus.webp',
     ruler: 'Constans (337-350 AD)',
@@ -197,6 +212,7 @@ export const CollectionData: CollectionItem[] = [
   },
   {
     id: 15,
+    grade: Grade.Good,
     title: 'Valentinian I Nummus',
     imgPath: '/Images/Collection/ValentinianVictory.webp',
     ruler: 'Valentinian I (364-375 AD)',
@@ -209,7 +225,8 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IX #7A',
   },
   {
-    id: 16,
+    id: 10,
+    grade: Grade.Good,
     title: 'Valentinian I Nummus',
     imgPath: '/Images/Collection/ValentinianCaptive.webp',
     ruler: 'Valentinian I (364-375 AD)',
@@ -222,7 +239,8 @@ export const CollectionData: CollectionItem[] = [
     catalogueNumber: 'RIC IX #14A',
   },
   {
-    id: 17,
+    id: 3,
+    grade: Grade.VeryGood,
     title: 'Valentinian II Nummus',
     imgPath: '/Images/Collection/ValentinianIINummus.webp',
     ruler: 'Valentinian II (375-392 AD)',
@@ -232,5 +250,47 @@ export const CollectionData: CollectionItem[] = [
     obverseDescription: 'Diademed bust of Valentinian facing right. "DN VALENTINIANVS PF AVG"',
     reverseDescription: 'Wreath containing text. "SMAQ" mint mark in exergue. "VOT X MVLT XX"',
     catalogueNumber: 'RIC IX #19',
+  },
+  {
+    id: 19,
+    grade: Grade.VeryFine,
+    title: 'Severus Alexander Denarius',
+    imgPath: '/Images/Collection/SevAlexanderDenarius.webp',
+    ruler: 'Severus Alexander (222-235 AD)',
+    authority: 'Roman Empire',
+    mintLocation: 'Rome',
+    mintDate: '231 AD',
+    obverseDescription: 'Diademed bust of Severus Alexander facing right. "IMP SEV ALEXAND AVG"',
+    reverseDescription: 'Fides seated left, holding vexillum and signum, "FIDES MILITVM"',
+    catalogueNumber: 'RIC IV #193',
+  },
+  {
+    id: 20,
+    grade: Grade.VeryFine,
+    title: 'Trajan Denarius',
+    imgPath: '/Images/Collection/TrajanDenarius.webp',
+    ruler: 'Trajan (98-117 AD)',
+    authority: 'Roman Empire',
+    mintLocation: 'Rome',
+    mintDate: '116 AD',
+    obverseDescription:
+      'Diademed bust of Trajan facing right. "IMP CAES NER TRAIANO OPTIMO AVG GER DAC"',
+    reverseDescription:
+      'Genius, standing left holding patera and grain ears, "PM TRP COS VI PP SPQR"',
+    catalogueNumber: 'RIC II #347',
+  },
+  {
+    id: 21,
+    grade: Grade.VeryFine,
+    title: 'Postumus Antonininanus',
+    imgPath: '/Images/Collection/PostumusAnt.webp',
+    ruler: 'Postumus (260-269 AD)',
+    authority: 'Gallic Empire',
+    mintLocation: 'Colonia Agrippinensis',
+    mintDate: '261 AD',
+    obverseDescription:
+      'Bust of Postumus facing right, wearing radiate crown. "IMP C POSTVMVS PF AVG"',
+    reverseDescription: 'Moneta, standing left holding scales and cornucopiae. "MONETA AVG"',
+    catalogueNumber: 'RIC #75',
   },
 ];

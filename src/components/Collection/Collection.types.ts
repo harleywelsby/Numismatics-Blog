@@ -1,5 +1,6 @@
 export type CollectionItem = {
   id: number;
+  grade: Grade;
   title: string;
   imgPath: string;
   ruler: string;
@@ -19,8 +20,18 @@ export type AuthorityGroup = {
 };
 
 export enum SortType {
-  Best = 'Best',
+  Latest = 'Latest Additions',
+  Best = 'Highest Grade',
   MintDateAsc = 'Mint Date (ascending)',
   MintDateDesc = 'Mint Date (descending)',
   Rulers = 'Rulers (alphabetical)',
+}
+
+export enum Grade {
+  Good = 1,
+  VeryGood = 2,
+  Fine = 3,
+  VeryFine = 4,
+  ExtremelyFine = 5,
+  AsStruck = 6,
 }

@@ -18,7 +18,7 @@ const AuthorityGroups: AuthorityGroup[] = [
   },
   {
     name: 'Roman Empire',
-    includedAuthorities: ['Roman Empire'],
+    includedAuthorities: ['Roman Empire', 'Gallic Empire'],
   },
   {
     name: 'United Kingdom',
@@ -68,8 +68,10 @@ export const Collection = () => {
         }
         return 0;
       case SortType.Best:
+        return b.grade - a.grade;
+      case SortType.Latest:
       default:
-        return a.id - b.id;
+        return b.id - a.id;
     }
   });
 
@@ -110,7 +112,8 @@ export const Collection = () => {
             value={sortType}
             onChange={(e) => setSortType(e.target.value as SortType)}
           >
-            <option>Best</option>
+            <option>Highest Grade</option>
+            <option>Latest Additions</option>
             <option>Mint Date (ascending)</option>
             <option>Mint Date (descending)</option>
             <option>Rulers (alphabetical)</option>
@@ -122,6 +125,7 @@ export const Collection = () => {
           <CoinCard
             key={x.id}
             id={x.id}
+            grade={x.grade}
             title={x.title}
             imgPath={x.imgPath}
             ruler={x.ruler}
