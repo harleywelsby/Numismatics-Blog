@@ -223,16 +223,39 @@ export const SetData: CoinSet[] = [
       },
     ],
   },
-  //   {
-  //     name: 'The Crisis of the Third Century',
-  //     description:
-  //       'After the death of Severus Alexander in 235 AD, Rome nearly collapsed in what is known as the "Crisis of the Third Century". This time was a brutal span of civil wars, barbarian invasions, peasant rebellions, and political instability. This set aims to collect a portrait coin of every major figure in the Crisis.',
-  //     items: [],
-  //   },
-  // TODO
-  //   {
-  //     name: 'The Successors of Alexander',
-  //     description: '',
-  //     items: [],
-  //   },
+  {
+    name: 'The Crisis of the Third Century',
+    description:
+      'After the death of Severus Alexander in 235 AD, Rome nearly collapsed in what is known as the "Crisis of the Third Century". This time was a brutal span of civil wars, barbarian invasions, peasant rebellions, and political instability. This set aims to collect a portrait coin of every major figure in the Crisis.',
+    items: [
+      {
+        name: 'Gallienus',
+        completed: true,
+        collectionId: 24,
+        imageUrl: '/Images/Sets/ThirdCenturyCrisis/A024-Gallienus.webp',
+      },
+      {
+        name: 'Postumus',
+        completed: true,
+        collectionId: 21,
+        imageUrl: '/Images/Sets/ThirdCenturyCrisis/PostumusAnt.webp',
+      },
+      {
+        name: 'Claudius II Gothicus',
+        completed: false,
+        imageUrl: '/Images/Sets/ThirdCenturyCrisis/ClaudiusII.webp',
+      },
+      {
+        name: 'Aurelian',
+        completed: true,
+        collectionId: 16,
+        imageUrl: '/Images/Sets/ThirdCenturyCrisis/AurelianAntoninianus.webp',
+      },
+      {
+        name: 'Diocletian',
+        completed: false,
+        imageUrl: '/Images/Sets/ThirdCenturyCrisis/Diocletian.webp',
+      },
+    ],
+  },
 ];

@@ -76,6 +76,11 @@ export const SetItemsWrapper = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
+
+  @media (min-width: 100em) {
+    max-width: 60%;
+    justify-self: center;
+  }
 `;
 
 export const SetItemWrapper = styled.div``;
