@@ -103,6 +103,75 @@ export const SetData: CoinSet[] = [
       },
     ],
   },
+  {
+    name: 'The Twelve Olympians',
+    description:
+      'This set aims to collect a depiction of each of the Twelve Olympian Gods. This includes both busts and full figures, on any form of ancient coinage.',
+    items: [
+      {
+        name: 'Zeus',
+        completed: true,
+        collectionId: 18,
+        imageUrl: '/Images/Sets/TwelveOlympians/A018-AlexanderTetradrachm.webp',
+      },
+      {
+        name: 'Poseidon',
+        completed: false,
+        imageUrl: '/Images/Sets/TwelveOlympians/Poseidon.webp',
+      },
+      {
+        name: 'Hera',
+        completed: false,
+        imageUrl: '/Images/Sets/TwelveOlympians/Hera.webp',
+      },
+      {
+        name: 'Demeter',
+        completed: false,
+        imageUrl: '/Images/Sets/TwelveOlympians/Demeter.webp',
+      },
+      {
+        name: 'Aphrodite',
+        completed: false,
+        imageUrl: '/Images/Sets/TwelveOlympians/Aphrodite.webp',
+      },
+      {
+        name: 'Athena',
+        completed: false,
+        imageUrl: '/Images/Sets/TwelveOlympians/Athena.webp',
+      },
+      {
+        name: 'Artemis',
+        completed: false,
+        imageUrl: '/Images/Sets/TwelveOlympians/Artemis.webp',
+      },
+      {
+        name: 'Apollo',
+        completed: true,
+        collectionId: 7,
+        imageUrl: '/Images/Sets/TwelveOlympians/A007-CaracallaV2.webp',
+      },
+      {
+        name: 'Ares',
+        completed: false,
+        imageUrl: '/Images/Sets/TwelveOlympians/Ares.webp',
+      },
+      {
+        name: 'Hephaestus',
+        completed: false,
+        imageUrl: '/Images/Sets/TwelveOlympians/Hephaestus.webp',
+      },
+      {
+        name: 'Hermes',
+        completed: false,
+        imageUrl: '/Images/Sets/TwelveOlympians/Hermes.webp',
+      },
+      {
+        name: 'Dionysus',
+        completed: false,
+        imageUrl: '/Images/Sets/TwelveOlympians/Dionysus.webp',
+      },
+    ],
+  },
   //   {
   //     name: 'The Crisis of the Third Century',
   //     description:
