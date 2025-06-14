@@ -189,55 +189,49 @@ export const SetData: CoinSet[] = [
       },
     ],
   },
-  // {
-  //   name: 'Alexander and his Generals',
-  //   description: '',
-  //   items: [
-  //     {
-  //       name: 'Alexander III "The Great"',
-  //       secondLine: 'Macedon, 336-323 BC',
-  //       completed: false,
-  //       imageUrl: '/Images/Sets/SuccessorsOfAlexander/AlexanderLifetime.webp',
-  //     },
-  //     {
-  //       name: 'Ptolemy I',
-  //       secondLine: 'Egypt, 325-285 BC',
-  //       completed: false,
-  //       imageUrl: '/Images/Sets/SuccessorsOfAlexander/PtolemyI.webp',
-  //     },
-  //     {
-  //       name: 'Seleucus I',
-  //       secondLine: 'Seleucid, 305-281 BC',
-  //       completed: true,
-  //       collectionId: 18,
-  //       imageUrl: '/Images/Sets/SuccessorsOfAlexander/SeleucusI.webp',
-  //     },
-  //     {
-  //       name: 'Antigonus I',
-  //       secondLine: 'Antigonid, 306-301 BC',
-  //       completed: false,
-  //       imageUrl: '/Images/Sets/SuccessorsOfAlexander/AntigonusI.webp',
-  //     },
-  //     {
-  //       name: 'Cassander',
-  //       secondLine: 'Macedon, 305-297 BC',
-  //       completed: false,
-  //       imageUrl: '/Images/Sets/SuccessorsOfAlexander/Cassander.webp',
-  //     },
-  //     {
-  //       name: 'Lysimachus',
-  //       secondLine: 'Thrace, 306-281 BC',
-  //       completed: false,
-  //       imageUrl: '/Images/Sets/SuccessorsOfAlexander/Lysimachus.webp',
-  //     },
-  //     {
-  //       name: 'Perdiccas',
-  //       secondLine: 'Macedon, 323-320 BC',
-  //       completed: false,
-  //       imageUrl: '/Images/Sets/SuccessorsOfAlexander/Perdiccas.webp',
-  //     },
-  //   ],
-  // },
+  {
+    name: 'Alexander and his Generals',
+    description: '',
+    items: [
+      {
+        name: 'Alexander III "The Great"',
+        secondLine: '336-323 BC',
+        completed: false,
+        imageUrl: '/Images/Sets/SuccessorsOfAlexander/AlexanderZeus.webp',
+      },
+      {
+        name: 'Ptolemy I',
+        secondLine: '325-285 BC',
+        completed: false,
+        imageUrl: '/Images/Sets/SuccessorsOfAlexander/PtolemyI.webp',
+      },
+      {
+        name: 'Seleucus I',
+        secondLine: '305-281 BC',
+        completed: true,
+        collectionId: 18,
+        imageUrl: '/Images/Sets/SuccessorsOfAlexander/SeleucusI.webp',
+      },
+      {
+        name: 'Antigonus I',
+        secondLine: '306-301 BC',
+        completed: false,
+        imageUrl: '/Images/Sets/SuccessorsOfAlexander/Heracles.webp',
+      },
+      {
+        name: 'Cassander',
+        secondLine: '305-297 BC',
+        completed: false,
+        imageUrl: '/Images/Sets/SuccessorsOfAlexander/Heracles.webp',
+      },
+      {
+        name: 'Lysimachus',
+        secondLine: '306-281 BC',
+        completed: false,
+        imageUrl: '/Images/Sets/SuccessorsOfAlexander/Lysimachos.webp',
+      },
+    ],
+  },
   {
     name: 'The Twelve Olympians',
     description:
