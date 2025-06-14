@@ -73,7 +73,7 @@ export const SetData: CoinSet[] = [
         name: 'Nerva',
         secondLine: '96-98 AD',
         completed: false,
-        imageUrl: '/Images/Sets/SeveranSilver/A019-SevAlexander.webp',
+        imageUrl: '/Images/Sets/5GoodEmperors/Nerva.webp',
       },
       {
         name: 'Trajan',
@@ -86,13 +86,13 @@ export const SetData: CoinSet[] = [
         name: 'Hadrian',
         secondLine: '117-138 AD',
         completed: false,
-        imageUrl: '/Images/Sets/SeveranSilver/A019-SevAlexander.webp',
+        imageUrl: '/Images/Sets/5GoodEmperors/Hadrian.webp',
       },
       {
         name: 'Antoninus Pius',
         secondLine: '138-161 AD',
         completed: false,
-        imageUrl: '/Images/Sets/SeveranSilver/A019-SevAlexander.webp',
+        imageUrl: '/Images/Sets/5GoodEmperors/AntoninusPius.webp',
       },
       {
         name: 'Marcus Aurelius',
