@@ -104,6 +104,57 @@ export const SetData: CoinSet[] = [
     ],
   },
   {
+    name: 'The Constantinian Dynasty',
+    description:
+      'The Constantinian Dynasty ruled Rome from 305 to 363 AD, beginning with Constantine I "The Great" instilling Christianity as the official religion of Rome, and ending with his descendant Julian "The Apostate", who made efforts to revert the Empire to Paganism. This set aims to collect a portrait of each of the major figures of the dynasty.',
+    items: [
+      {
+        name: 'Constantius I',
+        secondLine: '305-306 AD',
+        completed: false,
+        imageUrl: '/Images/Sets/Constantinians/ConstantiusChlorus.webp',
+      },
+      {
+        name: 'Constantine I "The Great"',
+        secondLine: '306-337 AD',
+        completed: true,
+        collectionId: 4,
+        imageUrl: '/Images/Sets/Constantinians/A004-ConstantineTheGreat.webp',
+      },
+      {
+        name: 'Crispus',
+        completed: false,
+        imageUrl: '/Images/Sets/Constantinians/Crispus.webp',
+      },
+      {
+        name: 'Constantine II',
+        secondLine: '337-340 AD',
+        completed: false,
+        imageUrl: '/Images/Sets/Constantinians/ConstantineII.webp',
+      },
+      {
+        name: 'Constantius II',
+        secondLine: '337-361 AD',
+        completed: true,
+        collectionId: 1,
+        imageUrl: '/Images/Sets/Constantinians/A001-ConstantiusNummus.webp',
+      },
+      {
+        name: 'Constans',
+        secondLine: '337-350 AD',
+        completed: true,
+        collectionId: 23,
+        imageUrl: '/Images/Sets/Constantinians/A023-Constans.webp',
+      },
+      {
+        name: 'Julian',
+        secondLine: '361-363 AD',
+        completed: false,
+        imageUrl: '/Images/Sets/Constantinians/Julian.webp',
+      },
+    ],
+  },
+  {
     name: 'The Twelve Olympians',
     description:
       'This set aims to collect a depiction of each of the Twelve Olympian Gods. This includes both busts and full figures, on any form of ancient coinage.',
@@ -179,11 +230,6 @@ export const SetData: CoinSet[] = [
   //     items: [],
   //   },
   // TODO
-  //   {
-  //     name: 'The Constantinian Dynasty',
-  //     description: '',
-  //     items: [],
-  //   },
   //   {
   //     name: 'The Successors of Alexander',
   //     description: '',
