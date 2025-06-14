@@ -61,6 +61,16 @@ export const Navbar = () => {
           </li>
           <li>
             <NavbarLink
+              data-test-id="navbar-sets-link"
+              to={Routes.Sets}
+              onClick={() => handleListItemClick(Routes.Sets)}
+              $selected={selectedRoute === Routes.Sets}
+            >
+              Sets
+            </NavbarLink>
+          </li>
+          <li>
+            <NavbarLink
               to={Routes.Blog}
               onClick={() => handleListItemClick(Routes.Blog)}
               $selected={selectedRoute.includes(Routes.Blog)}
