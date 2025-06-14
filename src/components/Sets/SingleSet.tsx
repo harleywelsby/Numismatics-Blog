@@ -8,11 +8,11 @@ import {
 } from './Sets.styles';
 import { SingleSetItem } from './SingleSetItem';
 
-const SetsWithCustomLayouts = ['Severan Silver'];
+//const SetsWithCustomLayouts = ['Severan Silver'];
 
 export const SingleSet = ({ name, description, items }: CoinSet) => {
   const isComplete = items.every((item) => item.completed);
-  const hasCustomLayout = SetsWithCustomLayouts.includes(name);
+  //const hasCustomLayout = SetsWithCustomLayouts.includes(name);
 
   return (
     <SetWrapper>
