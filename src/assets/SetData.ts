@@ -155,6 +155,90 @@ export const SetData: CoinSet[] = [
     ],
   },
   {
+    name: 'The Crisis of the Third Century',
+    description:
+      'After the death of Severus Alexander in 235 AD, Rome nearly collapsed in what is known as the "Crisis of the Third Century". This time was a brutal span of civil wars, barbarian invasions, peasant rebellions, and political instability. This set aims to collect a portrait coin of every major figure in the Crisis.',
+    items: [
+      {
+        name: 'Gallienus',
+        completed: true,
+        collectionId: 24,
+        imageUrl: '/Images/Sets/ThirdCenturyCrisis/A024-Gallienus.webp',
+      },
+      {
+        name: 'Postumus',
+        completed: true,
+        collectionId: 21,
+        imageUrl: '/Images/Sets/ThirdCenturyCrisis/PostumusAnt.webp',
+      },
+      {
+        name: 'Claudius II Gothicus',
+        completed: false,
+        imageUrl: '/Images/Sets/ThirdCenturyCrisis/ClaudiusII.webp',
+      },
+      {
+        name: 'Aurelian',
+        completed: true,
+        collectionId: 16,
+        imageUrl: '/Images/Sets/ThirdCenturyCrisis/AurelianAntoninianus.webp',
+      },
+      {
+        name: 'Diocletian',
+        completed: false,
+        imageUrl: '/Images/Sets/ThirdCenturyCrisis/Diocletian.webp',
+      },
+    ],
+  },
+  // {
+  //   name: 'Alexander and his Generals',
+  //   description: '',
+  //   items: [
+  //     {
+  //       name: 'Alexander III "The Great"',
+  //       secondLine: 'Macedon, 336-323 BC',
+  //       completed: false,
+  //       imageUrl: '/Images/Sets/SuccessorsOfAlexander/AlexanderLifetime.webp',
+  //     },
+  //     {
+  //       name: 'Ptolemy I',
+  //       secondLine: 'Egypt, 325-285 BC',
+  //       completed: false,
+  //       imageUrl: '/Images/Sets/SuccessorsOfAlexander/PtolemyI.webp',
+  //     },
+  //     {
+  //       name: 'Seleucus I',
+  //       secondLine: 'Seleucid, 305-281 BC',
+  //       completed: true,
+  //       collectionId: 18,
+  //       imageUrl: '/Images/Sets/SuccessorsOfAlexander/SeleucusI.webp',
+  //     },
+  //     {
+  //       name: 'Antigonus I',
+  //       secondLine: 'Antigonid, 306-301 BC',
+  //       completed: false,
+  //       imageUrl: '/Images/Sets/SuccessorsOfAlexander/AntigonusI.webp',
+  //     },
+  //     {
+  //       name: 'Cassander',
+  //       secondLine: 'Macedon, 305-297 BC',
+  //       completed: false,
+  //       imageUrl: '/Images/Sets/SuccessorsOfAlexander/Cassander.webp',
+  //     },
+  //     {
+  //       name: 'Lysimachus',
+  //       secondLine: 'Thrace, 306-281 BC',
+  //       completed: false,
+  //       imageUrl: '/Images/Sets/SuccessorsOfAlexander/Lysimachus.webp',
+  //     },
+  //     {
+  //       name: 'Perdiccas',
+  //       secondLine: 'Macedon, 323-320 BC',
+  //       completed: false,
+  //       imageUrl: '/Images/Sets/SuccessorsOfAlexander/Perdiccas.webp',
+  //     },
+  //   ],
+  // },
+  {
     name: 'The Twelve Olympians',
     description:
       'This set aims to collect a depiction of each of the Twelve Olympian Gods. This includes both busts and full figures, on any form of ancient coinage.',
@@ -220,41 +304,6 @@ export const SetData: CoinSet[] = [
         name: 'Dionysus',
         completed: false,
         imageUrl: '/Images/Sets/TwelveOlympians/Dionysus.webp',
-      },
-    ],
-  },
-  {
-    name: 'The Crisis of the Third Century',
-    description:
-      'After the death of Severus Alexander in 235 AD, Rome nearly collapsed in what is known as the "Crisis of the Third Century". This time was a brutal span of civil wars, barbarian invasions, peasant rebellions, and political instability. This set aims to collect a portrait coin of every major figure in the Crisis.',
-    items: [
-      {
-        name: 'Gallienus',
-        completed: true,
-        collectionId: 24,
-        imageUrl: '/Images/Sets/ThirdCenturyCrisis/A024-Gallienus.webp',
-      },
-      {
-        name: 'Postumus',
-        completed: true,
-        collectionId: 21,
-        imageUrl: '/Images/Sets/ThirdCenturyCrisis/PostumusAnt.webp',
-      },
-      {
-        name: 'Claudius II Gothicus',
-        completed: false,
-        imageUrl: '/Images/Sets/ThirdCenturyCrisis/ClaudiusII.webp',
-      },
-      {
-        name: 'Aurelian',
-        completed: true,
-        collectionId: 16,
-        imageUrl: '/Images/Sets/ThirdCenturyCrisis/AurelianAntoninianus.webp',
-      },
-      {
-        name: 'Diocletian',
-        completed: false,
-        imageUrl: '/Images/Sets/ThirdCenturyCrisis/Diocletian.webp',
       },
     ],
   },
