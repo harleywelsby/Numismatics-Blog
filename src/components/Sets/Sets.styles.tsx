@@ -83,11 +83,14 @@ export const SetItemsWrapper = styled.div`
   }
 `;
 
-export const SetItemWrapper = styled.div``;
+export const SetItemWrapper = styled.div`
+  padding: 0.5rem;
+`;
 
 export const SetItemName = styled.p`
   font-size: clamp(0.8rem, 2vw + 0.25rem, 1.1rem);
   margin: 0;
+  min-width: 5rem;
 
   @media (max-width: 35em) {
     max-width: 50%;

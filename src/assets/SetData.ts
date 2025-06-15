@@ -191,42 +191,43 @@ export const SetData: CoinSet[] = [
   },
   {
     name: 'Alexander and his Generals',
-    description: '',
+    description:
+      "Alexander the Great was one of the greatest military leaders of all time. After his untimely death, his empire split between his generals, known as the Diadochi. These successors continued to strike coins in Alexander's name, in the famous Heracles/Zeus type. This set aims to collect a lifetime coin of Alexander the Great, and each of his successors.",
     items: [
       {
         name: 'Alexander III "The Great"',
-        secondLine: '336-323 BC',
+        secondLine: 'Macedon, 336-323 BC',
         completed: false,
         imageUrl: '/Images/Sets/SuccessorsOfAlexander/AlexanderZeus.webp',
       },
       {
         name: 'Ptolemy I',
-        secondLine: '325-285 BC',
+        secondLine: 'Egypt, 325-285 BC',
         completed: false,
         imageUrl: '/Images/Sets/SuccessorsOfAlexander/PtolemyI.webp',
       },
       {
         name: 'Seleucus I',
-        secondLine: '305-281 BC',
+        secondLine: 'Seleucid, 305-281 BC',
         completed: true,
         collectionId: 18,
         imageUrl: '/Images/Sets/SuccessorsOfAlexander/SeleucusI.webp',
       },
       {
         name: 'Antigonus I',
-        secondLine: '306-301 BC',
+        secondLine: 'Antigonid, 306-301 BC',
         completed: false,
         imageUrl: '/Images/Sets/SuccessorsOfAlexander/Heracles.webp',
       },
       {
         name: 'Cassander',
-        secondLine: '305-297 BC',
+        secondLine: 'Macedonia, 305-297 BC',
         completed: false,
         imageUrl: '/Images/Sets/SuccessorsOfAlexander/Heracles.webp',
       },
       {
         name: 'Lysimachus',
-        secondLine: '306-281 BC',
+        secondLine: 'Thrace, 306-281 BC',
         completed: false,
         imageUrl: '/Images/Sets/SuccessorsOfAlexander/Lysimachos.webp',
       },
