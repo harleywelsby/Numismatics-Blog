@@ -18,6 +18,7 @@ export type CoinCardProps = {
   coin: CollectionItem;
   hideTitle?: boolean;
   sizeOverride?: { width: number; height: number };
+  noPadding?: boolean;
 };
 
 export type AuthorityGroup = {

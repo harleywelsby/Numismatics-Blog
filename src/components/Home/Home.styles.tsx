@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { getFullImagePath } from '../../shared/utils/imageHelper';
 
 export const TextWrapper = styled.div`
@@ -124,4 +124,39 @@ export const ShowcaseSeparator = styled.div`
   border-bottom: solid;
   min-width: 80%;
   justify-self: center;
+`;
+
+export const ShowcaseItem = styled.div<{ $isMediumScreenOrLarger?: boolean }>`
+  padding: 0.5rem 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  ${(props) =>
+    props.$isMediumScreenOrLarger &&
+    css`
+      flex-direction: row;
+      padding: 1rem 0;
+    `}
+`;
+
+export const ShowcaseText = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-width: 60%;
+`;
+
+export const ShowcaseTitle = styled.h3<{ $isMediumScreenOrLarger?: boolean }>`
+  text-align: center;
+  margin: 0.5rem 0;
+
+  ${(props) =>
+    props.$isMediumScreenOrLarger &&
+    css`
+      text-align: left;
+    `}
+`;
+
+export const ShowcaseDescription = styled.div`
+  text-align: left;
 `;

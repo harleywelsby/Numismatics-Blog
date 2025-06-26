@@ -19,7 +19,7 @@ export const CoinCardGrid = styled.div<{ $columnsOverride?: string }>`
   }
 `;
 
-export const CardWrapper = styled.button`
+export const CardWrapper = styled.button<{ $noPadding?: boolean }>`
   /* Remove default button styling */
   background: none;
   color: inherit;
@@ -39,6 +39,12 @@ export const CardWrapper = styled.button`
       transition: 0.5s;
     }
   }
+
+  ${(props) =>
+    props.$noPadding &&
+    css`
+      padding: 0;
+    `}
 `;
 
 export const CardText = styled.h2`

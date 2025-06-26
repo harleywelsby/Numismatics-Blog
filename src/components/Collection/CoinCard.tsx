@@ -28,7 +28,7 @@ const getThumbnailDimensions = (screenSize: ScreenSize) => {
   }
 };
 
-export const CoinCard = ({ coin, hideTitle, sizeOverride }: CoinCardProps) => {
+export const CoinCard = ({ coin, hideTitle, sizeOverride, noPadding }: CoinCardProps) => {
   const isMediumScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
   const isLargeScreen = useMediaQuery({ query: '(min-width: 86em)' });
 
@@ -92,7 +92,11 @@ export const CoinCard = ({ coin, hideTitle, sizeOverride }: CoinCardProps) => {
   return (
     <>
       {showModal && inspectModal}
-      <CardWrapper onClick={() => setShowModal(true)} data-test-id={`coin-card-${coin.id}`}>
+      <CardWrapper
+        onClick={() => setShowModal(true)}
+        data-test-id={`coin-card-${coin.id}`}
+        $noPadding={noPadding ?? false}
+      >
         <img
           src={coin.imgPath}
           alt={expandedTitle}
