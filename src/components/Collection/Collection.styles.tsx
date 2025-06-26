@@ -30,8 +30,20 @@ export const CardWrapper = styled.button<{ $noPadding?: boolean }>`
 
   padding: 1.2rem;
 
+  ${(props) =>
+    props.$noPadding &&
+    css`
+      padding: 0;
+    `}
+
   @media (min-width: 35em) {
     padding: 2rem;
+
+    ${(props) =>
+      props.$noPadding &&
+      css`
+        padding: 0;
+      `}
 
     &:hover {
       filter: brightness(50%);
@@ -39,12 +51,6 @@ export const CardWrapper = styled.button<{ $noPadding?: boolean }>`
       transition: 0.5s;
     }
   }
-
-  ${(props) =>
-    props.$noPadding &&
-    css`
-      padding: 0;
-    `}
 `;
 
 export const CardText = styled.h2`
