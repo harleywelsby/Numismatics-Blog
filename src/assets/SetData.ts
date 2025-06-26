@@ -242,7 +242,7 @@ export const SetData: CoinSet[] = [
         name: 'Zeus',
         completed: true,
         collectionId: 18,
-        imageUrl: '/Images/Sets/TwelveOlympians/A018-AlexanderTetradrachm.webp',
+        imageUrl: '/Images/Sets/TwelveOlympians/A026-Antigonus.webp',
       },
       {
         name: 'Poseidon',
