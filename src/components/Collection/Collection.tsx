@@ -128,20 +128,7 @@ export const Collection = () => {
       </FilterSection>
       <CoinCardGrid $columnsOverride={getColumnOverride()}>
         {filteredCollectionData.map((x) => (
-          <CoinCard
-            key={x.id}
-            id={x.id}
-            grade={x.grade}
-            title={x.title}
-            imgPath={x.imgPath}
-            ruler={x.ruler}
-            authority={x.authority}
-            mintLocation={x.mintLocation}
-            mintDate={x.mintDate}
-            obverseDescription={x.obverseDescription}
-            reverseDescription={x.reverseDescription}
-            catalogueNumber={x.catalogueNumber}
-          />
+          <CoinCard coin={x} />
         ))}
       </CoinCardGrid>
     </PageWrapper>

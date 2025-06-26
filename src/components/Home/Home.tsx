@@ -1,19 +1,27 @@
-import { useContext } from 'react';
 import { PageWrapper } from '../../shared/styles/sharedStyles';
-import { Routes } from '../../shared/utils/router';
 import {
-  ButtonGrid,
-  CollectionLink,
+  CuratorsPicksParagraph,
   HomepageHeader,
   HomepageParagraph,
-  LinkButtonText,
-  ShowcaseImage,
+  SectionSeparator,
+  ShowcaseSeparator,
   TextWrapper,
 } from './Home.styles';
-import { NavigationContext } from '../NavigationContext/NavigationContext';
+import { CoinCard } from '../Collection/CoinCard';
+import { CollectionData } from '../../assets/CollectionData';
+import { useMediaQuery } from 'react-responsive';
+
+const currentShowcaseIds = [26, 17, 25];
 
 export const Home = () => {
-  const { setSelectedRoute } = useContext(NavigationContext);
+  const currentShowcase = CollectionData.filter((x) => currentShowcaseIds.includes(x.id)).sort(
+    (a, b) => b.id - a.id,
+  );
+
+  const isMediumScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
+  const showcaseSizeOverride = isMediumScreenOrLarger
+    ? { width: 400, height: 200 }
+    : { width: 250, height: 125 };
 
   return (
     <PageWrapper>
@@ -21,28 +29,27 @@ export const Home = () => {
         <HomepageHeader data-test-id="home-welcome-header">
           Kia ora, and welcome to Niho Numismatics!
         </HomepageHeader>
-        <ShowcaseImage src={'/Images/HomepageDisplay.webp'} loading="lazy" />
-        <HomepageParagraph data-test-id="home-welcome-paragraph">
-          This website documents my personal coin collection, consisting mostly of Ancient Roman
-          pieces. It's also where I blog about the history behind my coins. Note that I am in no way
-          a professional historian or numismatist, and all historical notes are from my own amateur
-          research.
+        <HomepageParagraph data-test-id="home-welcome-paragraph-1">
+          This is a place to share my passion for collecting ancient coins. Everything you see on
+          this site is part of my personal collection, and the historic notes are all from my
+          (amateur) research.
         </HomepageParagraph>
-        <ButtonGrid>
-          <CollectionLink
-            to={Routes.Collection}
-            onClick={() => setSelectedRoute(Routes.Collection)}
-            data-test-id="home-collection-link"
-          >
-            <LinkButtonText>Browse the Collection</LinkButtonText>
-          </CollectionLink>
-          {/* <BlogCard to={Routes.Blog} onClick={() => setSelectedRoute(Routes.Blog)}>
-            <LinkButtonText>Featured Post</LinkButtonText>
-          </BlogCard>
-          <BlogCard to={Routes.Blog} onClick={() => setSelectedRoute(Routes.Blog)}>
-            <LinkButtonText>Latest Post</LinkButtonText>
-          </BlogCard> */}
-        </ButtonGrid>
+        <HomepageParagraph data-test-id="home-welcome-paragraph-2">
+          Stay a while, browse the collection, and I hope you find something that piques your
+          interest!
+        </HomepageParagraph>
+        <SectionSeparator />
+        <HomepageHeader data-test-id="curators-picks-header">Curator's Picks</HomepageHeader>
+        <CuratorsPicksParagraph data-test-id="curators-picks-description">
+          If you're not sure where to look, here's a couple of my favourites!
+        </CuratorsPicksParagraph>
+        <SectionSeparator />
+        {currentShowcase.map((x) => (
+          <>
+            {currentShowcase.indexOf(x) !== 0 && <ShowcaseSeparator />}
+            <CoinCard coin={x} hideTitle sizeOverride={showcaseSizeOverride} />
+          </>
+        ))}
       </TextWrapper>
     </PageWrapper>
   );

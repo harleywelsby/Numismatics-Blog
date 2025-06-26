@@ -14,6 +14,12 @@ export type CollectionItem = {
   blogPostLink?: string;
 };
 
+export type CoinCardProps = {
+  coin: CollectionItem;
+  hideTitle?: boolean;
+  sizeOverride?: { width: number; height: number };
+};
+
 export type AuthorityGroup = {
   name: string;
   includedAuthorities: string[];

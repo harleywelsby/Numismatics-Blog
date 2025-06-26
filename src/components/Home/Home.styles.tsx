@@ -22,10 +22,16 @@ export const HomepageHeader = styled.h2`
 `;
 
 export const HomepageParagraph = styled.p`
+  text-align: left;
+  font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);
+`;
+
+export const CuratorsPicksParagraph = styled.p`
   text-align: center;
   font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);
 `;
 
+// TODO: Unused, could be removed
 export const ButtonGrid = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
@@ -102,4 +108,20 @@ export const ShowcaseImage = styled.img`
   width: 90%;
   height: 90%;
   padding: 1rem;
+`;
+
+export const SectionSeparator = styled.div`
+  margin: 2rem 0 0 0;
+  color: var(--scroll-track-grey);
+  border-bottom: solid;
+  min-width: 100%;
+  justify-self: center;
+`;
+
+export const ShowcaseSeparator = styled.div`
+  margin: 0;
+  color: var(--scroll-track-grey);
+  border-bottom: solid;
+  min-width: 80%;
+  justify-self: center;
 `;
