@@ -14,7 +14,7 @@ import { AuthorityGroup, SortType } from './Collection.types';
 const AuthorityGroups: AuthorityGroup[] = [
   {
     name: 'Ancient Greece',
-    includedAuthorities: ['Kingdom of Macedon', 'Seleucid Empire'],
+    includedAuthorities: ['Kingdom of Macedon', 'Seleucid Empire', 'Macedonia'],
   },
   {
     name: 'Roman Empire',
@@ -54,6 +54,12 @@ export const Collection = () => {
     return mintDate.includes('BC') ? -result : +result;
   };
 
+  // Always sort by ID first, so that the latest additions are at the top.
+  filteredCollectionData.sort((a, b) => {
+    return b.id - a.id;
+  });
+
+  // Then, sort by the selected sort type.
   filteredCollectionData.sort((a, b) => {
     switch (sortType) {
       case SortType.MintDateAsc:

@@ -350,4 +350,33 @@ export const CollectionData: CollectionItem[] = [
       'Felicitas, draped, standing forward with head to left, holding short caduceus and long scepter. "FELICITAS AVG COS III"',
     catalogueNumber: 'RIC III #203',
   },
+  {
+    id: 26,
+    grade: Grade.VeryFine,
+    title: 'Alexander the Great Drachm',
+    imgPath: '/Images/Collection/A026-Antigonus.webp',
+    ruler: 'Antigonus I (306-301 BC)',
+    authority: 'Macedonia',
+    mintLocation: 'Teos, Ionia',
+    mintDate: '310-301 BC',
+    obverseDescription: 'Head of Heracles facing right, wearing lion skin headdress.',
+    reverseDescription:
+      'Zeus, enthroned and holding sceptre and eagle. Griffin mint mark in left field, with monogram of Π and Ι below. Reads "ΑΛΕΞΑΝΔΡΟΥ", or "Of Alexander"',
+    catalogueNumber: 'Price #2279',
+  },
+  {
+    id: 27,
+    grade: Grade.VeryFine,
+    title: 'Antoninus Pius Denarius',
+    imgPath: '/Images/Collection/A027-Antoninus.webp',
+    ruler: 'Antoninus Pius (138-161 AD)',
+    authority: 'Roman Empire',
+    mintLocation: 'Rome',
+    mintDate: '159-160 AD',
+    obverseDescription:
+      'Diademed bust of Antoninus facing right. "ANTONINVS AVG PIVS PP TRP XXIII"',
+    reverseDescription:
+      'Fortuna, draped, standing right, holding rudder and cornucopiae. "FORTVNA COS IIII"',
+    catalogueNumber: 'RIC III #300a',
+  },
 ];

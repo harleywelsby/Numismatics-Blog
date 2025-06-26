@@ -91,8 +91,8 @@ export const SetData: CoinSet[] = [
       {
         name: 'Antoninus Pius',
         secondLine: '138-161 AD',
-        completed: false,
-        imageUrl: '/Images/Sets/5GoodEmperors/AntoninusPius.webp',
+        completed: true,
+        imageUrl: '/Images/Sets/5GoodEmperors/A027-Antoninus.webp',
       },
       {
         name: 'Marcus Aurelius',
@@ -207,17 +207,17 @@ export const SetData: CoinSet[] = [
         imageUrl: '/Images/Sets/SuccessorsOfAlexander/PtolemyI.webp',
       },
       {
+        name: 'Antigonus I',
+        secondLine: 'Antigonid, 306-301 BC',
+        completed: true,
+        imageUrl: '/Images/Sets/SuccessorsOfAlexander/A026-Antigonus.webp',
+      },
+      {
         name: 'Seleucus I',
         secondLine: 'Seleucid, 305-281 BC',
         completed: true,
         collectionId: 18,
         imageUrl: '/Images/Sets/SuccessorsOfAlexander/SeleucusI.webp',
-      },
-      {
-        name: 'Antigonus I',
-        secondLine: 'Antigonid, 306-301 BC',
-        completed: false,
-        imageUrl: '/Images/Sets/SuccessorsOfAlexander/Heracles.webp',
       },
       {
         name: 'Cassander',
