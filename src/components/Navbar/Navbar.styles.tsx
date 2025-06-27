@@ -22,6 +22,7 @@ export const NavbarWrapper = styled.nav`
 
   @media (max-width: 35em) {
     margin-bottom: 0;
+    padding-bottom: 1rem;
   }
 `;
 
@@ -33,6 +34,23 @@ export const NavbarList = styled.ul`
   gap: 2rem;
   padding: 0;
   margin: 0;
+
+  @media (max-width: 35em) {
+    position: fixed;
+    inset: 0 0 0 55%;
+    background: var(--scroll-track-grey);
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 2rem;
+  }
+`;
+
+export const BlurredBackground = styled.div`
+  position: fixed;
+  inset: 0 45% 0 0;
+  backdrop-filter: blur(5px);
+  z-index: ${zIndex.AlwaysAtFront - 1};
 `;
 
 export const NavbarLink = styled(Link)<{ $selected?: boolean }>`
@@ -83,8 +101,8 @@ export const TitleText = styled.h1`
   color: var(--soft-white);
 
   @media (max-width: 35em) {
-    font-size: clamp(1.8rem, 3vw + 0.25rem, 4rem);
-    padding: 0.5rem 0 0 0;
+    font-size: clamp(1.5rem, 3vw + 0.25rem, 4rem);
+    padding: 1rem 0rem 0.5rem 0.2rem;
   }
 `;
 
@@ -100,7 +118,10 @@ export const TitleWrapper = styled.div`
 
   @media (max-width: 35em) {
     padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 `;
 
@@ -110,4 +131,12 @@ export const LogoImage = styled.img`
   @media (max-width: 35em) {
     padding-top: 0.5rem;
   }
+`;
+
+export const HamburgerIconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 0.8rem;
 `;
