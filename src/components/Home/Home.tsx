@@ -58,9 +58,9 @@ export const Home = () => {
         </CuratorsPicksParagraph>
         <SectionSeparator />
         {currentShowcase.map((x) => (
-          <>
+          <div key={x.id}>
             {currentShowcase.indexOf(x) !== 0 && <ShowcaseSeparator />}
-            <ShowcaseItem key={x.id} $isMediumScreenOrLarger={isMediumScreenOrLarger}>
+            <ShowcaseItem $isMediumScreenOrLarger={isMediumScreenOrLarger}>
               <CoinCard coin={x} hideTitle sizeOverride={showcaseSizeOverride} noPadding />
               <ShowcaseText>
                 <ShowcaseTitle $isMediumScreenOrLarger={isMediumScreenOrLarger}>
@@ -69,7 +69,7 @@ export const Home = () => {
                 <ShowcaseDescription>{getShowcaseDescription(x.id)}</ShowcaseDescription>
               </ShowcaseText>
             </ShowcaseItem>
-          </>
+          </div>
         ))}
       </TextWrapper>
     </PageWrapper>

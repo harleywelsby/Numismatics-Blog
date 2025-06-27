@@ -22,15 +22,10 @@ export const Sets = () => {
       </HeaderParagraphWrapper>
       <SetSeparator />
       {SetData.map((set) => (
-        <>
-          <SingleSet
-            key={set.name}
-            name={set.name}
-            description={set.description}
-            items={set.items}
-          />
+        <div key={set.name}>
+          <SingleSet name={set.name} description={set.description} items={set.items} />
           <SetSeparator />
-        </>
+        </div>
       ))}
     </PageWrapper>
   );

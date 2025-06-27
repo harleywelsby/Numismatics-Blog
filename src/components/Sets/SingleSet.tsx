@@ -8,6 +8,7 @@ import {
 } from './Sets.styles';
 import { SingleSetItem } from './SingleSetItem';
 
+// TODO
 //const SetsWithCustomLayouts = ['Severan Silver'];
 
 export const SingleSet = ({ name, description, items }: CoinSet) => {
@@ -23,17 +24,16 @@ export const SingleSet = ({ name, description, items }: CoinSet) => {
       <SetDescription>{description}</SetDescription>
 
       <SetItemsWrapper>
-        {items.map((item) => {
-          return (
-            <SingleSetItem
-              name={item.name}
-              secondLine={item.secondLine}
-              imageUrl={item.imageUrl}
-              completed={item.completed}
-              collectionId={item.collectionId}
-            />
-          );
-        })}
+        {items.map((item) => (
+          <SingleSetItem
+            key={item.collectionId || item.name}
+            name={item.name}
+            secondLine={item.secondLine}
+            imageUrl={item.imageUrl}
+            completed={item.completed}
+            collectionId={item.collectionId}
+          />
+        ))}
       </SetItemsWrapper>
     </SetWrapper>
   );
