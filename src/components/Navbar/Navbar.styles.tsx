@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { zIndex } from '../../shared/styles/styleConstants';
+import { getFullImagePath } from '../../shared/utils/imageHelper';
 
 export const InvisibleLink = styled(Link)`
   text-decoration: none;
@@ -37,18 +38,24 @@ export const NavbarList = styled.ul`
 
   @media (max-width: 35em) {
     position: fixed;
-    inset: 0 0 0 55%;
+    inset: 0 0 0 45%;
     background: var(--scroll-track-grey);
     flex-direction: column;
-    justify-content: center;
+
+    justify-content: flex-start;
     text-align: left;
-    padding: 2rem;
+
+    padding: 3rem 2rem 2rem 2rem;
+
+    background-image: url(${getFullImagePath('/Images/SidebarBackground.webp')});
+    background-size: cover;
+    background-position: center;
   }
 `;
 
 export const BlurredBackground = styled.div`
   position: fixed;
-  inset: 0 45% 0 0;
+  inset: 0 55% 0 0;
   backdrop-filter: blur(5px);
   z-index: ${zIndex.AlwaysAtFront - 1};
 `;
@@ -61,7 +68,7 @@ export const NavbarLink = styled(Link)<{ $selected?: boolean }>`
   padding: 0.3rem;
 
   @media (max-width: 35em) {
-    font-size: clamp(0.5rem, 3vw + 0.5rem, 3rem);
+    font-size: clamp(0.5rem, 3vw + 0.7rem, 4rem);
   }
 
   ${(props) =>
