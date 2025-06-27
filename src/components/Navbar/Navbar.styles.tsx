@@ -45,7 +45,7 @@ export const NavbarList = styled.ul`
     justify-content: flex-start;
     text-align: left;
 
-    padding: 2.5rem 2rem 2rem 2rem;
+    padding: 2rem;
 
     background-image: url(${getFullImagePath('/Images/SidebarBackground.webp')});
     background-size: cover;
