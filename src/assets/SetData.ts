@@ -2,6 +2,45 @@ import { CoinSet } from '../components/Sets/Sets.Types';
 
 export const SetData: CoinSet[] = [
   {
+    name: 'The 5 Good Emperors',
+    description:
+      'This set aims to collect one coin of each of the "5 Good Emperors", who reigned from 96 to 180 AD.  These emperor\'s reigns are often considered to be the Golden Age of Rome. Each coin in this set will feature a portrait of one of the emperors, and the personification of a different Roman virtue on the reverse.',
+    items: [
+      {
+        name: 'Nerva',
+        secondLine: '96-98 AD',
+        completed: false,
+        imageUrl: '/Images/Sets/5GoodEmperors/Nerva.webp',
+      },
+      {
+        name: 'Trajan',
+        secondLine: '98-117 AD',
+        completed: true,
+        collectionId: 19,
+        imageUrl: '/Images/Sets/5GoodEmperors/TrajanDenarius.webp',
+      },
+      {
+        name: 'Hadrian',
+        secondLine: '117-138 AD',
+        completed: false,
+        imageUrl: '/Images/Sets/5GoodEmperors/Hadrian.webp',
+      },
+      {
+        name: 'Antoninus Pius',
+        secondLine: '138-161 AD',
+        completed: true,
+        imageUrl: '/Images/Sets/5GoodEmperors/A027-Antoninus.webp',
+      },
+      {
+        name: 'Marcus Aurelius',
+        secondLine: '161-180 AD',
+        completed: true,
+        collectionId: 25,
+        imageUrl: '/Images/Sets/5GoodEmperors/A025-MarcusAurelius.webp',
+      },
+    ],
+  },
+  {
     name: 'Severan Silver',
     description:
       'This set aims to collect a silver denomination portrait of every member of the Severan Dynasty, who ruled Rome from 193 to 235 AD.',
@@ -65,41 +104,37 @@ export const SetData: CoinSet[] = [
     ],
   },
   {
-    name: 'The 5 Good Emperors',
+    name: 'The Crisis of the Third Century',
     description:
-      'This set aims to collect one coin of each of the "5 Good Emperors", who reigned from 96 to 180 AD.  These emperor\'s reigns are often considered to be the Golden Age of Rome. Each coin in this set will feature a portrait of one of the emperors, and the personification of a different Roman virtue on the reverse.',
+      'After the death of Severus Alexander in 235 AD, Rome nearly collapsed in what is known as the "Crisis of the Third Century". This time was a brutal span of civil wars, barbarian invasions, peasant rebellions, and political instability. This set aims to collect a portrait coin of every major figure in the Crisis.',
     items: [
       {
-        name: 'Nerva',
-        secondLine: '96-98 AD',
+        name: 'Gallienus',
+        completed: true,
+        collectionId: 24,
+        imageUrl: '/Images/Sets/ThirdCenturyCrisis/A024-Gallienus.webp',
+      },
+      {
+        name: 'Postumus',
+        completed: true,
+        collectionId: 21,
+        imageUrl: '/Images/Sets/ThirdCenturyCrisis/PostumusAnt.webp',
+      },
+      {
+        name: 'Claudius II Gothicus',
         completed: false,
-        imageUrl: '/Images/Sets/5GoodEmperors/Nerva.webp',
+        imageUrl: '/Images/Sets/ThirdCenturyCrisis/ClaudiusII.webp',
       },
       {
-        name: 'Trajan',
-        secondLine: '98-117 AD',
+        name: 'Aurelian',
         completed: true,
-        collectionId: 19,
-        imageUrl: '/Images/Sets/5GoodEmperors/TrajanDenarius.webp',
+        collectionId: 16,
+        imageUrl: '/Images/Sets/ThirdCenturyCrisis/AurelianAntoninianus.webp',
       },
       {
-        name: 'Hadrian',
-        secondLine: '117-138 AD',
+        name: 'Diocletian',
         completed: false,
-        imageUrl: '/Images/Sets/5GoodEmperors/Hadrian.webp',
-      },
-      {
-        name: 'Antoninus Pius',
-        secondLine: '138-161 AD',
-        completed: true,
-        imageUrl: '/Images/Sets/5GoodEmperors/A027-Antoninus.webp',
-      },
-      {
-        name: 'Marcus Aurelius',
-        secondLine: '161-180 AD',
-        completed: true,
-        collectionId: 25,
-        imageUrl: '/Images/Sets/5GoodEmperors/A025-MarcusAurelius.webp',
+        imageUrl: '/Images/Sets/ThirdCenturyCrisis/Diocletian.webp',
       },
     ],
   },
@@ -151,41 +186,6 @@ export const SetData: CoinSet[] = [
         secondLine: '361-363 AD',
         completed: false,
         imageUrl: '/Images/Sets/Constantinians/Julian.webp',
-      },
-    ],
-  },
-  {
-    name: 'The Crisis of the Third Century',
-    description:
-      'After the death of Severus Alexander in 235 AD, Rome nearly collapsed in what is known as the "Crisis of the Third Century". This time was a brutal span of civil wars, barbarian invasions, peasant rebellions, and political instability. This set aims to collect a portrait coin of every major figure in the Crisis.',
-    items: [
-      {
-        name: 'Gallienus',
-        completed: true,
-        collectionId: 24,
-        imageUrl: '/Images/Sets/ThirdCenturyCrisis/A024-Gallienus.webp',
-      },
-      {
-        name: 'Postumus',
-        completed: true,
-        collectionId: 21,
-        imageUrl: '/Images/Sets/ThirdCenturyCrisis/PostumusAnt.webp',
-      },
-      {
-        name: 'Claudius II Gothicus',
-        completed: false,
-        imageUrl: '/Images/Sets/ThirdCenturyCrisis/ClaudiusII.webp',
-      },
-      {
-        name: 'Aurelian',
-        completed: true,
-        collectionId: 16,
-        imageUrl: '/Images/Sets/ThirdCenturyCrisis/AurelianAntoninianus.webp',
-      },
-      {
-        name: 'Diocletian',
-        completed: false,
-        imageUrl: '/Images/Sets/ThirdCenturyCrisis/Diocletian.webp',
       },
     ],
   },
