@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 export const CoinCardGrid = styled.div<{ $columnsOverride?: string }>`
@@ -19,7 +20,7 @@ export const CoinCardGrid = styled.div<{ $columnsOverride?: string }>`
   }
 `;
 
-export const CardWrapper = styled.button<{ $noPadding?: boolean }>`
+export const CardWrapper = styled(Link)<{ $noPadding?: boolean }>`
   /* Remove default button styling */
   background: none;
   color: inherit;
@@ -27,6 +28,10 @@ export const CardWrapper = styled.button<{ $noPadding?: boolean }>`
   font: inherit;
   outline: inherit;
   cursor: pointer;
+
+  /* Remove default styling */
+  text-decoration: none;
+  color: inherit;
 
   padding: 1.2rem;
 

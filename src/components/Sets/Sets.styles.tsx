@@ -99,3 +99,16 @@ export const SetItemName = styled.p`
     align-self: center;
   }
 `;
+
+export const SetItemImage = styled.img<{ isComplete?: boolean }>`
+  ${(props) =>
+    props.isComplete &&
+    css`
+      cursor: pointer;
+      &:hover {
+        filter: brightness(50%);
+        transform: scale(1.05);
+        transition: 0.5s;
+      }
+    `}
+`;

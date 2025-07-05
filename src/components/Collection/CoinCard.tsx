@@ -10,13 +10,15 @@ import {
   ModalText,
   ModalTextWrapper,
 } from './Collection.styles';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Modal } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { getFullImagePath } from '../../shared/utils/imageHelper';
 import { CoinCardProps } from './Collection.types';
 import { ScreenSize } from '../../shared/types';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Routes } from '../../shared/utils/router';
 
 const getThumbnailDimensions = (screenSize: ScreenSize) => {
   switch (screenSize) {
@@ -29,6 +31,9 @@ const getThumbnailDimensions = (screenSize: ScreenSize) => {
 };
 
 export const CoinCard = ({ coin, hideTitle, sizeOverride, noPadding }: CoinCardProps) => {
+  const navigate = useNavigate();
+  const { itemId } = useParams();
+
   const isMediumScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
   const isLargeScreen = useMediaQuery({ query: '(min-width: 86em)' });
 
@@ -39,12 +44,24 @@ export const CoinCard = ({ coin, hideTitle, sizeOverride, noPadding }: CoinCardP
     screenSize = isLargeScreen ? ScreenSize.Large : ScreenSize.Medium;
   }
 
+  useEffect(() => {
+    // Automatically show the modal if the itemId matches this coin's ID.
+    if (itemId && parseInt(itemId, 10) === coin.id) {
+      setShowModal(true);
+    }
+  }, [itemId, coin.id]);
+
+  const handleModalClose = () => {
+    setShowModal(false);
+    navigate(Routes.Collection);
+  };
+
   const thumbnailDimensions = sizeOverride || getThumbnailDimensions(screenSize);
 
   const [showModal, setShowModal] = useState(false);
 
   const inspectModal = (
-    <Modal open={showModal} onClose={() => setShowModal(false)}>
+    <Modal open={showModal} onClose={handleModalClose}>
       <ModalContent data-test-id={`coin-card-${coin.id}-modal-content`}>
         <ModalImage src={getFullImagePath(coin.imgPath)} loading="lazy" />
         <ModalTextWrapper>
@@ -77,7 +94,7 @@ export const CoinCard = ({ coin, hideTitle, sizeOverride, noPadding }: CoinCardP
           </ModalBodyWrapper>
         </ModalTextWrapper>
         <CloseModalButton
-          onClick={() => setShowModal(false)}
+          onClick={handleModalClose}
           data-test-id={`coin-card-${coin.id}-modal-close`}
         >
           <FontAwesomeIcon icon={faXmark} size="2x" />
@@ -93,6 +110,7 @@ export const CoinCard = ({ coin, hideTitle, sizeOverride, noPadding }: CoinCardP
     <>
       {showModal && inspectModal}
       <CardWrapper
+        to={Routes.CollectionItem.replace(':itemId', `${coin.id}`)}
         onClick={() => setShowModal(true)}
         data-test-id={`coin-card-${coin.id}`}
         $noPadding={noPadding ?? false}

@@ -16,7 +16,7 @@ export const SetData: CoinSet[] = [
         name: 'Trajan',
         secondLine: '98-117 AD',
         completed: true,
-        collectionId: 19,
+        collectionId: 20,
         imageUrl: '/Images/Sets/5GoodEmperors/TrajanDenarius.webp',
       },
       {
@@ -29,6 +29,7 @@ export const SetData: CoinSet[] = [
         name: 'Antoninus Pius',
         secondLine: '138-161 AD',
         completed: true,
+        collectionId: 27,
         imageUrl: '/Images/Sets/5GoodEmperors/A027-Antoninus.webp',
       },
       {

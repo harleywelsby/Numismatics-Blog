@@ -16,6 +16,7 @@ export const Routes = {
   Blog: '/blog',
   BlogPost: '/blog/:postId',
   Collection: '/collection',
+  CollectionItem: '/collection/:itemId',
   Sets: '/sets',
   Error: '*',
 };
@@ -29,6 +30,7 @@ export const router = createBrowserRouter([
       { path: Routes.Home, element: <Home /> },
       { path: Routes.Blog, element: <Blog /> },
       { path: Routes.Collection, element: <Collection /> },
+      { path: Routes.CollectionItem, element: <Collection /> },
       { path: Routes.BlogPost, element: <BlogPost /> },
       { path: Routes.Sets, element: <Sets /> },
     ],
