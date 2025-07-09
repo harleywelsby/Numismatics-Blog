@@ -1,28 +1,17 @@
 import { CoinSet } from './Sets.Types';
-import {
-  CompletionStatusTag,
-  SetDescription,
-  SetItemsWrapper,
-  SetTitle,
-  SetWrapper,
-} from './Sets.styles';
+import { SetDescription, SetItemsWrapper, SetSeparator, SetWrapper } from './Sets.styles';
 import { SingleSetItem } from './SingleSetItem';
 
 // TODO
 //const SetsWithCustomLayouts = ['Severan Silver'];
 
-export const SingleSet = ({ name, description, items }: CoinSet) => {
-  const isComplete = items.every((item) => item.completed);
+export const SingleSet = ({ description, items }: CoinSet) => {
   //const hasCustomLayout = SetsWithCustomLayouts.includes(name);
 
   return (
     <SetWrapper>
-      <SetTitle>{name}</SetTitle>
-      <CompletionStatusTag $completed={isComplete}>
-        {isComplete ? 'Complete' : 'In Progress'}
-      </CompletionStatusTag>
       <SetDescription>{description}</SetDescription>
-
+      <SetSeparator />
       <SetItemsWrapper>
         {items.map((item) => (
           <SingleSetItem

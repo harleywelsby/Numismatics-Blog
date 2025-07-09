@@ -16,7 +16,7 @@ export const HeaderParagraphWrapper = styled.div`
   align-items: center;
 `;
 
-export const SetSeparator = styled.div`
+export const SetsHeaderSeparator = styled.div`
   margin: 2rem 0;
   color: var(--scroll-track-grey);
   border-bottom: solid;
@@ -24,34 +24,35 @@ export const SetSeparator = styled.div`
   justify-self: center;
 `;
 
-export const SetWrapper = styled.div`
-  justify-self: center;
-  max-width: 80%;
+/***********************************
+ *             Accordion           *
+ ***********************************/
+
+export const SetAccordionWrapper = styled.div`
+  padding: 0.2rem;
 `;
 
-export const SetTitle = styled.h2`
-  font-size: clamp(1rem, 3vw + 0.5rem, 2rem);
-  font-weight: 500;
+/***********************************
+ *         Accordion Header        *
+ ***********************************/
 
-  margin: 0;
-  max-width: 90%;
-  text-align: center;
-  justify-self: center;
-`;
+export const SetAccordionHeader = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
 
-export const SetDescription = styled.p`
-  text-align: left;
-  font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);
-  max-width: 60%;
-  margin: 1rem auto;
+  width: 98%;
 
   @media (max-width: 35em) {
-    text-align: center;
+    width: 100%;
   }
+`;
 
-  @media (max-width: 100em) {
-    max-width: 90%;
-  }
+export const SetTitle = styled.h3`
+  font-size: clamp(1rem, 3vw + 0.5rem, 1.8rem);
+  margin: 0;
+  font-weight: 500;
 `;
 
 export const CompletionStatusTag = styled.div<{ $completed?: boolean }>`
@@ -59,7 +60,6 @@ export const CompletionStatusTag = styled.div<{ $completed?: boolean }>`
   padding: 0;
   border-radius: 0.3rem;
   padding: 0.1rem 0.3rem;
-
   background-color: var(--incomplete-red);
   width: fit-content;
   justify-self: center;
@@ -71,6 +71,31 @@ export const CompletionStatusTag = styled.div<{ $completed?: boolean }>`
     `}
 `;
 
+/***********************************
+ *        Accordion Details        *
+ ***********************************/
+
+export const SetWrapper = styled.div``;
+
+export const SetDescription = styled.p`
+  text-align: left;
+  font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);
+  max-width: 90%;
+  margin: 0 1rem 0.5rem;
+`;
+
+export const SetSeparator = styled.div`
+  margin: 2rem 0;
+  color: var(--scroll-track-grey);
+  border-bottom: solid;
+  min-width: 97%;
+  justify-self: center;
+
+  @media (max-width: 35em) {
+    min-width: 90%;
+  }
+`;
+
 export const SetItemsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -78,13 +103,17 @@ export const SetItemsWrapper = styled.div`
   justify-content: center;
 
   @media (min-width: 100em) {
-    max-width: 60%;
+    max-width: 90%;
     justify-self: center;
   }
 `;
 
+/***********************************
+ *             Set Item            *
+ ***********************************/
+
 export const SetItemWrapper = styled.div`
-  padding: 0.5rem;
+  padding: 0.8rem;
 `;
 
 export const SetItemName = styled.p`

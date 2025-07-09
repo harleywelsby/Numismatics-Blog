@@ -1,9 +1,38 @@
 import { HeaderSeparator, HeaderText, PageWrapper } from '../../shared/styles/sharedStyles';
-import { HeaderParagraph, HeaderParagraphWrapper, SetSeparator } from './Sets.styles';
+import {
+  CompletionStatusTag,
+  HeaderParagraph,
+  HeaderParagraphWrapper,
+  SetAccordionHeader,
+  SetAccordionWrapper,
+  SetsHeaderSeparator,
+  SetTitle,
+} from './Sets.styles';
 import { SingleSet } from './SingleSet';
 import { SetData } from '../../assets/SetData';
+import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { useMediaQuery } from 'react-responsive';
+import { useContext } from 'react';
+import { SetContext } from './SetContext';
 
+// TODO: Clean up the messy styles here.
 export const Sets = () => {
+  const isMediumScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
+  const maxAccordionWidth = isMediumScreenOrLarger ? '80%' : '95%';
+
+  // TODO: Use context to keep sets open/closed after refresh
+  const setContext = useContext(SetContext);
+
+  const handleSetChange = (setName: string) => {
+    if (setContext.openSets.includes(setName)) {
+      setContext.closeSet(setName);
+    } else {
+      setContext.openSet(setName);
+    }
+  };
+
   return (
     <PageWrapper>
       <HeaderText>Collection Sets</HeaderText>
@@ -20,13 +49,41 @@ export const Sets = () => {
           these sets are personal goals for the future growth of the collection.
         </HeaderParagraph>
       </HeaderParagraphWrapper>
-      <SetSeparator />
-      {SetData.map((set) => (
-        <div key={set.name}>
-          <SingleSet name={set.name} description={set.description} items={set.items} />
-          <SetSeparator />
-        </div>
-      ))}
+      <SetsHeaderSeparator />
+      {SetData.map((set) => {
+        const isComplete = set.items.every((item) => item.completed);
+        return (
+          <SetAccordionWrapper key={set.name}>
+            <Accordion
+              expanded={setContext.openSets.includes(set.name)}
+              onChange={() => handleSetChange(set.name)}
+              sx={{
+                color: 'var(--white)',
+                backgroundColor: 'var(--deep-black)',
+                boxShadow: 'none',
+                maxWidth: maxAccordionWidth,
+                justifyContent: 'center',
+                justifySelf: 'center',
+              }}
+            >
+              <AccordionSummary
+                expandIcon={<FontAwesomeIcon icon={faChevronDown} color="white" size="2x" />}
+                sx={{ padding: '0.5rem 1rem' }}
+              >
+                <SetAccordionHeader>
+                  <SetTitle>{set.name}</SetTitle>
+                  <CompletionStatusTag $completed={isComplete}>
+                    {isComplete ? 'Complete' : 'In Progress'}
+                  </CompletionStatusTag>
+                </SetAccordionHeader>
+              </AccordionSummary>
+              <AccordionDetails sx={{ padding: '0', paddingBottom: '1rem' }}>
+                <SingleSet name={set.name} description={set.description} items={set.items} />
+              </AccordionDetails>
+            </Accordion>
+          </SetAccordionWrapper>
+        );
+      })}
     </PageWrapper>
   );
 };

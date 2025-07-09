@@ -1,24 +1,11 @@
 import { useMediaQuery } from 'react-responsive';
-import {
-  CardText,
-  CardWrapper,
-  CloseModalButton,
-  ModalBodyWrapper,
-  ModalContent,
-  ModalHeader,
-  ModalImage,
-  ModalText,
-  ModalTextWrapper,
-} from './Collection.styles';
+import { CardText, CardWrapper } from './Collection.styles';
 import { useEffect, useState } from 'react';
-import { Modal } from '@mui/material';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import { getFullImagePath } from '../../shared/utils/imageHelper';
 import { CoinCardProps } from './Collection.types';
 import { ScreenSize } from '../../shared/types';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Routes } from '../../shared/utils/router';
+import { CoinCardModal } from './CoinCardModal';
 
 const getThumbnailDimensions = (screenSize: ScreenSize) => {
   switch (screenSize) {
@@ -31,7 +18,6 @@ const getThumbnailDimensions = (screenSize: ScreenSize) => {
 };
 
 export const CoinCard = ({ coin, hideTitle, sizeOverride, noPadding }: CoinCardProps) => {
-  const navigate = useNavigate();
   const { itemId } = useParams();
 
   const isMediumScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
@@ -51,64 +37,16 @@ export const CoinCard = ({ coin, hideTitle, sizeOverride, noPadding }: CoinCardP
     }
   }, [itemId, coin.id]);
 
-  const handleModalClose = () => {
-    setShowModal(false);
-    navigate(Routes.Collection);
-  };
-
   const thumbnailDimensions = sizeOverride || getThumbnailDimensions(screenSize);
 
   const [showModal, setShowModal] = useState(false);
-
-  const inspectModal = (
-    <Modal open={showModal} onClose={handleModalClose}>
-      <ModalContent data-test-id={`coin-card-${coin.id}-modal-content`}>
-        <ModalImage src={getFullImagePath(coin.imgPath)} loading="lazy" />
-        <ModalTextWrapper>
-          <ModalHeader>{coin.title}</ModalHeader>
-          <ModalBodyWrapper>
-            <ModalText>
-              <b>Ruler: </b>
-              {coin.ruler}
-            </ModalText>
-            <ModalText>
-              <b>Authority: </b>
-              {coin.authority}
-            </ModalText>
-            <ModalText>
-              <b>Minted: </b>
-              {`${coin.mintLocation} (${coin.mintDate})`}
-            </ModalText>
-            <ModalText>
-              <b>Obv: </b>
-              {coin.obverseDescription}
-            </ModalText>
-            <ModalText>
-              <b>Rev: </b>
-              {coin.reverseDescription}
-            </ModalText>
-            <ModalText>
-              <b>Ref: </b>
-              {coin.catalogueNumber}
-            </ModalText>
-          </ModalBodyWrapper>
-        </ModalTextWrapper>
-        <CloseModalButton
-          onClick={handleModalClose}
-          data-test-id={`coin-card-${coin.id}-modal-close`}
-        >
-          <FontAwesomeIcon icon={faXmark} size="2x" />
-        </CloseModalButton>
-      </ModalContent>
-    </Modal>
-  );
 
   // Include some more info when not in the inspect modal.
   const expandedTitle = `${coin.title} (${coin.mintDate})`;
 
   return (
     <>
-      {showModal && inspectModal}
+      {showModal && <CoinCardModal coin={coin} showModal={showModal} setShowModal={setShowModal} />}
       <CardWrapper
         to={Routes.CollectionItem.replace(':itemId', `${coin.id}`)}
         onClick={() => setShowModal(true)}

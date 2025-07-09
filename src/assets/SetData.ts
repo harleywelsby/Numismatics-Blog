@@ -122,7 +122,7 @@ export const SetData: CoinSet[] = [
         imageUrl: '/Images/Sets/ThirdCenturyCrisis/PostumusAnt.webp',
       },
       {
-        name: 'Claudius II Gothicus',
+        name: 'Claudius II',
         completed: false,
         imageUrl: '/Images/Sets/ThirdCenturyCrisis/ClaudiusII.webp',
       },
@@ -151,7 +151,7 @@ export const SetData: CoinSet[] = [
         imageUrl: '/Images/Sets/Constantinians/ConstantiusChlorus.webp',
       },
       {
-        name: 'Constantine I "The Great"',
+        name: 'Constantine I',
         secondLine: '306-337 AD',
         completed: true,
         collectionId: 4,
@@ -211,6 +211,7 @@ export const SetData: CoinSet[] = [
         name: 'Antigonus I',
         secondLine: 'Antigonid, 306-301 BC',
         completed: true,
+        collectionId: 26,
         imageUrl: '/Images/Sets/SuccessorsOfAlexander/A026-Antigonus.webp',
       },
       {
@@ -242,7 +243,7 @@ export const SetData: CoinSet[] = [
       {
         name: 'Zeus',
         completed: true,
-        collectionId: 18,
+        collectionId: 26,
         imageUrl: '/Images/Sets/TwelveOlympians/A026-Antigonus.webp',
       },
       {

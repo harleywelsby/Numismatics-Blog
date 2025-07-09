@@ -2,10 +2,10 @@ import { SetItem } from './Sets.Types';
 import { SetItemImage, SetItemName, SetItemWrapper } from './Sets.styles';
 import { ScreenSize } from '../../shared/types';
 import { useMediaQuery } from 'react-responsive';
-import { useContext } from 'react';
-import { NavigationContext } from '../NavigationContext/NavigationContext';
+import { useState } from 'react';
+import { CoinCardModal } from '../Collection/CoinCardModal';
+import { CollectionData } from '../../assets/CollectionData';
 import { Routes } from '../../shared/utils/router';
-import { useNavigate } from 'react-router-dom';
 
 const getImageDimensions = (screenSize: ScreenSize) => {
   switch (screenSize) {
@@ -20,8 +20,12 @@ const getImageDimensions = (screenSize: ScreenSize) => {
 export const SingleSetItem = ({ name, secondLine, imageUrl, completed, collectionId }: SetItem) => {
   const isMediumScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
   const isLargeScreen = useMediaQuery({ query: '(min-width: 86em)' });
-  const { setSelectedRoute } = useContext(NavigationContext);
-  const navigate = useNavigate();
+
+  const collectionItem = collectionId
+    ? CollectionData.find((item) => item.id === collectionId)
+    : null;
+
+  const [showModal, setShowModal] = useState(false);
 
   // Default to small (mobile). If the screen is at least a 'medium' size,
   // then check the size and adjust accordingly.
@@ -30,7 +34,6 @@ export const SingleSetItem = ({ name, secondLine, imageUrl, completed, collectio
     screenSize = isLargeScreen ? ScreenSize.Large : ScreenSize.Medium;
   }
 
-  const collectionRoute = Routes.CollectionItem.replace(':itemId', `${collectionId}`);
   const imageDimensions = getImageDimensions(screenSize);
 
   const handleClick = () => {
@@ -38,8 +41,7 @@ export const SingleSetItem = ({ name, secondLine, imageUrl, completed, collectio
       return;
     }
 
-    setSelectedRoute(Routes.Collection);
-    navigate(collectionRoute);
+    setShowModal(true);
   };
 
   return (
@@ -55,6 +57,14 @@ export const SingleSetItem = ({ name, secondLine, imageUrl, completed, collectio
       />
       <SetItemName>{name}</SetItemName>
       {secondLine && <SetItemName>{secondLine}</SetItemName>}
+      {showModal && collectionItem && (
+        <CoinCardModal
+          coin={collectionItem}
+          showModal={showModal}
+          setShowModal={setShowModal}
+          closeRerouteOverride={Routes.Sets}
+        />
+      )}
     </SetItemWrapper>
   );
 };
