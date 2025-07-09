@@ -19,6 +19,8 @@ export type CoinCardProps = {
   hideTitle?: boolean;
   sizeOverride?: { width: number; height: number };
   noPadding?: boolean;
+  modalRerouteOverride?: string;
+  disableRedirect?: boolean;
 };
 
 export type AuthorityGroup = {

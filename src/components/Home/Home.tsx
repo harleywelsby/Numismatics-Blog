@@ -14,6 +14,7 @@ import {
 import { CoinCard } from '../Collection/CoinCard';
 import { CollectionData } from '../../assets/CollectionData';
 import { useMediaQuery } from 'react-responsive';
+import { Routes } from '../../shared/utils/router';
 
 const currentShowcaseIds = [26, 17, 25];
 const showcaseDescriptions: Record<number, string> = {
@@ -61,7 +62,14 @@ export const Home = () => {
           <div key={x.id}>
             {currentShowcase.indexOf(x) !== 0 && <ShowcaseSeparator />}
             <ShowcaseItem $isMediumScreenOrLarger={isMediumScreenOrLarger}>
-              <CoinCard coin={x} hideTitle sizeOverride={showcaseSizeOverride} noPadding />
+              <CoinCard
+                coin={x}
+                hideTitle
+                sizeOverride={showcaseSizeOverride}
+                noPadding
+                modalRerouteOverride={Routes.Home}
+                disableRedirect
+              />
               <ShowcaseText>
                 <ShowcaseTitle $isMediumScreenOrLarger={isMediumScreenOrLarger}>
                   {x.title}

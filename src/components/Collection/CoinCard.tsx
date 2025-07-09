@@ -17,7 +17,14 @@ const getThumbnailDimensions = (screenSize: ScreenSize) => {
   }
 };
 
-export const CoinCard = ({ coin, hideTitle, sizeOverride, noPadding }: CoinCardProps) => {
+export const CoinCard = ({
+  coin,
+  hideTitle,
+  sizeOverride,
+  noPadding,
+  modalRerouteOverride,
+  disableRedirect,
+}: CoinCardProps) => {
   const { itemId } = useParams();
 
   const isMediumScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
@@ -46,9 +53,20 @@ export const CoinCard = ({ coin, hideTitle, sizeOverride, noPadding }: CoinCardP
 
   return (
     <>
-      {showModal && <CoinCardModal coin={coin} showModal={showModal} setShowModal={setShowModal} />}
+      {showModal && (
+        <CoinCardModal
+          coin={coin}
+          showModal={showModal}
+          setShowModal={setShowModal}
+          closeRerouteOverride={modalRerouteOverride}
+        />
+      )}
       <CardWrapper
-        to={Routes.CollectionItem.replace(':itemId', `${coin.id}`)}
+        to={
+          disableRedirect
+            ? window.location.href
+            : Routes.CollectionItem.replace(':itemId', `${coin.id}`)
+        }
         onClick={() => setShowModal(true)}
         data-test-id={`coin-card-${coin.id}`}
         $noPadding={noPadding ?? false}
