@@ -113,7 +113,7 @@ export const SetItemsWrapper = styled.div`
  ***********************************/
 
 export const SetItemWrapper = styled.div`
-  padding: 0.8rem;
+  padding: 0.5rem;
 `;
 
 export const SetItemName = styled.p`
