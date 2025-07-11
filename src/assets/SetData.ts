@@ -2,6 +2,44 @@ import { CoinSet } from '../components/Sets/Sets.Types';
 
 export const SetData: CoinSet[] = [
   {
+    name: 'The Julio-Claudian Dynasty',
+    category: 'Rome',
+    description:
+      'This set aims to collect a portrait coin of each emperor from the first Roman dynasty, the Julio-Claudians, who ruled Rome from 27 BC to 68 AD.',
+    items: [
+      {
+        name: 'Augustus',
+        secondLine: '27 BC - 14 AD',
+        completed: false,
+        imageUrl: '/Images/Sets/JulioClaudians/Augustus.webp',
+      },
+      {
+        name: 'Tiberius',
+        secondLine: '14-37 AD',
+        completed: false,
+        imageUrl: '/Images/Sets/JulioClaudians/Tiberius.webp',
+      },
+      {
+        name: 'Caligula',
+        secondLine: '37-41 AD',
+        completed: false,
+        imageUrl: '/Images/Sets/JulioClaudians/Caligula.webp',
+      },
+      {
+        name: 'Claudius',
+        secondLine: '41-54 AD',
+        completed: false,
+        imageUrl: '/Images/Sets/JulioClaudians/Claudius.webp',
+      },
+      {
+        name: 'Nero',
+        secondLine: '54-68 AD',
+        completed: false,
+        imageUrl: '/Images/Sets/JulioClaudians/Nero.webp',
+      },
+    ],
+  },
+  {
     name: 'The 5 Good Emperors',
     category: 'Rome',
     description:
