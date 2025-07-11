@@ -50,6 +50,8 @@ export const NavbarList = styled.ul`
     background-image: url(${getFullImagePath('/Images/SidebarBackground.webp')});
     background-size: cover;
     background-position: center;
+
+    z-index: ${zIndex.AlwaysAtFront};
   }
 `;
 

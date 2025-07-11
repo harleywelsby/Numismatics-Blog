@@ -10,6 +10,7 @@ import {
 import { HeaderSeparator, HeaderText, PageWrapper } from '../../shared/styles/sharedStyles';
 import { useState } from 'react';
 import { AuthorityGroup, SortType } from './Collection.types';
+import { getCleanMintDate } from '../../shared/utils/dateHelper';
 
 const AuthorityGroups: AuthorityGroup[] = [
   {
@@ -37,22 +38,6 @@ export const Collection = () => {
       : CollectionData.filter((x) =>
           currentAuthorityGroup?.includedAuthorities.includes(x.authority),
         );
-
-  const getCleanMintDate = (mintDate: string) => {
-    let result = mintDate;
-
-    // If there's a range of dates, take the lowest possible.
-    if (mintDate.includes('-')) {
-      const splitDates = result.split('-');
-      result = splitDates[0];
-    }
-
-    // Remove all non-numeric characters.
-    result = result.replace(/\D/g, '');
-
-    // Convert to a number (AD = positive, BC = negative) and return.
-    return mintDate.includes('BC') ? -result : +result;
-  };
 
   // Always sort by ID first, so that the latest additions are at the top.
   filteredCollectionData.sort((a, b) => {

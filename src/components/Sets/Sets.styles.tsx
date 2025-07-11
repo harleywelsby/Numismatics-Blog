@@ -84,8 +84,6 @@ export const CompletionStatusTag = styled.div<{ $setStatus: SetStatus }>`
  *        Accordion Details        *
  ***********************************/
 
-export const SetWrapper = styled.div``;
-
 export const SetDescription = styled.p`
   text-align: left;
   font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);

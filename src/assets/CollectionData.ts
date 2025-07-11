@@ -4,7 +4,7 @@ export const CollectionData: CollectionItem[] = [
   {
     id: 18,
     grade: Grade.VeryFine,
-    title: 'Alexander III Tetradrachm',
+    title: 'Seleucid I Tetradrachm',
     imgPath: '/Images/Collection/AlexanderTetradrachm.webp',
     ruler: 'Seleucus I (305-281 BC)',
     authority: 'Seleucid Empire',

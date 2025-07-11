@@ -8,6 +8,7 @@ import {
   LogoImage,
   HamburgerIconWrapper,
   BlurredBackground,
+  InvisibleLink,
 } from './Navbar.styles';
 import { Routes } from '../../shared/utils/router';
 import { useMediaQuery } from 'react-responsive';
@@ -51,7 +52,13 @@ export const Navbar = () => {
         {isBigScreen && logo}
         <TitleWrapper>
           {!isBigScreen && logo}
-          <TitleText data-test-id="navbar-title">Niho Numismatics</TitleText>
+          <InvisibleLink
+            to={Routes.Home}
+            onClick={() => handleListItemClick(Routes.Home)}
+            data-test-id="navbar-home-link"
+          >
+            <TitleText data-test-id="navbar-title">Niho Numismatics</TitleText>
+          </InvisibleLink>
           {!isBigScreen && (
             <HamburgerIconWrapper>
               <FontAwesomeIcon
@@ -94,6 +101,16 @@ export const Navbar = () => {
                 $selected={selectedRoute === Routes.Sets}
               >
                 Sets
+              </NavbarLink>
+            </li>
+            <li>
+              <NavbarLink
+                data-test-id="navbar-timeline-link"
+                to={Routes.Timeline}
+                onClick={() => handleListItemClick(Routes.Timeline)}
+                $selected={selectedRoute === Routes.Timeline}
+              >
+                Timeline
               </NavbarLink>
             </li>
             <li>
