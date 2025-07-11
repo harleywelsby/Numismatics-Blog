@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { SetStatus } from './Sets.Types';
 
 export const HeaderParagraph = styled.p`
   text-align: left;
@@ -17,7 +18,7 @@ export const HeaderParagraphWrapper = styled.div`
 `;
 
 export const SetsHeaderSeparator = styled.div`
-  margin: 2rem 0;
+  margin: 2rem 0 1rem 0;
   color: var(--scroll-track-grey);
   border-bottom: solid;
   min-width: 80%;
@@ -55,7 +56,19 @@ export const SetTitle = styled.h3`
   font-weight: 500;
 `;
 
-export const CompletionStatusTag = styled.div<{ $completed?: boolean }>`
+const getStatusTagColour = (status: SetStatus) => {
+  switch (status) {
+    case SetStatus.NotStarted:
+      return 'var(--scroll-track-grey)';
+    case SetStatus.Complete:
+      return 'var(--complete-green)';
+    default:
+    case SetStatus.InProgress:
+      return 'var(--incomplete-red)';
+  }
+};
+
+export const CompletionStatusTag = styled.div<{ $setStatus: SetStatus }>`
   margin: 0.5rem;
   padding: 0;
   border-radius: 0.3rem;
@@ -64,11 +77,7 @@ export const CompletionStatusTag = styled.div<{ $completed?: boolean }>`
   width: fit-content;
   justify-self: center;
 
-  ${(props) =>
-    props.$completed &&
-    css`
-      background-color: var(--complete-green);
-    `}
+  background-color: ${({ $setStatus }) => getStatusTagColour($setStatus)};
 `;
 
 /***********************************

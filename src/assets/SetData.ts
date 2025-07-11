@@ -3,6 +3,7 @@ import { CoinSet } from '../components/Sets/Sets.Types';
 export const SetData: CoinSet[] = [
   {
     name: 'The 5 Good Emperors',
+    category: 'Rome',
     description:
       'This set aims to collect one coin of each of the "5 Good Emperors", who reigned from 96 to 180 AD.  These emperor\'s reigns are often considered to be the Golden Age of Rome. Each coin in this set will feature a portrait of one of the emperors, and the personification of a different Roman virtue on the reverse.',
     items: [
@@ -43,6 +44,7 @@ export const SetData: CoinSet[] = [
   },
   {
     name: 'Severan Silver',
+    category: 'Rome',
     description:
       'This set aims to collect a silver denomination portrait of every member of the Severan Dynasty, who ruled Rome from 193 to 235 AD.',
     items: [
@@ -106,6 +108,7 @@ export const SetData: CoinSet[] = [
   },
   {
     name: 'The Crisis of the Third Century',
+    category: 'Rome',
     description:
       'After the death of Severus Alexander in 235 AD, Rome nearly collapsed in what is known as the "Crisis of the Third Century". This time was a brutal span of civil wars, barbarian invasions, peasant rebellions, and political instability. This set aims to collect a portrait coin of every major figure in the Crisis.',
     items: [
@@ -141,6 +144,7 @@ export const SetData: CoinSet[] = [
   },
   {
     name: 'The Constantinian Dynasty',
+    category: 'Rome',
     description:
       'The Constantinian Dynasty ruled Rome from 305 to 363 AD, beginning with Constantine I "The Great" instilling Christianity as the official religion of Rome, and ending with his descendant Julian "The Apostate", who made efforts to revert the Empire to Paganism. This set aims to collect a portrait of each of the major figures of the dynasty.',
     items: [
@@ -192,6 +196,7 @@ export const SetData: CoinSet[] = [
   },
   {
     name: 'Alexander and his Generals',
+    category: 'Greek',
     description:
       "Alexander the Great was one of the greatest military leaders of all time. After his untimely death, his empire split between his generals, known as the Diadochi. These successors continued to strike coins in Alexander's name, in the famous Heracles/Zeus type. This set aims to collect a lifetime coin of Alexander the Great, and each of his successors.",
     items: [
@@ -237,6 +242,7 @@ export const SetData: CoinSet[] = [
   },
   {
     name: 'The Twelve Olympians',
+    category: 'Greek',
     description:
       'This set aims to collect a depiction of each of the Twelve Olympian Gods. This includes both busts and full figures, on any form of ancient coinage.',
     items: [
