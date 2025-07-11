@@ -310,4 +310,38 @@ export const SetData: CoinSet[] = [
       },
     ],
   },
+  {
+    name: 'Kings of Persia',
+    category: 'Near East',
+    description:
+      "During Rome's height, the many dynasties of Persia were an ever-present neighbour, and often rival. During this time, the region developed its own unique coinage standards and artistic styles. This set aims to collect a coin from each of the dynasties of Ancient Persia, from the Achaemenids to the Sassanids.",
+    items: [
+      {
+        name: 'Achaemenid Empire',
+        secondLine: '550-330 BC',
+        completed: false,
+        imageUrl: '/Images/Sets/AncientPersia/Achaemenid.webp',
+      },
+      {
+        name: 'Seleucid Empire',
+        secondLine: '312-63 BC',
+        completed: true,
+        collectionId: 18,
+        imageUrl: '/Images/Sets/AncientPersia/SeleucusI.webp',
+      },
+      {
+        name: 'Parthian Empire',
+        secondLine: '247 BC - 224 AD',
+        completed: false,
+        imageUrl: '/Images/Sets/AncientPersia/Parthia.webp',
+      },
+
+      {
+        name: 'Sasanian Empire',
+        secondLine: '224-651 AD',
+        completed: false,
+        imageUrl: '/Images/Sets/AncientPersia/Sassania.webp',
+      },
+    ],
+  },
 ];
