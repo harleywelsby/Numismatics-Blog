@@ -5,7 +5,7 @@ export const SetData: CoinSet[] = [
     name: 'The Julio-Claudian Dynasty',
     category: 'Rome',
     description:
-      'This set aims to collect a portrait coin of each emperor from the first Roman dynasty, the Julio-Claudians, who ruled Rome from 27 BC to 68 AD.',
+      'This set aims to collect a portrait coin of each emperor from the first Roman dynasty and descendants of Caesar, the Julio-Claudians, who ruled Rome from 27 BC to 68 AD.',
     items: [
       {
         name: 'Augustus',

@@ -131,14 +131,15 @@ export const TitleWrapper = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
+    gap: 2vw;
   }
 `;
 
 export const LogoImage = styled.img`
-  padding-top: 1.5rem;
+  padding: 1.5rem;
 
   @media (max-width: 35em) {
-    padding-top: 0.5rem;
+    padding: 0.5rem 0 0 0;
   }
 `;
 

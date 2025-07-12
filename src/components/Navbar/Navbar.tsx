@@ -36,10 +36,11 @@ export const Navbar = () => {
     }
   };
 
-  const logoSize = isBigScreen ? 200 : 65;
-  const logo = (
+  const logoSize = isBigScreen ? 200 : 70;
+  const logoPath = isBigScreen ? '/Images/Logo.webp' : '/Images/LogoSquareNoText.webp';
+  const Logo = () => (
     <LogoImage
-      src={getFullImagePath('/Images/Logo.webp')}
+      src={getFullImagePath(logoPath)}
       width={logoSize}
       height={logoSize}
       data-test-id="navbar-logo"
@@ -49,16 +50,20 @@ export const Navbar = () => {
   return (
     <>
       <NavbarWrapper>
-        {isBigScreen && logo}
+        {isBigScreen && <Logo />}
         <TitleWrapper>
-          {!isBigScreen && logo}
-          <InvisibleLink
-            to={Routes.Home}
-            onClick={() => handleListItemClick(Routes.Home)}
-            data-test-id="navbar-home-link"
-          >
-            <TitleText data-test-id="navbar-title">Niho Numismatics</TitleText>
-          </InvisibleLink>
+          {!isBigScreen && (
+            <>
+              <Logo />
+              <InvisibleLink
+                to={Routes.Home}
+                onClick={() => handleListItemClick(Routes.Home)}
+                data-test-id="navbar-home-link"
+              >
+                <TitleText data-test-id="navbar-title">Niho Numismatics</TitleText>
+              </InvisibleLink>
+            </>
+          )}
           {!isBigScreen && (
             <HamburgerIconWrapper>
               <FontAwesomeIcon
