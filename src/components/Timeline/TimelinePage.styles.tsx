@@ -28,7 +28,12 @@ export const DescriptionText = styled.p`
 `;
 
 export const TimelineWrapper = styled.div`
+  max-width: 70%;
+  justify-self: center;
+
   @media (max-width: 35em) {
+    max-width: 95%;
+
     ::before {
       display: none;
     }

@@ -311,7 +311,7 @@ export const CollectionData: CollectionItem[] = [
   {
     id: 23,
     grade: Grade.Good,
-    title: 'Cosntans Nummus',
+    title: 'Constans Nummus',
     imgPath: '/Images/Collection/A023-Constans.webp',
     ruler: 'Constans (337-350 AD)',
     authority: 'Roman Empire',
