@@ -29,6 +29,7 @@ export const CollectionData: CollectionItem[] = [
     reverseDescription:
       'Jupiter, naked, holding thunderbolt and sceptre. Two children flanking representing Severus\' sons Caracalla and Geta. "PM TRP XVIII COS III PP"',
     catalogueNumber: 'RIC IV #233',
+    featuredRanking: 1,
   },
   {
     id: 13,
@@ -42,6 +43,7 @@ export const CollectionData: CollectionItem[] = [
     obverseDescription: 'Bust of Julia Domna, draped, facing right. "IVLIA PIA FELIX AVG"',
     reverseDescription: 'Vesta, standing left holding Palladium and sceptre. "VESTA"',
     catalogueNumber: 'RIC IV #390',
+    featuredRanking: 2,
   },
   {
     id: 11,
@@ -84,6 +86,7 @@ export const CollectionData: CollectionItem[] = [
       'Diademed and cuirassed bust of Elagabalus facing right. "IMP CAES ANTONINVS AVG"',
     reverseDescription: 'Victory advancing right with wreath and trophy. "VICTOR ANTONINI AVG"',
     catalogueNumber: 'RIC IV.2 #153',
+    featuredRanking: 5,
   },
   {
     id: 4,
@@ -363,6 +366,7 @@ export const CollectionData: CollectionItem[] = [
     reverseDescription:
       'Zeus, enthroned and holding sceptre and eagle. Griffin mint mark in left field, with monogram of Π and Ι below. Reads "ΑΛΕΞΑΝΔΡΟΥ", or "Of Alexander"',
     catalogueNumber: 'Price #2279',
+    featuredRanking: 3,
   },
   {
     id: 27,
@@ -378,5 +382,6 @@ export const CollectionData: CollectionItem[] = [
     reverseDescription:
       'Fortuna, draped, standing right, holding rudder and cornucopiae. "FORTVNA COS IIII"',
     catalogueNumber: 'RIC III #300a',
+    featuredRanking: 4,
   },
 ];

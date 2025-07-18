@@ -12,6 +12,7 @@ export type CollectionItem = {
   catalogueNumber: string;
   // Optional: Only if one exists.
   blogPostLink?: string;
+  featuredRanking?: number;
 };
 
 export type CoinCardProps = {
@@ -29,6 +30,7 @@ export type AuthorityGroup = {
 };
 
 export enum SortType {
+  Featured = 'Featured',
   Latest = 'Latest Additions',
   Best = 'Highest Grade',
   MintDateAsc = 'Mint Date (ascending)',

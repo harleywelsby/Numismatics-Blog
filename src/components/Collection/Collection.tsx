@@ -29,7 +29,7 @@ const AuthorityGroups: AuthorityGroup[] = [
 
 export const Collection = () => {
   const [authorityFilter, setAuthorityFilter] = useState('All');
-  const [sortType, setSortType] = useState(SortType.Best);
+  const [sortType, setSortType] = useState(SortType.Featured);
 
   const currentAuthorityGroup = AuthorityGroups.find((x) => x.name === authorityFilter);
   const filteredCollectionData =
@@ -59,6 +59,16 @@ export const Collection = () => {
         }
         return 0;
       case SortType.Best:
+        return b.grade - a.grade;
+      case SortType.Featured:
+        if (a.featuredRanking && b.featuredRanking) {
+          return (a.featuredRanking || 0) - (b.featuredRanking || 0);
+        } else if (a.featuredRanking) {
+          return -1; // a is featured, b is not
+        } else if (b.featuredRanking) {
+          return 1; // b is featured, a is not
+        }
+        // If neither has a featured ranking, fall back to grade sorting
         return b.grade - a.grade;
       case SortType.Latest:
       default:
@@ -103,6 +113,7 @@ export const Collection = () => {
             value={sortType}
             onChange={(e) => setSortType(e.target.value as SortType)}
           >
+            <option>Featured</option>
             <option>Highest Grade</option>
             <option>Latest Additions</option>
             <option>Mint Date (ascending)</option>
