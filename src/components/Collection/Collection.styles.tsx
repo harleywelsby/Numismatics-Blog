@@ -134,9 +134,9 @@ export const ModalImage = styled.img`
   width: 100%;
   height: 100%;
 
-  // On larger screens, 100% is far too big. Cap at 90%.
+  // On larger screens, 100% is far too big.
   @media (min-width: 100em) {
-    max-width: 80%;
+    max-width: 60%;
   }
 `;
 

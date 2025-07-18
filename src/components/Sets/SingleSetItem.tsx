@@ -10,10 +10,10 @@ import { Routes } from '../../shared/utils/router';
 const getImageDimensions = (screenSize: ScreenSize) => {
   switch (screenSize) {
     case ScreenSize.Small:
-      return { width: 90, height: 90 };
+      return { width: 120, height: 120 };
     case ScreenSize.Medium:
     case ScreenSize.Large:
-      return { width: 150, height: 150 };
+      return { width: 200, height: 200 };
   }
 };
 
