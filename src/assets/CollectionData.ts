@@ -25,7 +25,7 @@ export const CollectionData: CollectionItem[] = [
     authority: 'Roman Empire',
     mintLocation: 'Rome',
     mintDate: '210 AD',
-    obverseDescription: 'Diademed bust of Severus facing right. "SEVERUS PIVS AVG"',
+    obverseDescription: 'Diademed bust of Severus facing right. "SEVERVS PIVS AVG"',
     reverseDescription:
       'Jupiter, naked, holding thunderbolt and sceptre. Two children flanking representing Severus\' sons Caracalla and Geta. "PM TRP XVIII COS III PP"',
     catalogueNumber: 'RIC IV #233',

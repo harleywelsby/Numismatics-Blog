@@ -8,10 +8,9 @@ import {
   FilterLabel,
   FilterSection,
   FilterSelectBox,
-  SearchBar,
 } from './Collection.styles';
 import { HeaderSeparator, HeaderText, PageWrapper } from '../../shared/styles/sharedStyles';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { AuthorityGroup, CollectionItem, SortType } from './Collection.types';
 import { getCleanMintDate } from '../../shared/utils/dateHelper';
 
