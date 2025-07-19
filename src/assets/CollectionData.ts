@@ -43,7 +43,7 @@ export const CollectionData: CollectionItem[] = [
     obverseDescription: 'Bust of Julia Domna, draped, facing right. "IVLIA PIA FELIX AVG"',
     reverseDescription: 'Vesta, standing left holding Palladium and sceptre. "VESTA"',
     catalogueNumber: 'RIC IV #390',
-    featuredRanking: 2,
+    featuredRanking: 6,
   },
   {
     id: 11,
@@ -77,7 +77,7 @@ export const CollectionData: CollectionItem[] = [
     id: 17,
     grade: Grade.AsStruck,
     title: 'Elagabalus Denarius',
-    imgPath: '/Images/Collection/Elagabalus.webp',
+    imgPath: '/Images/Collection/A017-Elagabalus.webp',
     ruler: 'Elagabalus (218-222 AD)',
     authority: 'Roman Empire',
     mintLocation: 'Rome',
@@ -352,6 +352,7 @@ export const CollectionData: CollectionItem[] = [
     reverseDescription:
       'Felicitas, draped, standing forward with head to left, holding short caduceus and long scepter. "FELICITAS AVG COS III"',
     catalogueNumber: 'RIC III #203',
+    featuredRanking: 2,
   },
   {
     id: 26,
