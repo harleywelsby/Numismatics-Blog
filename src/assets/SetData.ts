@@ -84,7 +84,7 @@ export const SetData: CoinSet[] = [
     name: 'Severan Silver',
     category: 'Rome',
     description:
-      'This set aims to collect a silver denomination portrait of every member of the Severan Dynasty, who ruled Rome from 193 to 235 AD.',
+      'This set aims to collect a silver denomination portrait of every member of the Severan Dynasty, who ruled Rome from 193 to 235 AD. The Severans are known not only for their scandalous behaviour (Caracalla murdering his brother Geta, Elagabalus marrying a Vestal Virgin), but also for their extremely powerful women, such as Julia Domna and her sister Julia Maesa. Julia Domna was revered as the "Mother of the Invincible Camps", travelling with the soldiers on campain. When Caracalla was assassinated, Julia Maesa led a coup to bring her grandson Elagabalus to the throne.',
     items: [
       {
         name: 'Septimius Severus',
