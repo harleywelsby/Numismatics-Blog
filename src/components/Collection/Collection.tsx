@@ -2,14 +2,17 @@ import { CollectionData } from '../../assets/CollectionData';
 import { CoinCard } from './CoinCard';
 import {
   CoinCardGrid,
+  FilterCheckbox,
+  FilterCheckboxWrapper,
   FilterItem,
   FilterLabel,
   FilterSection,
   FilterSelectBox,
+  SearchBar,
 } from './Collection.styles';
 import { HeaderSeparator, HeaderText, PageWrapper } from '../../shared/styles/sharedStyles';
-import { useState } from 'react';
-import { AuthorityGroup, SortType } from './Collection.types';
+import { useEffect, useState } from 'react';
+import { AuthorityGroup, CollectionItem, SortType } from './Collection.types';
 import { getCleanMintDate } from '../../shared/utils/dateHelper';
 
 const AuthorityGroups: AuthorityGroup[] = [
@@ -27,25 +30,35 @@ const AuthorityGroups: AuthorityGroup[] = [
   },
 ];
 
-export const Collection = () => {
-  const [authorityFilter, setAuthorityFilter] = useState('All');
-  const [sortType, setSortType] = useState(SortType.Featured);
+const ApplyDataFilters = (
+  data: CollectionItem[],
+  authorityFilter: string,
+  hideLowGrade: boolean,
+) => {
+  let filteredData = data;
 
   const currentAuthorityGroup = AuthorityGroups.find((x) => x.name === authorityFilter);
-  const filteredCollectionData =
-    authorityFilter === 'All'
-      ? CollectionData
-      : CollectionData.filter((x) =>
-          currentAuthorityGroup?.includedAuthorities.includes(x.authority),
-        );
+  if (authorityFilter !== 'All' && currentAuthorityGroup) {
+    filteredData = filteredData.filter((x) =>
+      currentAuthorityGroup.includedAuthorities.includes(x.authority),
+    );
+  }
 
+  if (hideLowGrade) {
+    filteredData = filteredData.filter((x) => x.grade >= 4); // Very Fine (VF) or better
+  }
+
+  return filteredData;
+};
+
+const SortCollectionData = (data: CollectionItem[], sortType: SortType) => {
   // Always sort by ID first, so that the latest additions are at the top.
-  filteredCollectionData.sort((a, b) => {
+  data.sort((a, b) => {
     return b.id - a.id;
   });
 
   // Then, sort by the selected sort type.
-  filteredCollectionData.sort((a, b) => {
+  data.sort((a, b) => {
     switch (sortType) {
       case SortType.MintDateAsc:
         return getCleanMintDate(a.mintDate) - getCleanMintDate(b.mintDate);
@@ -75,6 +88,17 @@ export const Collection = () => {
         return b.id - a.id;
     }
   });
+
+  return data;
+};
+
+export const Collection = () => {
+  const [authorityFilter, setAuthorityFilter] = useState('All');
+  const [sortType, setSortType] = useState(SortType.Featured);
+  const [hideLowGrade, setHideLowGrade] = useState(true);
+
+  const filteredCollectionData = ApplyDataFilters(CollectionData, authorityFilter, hideLowGrade);
+  SortCollectionData(filteredCollectionData, sortType);
 
   // If only 1 or 2 items are in the list, let the columns adjust.
   const getColumnOverride = () => {
@@ -121,6 +145,16 @@ export const Collection = () => {
             <option>Rulers (alphabetical)</option>
           </FilterSelectBox>
         </FilterItem>
+      </FilterSection>
+      <FilterSection>
+        <FilterCheckboxWrapper>
+          <FilterCheckbox
+            type="checkbox"
+            checked={hideLowGrade}
+            onChange={(e) => setHideLowGrade(e.target.checked)}
+          />
+          <FilterLabel>Hide low-grade coins</FilterLabel>
+        </FilterCheckboxWrapper>
       </FilterSection>
       <CoinCardGrid $columnsOverride={getColumnOverride()}>
         {filteredCollectionData.map((x) => (

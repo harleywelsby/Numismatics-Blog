@@ -183,6 +183,7 @@ export const FilterItem = styled.div`
   flex-direction: column;
   padding: 0;
   margin: 0;
+  justify-content: center;
 `;
 
 export const FilterLabel = styled.p`
@@ -196,4 +197,19 @@ export const FilterSelectBox = styled.select`
   min-width: 12rem;
   padding: 0.5rem 0.2rem;
   border-radius: 5px;
+`;
+
+export const FilterCheckboxWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+export const FilterCheckbox = styled.input`
+  cursor: pointer;
+  transform: scale(1.5);
+  justify-self: center;
+  align-self: center;
+  padding: 1rem;
 `;
