@@ -161,4 +161,5 @@ export const ShowcaseTitle = styled.h3<{ $isMediumScreenOrLarger?: boolean }>`
 
 export const ShowcaseDescription = styled.div`
   text-align: left;
+  margin-bottom: 0.5rem;
 `;

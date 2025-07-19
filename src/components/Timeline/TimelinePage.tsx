@@ -113,10 +113,10 @@ export const TimelinePage = () => {
       <HeaderText>Collection Timeline</HeaderText>
       <HeaderSeparator />
       <HeaderParagraph>
-        Ancient coins reflect numerous details of their place in time. Different periods and empires
-        have distinct styles and denominations. It's often hard to visualize the exact moment of
-        history that a given coin originated from, so this timeline aims to provide a new, visual
-        way to see the collection in the context of their place in history.
+        This page tracks the Niho Collection in chronological order, in the context of the
+        historical events of the time. Often, it's difficult to understand the exact place in time a
+        coin originated from, so this timeline aims to provide a clearer picture of the history
+        behind each coin.
       </HeaderParagraph>
       <SectionSeparator />
       <TimelineWrapper>
