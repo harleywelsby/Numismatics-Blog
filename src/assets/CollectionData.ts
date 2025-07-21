@@ -353,7 +353,6 @@ export const CollectionData: CollectionItem[] = [
       'Felicitas, draped, standing forward with head to left, holding short caduceus and long scepter. "FELICITAS AVG COS III"',
     catalogueNumber: 'RIC III #203',
     featuredRanking: 2,
-    enableSeeMore: true,
   },
   {
     id: 26,
@@ -434,11 +433,20 @@ export const CollectionDataVNext: CollectionItemV2[] = [
     obverse: {
       description: 'Diademed bust of Marcus Aurelius facing right.',
       legend: 'M ANTONINVS AVG TRP XXIII',
+      legendDetails: {
+        latin: 'Marcus Antoninus Augustus Tribunicia Potestas XXIII',
+        english:
+          'Emperor Marcus Antoninus, Augustus, holding the Tribunician Power for the 23rd year',
+      },
     },
     reverse: {
       description:
         'Felicitas, draped, standing forward with head to left, holding short caduceus and long scepter.',
       legend: 'FELICITAS AVG COS III',
+      legendDetails: {
+        latin: 'Felicitas Augusti Consul III',
+        english: 'To the happiness of the Emperor, Consul for the third time',
+      },
     },
     reference: {
       catalogueNumber: 'RIC III #203',

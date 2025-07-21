@@ -9,7 +9,7 @@ import {
   FilterCheckboxWrapper,
   FilterCheckbox,
   CoinCardGrid,
-} from '../Collection.styles';
+} from './Collection.styles';
 import { SortType } from '../Collection.types';
 import {
   ActiveSortTypes,
@@ -17,7 +17,7 @@ import {
   GetAuthorityGroups,
   SortCollectionData,
 } from './utils/FilterHelpers';
-import { CoinCard } from './CoinCard';
+import { CoinCard } from './CoinCard/CoinCard';
 
 export const CollectionV2 = () => {
   const [authorityFilter, setAuthorityFilter] = useState('All');

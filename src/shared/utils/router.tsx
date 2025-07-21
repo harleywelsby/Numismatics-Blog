@@ -8,6 +8,7 @@ import { BlogPost } from '../../components/Blog/BlogPost';
 import { Sets } from '../../components/Sets/Sets';
 import { TimelinePage } from '../../components/Timeline/TimelinePage';
 import { CollectionV2 } from '../../components/Collection/V2/Collection';
+import { CoinDetails } from '../../components/Collection/V2/CoinDetails/CoinDetails';
 
 export const getBlogPostRoute = (postId: string) => {
   return Routes.BlogPost.replace(':postId', postId);
@@ -25,6 +26,7 @@ export const Routes = {
   // TODO: Temporary, will replace /collection.
   CollectionV2: '/collection/v2',
   CollectionItemV2: '/collection/v2/:itemId',
+  CollectionItemDetails: '/collection/v2/:itemId/details',
 
   Error: '*',
 };
@@ -44,6 +46,7 @@ export const router = createBrowserRouter([
       { path: Routes.Timeline, element: <TimelinePage /> },
       { path: Routes.CollectionV2, element: <CollectionV2 /> },
       { path: Routes.CollectionItemV2, element: <CollectionV2 /> },
+      { path: Routes.CollectionItemDetails, element: <CoinDetails /> },
     ],
   },
 ]);

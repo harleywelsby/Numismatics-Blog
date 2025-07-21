@@ -65,28 +65,35 @@ export type CollectionItemV2 = {
   moreDetails?: MoreDetails;
 };
 
-export type CoinFace = {
+type CoinFace = {
   description: string;
   legend: string;
+  legendDetails?: LegendDetails;
   imagePath?: string;
 };
 
-export type Reference = {
+type LegendDetails = {
+  latin: string;
+  english: string;
+  description?: string; // Optional description for the legend.
+};
+
+type Reference = {
   catalogueNumber: string;
   url: string;
 };
 
-export type Mint = {
+type Mint = {
   location: string;
   date: string;
 };
 
-export type MoreDetails = {
+type MoreDetails = {
   description?: string; // Additional description for the details page.
   mentionedIn?: string[]; // Array of blog post links this coin features in.
 };
 
-export type Ruler = {
+type Ruler = {
   name: string;
   reign: string;
 };

@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Modal } from '@mui/material';
 
 import { useNavigate } from 'react-router-dom';
-import { CollectionItemV2 } from '../Collection.types';
-import { getFullImagePath } from '../../../shared/utils/imageHelper';
+import { CollectionItemV2 } from '../../Collection.types';
+import { getFullImagePath } from '../../../../shared/utils/imageHelper';
 import {
   ModalContent,
   ModalImage,
@@ -16,8 +16,8 @@ import {
   SeeMoreButton,
   NewPill,
   CloseModalButton,
-} from '../Collection.styles';
-import { Routes } from '../../../shared/utils/router';
+} from '../../Collection.styles';
+import { Routes } from '../../../../shared/utils/router';
 
 interface CoinCardModalProps {
   coin: CollectionItemV2;
@@ -37,6 +37,12 @@ export const CoinCardModal = ({
   const handleModalClose = () => {
     setShowModal(false);
     navigate(closeRerouteOverride || Routes.CollectionV2);
+  };
+
+  const handleSeeMore = () => {
+    setShowModal(false);
+    window.history.replaceState(null, '', Routes.CollectionV2);
+    navigate(Routes.CollectionItemDetails.replace(':itemId', `${coin.id}`));
   };
 
   return (
@@ -75,7 +81,7 @@ export const CoinCardModal = ({
             </ModalText>
             {coin.enableSeeMore && (
               <SeeMoreButtonWrapper>
-                <SeeMoreButton>See More</SeeMoreButton>
+                <SeeMoreButton onClick={handleSeeMore}>See More</SeeMoreButton>
                 <NewPill>New!</NewPill>
               </SeeMoreButtonWrapper>
             )}
