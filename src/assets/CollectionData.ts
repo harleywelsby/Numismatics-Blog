@@ -1,4 +1,4 @@
-import { CollectionItem, Grade } from '../components/Collection/Collection.types';
+import { CollectionItem, CollectionItemV2, Grade } from '../components/Collection/Collection.types';
 
 export const CollectionData: CollectionItem[] = [
   {
@@ -353,6 +353,7 @@ export const CollectionData: CollectionItem[] = [
       'Felicitas, draped, standing forward with head to left, holding short caduceus and long scepter. "FELICITAS AVG COS III"',
     catalogueNumber: 'RIC III #203',
     featuredRanking: 2,
+    enableSeeMore: true,
   },
   {
     id: 26,
@@ -384,5 +385,68 @@ export const CollectionData: CollectionItem[] = [
       'Fortuna, draped, standing right, holding rudder and cornucopiae. "FORTVNA COS IIII"',
     catalogueNumber: 'RIC III #300a',
     featuredRanking: 4,
+  },
+];
+
+export const CollectionDataVNext: CollectionItemV2[] = [
+  {
+    id: 8,
+    grade: Grade.VeryFine,
+    title: 'Septimius Severus Denarius',
+    imgPath: '/Images/Collection/A008-SeptimiusSeverus.webp',
+    ruler: {
+      name: 'Septimius Severus',
+      reign: '193-211 AD',
+    },
+    authority: 'Roman Empire',
+    mint: {
+      location: 'Rome',
+      date: '210 AD',
+    },
+    obverse: {
+      description: 'Diademed bust of Severus facing right.',
+      legend: 'SEVERVS PIVS AVG',
+    },
+    reverse: {
+      description:
+        "Jupiter, naked, holding thunderbolt and sceptre. Two children flanking representing Severus' sons Caracalla and Geta. ",
+      legend: 'PM TRP XVIII COS III PP',
+    },
+    reference: {
+      catalogueNumber: 'RIC IV #233',
+      url: 'https://numismatics.org/ocre/id/ric.4.ss.233',
+    },
+  },
+  {
+    id: 25,
+    grade: Grade.VeryFine,
+    title: 'Marcus Aurelius Denarius',
+    imgPath: '/Images/Collection/A025-MarcusAurelius.webp',
+    ruler: {
+      name: 'Marcus Aurelius',
+      reign: '161-180 AD',
+    },
+    authority: 'Roman Empire',
+    mint: {
+      location: 'Rome',
+      date: '168-169 AD',
+    },
+    obverse: {
+      description: 'Diademed bust of Marcus Aurelius facing right.',
+      legend: 'M ANTONINVS AVG TRP XXIII',
+    },
+    reverse: {
+      description:
+        'Felicitas, draped, standing forward with head to left, holding short caduceus and long scepter.',
+      legend: 'FELICITAS AVG COS III',
+    },
+    reference: {
+      catalogueNumber: 'RIC III #203',
+      url: 'http://numismatics.org/ocre/id/ric.3.m_aur.203',
+    },
+    enableSeeMore: true,
+    moreDetails: {
+      description: 'TODO: This is where the details description will go.',
+    },
   },
 ];

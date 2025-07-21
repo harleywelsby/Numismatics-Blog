@@ -106,6 +106,8 @@ export const ModalTextWrapper = styled.div`
 `;
 
 export const ModalBodyWrapper = styled.div`
+  align-items: center;
+  justify-content: center;
   text-align: left;
   margin: 0;
   padding: 0;
@@ -212,4 +214,37 @@ export const FilterCheckbox = styled.input`
   justify-self: center;
   align-self: center;
   padding: 1rem;
+`;
+
+export const SeeMoreButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 1rem;
+`;
+
+export const SeeMoreButton = styled.button`
+  background-color: var(--deep-black);
+  color: var(--white);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: clamp(0.5rem, 3vw + 0.1rem, 1rem);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--scroll-track-grey);
+  }
+`;
+
+export const NewPill = styled.span`
+  padding: 0.2rem;
+  border-radius: 5px;
+  font-size: clamp(0.5rem, 3vw + 0.1rem, 1rem);
+  font-weight: bold;
+  background-color: var(--complete-green);
 `;

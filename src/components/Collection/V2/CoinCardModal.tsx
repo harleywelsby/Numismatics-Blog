@@ -1,7 +1,10 @@
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Modal } from '@mui/material';
-import { getFullImagePath } from '../../shared/utils/imageHelper';
+
+import { useNavigate } from 'react-router-dom';
+import { CollectionItemV2 } from '../Collection.types';
+import { getFullImagePath } from '../../../shared/utils/imageHelper';
 import {
   ModalContent,
   ModalImage,
@@ -9,17 +12,15 @@ import {
   ModalHeader,
   ModalBodyWrapper,
   ModalText,
-  CloseModalButton,
+  SeeMoreButtonWrapper,
   SeeMoreButton,
   NewPill,
-  SeeMoreButtonWrapper,
-} from './Collection.styles';
-import { Routes } from '../../shared/utils/router';
-import { CollectionItem } from './Collection.types';
-import { useNavigate } from 'react-router-dom';
+  CloseModalButton,
+} from '../Collection.styles';
+import { Routes } from '../../../shared/utils/router';
 
-export interface CoinCardModalProps {
-  coin: CollectionItem;
+interface CoinCardModalProps {
+  coin: CollectionItemV2;
   showModal: boolean;
   setShowModal: (show: boolean) => void;
   closeRerouteOverride?: string;
@@ -35,7 +36,7 @@ export const CoinCardModal = ({
 
   const handleModalClose = () => {
     setShowModal(false);
-    navigate(closeRerouteOverride || Routes.Collection);
+    navigate(closeRerouteOverride || Routes.CollectionV2);
   };
 
   return (
@@ -47,7 +48,7 @@ export const CoinCardModal = ({
           <ModalBodyWrapper>
             <ModalText>
               <b>Ruler: </b>
-              {coin.ruler}
+              {`${coin.ruler.name} (r. ${coin.ruler.reign})`}
             </ModalText>
             <ModalText>
               <b>Authority: </b>
@@ -55,20 +56,22 @@ export const CoinCardModal = ({
             </ModalText>
             <ModalText>
               <b>Minted: </b>
-              {`${coin.mintLocation} (${coin.mintDate})`}
+              {`${coin.mint.location} (${coin.mint.date})`}
             </ModalText>
 
             <ModalText>
               <b>Obv: </b>
-              {coin.obverseDescription}
+              {coin.obverse.description}
             </ModalText>
             <ModalText>
               <b>Rev: </b>
-              {coin.reverseDescription}
+              {coin.reverse.description}
             </ModalText>
             <ModalText>
               <b>Ref: </b>
-              {coin.catalogueNumber}
+              <a href={coin.reference.url} target="_blank" rel="noopener noreferrer">
+                {coin.reference.catalogueNumber}
+              </a>
             </ModalText>
             {coin.enableSeeMore && (
               <SeeMoreButtonWrapper>
