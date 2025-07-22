@@ -5,19 +5,20 @@ import { Modal } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { CollectionItemV2 } from '../../Collection.types';
 import { getFullImagePath } from '../../../../shared/utils/imageHelper';
-import {
-  ModalContent,
-  ModalImage,
-  ModalTextWrapper,
-  ModalHeader,
-  ModalBodyWrapper,
-  ModalText,
-  SeeMoreButtonWrapper,
-  SeeMoreButton,
-  NewPill,
-  CloseModalButton,
-} from '../../Collection.styles';
 import { Routes } from '../../../../shared/utils/router';
+import {
+  CloseModalButton,
+  ModalBodyWrapper,
+  ModalContent,
+  ModalHeader,
+  ModalImage,
+  ModalImageWrapper,
+  ModalText,
+  ModalTextWrapper,
+  NewPill,
+  SeeMoreButton,
+  SeeMoreButtonWrapper,
+} from './CoinCard.styles';
 
 interface CoinCardModalProps {
   coin: CollectionItemV2;
@@ -48,7 +49,10 @@ export const CoinCardModal = ({
   return (
     <Modal open={showModal} onClose={handleModalClose}>
       <ModalContent data-test-id={`coin-card-${coin.id}-modal-content`}>
-        <ModalImage src={getFullImagePath(coin.imgPath)} loading="lazy" />
+        <ModalImageWrapper>
+          <ModalImage src={getFullImagePath(coin.obverse.imagePath)} loading="lazy" />
+          <ModalImage src={getFullImagePath(coin.reverse.imagePath)} loading="lazy" />
+        </ModalImageWrapper>
         <ModalTextWrapper>
           <ModalHeader>{coin.title}</ModalHeader>
           <ModalBodyWrapper>

@@ -3,17 +3,17 @@ import { ScreenSize } from '../../../../shared/types';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { CoinCardModal } from './CoinCardModal';
-import { CardWrapper, CardText } from './CoinCard.styles';
+import { CardWrapper, CardText, CoinImageWrapper } from './CoinCard.styles';
 import { CoinCardOptions, CollectionItemV2 } from '../../Collection.types';
 import { Routes } from '../../../../shared/utils/router';
 
 const getThumbnailDimensions = (screenSize: ScreenSize) => {
   switch (screenSize) {
     case ScreenSize.Small:
-      return { width: 300, height: 150 };
+      return { width: 150, height: 150 };
     case ScreenSize.Medium:
     case ScreenSize.Large:
-      return { width: 450, height: 225 };
+      return { width: 225, height: 225 };
   }
 };
 
@@ -69,13 +69,22 @@ export const CoinCard = ({ coin, options }: CoinCardProps) => {
         data-test-id={`coin-card-${coin.id}`}
         $noPadding={options?.noPadding ?? false}
       >
-        <img
-          src={coin.imgPath}
-          alt={expandedTitle}
-          width={thumbnailDimensions.width}
-          height={thumbnailDimensions.height}
-          loading="lazy"
-        />
+        <CoinImageWrapper>
+          <img
+            src={coin.obverse.imagePath}
+            alt={expandedTitle}
+            width={thumbnailDimensions.width}
+            height={thumbnailDimensions.height}
+            loading="lazy"
+          />
+          <img
+            src={coin.reverse.imagePath}
+            alt={expandedTitle}
+            width={thumbnailDimensions.width}
+            height={thumbnailDimensions.height}
+            loading="lazy"
+          />
+        </CoinImageWrapper>
         {!options?.hideTitle && <CardText>{expandedTitle}</CardText>}
       </CardWrapper>
     </>

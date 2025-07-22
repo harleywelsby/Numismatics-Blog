@@ -54,7 +54,6 @@ export type CollectionItemV2 = {
   id: number;
   grade: Grade;
   title: string;
-  imgPath: string;
   ruler: Ruler;
   authority: string;
   mint: Mint;
@@ -66,13 +65,13 @@ export type CollectionItemV2 = {
 };
 
 type CoinFace = {
+  imagePath: string;
   description: string;
   legend: string;
   legendDetails?: LegendDetails;
-  imagePath?: string;
 };
 
-type LegendDetails = {
+export type LegendDetails = {
   latin: string;
   english: string;
   description?: string; // Optional description for the legend.

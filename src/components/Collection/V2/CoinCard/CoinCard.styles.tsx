@@ -46,6 +46,13 @@ export const CardText = styled.h2`
   font-weight: 300;
 `;
 
+export const CoinImageWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 0.2rem;
+  padding-bottom: 0.5rem;
+`;
+
 // Modal
 
 export const ModalContent = styled.div`
@@ -65,11 +72,13 @@ export const ModalContent = styled.div`
   opacity: 0.95;
   border-radius: 20px;
 
-  width: 85%;
+  width: 80%;
 
   @media (min-width: 100em) {
     flex-direction: row;
     min-width: 70vw;
+    gap: 5rem;
+    width: 25%;
   }
 `;
 
@@ -113,6 +122,14 @@ export const ModalHeader = styled.h2`
 export const ModalText = styled.p`
   margin: 0.8rem 0;
   font-size: clamp(0.5rem, 3vw + 0.1rem, 1rem);
+`;
+
+export const ModalImageWrapper = styled.div`
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  gap: 0.2rem;
+  display: flex;
 `;
 
 export const ModalImage = styled.img`

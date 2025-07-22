@@ -392,7 +392,6 @@ export const CollectionDataVNext: CollectionItemV2[] = [
     id: 8,
     grade: Grade.VeryFine,
     title: 'Septimius Severus Denarius',
-    imgPath: '/Images/Collection/A008-SeptimiusSeverus.webp',
     ruler: {
       name: 'Septimius Severus',
       reign: '193-211 AD',
@@ -403,10 +402,12 @@ export const CollectionDataVNext: CollectionItemV2[] = [
       date: '210 AD',
     },
     obverse: {
+      imagePath: '/Images/Collection/V2/A008-Obverse.webp',
       description: 'Diademed bust of Severus facing right.',
       legend: 'SEVERVS PIVS AVG',
     },
     reverse: {
+      imagePath: '/Images/Collection/V2/A008-Reverse.webp',
       description:
         "Jupiter, naked, holding thunderbolt and sceptre. Two children flanking representing Severus' sons Caracalla and Geta. ",
       legend: 'PM TRP XVIII COS III PP',
@@ -420,7 +421,6 @@ export const CollectionDataVNext: CollectionItemV2[] = [
     id: 25,
     grade: Grade.VeryFine,
     title: 'Marcus Aurelius Denarius',
-    imgPath: '/Images/Collection/A025-MarcusAurelius.webp',
     ruler: {
       name: 'Marcus Aurelius',
       reign: '161-180 AD',
@@ -431,6 +431,7 @@ export const CollectionDataVNext: CollectionItemV2[] = [
       date: '168-169 AD',
     },
     obverse: {
+      imagePath: '/Images/Collection/V2/A025-Obverse.webp',
       description: 'Diademed bust of Marcus Aurelius facing right.',
       legend: 'M ANTONINVS AVG TRP XXIII',
       legendDetails: {
@@ -440,6 +441,7 @@ export const CollectionDataVNext: CollectionItemV2[] = [
       },
     },
     reverse: {
+      imagePath: '/Images/Collection/V2/A025-Reverse.webp',
       description:
         'Felicitas, draped, standing forward with head to left, holding short caduceus and long scepter.',
       legend: 'FELICITAS AVG COS III',
