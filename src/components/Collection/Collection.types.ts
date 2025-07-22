@@ -97,6 +97,12 @@ type Ruler = {
   reign: string;
 };
 
+export type RulerDetails = {
+  ruler: Ruler;
+  imagePath: string;
+  description: string;
+};
+
 export type CoinCardOptions = {
   hideTitle?: boolean;
   sizeOverride?: { width: number; height: number };

@@ -54,8 +54,9 @@ export const HeaderSeparator = styled.div<{ $noSpacing?: boolean }>`
   }
 `;
 
-// Section styles (// TODO)
+// Section Styles
 
+// TODO
 export const SectionHeaderText = styled.h2``;
 
 export const SectionSeparator = styled.div`
@@ -98,5 +99,29 @@ export const DescriptionText = styled.p`
   @media (min-width: 100em) {
     padding: 0 2rem;
     text-align: center;
+  }
+`;
+
+export const LegendHeaderText = styled.h3`
+  font-size: clamp(1.2rem, 1vw + 0.5rem, 1.8rem);
+  text-align: center;
+  justify-self: center;
+  margin: 0;
+  padding: 0 1rem;
+
+  @media (min-width: 35em) {
+    padding: 0 2rem;
+  }
+`;
+
+export const LegendText = styled.p`
+  font-size: clamp(0.8rem, 1vw + 0.5rem, 1.2rem);
+  text-align: center;
+  justify-self: center;
+  margin: 0;
+  padding: 0 1rem;
+
+  @media (min-width: 35em) {
+    padding: 0 2rem;
   }
 `;
