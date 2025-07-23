@@ -60,6 +60,7 @@ export type CollectionItemV2 = {
   obverse: CoinFace;
   reverse: CoinFace;
   reference: Reference;
+  characters?: string[];
   enableSeeMore?: boolean;
   moreDetails?: MoreDetails;
 };
@@ -88,7 +89,7 @@ type Mint = {
 };
 
 type MoreDetails = {
-  description?: string; // Additional description for the details page.
+  descriptionParagraphs?: string[]; // Additional description for the details page.
   mentionedIn?: string[]; // Array of blog post links this coin features in.
 };
 
@@ -100,7 +101,20 @@ type Ruler = {
 export type RulerDetails = {
   ruler: Ruler;
   imagePath: string;
+  descriptionParagraphs: string[];
+};
+
+export type CharacterDetails = {
+  name: string;
+  imagePath?: string;
+  descriptionParagraphs: string[];
+  variants?: CharacterVariant[];
+};
+
+export type CharacterVariant = {
+  name: string;
   description: string;
+  imagePath?: string;
 };
 
 export type CoinCardOptions = {

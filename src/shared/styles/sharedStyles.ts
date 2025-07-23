@@ -6,12 +6,19 @@ export const PageWrapper = styled.div`
   justify-self: center;
 `;
 
-export const HeaderText = styled.h1`
+export const HeaderText = styled.h1<{ $primaryColor?: boolean }>`
   font-family: 'Times New Roman', Times, serif;
   font-size: clamp(2rem, 3vw + 0.5rem, 3rem);
   font-weight: 700;
 
   margin: 0;
+
+  ${(props) =>
+    props.$primaryColor &&
+    css`
+      color: var(--title-orange);
+    `}
+
   padding: 1rem 0;
   max-width: 90%;
   text-align: center;

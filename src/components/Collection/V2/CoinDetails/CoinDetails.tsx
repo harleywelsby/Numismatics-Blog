@@ -10,17 +10,166 @@ import {
   LegendHeaderText,
   LegendText,
   MobileDetailsGrid,
+  ObverseReverseDescriptionText,
+  SectionHeaderSeparator,
+  SectionHeaderText,
+  SectionImage,
   SectionSeparator,
+  SubtitleText,
+  VariantGrid,
+  VariantTitle,
+  VariantValue,
+  VariantWrapper,
 } from './CoinDetails.styles';
 import { HeaderText } from '../../../../shared/styles/sharedStyles';
 import { CollectionDataVNext } from '../../../../assets/CollectionData';
 import { useMediaQuery } from 'react-responsive';
-import { LegendDetails } from '../../Collection.types';
-import { Rulers } from '../../../../assets/CharacterData';
+import { Characters, Rulers } from '../../../../assets/CharacterData';
+import { CharacterData, LegendData, ObverseReverseData, RulerData } from './CoinDetails.types';
+import React from 'react';
 
-type LegendSectionProps = {
-  legend: string;
-  legendDetails?: LegendDetails;
+const SectionHeader = ({ title, subTitle }: { title: string; subTitle?: string }) => {
+  return (
+    <>
+      <SectionHeaderText>{title}</SectionHeaderText>
+      {subTitle && <SubtitleText>{subTitle}</SubtitleText>}
+      <SectionHeaderSeparator />
+    </>
+  );
+};
+
+const ObverseReverseSection = ({ coin, isSmallScreen }: ObverseReverseData) => {
+  if (isSmallScreen) {
+    return (
+      <MobileDetailsGrid>
+        <CoinImage src={coin.obverse.imagePath} alt={`${coin.title} Obverse`} />
+        <DescriptionHeaderText>Obverse</DescriptionHeaderText>
+        <ObverseReverseDescriptionText>{coin.obverse.description}</ObverseReverseDescriptionText>
+        <LegendSection
+          legend={coin.obverse.legend}
+          legendDetails={coin.obverse.legendDetails}
+          isSmallScreen={isSmallScreen}
+        />
+        <SectionSeparator />
+        <CoinImage src={coin.reverse.imagePath} alt={`${coin.title} Reverse`} />
+        <DescriptionHeaderText>Reverse</DescriptionHeaderText>
+        <ObverseReverseDescriptionText>{coin.reverse.description}</ObverseReverseDescriptionText>
+
+        <LegendSection
+          legend={coin.reverse.legend}
+          legendDetails={coin.reverse.legendDetails}
+          isSmallScreen={isSmallScreen}
+        />
+      </MobileDetailsGrid>
+    );
+  }
+
+  return (
+    <DetailsGrid>
+      <CoinImage src={coin.obverse.imagePath} alt={`${coin.title} Obverse`} />
+      <CoinImage src={coin.reverse.imagePath} alt={`${coin.title} Reverse`} />
+      <DescriptionSection>
+        <DescriptionHeaderText>Obverse</DescriptionHeaderText>
+        <ObverseReverseDescriptionText>{coin.obverse.description}</ObverseReverseDescriptionText>
+      </DescriptionSection>
+      <DescriptionSection>
+        <DescriptionHeaderText>Reverse</DescriptionHeaderText>
+        <ObverseReverseDescriptionText>{coin.reverse.description}</ObverseReverseDescriptionText>
+      </DescriptionSection>
+      <LegendSection
+        legend={coin.obverse.legend}
+        legendDetails={coin.obverse.legendDetails}
+        isSmallScreen={isSmallScreen}
+      />
+      <LegendSection
+        legend={coin.reverse.legend}
+        legendDetails={coin.reverse.legendDetails}
+        isSmallScreen={isSmallScreen}
+      />
+    </DetailsGrid>
+  );
+};
+
+const LegendSection = ({ legend, legendDetails, isSmallScreen }: LegendData) => {
+  const hasTranslations = legendDetails && legendDetails.latin && legendDetails.english;
+
+  return (
+    <DescriptionSection>
+      <LegendHeaderText>Legend</LegendHeaderText>
+      <LegendText>
+        <b>{legend}</b>
+      </LegendText>
+      {hasTranslations && (
+        <>
+          <DescriptionText>
+            <b>Latin:</b> {legendDetails.latin}
+          </DescriptionText>
+          <br />
+          <DescriptionText>
+            <b>English:</b> {legendDetails.english}
+          </DescriptionText>
+          <br />
+          {legendDetails.description && (
+            <DescriptionText $withTopPadding>{legendDetails.description}</DescriptionText>
+          )}
+        </>
+      )}
+      {!isSmallScreen && <br />}
+    </DescriptionSection>
+  );
+};
+
+const RulerSection = ({ coin, rulerDetails }: RulerData) => {
+  return (
+    <>
+      <SectionHeader title={coin.ruler.name} />
+      <SectionImage src={rulerDetails?.imagePath} alt={rulerDetails?.ruler.name} />
+      {rulerDetails?.descriptionParagraphs.map((paragraph, index) => (
+        <React.Fragment key={index}>
+          <DescriptionText $withTopPadding={index === 0}>{paragraph}</DescriptionText>
+          <br />
+        </React.Fragment>
+      ))}
+      <SectionSeparator />
+    </>
+  );
+};
+
+const CharacterSection = ({ character }: CharacterData) => {
+  if (!character) {
+    return null;
+  }
+
+  const hasVariants = character.variants && character.variants.length > 0;
+
+  return (
+    <>
+      <SectionHeader title={character.name} />
+      {character.imagePath && <SectionImage src={character.imagePath} alt={character.name} />}
+      {!character.imagePath && <br />}
+      <DescriptionSection>
+        {character.descriptionParagraphs.map((paragraph, index) => (
+          <React.Fragment key={index}>
+            <DescriptionText $withTopPadding={index === 0}>{paragraph}</DescriptionText>
+            <br />
+          </React.Fragment>
+        ))}
+        {hasVariants && (
+          <VariantGrid>
+            {character.variants!.map((variant, index) => (
+              <VariantWrapper key={index}>
+                <VariantTitle>
+                  <b>{variant.name}:</b>
+                </VariantTitle>
+                <VariantValue>{variant.description}</VariantValue>
+                <br />
+              </VariantWrapper>
+            ))}
+          </VariantGrid>
+        )}
+      </DescriptionSection>
+    </>
+  );
 };
 
 export const CoinDetails = () => {
@@ -29,98 +178,40 @@ export const CoinDetails = () => {
   const itemIdAsNumber = parseInt(itemId || '', 10);
 
   const coin = CollectionDataVNext.find((coin) => coin.id === itemIdAsNumber);
-
   const rulerDetails = Rulers.find((ruler) => ruler.ruler.name === coin?.ruler.name);
+  const showCharacterDetails = coin?.characters && coin.characters.length > 0;
 
   if (!coin) {
     return;
   }
 
-  const LegendSection = ({ legend, legendDetails }: LegendSectionProps) => {
-    const hasTranslations = legendDetails && legendDetails.latin && legendDetails.english;
-
-    return (
-      <DescriptionSection>
-        <LegendHeaderText>Legend</LegendHeaderText>
-        <LegendText>
-          <b>{legend}</b>
-        </LegendText>
-        {hasTranslations && (
-          <>
-            <DescriptionText>
-              <b>Latin:</b> {legendDetails.latin}
-            </DescriptionText>
-            <DescriptionText>
-              <b>English:</b> {legendDetails.english}
-            </DescriptionText>
-          </>
-        )}
-      </DescriptionSection>
-    );
-  };
-
-  const ObverseReverseSection = () => {
-    if (isSmallScreen) {
-      return (
-        <MobileDetailsGrid>
-          <CoinImage src={coin.obverse.imagePath} alt={`${coin.title} Obverse`} />
-          <DescriptionHeaderText>Obverse</DescriptionHeaderText>
-          <DescriptionText>{coin.obverse.description}</DescriptionText>
-          <LegendSection legend={coin.obverse.legend} legendDetails={coin.obverse.legendDetails} />
-          <SectionSeparator />
-          <CoinImage src={coin.reverse.imagePath} alt={`${coin.title} Reverse`} />
-          <DescriptionHeaderText>Reverse</DescriptionHeaderText>
-          <DescriptionText>{coin.reverse.description}</DescriptionText>
-
-          <LegendSection legend={coin.reverse.legend} legendDetails={coin.reverse.legendDetails} />
-        </MobileDetailsGrid>
-      );
-    }
-
-    return (
-      <DetailsGrid>
-        <CoinImage src={coin.obverse.imagePath} alt={`${coin.title} Obverse`} />
-        <CoinImage src={coin.reverse.imagePath} alt={`${coin.title} Reverse`} />
-        <DescriptionSection>
-          <DescriptionHeaderText>Obverse</DescriptionHeaderText>
-          <DescriptionText>{coin.obverse.description}</DescriptionText>
-        </DescriptionSection>
-        <DescriptionSection>
-          <DescriptionHeaderText>Reverse</DescriptionHeaderText>
-          <DescriptionText>{coin.reverse.description}</DescriptionText>
-        </DescriptionSection>
-        <LegendSection legend={coin.obverse.legend} legendDetails={coin.obverse.legendDetails} />
-        <LegendSection legend={coin.reverse.legend} legendDetails={coin.reverse.legendDetails} />
-      </DetailsGrid>
-    );
-  };
-
-  const RulerSection = () => {
-    return (
-      <>
-        <HeaderText>{coin.ruler.name}</HeaderText>
-        <img src={rulerDetails?.imagePath} alt={rulerDetails?.ruler.name} />
-        <DescriptionText>{rulerDetails?.description}</DescriptionText>
-      </>
-    );
-  };
-
   return (
     <CoinDetailsPageWrapper>
-      <HeaderText>{coin.title}</HeaderText>
+      <HeaderText $primaryColor>{coin.title}</HeaderText>
       <HeaderSeparator />
-      {coin.moreDetails?.description && (
+      <ObverseReverseSection coin={coin} isSmallScreen={isSmallScreen} />
+      <SectionSeparator />
+      {coin.moreDetails?.descriptionParagraphs && (
         <>
+          <SectionHeader title="Interpretation" />
+          {isSmallScreen && <br />}
           <DescriptionSection>
-            <DescriptionText>{coin.moreDetails.description}</DescriptionText>
+            {coin.moreDetails.descriptionParagraphs.map((paragraph, index) => (
+              <React.Fragment key={index}>
+                <DescriptionText $withTopPadding={index === 0}>{paragraph}</DescriptionText>
+                <br />
+              </React.Fragment>
+            ))}
           </DescriptionSection>
+          {!isSmallScreen && <br />}
           <SectionSeparator />
         </>
       )}
-      <ObverseReverseSection />
-      <SectionSeparator />
-      <RulerSection />
-      {/** Character sections */}
+      {rulerDetails && <RulerSection coin={coin} rulerDetails={rulerDetails} />}
+      {showCharacterDetails &&
+        coin?.characters?.map((character, index) => (
+          <CharacterSection key={index} character={Characters.find((c) => c.name === character)} />
+        ))}
       {/** 'See also' links */}
     </CoinDetailsPageWrapper>
   );

@@ -454,9 +454,7 @@ export const CollectionDataVNext: CollectionItemV2[] = [
       catalogueNumber: 'RIC III #203',
       url: 'http://numismatics.org/ocre/id/ric.3.m_aur.203',
     },
+    characters: ['Felicitas'],
     enableSeeMore: true,
-    moreDetails: {
-      description: 'TODO: This is where the details description will go.',
-    },
   },
 ];
