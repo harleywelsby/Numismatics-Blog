@@ -28,6 +28,10 @@ import { Characters, Rulers } from '../../../../assets/CharacterData';
 import { CharacterData, LegendData, ObverseReverseData, RulerData } from './CoinDetails.types';
 import React from 'react';
 
+const CapitalizeFirstLetter = (str: string) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
 const SectionHeader = ({ title, subTitle }: { title: string; subTitle?: string }) => {
   return (
     <>
@@ -45,21 +49,24 @@ const ObverseReverseSection = ({ coin, isSmallScreen }: ObverseReverseData) => {
         <CoinImage src={coin.obverse.imagePath} alt={`${coin.title} Obverse`} />
         <DescriptionHeaderText>Obverse</DescriptionHeaderText>
         <ObverseReverseDescriptionText>{coin.obverse.description}</ObverseReverseDescriptionText>
-        <LegendSection
-          legend={coin.obverse.legend}
-          legendDetails={coin.obverse.legendDetails}
-          isSmallScreen={isSmallScreen}
-        />
+        {coin.obverse.legend && (
+          <LegendSection
+            legend={coin.obverse.legend}
+            legendDetails={coin.obverse.legendDetails}
+            isSmallScreen={isSmallScreen}
+          />
+        )}
         <SectionSeparator />
         <CoinImage src={coin.reverse.imagePath} alt={`${coin.title} Reverse`} />
         <DescriptionHeaderText>Reverse</DescriptionHeaderText>
         <ObverseReverseDescriptionText>{coin.reverse.description}</ObverseReverseDescriptionText>
-
-        <LegendSection
-          legend={coin.reverse.legend}
-          legendDetails={coin.reverse.legendDetails}
-          isSmallScreen={isSmallScreen}
-        />
+        {coin.reverse.legend && (
+          <LegendSection
+            legend={coin.reverse.legend}
+            legendDetails={coin.reverse.legendDetails}
+            isSmallScreen={isSmallScreen}
+          />
+        )}
       </MobileDetailsGrid>
     );
   }
@@ -76,22 +83,26 @@ const ObverseReverseSection = ({ coin, isSmallScreen }: ObverseReverseData) => {
         <DescriptionHeaderText>Reverse</DescriptionHeaderText>
         <ObverseReverseDescriptionText>{coin.reverse.description}</ObverseReverseDescriptionText>
       </DescriptionSection>
-      <LegendSection
-        legend={coin.obverse.legend}
-        legendDetails={coin.obverse.legendDetails}
-        isSmallScreen={isSmallScreen}
-      />
-      <LegendSection
-        legend={coin.reverse.legend}
-        legendDetails={coin.reverse.legendDetails}
-        isSmallScreen={isSmallScreen}
-      />
+      {coin.obverse.legend && (
+        <LegendSection
+          legend={coin.obverse.legend}
+          legendDetails={coin.obverse.legendDetails}
+          isSmallScreen={isSmallScreen}
+        />
+      )}
+      {coin.reverse.legend && (
+        <LegendSection
+          legend={coin.reverse.legend}
+          legendDetails={coin.reverse.legendDetails}
+          isSmallScreen={isSmallScreen}
+        />
+      )}
     </DetailsGrid>
   );
 };
 
 const LegendSection = ({ legend, legendDetails, isSmallScreen }: LegendData) => {
-  const hasTranslations = legendDetails && legendDetails.latin && legendDetails.english;
+  const hasTranslations = legendDetails && legendDetails.original && legendDetails.english;
 
   return (
     <DescriptionSection>
@@ -102,7 +113,7 @@ const LegendSection = ({ legend, legendDetails, isSmallScreen }: LegendData) => 
       {hasTranslations && (
         <>
           <DescriptionText>
-            <b>Latin:</b> {legendDetails.latin}
+            <b>{`${CapitalizeFirstLetter(legendDetails.language)}:`}</b> {legendDetails.original}
           </DescriptionText>
           <br />
           <DescriptionText>
@@ -135,7 +146,7 @@ const RulerSection = ({ coin, rulerDetails }: RulerData) => {
   );
 };
 
-const CharacterSection = ({ character }: CharacterData) => {
+const CharacterSection = ({ character, isSmallScreen }: CharacterData) => {
   if (!character) {
     return null;
   }
@@ -146,7 +157,7 @@ const CharacterSection = ({ character }: CharacterData) => {
     <>
       <SectionHeader title={character.name} />
       {character.imagePath && <SectionImage src={character.imagePath} alt={character.name} />}
-      {!character.imagePath && <br />}
+      {!character.imagePath && isSmallScreen && <br />}
       <DescriptionSection>
         {character.descriptionParagraphs.map((paragraph, index) => (
           <React.Fragment key={index}>
@@ -210,7 +221,11 @@ export const CoinDetails = () => {
       {rulerDetails && <RulerSection coin={coin} rulerDetails={rulerDetails} />}
       {showCharacterDetails &&
         coin?.characters?.map((character, index) => (
-          <CharacterSection key={index} character={Characters.find((c) => c.name === character)} />
+          <CharacterSection
+            key={index}
+            character={Characters.find((c) => c.name === character)}
+            isSmallScreen={isSmallScreen}
+          />
         ))}
       {/** 'See also' links */}
     </CoinDetailsPageWrapper>

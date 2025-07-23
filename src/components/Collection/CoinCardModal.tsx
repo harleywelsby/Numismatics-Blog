@@ -57,7 +57,6 @@ export const CoinCardModal = ({
               <b>Minted: </b>
               {`${coin.mintLocation} (${coin.mintDate})`}
             </ModalText>
-
             <ModalText>
               <b>Obv: </b>
               {coin.obverseDescription}

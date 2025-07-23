@@ -60,7 +60,7 @@ export type CollectionItemV2 = {
   obverse: CoinFace;
   reverse: CoinFace;
   reference: Reference;
-  characters?: string[];
+  characters: string[];
   enableSeeMore?: boolean;
   moreDetails?: MoreDetails;
 };
@@ -73,14 +73,15 @@ type CoinFace = {
 };
 
 export type LegendDetails = {
-  latin: string;
+  language: 'latin' | 'greek';
+  original: string;
   english: string;
   description?: string; // Optional description for the legend.
 };
 
 type Reference = {
   catalogueNumber: string;
-  url: string;
+  url?: string;
 };
 
 type Mint = {

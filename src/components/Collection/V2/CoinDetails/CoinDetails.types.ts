@@ -23,4 +23,5 @@ export interface RulerData {
 
 export interface CharacterData {
   character?: CharacterDetails;
+  isSmallScreen: boolean;
 }

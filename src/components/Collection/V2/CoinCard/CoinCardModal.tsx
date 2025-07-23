@@ -68,15 +68,26 @@ export const CoinCardModal = ({
               <b>Minted: </b>
               {`${coin.mint.location} (${coin.mint.date})`}
             </ModalText>
-
-            <ModalText>
-              <b>Obv: </b>
-              {coin.obverse.description}
-            </ModalText>
-            <ModalText>
-              <b>Rev: </b>
-              {coin.reverse.description}
-            </ModalText>
+            {!coin.enableSeeMore && (
+              <>
+                <ModalText>
+                  <b>Obv: </b>
+                  {coin.obverse.description}
+                </ModalText>
+                <ModalText>
+                  <b>Obverse Legend: </b>
+                  {`"${coin.obverse.legend}"`}
+                </ModalText>
+                <ModalText>
+                  <b>Rev: </b>
+                  {coin.reverse.description}
+                </ModalText>
+                <ModalText>
+                  <b>Reverse Legend: </b>
+                  {`"${coin.reverse.legend}"`}
+                </ModalText>
+              </>
+            )}
             <ModalText>
               <b>Ref: </b>
               <a href={coin.reference.url} target="_blank" rel="noopener noreferrer">
