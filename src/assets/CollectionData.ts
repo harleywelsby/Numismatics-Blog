@@ -388,6 +388,7 @@ export const CollectionData: CollectionItem[] = [
 ];
 
 export const CollectionDataVNext: CollectionItemV2[] = [
+  // 8
   {
     id: 8,
     grade: Grade.VeryFine,
@@ -417,6 +418,7 @@ export const CollectionDataVNext: CollectionItemV2[] = [
       url: 'https://numismatics.org/ocre/id/ric.4.ss.233',
     },
   },
+  // 18
   {
     id: 18,
     grade: Grade.VeryFine,
@@ -447,6 +449,7 @@ export const CollectionDataVNext: CollectionItemV2[] = [
     },
     characters: ['Heracles', 'Zeus'],
   },
+  // 25
   {
     id: 25,
     grade: Grade.VeryFine,
