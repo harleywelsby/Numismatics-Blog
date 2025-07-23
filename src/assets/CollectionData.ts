@@ -418,6 +418,36 @@ export const CollectionDataVNext: CollectionItemV2[] = [
     },
   },
   {
+    id: 18,
+    grade: Grade.VeryFine,
+    title: 'Seleucus I Tetradrachm',
+    ruler: {
+      name: 'Seleucus I',
+      reign: '305-281 BC',
+    },
+    authority: 'Seleucid Empire',
+    mint: {
+      location: 'Seleucia on the Tigris, Babylon',
+      date: '300-295 BC',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/V2/A018-Obverse.webp',
+      description:
+        'Posthumous issue of Alexander the Great types. Bust of Heracles facing right, wearing lion skin headdress.',
+    },
+    reverse: {
+      imagePath: '/Images/Collection/V2/A018-Reverse.webp',
+      description:
+        'Zeus, enthroned and holding a sceptre and eagle. Monogram mint mark in left field, and two test cuts in the exergue.',
+      legend: 'ΣΕΛΕΥΚΟΥ ΒΑΣΙΛΕΩΣ',
+    },
+    reference: {
+      catalogueNumber: 'SC 117.4',
+      url: 'http://numismatics.org/sco/id/sc.1.117.4b',
+    },
+    characters: ['Heracles', 'Zeus'],
+  },
+  {
     id: 25,
     grade: Grade.VeryFine,
     title: 'Marcus Aurelius Denarius',

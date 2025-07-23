@@ -68,7 +68,7 @@ export type CollectionItemV2 = {
 type CoinFace = {
   imagePath: string;
   description: string;
-  legend: string;
+  legend?: string;
   legendDetails?: LegendDetails;
 };
 
