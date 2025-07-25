@@ -1,11 +1,24 @@
-import { SetItem } from './Sets.Types';
+import { SetItem, SingleSetItemProps } from './Sets.Types';
 import { SetItemImage, SetItemName, SetItemWrapper } from './Sets.styles';
 import { ScreenSize } from '../../shared/types';
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
-import { CollectionDataV1 } from '../../assets/CollectionData';
+import { CollectionData } from '../../assets/CollectionData';
 import { Routes } from '../../shared/utils/router';
-import { CoinCardModal } from '../Collection/V1/CoinCardModal';
+import { CoinCardModal } from '../Collection/CoinCard/CoinCardModal';
+import { CollectionItemV2 } from '../Collection/Collection.types';
+
+const validateSetItem = (setItem: SetItem) => {
+  // State 1: No linked collection item.
+  if (!setItem.linkedCollectionItem) {
+    return !!setItem.imageUrl; // Has image URL
+  }
+
+  // State 2: Linked collection item exists.
+  if (setItem.linkedCollectionItem) {
+    return !setItem.imageUrl; // No Image URL
+  }
+};
 
 const getImageDimensions = (screenSize: ScreenSize) => {
   switch (screenSize) {
@@ -17,13 +30,28 @@ const getImageDimensions = (screenSize: ScreenSize) => {
   }
 };
 
-export const SingleSetItem = ({ name, secondLine, imageUrl, completed, collectionId }: SetItem) => {
+const getImageSrc = (setItem: SetItem, collectionItem?: CollectionItemV2) => {
+  if (setItem.linkedCollectionItem && collectionItem) {
+    return setItem.linkedCollectionItem.face === 'obverse'
+      ? collectionItem.obverse.imagePath
+      : collectionItem.reverse.imagePath;
+  }
+
+  // Even though all params are nullable, we will ALWAYS have one or the other.
+  return setItem.imageUrl;
+};
+
+export const SingleSetItem = ({ setItem }: SingleSetItemProps) => {
+  if (!validateSetItem(setItem)) {
+    throw new Error(`Invalid set item: ${JSON.stringify(setItem)}`);
+  }
+
   const isMediumScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
   const isLargeScreen = useMediaQuery({ query: '(min-width: 86em)' });
 
-  const collectionItem = collectionId
-    ? CollectionDataV1.find((item) => item.id === collectionId)
-    : null;
+  const collectionItem = setItem.linkedCollectionItem
+    ? CollectionData.find((item) => item.id === setItem.linkedCollectionItem!.id)
+    : undefined;
 
   const [showModal, setShowModal] = useState(false);
 
@@ -37,7 +65,7 @@ export const SingleSetItem = ({ name, secondLine, imageUrl, completed, collectio
   const imageDimensions = getImageDimensions(screenSize);
 
   const handleClick = () => {
-    if (!completed || !collectionId) {
+    if (!setItem.completed || !collectionItem) {
       return;
     }
 
@@ -48,15 +76,15 @@ export const SingleSetItem = ({ name, secondLine, imageUrl, completed, collectio
     <SetItemWrapper>
       <SetItemImage
         onClick={handleClick}
-        src={imageUrl}
-        alt={name}
+        src={getImageSrc(setItem, collectionItem)}
+        alt={setItem.name}
         width={imageDimensions.width}
         height={imageDimensions.height}
-        isComplete={completed}
+        isComplete={setItem.completed}
         loading="lazy"
       />
-      <SetItemName>{name}</SetItemName>
-      {secondLine && <SetItemName>{secondLine}</SetItemName>}
+      <SetItemName>{setItem.name}</SetItemName>
+      {setItem.secondLine && <SetItemName>{setItem.secondLine}</SetItemName>}
       {showModal && collectionItem && (
         <CoinCardModal
           coin={collectionItem}

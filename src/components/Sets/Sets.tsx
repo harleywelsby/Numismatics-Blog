@@ -91,14 +91,7 @@ export const Sets = () => {
               <SetSeparator />
               <SetItemsWrapper>
                 {set.items.map((item) => (
-                  <SingleSetItem
-                    key={item.collectionId || item.name}
-                    name={item.name}
-                    secondLine={item.secondLine}
-                    imageUrl={item.imageUrl}
-                    completed={item.completed}
-                    collectionId={item.collectionId}
-                  />
+                  <SingleSetItem key={item.name} setItem={item} />
                 ))}
               </SetItemsWrapper>
             </AccordionDetails>

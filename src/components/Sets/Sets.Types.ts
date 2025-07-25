@@ -9,8 +9,13 @@ export type SetItem = {
   name: string;
   secondLine?: string;
   completed: boolean;
-  collectionId?: number;
-  imageUrl: string;
+  linkedCollectionItem?: LinkedCollectionItem;
+  imageUrl?: string;
+};
+
+type LinkedCollectionItem = {
+  id: number;
+  face: 'obverse' | 'reverse';
 };
 
 export enum SetStatus {
@@ -18,3 +23,7 @@ export enum SetStatus {
   InProgress = 'In Progress',
   Complete = 'Complete',
 }
+
+export type SingleSetItemProps = {
+  setItem: SetItem;
+};

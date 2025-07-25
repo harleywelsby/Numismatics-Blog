@@ -55,8 +55,10 @@ export const SetData: CoinSet[] = [
         name: 'Trajan',
         secondLine: '98-117 AD',
         completed: true,
-        collectionId: 20,
-        imageUrl: '/Images/Sets/5GoodEmperors/TrajanDenarius.webp',
+        linkedCollectionItem: {
+          id: 20,
+          face: 'obverse',
+        },
       },
       {
         name: 'Hadrian',
@@ -68,15 +70,19 @@ export const SetData: CoinSet[] = [
         name: 'Antoninus Pius',
         secondLine: '138-161 AD',
         completed: true,
-        collectionId: 27,
-        imageUrl: '/Images/Sets/5GoodEmperors/A027-Antoninus.webp',
+        linkedCollectionItem: {
+          id: 27,
+          face: 'obverse',
+        },
       },
       {
         name: 'Marcus Aurelius',
         secondLine: '161-180 AD',
         completed: true,
-        collectionId: 25,
-        imageUrl: '/Images/Sets/5GoodEmperors/A025-MarcusAurelius.webp',
+        linkedCollectionItem: {
+          id: 25,
+          face: 'obverse',
+        },
       },
     ],
   },
@@ -90,28 +96,36 @@ export const SetData: CoinSet[] = [
         name: 'Septimius Severus',
         secondLine: '193-211 AD',
         completed: true,
-        collectionId: 8,
-        imageUrl: '/Images/Sets/SeveranSilver/A008-SeptimiusSeverusV2.webp',
+        linkedCollectionItem: {
+          id: 8,
+          face: 'obverse',
+        },
       },
       {
         name: 'Julia Domna',
         completed: true,
-        collectionId: 13,
-        imageUrl: '/Images/Sets/SeveranSilver/A013-JuliaDomnaV2.webp',
+        linkedCollectionItem: {
+          id: 13,
+          face: 'obverse',
+        },
       },
       {
         name: 'Geta',
         secondLine: '209-211 AD',
         completed: true,
-        collectionId: 11,
-        imageUrl: '/Images/Sets/SeveranSilver/A011-GetaV2.webp',
+        linkedCollectionItem: {
+          id: 11,
+          face: 'obverse',
+        },
       },
       {
         name: 'Caracalla',
         secondLine: '198-217 AD',
         completed: true,
-        collectionId: 7,
-        imageUrl: '/Images/Sets/SeveranSilver/A007-CaracallaV2.webp',
+        linkedCollectionItem: {
+          id: 7,
+          face: 'obverse',
+        },
       },
       {
         name: 'Julia Maesa',
@@ -127,8 +141,10 @@ export const SetData: CoinSet[] = [
         name: 'Elagabalus',
         secondLine: '218-222 AD',
         completed: true,
-        collectionId: 17,
-        imageUrl: '/Images/Sets/SeveranSilver/A017-ElagabalusV2.webp',
+        linkedCollectionItem: {
+          id: 17,
+          face: 'obverse',
+        },
       },
       {
         name: 'Julia Mamaea',
@@ -139,8 +155,10 @@ export const SetData: CoinSet[] = [
         name: 'Severus Alexander',
         secondLine: '222-235 AD',
         completed: true,
-        collectionId: 19,
-        imageUrl: '/Images/Sets/SeveranSilver/A019-SevAlexander.webp',
+        linkedCollectionItem: {
+          id: 19,
+          face: 'obverse',
+        },
       },
     ],
   },
@@ -153,14 +171,18 @@ export const SetData: CoinSet[] = [
       {
         name: 'Gallienus',
         completed: true,
-        collectionId: 24,
-        imageUrl: '/Images/Sets/ThirdCenturyCrisis/A024-Gallienus.webp',
+        linkedCollectionItem: {
+          id: 24,
+          face: 'obverse',
+        },
       },
       {
         name: 'Postumus',
         completed: true,
-        collectionId: 21,
-        imageUrl: '/Images/Sets/ThirdCenturyCrisis/PostumusAnt.webp',
+        linkedCollectionItem: {
+          id: 21,
+          face: 'obverse',
+        },
       },
       {
         name: 'Claudius II',
@@ -170,8 +192,10 @@ export const SetData: CoinSet[] = [
       {
         name: 'Aurelian',
         completed: true,
-        collectionId: 16,
-        imageUrl: '/Images/Sets/ThirdCenturyCrisis/AurelianAntoninianus.webp',
+        linkedCollectionItem: {
+          id: 16,
+          face: 'obverse',
+        },
       },
       {
         name: 'Diocletian',
@@ -196,8 +220,10 @@ export const SetData: CoinSet[] = [
         name: 'Constantine I',
         secondLine: '306-337 AD',
         completed: true,
-        collectionId: 4,
-        imageUrl: '/Images/Sets/Constantinians/A004-ConstantineTheGreat.webp',
+        linkedCollectionItem: {
+          id: 4,
+          face: 'obverse',
+        },
       },
       {
         name: 'Crispus',
@@ -214,15 +240,19 @@ export const SetData: CoinSet[] = [
         name: 'Constantius II',
         secondLine: '337-361 AD',
         completed: true,
-        collectionId: 1,
-        imageUrl: '/Images/Sets/Constantinians/A001-ConstantiusNummus.webp',
+        linkedCollectionItem: {
+          id: 1,
+          face: 'obverse',
+        },
       },
       {
         name: 'Constans',
         secondLine: '337-350 AD',
         completed: true,
-        collectionId: 23,
-        imageUrl: '/Images/Sets/Constantinians/A023-Constans.webp',
+        linkedCollectionItem: {
+          id: 23,
+          face: 'obverse',
+        },
       },
       {
         name: 'Julian',
@@ -254,15 +284,19 @@ export const SetData: CoinSet[] = [
         name: 'Antigonus I',
         secondLine: 'Antigonid, 306-301 BC',
         completed: true,
-        collectionId: 26,
-        imageUrl: '/Images/Sets/SuccessorsOfAlexander/A026-Antigonus.webp',
+        linkedCollectionItem: {
+          id: 26,
+          face: 'obverse',
+        },
       },
       {
         name: 'Seleucus I',
         secondLine: 'Seleucid, 305-281 BC',
         completed: true,
-        collectionId: 18,
-        imageUrl: '/Images/Sets/SuccessorsOfAlexander/SeleucusI.webp',
+        linkedCollectionItem: {
+          id: 18,
+          face: 'obverse',
+        },
       },
       {
         name: 'Cassander',
@@ -287,8 +321,10 @@ export const SetData: CoinSet[] = [
       {
         name: 'Zeus',
         completed: true,
-        collectionId: 26,
-        imageUrl: '/Images/Sets/TwelveOlympians/A026-Antigonus.webp',
+        linkedCollectionItem: {
+          id: 26,
+          face: 'reverse',
+        },
       },
       {
         name: 'Poseidon',
@@ -323,8 +359,10 @@ export const SetData: CoinSet[] = [
       {
         name: 'Apollo',
         completed: true,
-        collectionId: 7,
-        imageUrl: '/Images/Sets/TwelveOlympians/A007-CaracallaV2.webp',
+        linkedCollectionItem: {
+          id: 7,
+          face: 'reverse',
+        },
       },
       {
         name: 'Ares',
@@ -364,8 +402,10 @@ export const SetData: CoinSet[] = [
         name: 'Seleucid Empire',
         secondLine: '312-63 BC',
         completed: true,
-        collectionId: 18,
-        imageUrl: '/Images/Sets/AncientPersia/SeleucusI.webp',
+        linkedCollectionItem: {
+          id: 18,
+          face: 'obverse',
+        },
       },
       {
         name: 'Parthian Empire',
