@@ -1,5 +1,5 @@
 import { getCleanMintDate } from '../../../shared/utils/dateHelper';
-import { AuthorityGroup, CollectionItemV2, SortType } from '../Collection.types';
+import { AuthorityGroup, CollectionItem, SortType } from '../Collection.types';
 
 export const AuthorityGroups: AuthorityGroup[] = [
   {
@@ -23,7 +23,7 @@ export const GetAuthorityGroups = (authorities: string[]): AuthorityGroup[] => {
 };
 
 export const ApplyDataFilters = (
-  data: CollectionItemV2[],
+  data: CollectionItem[],
   authorityFilter: string,
   hideLowGrade: boolean,
 ) => {
@@ -43,7 +43,7 @@ export const ApplyDataFilters = (
   return filteredData;
 };
 
-export const SortCollectionData = (data: CollectionItemV2[], sortType: SortType) => {
+export const SortCollectionData = (data: CollectionItem[], sortType: SortType) => {
   // Always sort by ID first, so that the latest additions are at the top.
   data.sort((a, b) => {
     return b.id - a.id;

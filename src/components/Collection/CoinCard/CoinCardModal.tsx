@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Modal } from '@mui/material';
 
 import { useNavigate } from 'react-router-dom';
-import { CollectionItemV2 } from '../Collection.types';
+import { CollectionItem } from '../Collection.types';
 import { getFullImagePath } from '../../../shared/utils/imageHelper';
 import { Routes } from '../../../shared/utils/router';
 import {
@@ -21,7 +21,7 @@ import {
 } from './CoinCard.styles';
 
 interface CoinCardModalProps {
-  coin: CollectionItemV2;
+  coin: CollectionItem;
   showModal: boolean;
   setShowModal: (show: boolean) => void;
   closeRerouteOverride?: string;

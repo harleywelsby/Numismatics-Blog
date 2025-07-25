@@ -20,15 +20,9 @@ import { CollectionData } from '../../assets/CollectionData';
 import { getCleanMintDate } from '../../shared/utils/dateHelper';
 import { ScreenSize } from '../../shared/types';
 import { useMediaQuery } from 'react-responsive';
-import { CollectionItemV2 } from '../Collection/Collection.types';
 import { Routes } from '../../shared/utils/router';
 import { CoinCard } from '../Collection/CoinCard/CoinCard';
-
-export type TimelineListItemContent = {
-  date: string;
-  description: string;
-  collectionItem?: CollectionItemV2;
-};
+import { TimelineListItemContent } from './TimelinePage.types';
 
 const SortByDate = (a: TimelineListItemContent, b: TimelineListItemContent) => {
   return getCleanMintDate(a.date) - getCleanMintDate(b.date);

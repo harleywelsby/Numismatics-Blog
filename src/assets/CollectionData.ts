@@ -1,6 +1,6 @@
-import { CollectionItem, CollectionItemV2, Grade } from '../components/Collection/Collection.types';
+import { CollectionItemV1, CollectionItem, Grade } from '../components/Collection/Collection.types';
 
-export const CollectionDataV1: CollectionItem[] = [
+export const CollectionDataLegacy: CollectionItemV1[] = [
   {
     id: 18,
     grade: Grade.VeryFine,
@@ -387,7 +387,7 @@ export const CollectionDataV1: CollectionItem[] = [
   },
 ];
 
-export const CollectionData: CollectionItemV2[] = [
+export const CollectionData: CollectionItem[] = [
   // 1
   {
     id: 1,

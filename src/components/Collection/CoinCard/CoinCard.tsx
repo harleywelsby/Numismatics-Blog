@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { CoinCardModal } from './CoinCardModal';
 import { CardWrapper, CardText, CoinImageWrapper } from './CoinCard.styles';
-import { CoinCardOptions, CollectionItemV2 } from '../Collection.types';
+import { CoinCardOptions, CollectionItem } from '../Collection.types';
 import { Routes } from '../../../shared/utils/router';
 
 const getThumbnailDimensions = (screenSize: ScreenSize) => {
@@ -18,7 +18,7 @@ const getThumbnailDimensions = (screenSize: ScreenSize) => {
 };
 
 interface CoinCardProps {
-  coin: CollectionItemV2;
+  coin: CollectionItem;
   options?: CoinCardOptions;
 }
 

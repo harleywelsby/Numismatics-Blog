@@ -1,4 +1,5 @@
-export type CollectionItem = {
+// TODO: Remove once the last of the V1 data is migrated.
+export type CollectionItemV1 = {
   id: number;
   grade: Grade;
   title: string;
@@ -14,15 +15,6 @@ export type CollectionItem = {
   blogPostLink?: string;
   featuredRanking?: number;
   enableSeeMore?: boolean;
-};
-
-export type CoinCardProps = {
-  coin: CollectionItem;
-  hideTitle?: boolean;
-  sizeOverride?: { width: number; height: number };
-  noPadding?: boolean;
-  modalRerouteOverride?: string;
-  disableRedirect?: boolean;
 };
 
 export type AuthorityGroup = {
@@ -50,7 +42,7 @@ export enum Grade {
 
 // Collection V2
 
-export type CollectionItemV2 = {
+export type CollectionItem = {
   id: number;
   grade: Grade;
   title: string;

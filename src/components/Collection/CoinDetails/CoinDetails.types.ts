@@ -1,9 +1,4 @@
-import {
-  CharacterDetails,
-  CollectionItemV2,
-  LegendDetails,
-  RulerDetails,
-} from '../Collection.types';
+import { CharacterDetails, CollectionItem, LegendDetails, RulerDetails } from '../Collection.types';
 
 export interface LegendData {
   legend: string;
@@ -12,12 +7,12 @@ export interface LegendData {
 }
 
 export interface ObverseReverseData {
-  coin: CollectionItemV2;
+  coin: CollectionItem;
   isSmallScreen: boolean;
 }
 
 export interface RulerData {
-  coin: CollectionItemV2;
+  coin: CollectionItem;
   rulerDetails: RulerDetails;
 }
 

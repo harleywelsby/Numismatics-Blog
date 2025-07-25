@@ -1,4 +1,4 @@
-import { TimelineListItemContent } from '../components/Timeline/TimelinePage';
+import { TimelineListItemContent } from '../components/Timeline/TimelinePage.types';
 
 export const TimelineData: TimelineListItemContent[] = [
   {

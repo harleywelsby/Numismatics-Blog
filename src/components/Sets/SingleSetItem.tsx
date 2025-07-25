@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { CollectionData } from '../../assets/CollectionData';
 import { Routes } from '../../shared/utils/router';
 import { CoinCardModal } from '../Collection/CoinCard/CoinCardModal';
-import { CollectionItemV2 } from '../Collection/Collection.types';
+import { CollectionItem } from '../Collection/Collection.types';
 
 const validateSetItem = (setItem: SetItem) => {
   // State 1: No linked collection item.
@@ -30,7 +30,7 @@ const getImageDimensions = (screenSize: ScreenSize) => {
   }
 };
 
-const getImageSrc = (setItem: SetItem, collectionItem?: CollectionItemV2) => {
+const getImageSrc = (setItem: SetItem, collectionItem?: CollectionItem) => {
   if (setItem.linkedCollectionItem && collectionItem) {
     return setItem.linkedCollectionItem.face === 'obverse'
       ? collectionItem.obverse.imagePath
