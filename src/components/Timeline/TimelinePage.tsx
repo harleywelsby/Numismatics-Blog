@@ -16,18 +16,18 @@ import {
   TimelineWrapper,
 } from './TimelinePage.styles';
 import { TimelineData } from '../../assets/TimelineData';
-import { CollectionDataV1 } from '../../assets/CollectionData';
+import { CollectionData } from '../../assets/CollectionData';
 import { getCleanMintDate } from '../../shared/utils/dateHelper';
 import { ScreenSize } from '../../shared/types';
 import { useMediaQuery } from 'react-responsive';
-import { CollectionItem } from '../Collection/Collection.types';
+import { CollectionItemV2 } from '../Collection/Collection.types';
 import { Routes } from '../../shared/utils/router';
-import { CoinCard } from '../Collection/V1/CoinCard';
+import { CoinCard } from '../Collection/CoinCard/CoinCard';
 
 export type TimelineListItemContent = {
   date: string;
   description: string;
-  collectionItem?: CollectionItem;
+  collectionItem?: CollectionItemV2;
 };
 
 const SortByDate = (a: TimelineListItemContent, b: TimelineListItemContent) => {
@@ -37,10 +37,10 @@ const SortByDate = (a: TimelineListItemContent, b: TimelineListItemContent) => {
 const getImageDimensions = (screenSize: ScreenSize) => {
   switch (screenSize) {
     case ScreenSize.Small:
-      return { width: 180, height: 90 };
+      return { width: 90, height: 90 };
     case ScreenSize.Medium:
     case ScreenSize.Large:
-      return { width: 300, height: 150 };
+      return { width: 150, height: 150 };
   }
 };
 
@@ -67,8 +67,8 @@ export const TimelinePage = () => {
     screenSize = isLargeScreen ? ScreenSize.Large : ScreenSize.Medium;
   }
 
-  const collectionData: TimelineListItemContent[] = CollectionDataV1.map((item) => ({
-    date: item.mintDate,
+  const collectionData: TimelineListItemContent[] = CollectionData.map((item) => ({
+    date: item.mint.date,
     description: item.title,
     collectionItem: item,
   }));
@@ -95,11 +95,13 @@ export const TimelinePage = () => {
             {hasCollectionItem && (
               <CoinCard
                 coin={item.collectionItem!}
-                hideTitle
-                sizeOverride={imageDimensions}
-                noPadding
-                disableRedirect
-                modalRerouteOverride={Routes.Timeline}
+                options={{
+                  hideTitle: true,
+                  sizeOverride: imageDimensions,
+                  noPadding: true,
+                  disableRedirect: true,
+                  modalRerouteOverride: Routes.Timeline,
+                }}
               />
             )}
           </TimelineContentWrapper>
