@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { CollectionDataVNext } from '../../../assets/CollectionData';
-import { PageWrapper, HeaderText, HeaderSeparator } from '../../../shared/styles/sharedStyles';
 import {
   FilterSection,
   FilterItem,
@@ -10,7 +8,6 @@ import {
   FilterCheckbox,
   CoinCardGrid,
 } from './Collection.styles';
-import { SortType } from '../Collection.types';
 import {
   ActiveSortTypes,
   ApplyDataFilters,
@@ -18,6 +15,9 @@ import {
   SortCollectionData,
 } from './utils/FilterHelpers';
 import { CoinCard } from './CoinCard/CoinCard';
+import { CollectionData } from '../../assets/CollectionData';
+import { SortType } from './Collection.types';
+import { PageWrapper, HeaderText, HeaderSeparator } from '../../shared/styles/sharedStyles';
 
 export const CollectionV2 = () => {
   const [authorityFilter, setAuthorityFilter] = useState('All');
@@ -25,11 +25,7 @@ export const CollectionV2 = () => {
   const [hideLowGrade, setHideLowGrade] = useState(true);
 
   // Prepare the collection data
-  const filteredCollectionData = ApplyDataFilters(
-    CollectionDataVNext,
-    authorityFilter,
-    hideLowGrade,
-  );
+  const filteredCollectionData = ApplyDataFilters(CollectionData, authorityFilter, hideLowGrade);
   SortCollectionData(filteredCollectionData, sortType);
 
   // Dynamically fetch the filter options

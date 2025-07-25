@@ -21,10 +21,10 @@ import {
   VariantValue,
   VariantWrapper,
 } from './CoinDetails.styles';
-import { HeaderText } from '../../../../shared/styles/sharedStyles';
-import { CollectionDataVNext } from '../../../../assets/CollectionData';
+import { HeaderText } from '../../../shared/styles/sharedStyles';
+import { CollectionData } from '../../../assets/CollectionData';
 import { useMediaQuery } from 'react-responsive';
-import { Characters, Rulers } from '../../../../assets/CharacterData';
+import { Characters, Rulers } from '../../../assets/CharacterData';
 import { CharacterData, LegendData, ObverseReverseData, RulerData } from './CoinDetails.types';
 import React from 'react';
 
@@ -188,7 +188,7 @@ export const CoinDetails = () => {
   const { itemId } = useParams();
   const itemIdAsNumber = parseInt(itemId || '', 10);
 
-  const coin = CollectionDataVNext.find((coin) => coin.id === itemIdAsNumber);
+  const coin = CollectionData.find((coin) => coin.id === itemIdAsNumber);
   const rulerDetails = Rulers.find((ruler) => ruler.ruler.name === coin?.ruler.name);
   const showCharacterDetails = coin?.characters && coin.characters.length > 0;
 

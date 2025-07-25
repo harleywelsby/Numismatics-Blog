@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Modal } from '@mui/material';
 
 import { useNavigate } from 'react-router-dom';
-import { CollectionItemV2 } from '../../Collection.types';
-import { getFullImagePath } from '../../../../shared/utils/imageHelper';
-import { Routes } from '../../../../shared/utils/router';
+import { CollectionItemV2 } from '../Collection.types';
+import { getFullImagePath } from '../../../shared/utils/imageHelper';
+import { Routes } from '../../../shared/utils/router';
 import {
   CloseModalButton,
   ModalBodyWrapper,

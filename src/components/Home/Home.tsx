@@ -11,10 +11,10 @@ import {
   ShowcaseTitle,
   TextWrapper,
 } from './Home.styles';
-import { CollectionDataV1 } from '../../assets/CollectionData';
+import { CollectionData } from '../../assets/CollectionData';
 import { useMediaQuery } from 'react-responsive';
 import { Routes } from '../../shared/utils/router';
-import { CoinCard } from '../Collection/V1/CoinCard';
+import { CoinCard } from '../Collection/CoinCard/CoinCard';
 
 const currentShowcaseIds = [26, 17, 25];
 const showcaseDescriptions: Record<number, string> = {
@@ -28,14 +28,14 @@ const getShowcaseDescription = (id: number): string => {
 };
 
 export const Home = () => {
-  const currentShowcase = CollectionDataV1.filter((x) => currentShowcaseIds.includes(x.id)).sort(
+  const currentShowcase = CollectionData.filter((x) => currentShowcaseIds.includes(x.id)).sort(
     (a, b) => b.id - a.id,
   );
 
   const isMediumScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
   const showcaseSizeOverride = isMediumScreenOrLarger
-    ? { width: 400, height: 200 }
-    : { width: 250, height: 125 };
+    ? { width: 200, height: 200 }
+    : { width: 125, height: 125 };
 
   return (
     <PageWrapper>
@@ -71,18 +71,20 @@ export const Home = () => {
             <ShowcaseItem $isMediumScreenOrLarger={isMediumScreenOrLarger}>
               <CoinCard
                 coin={x}
-                hideTitle
-                sizeOverride={showcaseSizeOverride}
-                noPadding
-                modalRerouteOverride={Routes.Home}
-                disableRedirect
+                options={{
+                  hideTitle: true,
+                  sizeOverride: showcaseSizeOverride,
+                  noPadding: true,
+                  modalRerouteOverride: Routes.Home,
+                  disableRedirect: true,
+                }}
               />
               <ShowcaseText>
                 <ShowcaseTitle $isMediumScreenOrLarger={isMediumScreenOrLarger}>
                   {x.title}
                 </ShowcaseTitle>
                 <ShowcaseDescription>
-                  {x.mintDate}, {x.mintLocation}
+                  {x.mint.date}, {x.mint.location}
                 </ShowcaseDescription>
                 <ShowcaseDescription>{getShowcaseDescription(x.id)}</ShowcaseDescription>
               </ShowcaseText>

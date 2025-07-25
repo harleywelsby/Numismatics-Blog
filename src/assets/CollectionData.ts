@@ -387,7 +387,7 @@ export const CollectionDataV1: CollectionItem[] = [
   },
 ];
 
-export const CollectionDataVNext: CollectionItemV2[] = [
+export const CollectionData: CollectionItemV2[] = [
   // 1
   {
     id: 1,
@@ -1076,7 +1076,7 @@ export const CollectionDataVNext: CollectionItemV2[] = [
       url: 'http://numismatics.org/ocre/id/ric.3.m_aur.203',
     },
     characters: ['Felicitas'],
-    enableSeeMore: true,
+    enableSeeMore: false,
   },
   // 26
   {

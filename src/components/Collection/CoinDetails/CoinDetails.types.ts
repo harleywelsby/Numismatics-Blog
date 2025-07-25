@@ -3,7 +3,7 @@ import {
   CollectionItemV2,
   LegendDetails,
   RulerDetails,
-} from '../../Collection.types';
+} from '../Collection.types';
 
 export interface LegendData {
   legend: string;

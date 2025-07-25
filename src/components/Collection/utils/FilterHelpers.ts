@@ -1,5 +1,5 @@
-import { getCleanMintDate } from '../../../../shared/utils/dateHelper';
-import { AuthorityGroup, CollectionItemV2, SortType } from '../../Collection.types';
+import { getCleanMintDate } from '../../../shared/utils/dateHelper';
+import { AuthorityGroup, CollectionItemV2, SortType } from '../Collection.types';
 
 export const AuthorityGroups: AuthorityGroup[] = [
   {
