@@ -1,6 +1,6 @@
 import { CollectionItem, CollectionItemV2, Grade } from '../components/Collection/Collection.types';
 
-export const CollectionData: CollectionItem[] = [
+export const CollectionDataV1: CollectionItem[] = [
   {
     id: 18,
     grade: Grade.VeryFine,

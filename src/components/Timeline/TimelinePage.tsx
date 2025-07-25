@@ -16,13 +16,13 @@ import {
   TimelineWrapper,
 } from './TimelinePage.styles';
 import { TimelineData } from '../../assets/TimelineData';
-import { CollectionData } from '../../assets/CollectionData';
+import { CollectionDataV1 } from '../../assets/CollectionData';
 import { getCleanMintDate } from '../../shared/utils/dateHelper';
 import { ScreenSize } from '../../shared/types';
 import { useMediaQuery } from 'react-responsive';
 import { CollectionItem } from '../Collection/Collection.types';
-import { CoinCard } from '../Collection/CoinCard';
 import { Routes } from '../../shared/utils/router';
+import { CoinCard } from '../Collection/V1/CoinCard';
 
 export type TimelineListItemContent = {
   date: string;
@@ -67,7 +67,7 @@ export const TimelinePage = () => {
     screenSize = isLargeScreen ? ScreenSize.Large : ScreenSize.Medium;
   }
 
-  const collectionData: TimelineListItemContent[] = CollectionData.map((item) => ({
+  const collectionData: TimelineListItemContent[] = CollectionDataV1.map((item) => ({
     date: item.mintDate,
     description: item.title,
     collectionItem: item,

@@ -11,10 +11,10 @@ import {
   ShowcaseTitle,
   TextWrapper,
 } from './Home.styles';
-import { CoinCard } from '../Collection/CoinCard';
-import { CollectionData } from '../../assets/CollectionData';
+import { CollectionDataV1 } from '../../assets/CollectionData';
 import { useMediaQuery } from 'react-responsive';
 import { Routes } from '../../shared/utils/router';
+import { CoinCard } from '../Collection/V1/CoinCard';
 
 const currentShowcaseIds = [26, 17, 25];
 const showcaseDescriptions: Record<number, string> = {
@@ -28,7 +28,7 @@ const getShowcaseDescription = (id: number): string => {
 };
 
 export const Home = () => {
-  const currentShowcase = CollectionData.filter((x) => currentShowcaseIds.includes(x.id)).sort(
+  const currentShowcase = CollectionDataV1.filter((x) => currentShowcaseIds.includes(x.id)).sort(
     (a, b) => b.id - a.id,
   );
 

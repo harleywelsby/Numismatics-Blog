@@ -1,11 +1,11 @@
 import { useMediaQuery } from 'react-responsive';
 import { CardText, CardWrapper } from './Collection.styles';
 import { useEffect, useState } from 'react';
-import { CoinCardProps } from './Collection.types';
-import { ScreenSize } from '../../shared/types';
-import { useParams } from 'react-router-dom';
-import { Routes } from '../../shared/utils/router';
 import { CoinCardModal } from './CoinCardModal';
+import { useParams } from 'react-router-dom';
+import { ScreenSize } from '../../../shared/types';
+import { CoinCardProps } from '../Collection.types';
+import { Routes } from '../../../shared/utils/router';
 
 const getThumbnailDimensions = (screenSize: ScreenSize) => {
   switch (screenSize) {

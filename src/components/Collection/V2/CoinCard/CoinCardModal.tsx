@@ -37,12 +37,12 @@ export const CoinCardModal = ({
 
   const handleModalClose = () => {
     setShowModal(false);
-    navigate(closeRerouteOverride || Routes.CollectionV2);
+    navigate(closeRerouteOverride || Routes.Collection);
   };
 
   const handleSeeMore = () => {
     setShowModal(false);
-    window.history.replaceState(null, '', Routes.CollectionV2);
+    window.history.replaceState(null, '', Routes.Collection);
     navigate(Routes.CollectionItemDetails.replace(':itemId', `${coin.id}`));
   };
 

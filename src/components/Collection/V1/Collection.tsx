@@ -1,4 +1,8 @@
-import { CollectionData } from '../../assets/CollectionData';
+import { useState } from 'react';
+import { PageWrapper, HeaderText } from '../../../shared/styles/sharedStyles';
+import { getCleanMintDate } from '../../../shared/utils/dateHelper';
+import { AuthorityGroup, CollectionItem, SortType } from '../Collection.types';
+import { HeaderSeparator } from '../V2/CoinDetails/CoinDetails.styles';
 import { CoinCard } from './CoinCard';
 import {
   CoinCardGrid,
@@ -9,10 +13,7 @@ import {
   FilterSection,
   FilterSelectBox,
 } from './Collection.styles';
-import { HeaderSeparator, HeaderText, PageWrapper } from '../../shared/styles/sharedStyles';
-import { useState } from 'react';
-import { AuthorityGroup, CollectionItem, SortType } from './Collection.types';
-import { getCleanMintDate } from '../../shared/utils/dateHelper';
+import { CollectionDataV1 } from '../../../assets/CollectionData';
 
 const AuthorityGroups: AuthorityGroup[] = [
   {
@@ -91,12 +92,12 @@ const SortCollectionData = (data: CollectionItem[], sortType: SortType) => {
   return data;
 };
 
-export const Collection = () => {
+export const CollectionV1 = () => {
   const [authorityFilter, setAuthorityFilter] = useState('All');
   const [sortType, setSortType] = useState(SortType.Featured);
   const [hideLowGrade, setHideLowGrade] = useState(true);
 
-  const filteredCollectionData = ApplyDataFilters(CollectionData, authorityFilter, hideLowGrade);
+  const filteredCollectionData = ApplyDataFilters(CollectionDataV1, authorityFilter, hideLowGrade);
   SortCollectionData(filteredCollectionData, sortType);
 
   // If only 1 or 2 items are in the list, let the columns adjust.

@@ -1,7 +1,6 @@
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Modal } from '@mui/material';
-import { getFullImagePath } from '../../shared/utils/imageHelper';
 import {
   ModalContent,
   ModalImage,
@@ -14,9 +13,10 @@ import {
   NewPill,
   SeeMoreButtonWrapper,
 } from './Collection.styles';
-import { Routes } from '../../shared/utils/router';
-import { CollectionItem } from './Collection.types';
 import { useNavigate } from 'react-router-dom';
+import { getFullImagePath } from '../../../shared/utils/imageHelper';
+import { CollectionItem } from '../Collection.types';
+import { Routes } from '../../../shared/utils/router';
 
 export interface CoinCardModalProps {
   coin: CollectionItem;

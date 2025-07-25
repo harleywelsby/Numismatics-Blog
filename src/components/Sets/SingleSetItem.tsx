@@ -3,9 +3,9 @@ import { SetItemImage, SetItemName, SetItemWrapper } from './Sets.styles';
 import { ScreenSize } from '../../shared/types';
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
-import { CoinCardModal } from '../Collection/CoinCardModal';
-import { CollectionData } from '../../assets/CollectionData';
+import { CollectionDataV1 } from '../../assets/CollectionData';
 import { Routes } from '../../shared/utils/router';
+import { CoinCardModal } from '../Collection/V1/CoinCardModal';
 
 const getImageDimensions = (screenSize: ScreenSize) => {
   switch (screenSize) {
@@ -22,7 +22,7 @@ export const SingleSetItem = ({ name, secondLine, imageUrl, completed, collectio
   const isLargeScreen = useMediaQuery({ query: '(min-width: 86em)' });
 
   const collectionItem = collectionId
-    ? CollectionData.find((item) => item.id === collectionId)
+    ? CollectionDataV1.find((item) => item.id === collectionId)
     : null;
 
   const [showModal, setShowModal] = useState(false);

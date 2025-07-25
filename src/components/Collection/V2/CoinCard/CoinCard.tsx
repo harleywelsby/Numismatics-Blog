@@ -63,7 +63,7 @@ export const CoinCard = ({ coin, options }: CoinCardProps) => {
         to={
           options?.disableRedirect
             ? window.location.href
-            : Routes.CollectionItemV2.replace(':itemId', `${coin.id}`)
+            : Routes.CollectionItem.replace(':itemId', `${coin.id}`)
         }
         onClick={() => setShowModal(true)}
         data-test-id={`coin-card-${coin.id}`}
