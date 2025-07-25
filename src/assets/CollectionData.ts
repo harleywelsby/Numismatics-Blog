@@ -388,9 +388,125 @@ export const CollectionData: CollectionItem[] = [
 ];
 
 export const CollectionDataVNext: CollectionItemV2[] = [
-  // TODO: 1
-  // TODO: 2
-  // TODO: 3
+  // 1
+  {
+    id: 1,
+    grade: Grade.Fine,
+    title: 'Constantius II Nummus',
+    ruler: {
+      name: 'Constantius II',
+      reign: '337-361 AD',
+    },
+    authority: 'Roman Empire',
+    mint: {
+      location: 'Nicomedia',
+      date: '348-350 AD',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/V2/A001-Obverse.webp',
+      description: 'Diademed bust of Constantius II facing right.',
+      legend: 'DN CONSTANTIVS PF AVG',
+      legendDetails: {
+        language: 'latin',
+        original: 'Dominus Noster Constantinus Pius Felix Augustus',
+        english: 'Our Lord Constantine, the Pious, the Happy, the Emperor',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/V2/A001-Reverse.webp',
+      description: 'Soldier with spear lunging over barbarian on horseback.',
+      legend: 'FEL TEMP REPARATIO',
+      legendDetails: {
+        language: 'latin',
+        original: 'Felicium Temporum Reparatio',
+        english: 'Restoration of Happy Times',
+      },
+    },
+    reference: {
+      catalogueNumber: 'RIC VIII #189',
+    },
+    characters: ['Fel Temp Reparatio'],
+  },
+  // 2
+  {
+    id: 2,
+    grade: Grade.Good,
+    title: 'Constans Nummus',
+    ruler: {
+      name: 'Constans',
+      reign: '337-350 AD',
+    },
+    authority: 'Roman Empire',
+    mint: {
+      location: 'Constantinople',
+      date: '336-337 AD',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/V2/A002-Obverse.webp',
+      description: 'Diademed bust of Constans facing left.',
+      legend: 'FL CONSTANS NOB CAES',
+      legendDetails: {
+        language: 'latin',
+        original: 'Flavius Constans Nobilis Caesar',
+        english: 'Flavius Constans, Noble Heir to the Throne',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/V2/A002-Reverse.webp',
+      description:
+        'Military standard flanked by two cuirassed soldiers with spears. "CONS" mint mark in exergue."',
+      legend: 'GLORIA EXERCITVS',
+      legendDetails: {
+        language: 'latin',
+        original: 'Gloria Exercitus',
+        english: 'The Glory of the Army',
+      },
+    },
+    reference: {
+      catalogueNumber: 'RIC VII #140',
+    },
+    characters: ['Gloria Exercitus'],
+  },
+  // 3
+  {
+    id: 3,
+    grade: Grade.VeryGood,
+    title: 'Valentinian II Nummus',
+    ruler: {
+      name: 'Valentinian II',
+      reign: '375-392 AD',
+    },
+    authority: 'Roman Empire',
+    mint: {
+      location: 'Aquileia',
+      date: '378-388 AD',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/V2/A003-Obverse.webp',
+      description: 'Diademed bust of Valentinian facing right.',
+      legend: 'DN VALENTINIANVS PF AVG',
+      legendDetails: {
+        language: 'latin',
+        original: 'Dominus Noster Valentinianus Pius Felix Augustus',
+        english: 'Our Lord Valentinian, the Pious, the Happy, the Emperor',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/V2/A003-Reverse.webp',
+      description: 'Wreath containing text. "SMAQ" mint mark in exergue.',
+      legend: 'VOT X MVLT XX',
+      legendDetails: {
+        language: 'latin',
+        original: 'Votis Decennalibus Multis que Vicennalibus',
+        english:
+          "Vows to the Gods on the Tenth Anniversary of the Emperor's rule, that he will reach his twentieth anniversary.",
+      },
+    },
+    reference: {
+      catalogueNumber: 'RIC IX #19',
+    },
+    characters: ['VOT MVLT'],
+  },
   // 4
   {
     id: 4,
@@ -433,7 +549,48 @@ export const CollectionDataVNext: CollectionItemV2[] = [
   },
   // TODO: 5
   // TODO: 6
-  // TODO: 7
+  // 7
+  {
+    id: 7,
+    grade: Grade.VeryFine,
+    title: 'Caracalla Denarius',
+    ruler: {
+      name: 'Caracalla',
+      reign: '198-217 AD',
+    },
+    authority: 'Roman Empire',
+    mint: {
+      location: 'Rome',
+      date: '214 AD',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/V2/A007-Obverse.webp',
+      description: 'Diademed bust of Caracalla facing right.',
+      legend: 'ANTONINVS PIVS AVG GERM',
+      legendDetails: {
+        language: 'latin',
+        original: 'Antoninus Pius Augustus Germanicus',
+        english:
+          'Emperor Antoninus (Caracalla was a nickname, after the type of cloak he wore), the dutiful, conqueror of the Germans.',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/V2/A007-Reverse.webp',
+      description: 'Apollo, shirtless, seated left, holding olive branch and leaning on lyre.',
+      legend: 'PM TRP XVII COS IIII PP',
+      legendDetails: {
+        language: 'latin',
+        original: 'Pontifex Maximus Tribunicia Potestas XVII Consul IIII Pater Patriae',
+        english:
+          'High Priest, holding the Tribunician Power for the 17th year, Consul for the 4th year, Father of the Fatherland',
+      },
+    },
+    reference: {
+      catalogueNumber: 'RIC IV #238A',
+      url: 'http://numismatics.org/ocre/id/ric.4.crl.238A',
+    },
+    characters: ['Apollo'],
+  },
   // 8
   {
     id: 8,
@@ -479,11 +636,128 @@ export const CollectionDataVNext: CollectionItemV2[] = [
   // TODO: 9
   // TODO: 10
   // TODO: 11
+  {
+    id: 11,
+    grade: Grade.ExtremelyFine,
+    title: 'Geta Denarius',
+    ruler: {
+      name: 'Septimius Geta',
+      reign: '209-211 AD',
+    },
+    authority: 'Roman Empire',
+    mint: {
+      location: 'Rome',
+      date: '203-208 AD',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/V2/A011-Obverse.webp',
+      description: 'Bust of Geta facing right.',
+      legend: 'P SEPTIMIVS GETA CAES',
+      legendDetails: {
+        language: 'latin',
+        original: 'Publius Septimius Geta Caesar',
+        english: 'Publius Septimius Geta, Heir to the Throne',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/V2/A011-Reverse.webp',
+      description: 'Providentia, draped, standing left, holding wand over globe and sceptre.',
+      legend: 'PROVID DEORVM',
+      legendDetails: {
+        language: 'latin',
+        original: 'Providentia Deorum',
+        english: 'The Providence of the Gods',
+      },
+    },
+    reference: {
+      catalogueNumber: 'RIC IV.1 #51',
+      url: 'http://numismatics.org/ocre/id/ric.4.ge.51',
+    },
+    characters: ['Providentia'],
+  },
   // TODO: 12
-  // TODO: 13
+  // 13
+  {
+    id: 13,
+    grade: Grade.VeryFine,
+    title: 'Julia Domna Denarius',
+    ruler: {
+      name: 'Caracalla',
+      reign: '198-217 AD',
+    },
+    authority: 'Roman Empire',
+    mint: {
+      location: 'Rome',
+      date: '211-217 AD',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/V2/A013-Obverse.webp',
+      description: 'Bust of Julia Domna, draped, facing right.',
+      legend: 'IVLIA PIA FELIX AVG',
+      legendDetails: {
+        language: 'latin',
+        original: 'Julia Pia Felix Augusta',
+        english: 'Julia, the Dutiful and Fortunate Empress',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/V2/A013-Reverse.webp',
+      description: 'Vesta, standing left holding Palladium and sceptre.',
+      legend: 'VESTA',
+      legendDetails: {
+        language: 'latin',
+        original: 'Vesta',
+        english: 'Vesta (Virgin Goddess of the Hearth, Home and Family)',
+      },
+    },
+    reference: {
+      catalogueNumber: 'RIC IV #390',
+      url: 'https://numismatics.org/ocre/id/ric.4.crl.390?lang=es/1000',
+    },
+    characters: ['Julia Domna', 'Vesta'],
+  },
   // TODO: 14
   // TODO: 15
-  // TODO: 16
+  // 16
+  {
+    id: 16,
+    grade: Grade.Good,
+    title: 'Aurelian Antoninianus',
+    ruler: {
+      name: 'Aurelian',
+      reign: '270-275 AD',
+    },
+    authority: 'Roman Empire',
+    mint: {
+      location: 'Rome',
+      date: '270-275 AD',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/V2/A016-Obverse.webp',
+      description: 'Crowned Aurelian facing right.',
+      legend: 'IMP CL DOM AVRELIANVS AVG',
+      legendDetails: {
+        language: 'latin',
+        original: 'Imperator Caesar Lucius Domitius Aurelianus Augustus',
+        english: 'Leader of the Army, Heir to the Throne, Emperor Lucius Domitius Aurelianus',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/V2/A016-Reverse.webp',
+      description:
+        'Securitas, standing with legs crossed, holding sceptre and leaning on column. "XI" (denomination) to right.',
+      legend: 'SECURITAS AVG',
+      legendDetails: {
+        language: 'latin',
+        original: 'Securitas Augusta',
+        english: 'To The Security brought to Rome by the Emperor',
+      },
+    },
+    reference: {
+      catalogueNumber: 'RIC V #38',
+    },
+    characters: ['Securitas'],
+  },
   // 17
   {
     id: 17,
