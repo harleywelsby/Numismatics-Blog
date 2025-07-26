@@ -24,6 +24,8 @@ import { useMediaQuery } from 'react-responsive';
 import { Routes } from '../../shared/utils/router';
 import { CoinCard } from '../Collection/CoinCard/CoinCard';
 import { TimelineListItemContent } from './TimelinePage.types';
+import { useContext, useEffect } from 'react';
+import { NavigationContext } from '../NavigationContext/NavigationContext';
 
 const SortByDate = (a: TimelineListItemContent, b: TimelineListItemContent) => {
   return getCleanMintDate(a.date) - getCleanMintDate(b.date);
@@ -53,6 +55,11 @@ const shouldShowItem = (item: TimelineListItemContent) => {
 };
 
 export const TimelinePage = () => {
+  const { setSelectedRoute } = useContext(NavigationContext);
+  useEffect(() => {
+    setSelectedRoute(Routes.Timeline);
+  }, [setSelectedRoute]);
+
   const isMediumScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
   const isLargeScreen = useMediaQuery({ query: '(min-width: 86em)' });
   // Default to small (mobile). If the screen is at least a 'medium' size,

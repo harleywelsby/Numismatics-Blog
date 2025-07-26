@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 import { CoinCardModal } from './CoinCardModal';
 import { CardWrapper, CardText, CoinImageWrapper } from './CoinCard.styles';
 import { CoinCardOptions, CollectionItem } from '../Collection.types';
-import { Routes } from '../../../shared/utils/router';
 
 const getThumbnailDimensions = (screenSize: ScreenSize) => {
   switch (screenSize) {
@@ -60,11 +59,6 @@ export const CoinCard = ({ coin, options }: CoinCardProps) => {
         />
       )}
       <CardWrapper
-        to={
-          options?.disableRedirect
-            ? window.location.href
-            : Routes.CollectionItem.replace(':itemId', `${coin.id}`)
-        }
         onClick={() => setShowModal(true)}
         data-test-id={`coin-card-${coin.id}`}
         $noPadding={options?.noPadding ?? false}

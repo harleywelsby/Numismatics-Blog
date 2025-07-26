@@ -16,10 +16,12 @@ import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { useMediaQuery } from 'react-responsive';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { SetContext } from './SetContext';
 import { CoinSet, SetStatus } from './Sets.Types';
 import { SingleSetItem } from './SingleSetItem';
+import { Routes } from '../../shared/utils/router';
+import { NavigationContext } from '../NavigationContext/NavigationContext';
 
 // TODO: This should be resolved dynamically from the SetData.
 const getSetCategories = () => {
@@ -48,6 +50,11 @@ const getSetStatus = (set: CoinSet) => {
 
 // TODO: Clean up the messy styles here.
 export const Sets = () => {
+  const { setSelectedRoute } = useContext(NavigationContext);
+  useEffect(() => {
+    setSelectedRoute(Routes.Sets);
+  }, [setSelectedRoute]);
+
   const isMediumScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
   const maxAccordionWidth = isMediumScreenOrLarger ? '80%' : '95%';
   const setContext = useContext(SetContext);

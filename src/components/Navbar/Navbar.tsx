@@ -93,7 +93,7 @@ export const Navbar = () => {
                 data-test-id="navbar-collection-link"
                 to={Routes.Collection}
                 onClick={() => handleListItemClick(Routes.Collection)}
-                $selected={selectedRoute === Routes.Collection}
+                $selected={selectedRoute.includes(Routes.Collection)}
               >
                 Collection
               </NavbarLink>

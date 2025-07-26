@@ -18,8 +18,7 @@ export const Routes = {
   Blog: '/blog',
   BlogPost: '/blog/:postId',
   Collection: '/collection',
-  CollectionItem: '/collection/:itemId',
-  CollectionItemDetails: '/collection/:itemId/details',
+  CollectionItemDetails: '/collection/:itemId',
   Sets: '/sets',
   Timeline: '/timeline',
 
@@ -35,7 +34,6 @@ export const router = createBrowserRouter([
       { path: Routes.Home, element: <Home /> },
       { path: Routes.Blog, element: <Blog /> },
       { path: Routes.Collection, element: <CollectionV2 /> },
-      { path: Routes.CollectionItem, element: <CollectionV2 /> },
       { path: Routes.CollectionItemDetails, element: <CoinDetails /> },
       { path: Routes.BlogPost, element: <BlogPost /> },
       { path: Routes.Sets, element: <Sets /> },

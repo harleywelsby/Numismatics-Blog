@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import {
   FilterSection,
   FilterItem,
@@ -18,8 +18,15 @@ import { CoinCard } from './CoinCard/CoinCard';
 import { CollectionData } from '../../assets/CollectionData';
 import { SortType } from './Collection.types';
 import { PageWrapper, HeaderText, HeaderSeparator } from '../../shared/styles/sharedStyles';
+import { NavigationContext } from '../NavigationContext/NavigationContext';
+import { Routes } from '../../shared/utils/router';
 
 export const CollectionV2 = () => {
+  const { setSelectedRoute } = useContext(NavigationContext);
+  useEffect(() => {
+    setSelectedRoute(Routes.Collection);
+  }, [setSelectedRoute]);
+
   const [authorityFilter, setAuthorityFilter] = useState('All');
   const [sortType, setSortType] = useState(SortType.Latest);
   const [hideLowGrade, setHideLowGrade] = useState(true);

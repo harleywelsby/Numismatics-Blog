@@ -19,6 +19,8 @@ import {
   SeeMoreButton,
   SeeMoreButtonWrapper,
 } from './CoinCard.styles';
+import { useContext } from 'react';
+import { NavigationContext } from '../../NavigationContext/NavigationContext';
 
 interface CoinCardModalProps {
   coin: CollectionItem;
@@ -29,24 +31,17 @@ interface CoinCardModalProps {
 
 const ENABLE_SEE_MORE_OVERRIDE = true;
 
-export const CoinCardModal = ({
-  coin,
-  showModal,
-  setShowModal,
-  closeRerouteOverride,
-}: CoinCardModalProps) => {
+export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalProps) => {
+  const { setSelectedRoute } = useContext(NavigationContext);
   const navigate = useNavigate();
-
-  const routeUrl = closeRerouteOverride || Routes.Collection;
 
   const handleModalClose = () => {
     setShowModal(false);
-    navigate(routeUrl);
   };
 
   const handleSeeMore = () => {
     setShowModal(false);
-    window.history.replaceState(null, '', routeUrl);
+    setSelectedRoute(Routes.CollectionItemDetails);
     navigate(Routes.CollectionItemDetails.replace(':itemId', `${coin.id}`));
   };
 

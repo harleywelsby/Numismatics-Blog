@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
-export const CardWrapper = styled(Link)<{ $noPadding?: boolean }>`
+export const CardWrapper = styled.button<{ $noPadding?: boolean }>`
   /* Remove default button styling */
   background: none;
   color: inherit;

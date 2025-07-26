@@ -15,6 +15,8 @@ import { CollectionData } from '../../assets/CollectionData';
 import { useMediaQuery } from 'react-responsive';
 import { Routes } from '../../shared/utils/router';
 import { CoinCard } from '../Collection/CoinCard/CoinCard';
+import { useContext, useEffect } from 'react';
+import { NavigationContext } from '../NavigationContext/NavigationContext';
 
 const currentShowcaseIds = [26, 17, 25];
 const showcaseDescriptions: Record<number, string> = {
@@ -28,6 +30,11 @@ const getShowcaseDescription = (id: number): string => {
 };
 
 export const Home = () => {
+  const { setSelectedRoute } = useContext(NavigationContext);
+  useEffect(() => {
+    setSelectedRoute(Routes.Home);
+  }, [setSelectedRoute]);
+
   const currentShowcase = CollectionData.filter((x) => currentShowcaseIds.includes(x.id)).sort(
     (a, b) => b.id - a.id,
   );
