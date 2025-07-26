@@ -128,7 +128,12 @@ export const TimelinePage = () => {
       <TimelineWrapper>
         <Timeline position={isMediumScreenOrLarger ? 'alternate' : 'right'}>
           {sortedTimelineData.map((item) =>
-            shouldShowItem(item) ? <TimelineListItem key={item.date} item={item} /> : null,
+            shouldShowItem(item) ? (
+              <TimelineListItem
+                key={`${item.date}-${item.description.substring(0, 3)}`}
+                item={item}
+              />
+            ) : null,
           )}
         </Timeline>
       </TimelineWrapper>

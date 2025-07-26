@@ -46,6 +46,7 @@ export const NavbarList = styled.ul`
     text-align: left;
 
     padding: 2rem;
+    gap: 1.5rem;
 
     background-image: url(${getFullImagePath('/Images/SidebarBackground.webp')});
     background-size: cover;
