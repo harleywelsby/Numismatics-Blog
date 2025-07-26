@@ -14,6 +14,7 @@ export interface ObverseReverseData {
 export interface RulerData {
   coin: CollectionItem;
   rulerDetails: RulerDetails;
+  showSeparator?: boolean;
 }
 
 export interface CharacterData {

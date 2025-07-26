@@ -137,7 +137,7 @@ const LegendSection = ({ legend, legendDetails, isSmallScreen }: LegendData) => 
   );
 };
 
-const RulerSection = ({ coin, rulerDetails }: RulerData) => {
+const RulerSection = ({ coin, rulerDetails, showSeparator }: RulerData) => {
   return (
     <>
       <SectionHeader
@@ -151,7 +151,7 @@ const RulerSection = ({ coin, rulerDetails }: RulerData) => {
           <br />
         </React.Fragment>
       ))}
-      <SectionSeparator />
+      {showSeparator && <SectionSeparator />}
     </>
   );
 };
@@ -234,7 +234,13 @@ export const CoinDetails = () => {
           <SectionSeparator />
         </>
       )}
-      {rulerDetails && <RulerSection coin={coin} rulerDetails={rulerDetails} />}
+      {rulerDetails && (
+        <RulerSection
+          coin={coin}
+          rulerDetails={rulerDetails}
+          showSeparator={showCharacterDetails}
+        />
+      )}
       {showCharacterDetails &&
         coin?.characters?.map((character, index) => (
           <CharacterSection

@@ -22,7 +22,7 @@ export const TimelineContentWrapper = styled.div`
 
 export const TimelineCoinWrapper = styled.div`
   padding: 1rem 0 0 0;
-  display: flex;
+  //display: flex;
 `;
 
 export const DateText = styled.p`

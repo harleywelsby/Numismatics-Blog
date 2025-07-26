@@ -19,6 +19,20 @@ export const Rulers: RulerDetails[] = [
       'Despite the persistent troubles of his reign, Marcus’ unbreakable leadership, skill and conviction to improve the empire saw Rome through some of its darkest hours, earning him the reputation he has today.',
     ],
   },
+  {
+    ruler: {
+      name: 'Antoninus Pius',
+      reign: '138-161 AD',
+    },
+    title: 'Roman Emperor',
+    imagePath: '/Images/Characters/AntoninusPius.webp',
+    descriptionParagraphs: [
+      'One of the “5 Good Emperors”, Antoninus Pius was arguably the most effective and competent Emperor Rome ever saw. His 23 year rule was the first complete reign of a Roman Emperor without a single war.',
+      'Born into a senatorial family, Antoninus held various public offices during the reign of Emperor Hadrian. After notable success in his roles, he became Consul in 120, before being promoted by Hadrian to Proconsul of Italia (Governor of the Italian Peninsula). He later served as Proconsul of Asia (Governor of West Turkey) from 134-135, with notable success.',
+      'In 138, Hadrian’s adopted son and heir Lucius Aelius Caesar died suddenly of a haemorrhage. In his place, he adopted Antoninus Pius as his son and heir.',
+      'During his reign, Antoninus built numerous temples and theaters, and heavily promoted science and the arts. He was a skilled administrator and especially effective at directing construction. Remarkably, he was able to massively expand the availability of free drinking water in Rome and the provinces, as well as build numerous bridges and roads, while still leaving behind an enormous treasury.',
+    ],
+  },
 ];
 
 export const Characters: CharacterDetails[] = [
