@@ -14,6 +14,15 @@ export const HeaderParagraph = styled.p`
 export const TimelineContentWrapper = styled.div`
   margin: 0;
   padding: 0 0 2rem 0;
+
+  @media (max-width: 35em) {
+    padding: 0 0 1rem 0;
+  }
+`;
+
+export const TimelineCoinWrapper = styled.div`
+  padding: 1rem 0 0 0;
+  display: flex;
 `;
 
 export const DateText = styled.p`

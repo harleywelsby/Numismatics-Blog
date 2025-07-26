@@ -12,6 +12,7 @@ import {
   DescriptionText,
   HeaderParagraph,
   SectionSeparator,
+  TimelineCoinWrapper,
   TimelineContentWrapper,
   TimelineWrapper,
 } from './TimelinePage.styles';
@@ -87,16 +88,18 @@ export const TimelinePage = () => {
               {hasCollectionItem && ' struck'}
             </DescriptionText>
             {hasCollectionItem && (
-              <CoinCard
-                coin={item.collectionItem!}
-                options={{
-                  hideTitle: true,
-                  sizeOverride: imageDimensions,
-                  noPadding: true,
-                  disableRedirect: true,
-                  modalRerouteOverride: Routes.Timeline,
-                }}
-              />
+              <TimelineCoinWrapper>
+                <CoinCard
+                  coin={item.collectionItem!}
+                  options={{
+                    hideTitle: true,
+                    sizeOverride: imageDimensions,
+                    noPadding: true,
+                    disableRedirect: true,
+                    modalRerouteOverride: Routes.Timeline,
+                  }}
+                />
+              </TimelineCoinWrapper>
             )}
           </TimelineContentWrapper>
         </TimelineContent>
