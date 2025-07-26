@@ -19,6 +19,7 @@ export const VariantGrid = styled.div`
 
   @media (min-width: 100em) {
     max-width: 70%;
+    margin-left: -15rem;
   }
 `;
 
@@ -292,5 +293,38 @@ export const TranslationGrid = styled.div`
 
   @media (min-width: 35em) {
     gap: 1rem;
+  }
+
+  @media (min-width: 100em) {
+    grid-template-columns: 30% 70%;
+    gap: 1rem 0;
+  }
+`;
+
+export const TranslationText = styled.p<{ $withTopPadding?: boolean; $rightAlign?: boolean }>`
+  width: 100%;
+  font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
+
+  text-align: left;
+  justify-self: center;
+
+  ${(props) =>
+    props.$rightAlign &&
+    css`
+      text-align: right;
+      justify-self: right;
+    `}
+
+  ${(props) =>
+    props.$withTopPadding &&
+    css`
+      padding-top: 2rem;
+    `}
+
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: 100em) {
+    width: 90%;
   }
 `;

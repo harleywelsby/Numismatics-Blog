@@ -27,6 +27,8 @@ interface CoinCardModalProps {
   closeRerouteOverride?: string;
 }
 
+const ENABLE_SEE_MORE_OVERRIDE = true;
+
 export const CoinCardModal = ({
   coin,
   showModal,
@@ -47,6 +49,8 @@ export const CoinCardModal = ({
     window.history.replaceState(null, '', routeUrl);
     navigate(Routes.CollectionItemDetails.replace(':itemId', `${coin.id}`));
   };
+
+  const enableSeeMore = ENABLE_SEE_MORE_OVERRIDE || coin.enableSeeMore;
 
   return (
     <Modal open={showModal} onClose={handleModalClose}>
@@ -70,7 +74,7 @@ export const CoinCardModal = ({
               <b>Minted: </b>
               {`${coin.mint.location} (${coin.mint.date})`}
             </ModalText>
-            {!coin.enableSeeMore && (
+            {!enableSeeMore && (
               <>
                 <ModalText>
                   <b>Obv: </b>
@@ -96,7 +100,7 @@ export const CoinCardModal = ({
                 {coin.reference.catalogueNumber}
               </a>
             </ModalText>
-            {coin.enableSeeMore && (
+            {enableSeeMore && (
               <SeeMoreButtonWrapper>
                 <SeeMoreButton onClick={handleSeeMore}>See More</SeeMoreButton>
                 <NewPill>New!</NewPill>

@@ -17,6 +17,7 @@ import {
   SectionSeparator,
   SubtitleText,
   TranslationGrid,
+  TranslationText,
   VariantGrid,
   VariantTitle,
   VariantValue,
@@ -114,14 +115,14 @@ const LegendSection = ({ legend, legendDetails, isSmallScreen }: LegendData) => 
       {hasTranslations && (
         <>
           <TranslationGrid>
-            <DescriptionText $rightAlign>
+            <TranslationText $rightAlign>
               <b>{`${CapitalizeFirstLetter(legendDetails.language)}:`}</b>
-            </DescriptionText>
-            <DescriptionText>{legendDetails.original}</DescriptionText>
-            <DescriptionText $rightAlign>
+            </TranslationText>
+            <TranslationText>{legendDetails.original}</TranslationText>
+            <TranslationText $rightAlign>
               <b>English:</b>
-            </DescriptionText>
-            <DescriptionText>{legendDetails.english}</DescriptionText>
+            </TranslationText>
+            <TranslationText>{legendDetails.english}</TranslationText>
           </TranslationGrid>
           {legendDetails.description && (
             <DescriptionText $withTopPadding>{legendDetails.description}</DescriptionText>
@@ -196,18 +197,24 @@ export const CoinDetails = () => {
 
   const coin = CollectionData.find((coin) => coin.id === itemIdAsNumber);
   const rulerDetails = Rulers.find((ruler) => ruler.ruler.name === coin?.ruler.name);
-  const showCharacterDetails = coin?.characters && coin.characters.length > 0;
+  const showCharacterDetails =
+    coin?.characters &&
+    coin.characters.length > 0 &&
+    Characters.some((c) => coin.characters.includes(c.name));
 
   if (!coin) {
     return;
   }
+
+  const hasMoreSections =
+    rulerDetails || showCharacterDetails || coin.moreDetails?.descriptionParagraphs;
 
   return (
     <CoinDetailsPageWrapper>
       <HeaderText $primaryColor>{coin.title}</HeaderText>
       <HeaderSeparator />
       <ObverseReverseSection coin={coin} isSmallScreen={isSmallScreen} />
-      <SectionSeparator />
+      {hasMoreSections && <SectionSeparator />}
       {coin.moreDetails?.descriptionParagraphs && (
         <>
           <SectionHeader title="Interpretation" />
