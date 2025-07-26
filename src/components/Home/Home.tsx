@@ -1,8 +1,8 @@
-import { PageWrapper } from '../../shared/styles/sharedStyles';
+import { HeaderText, PageWrapper } from '../../shared/styles/sharedStyles';
 import {
-  CuratorsPicksParagraph,
   HomepageHeader,
   HomepageParagraph,
+  SectionHeaderSeparator,
   SectionSeparator,
   ShowcaseDescription,
   ShowcaseItem,
@@ -67,11 +67,10 @@ export const Home = () => {
           interest!
         </HomepageParagraph>
         <SectionSeparator />
-        <HomepageHeader data-test-id="curators-picks-header">Curator's Picks</HomepageHeader>
-        <CuratorsPicksParagraph data-test-id="curators-picks-description">
-          If you're not sure where to look, here's a couple of my favourites!
-        </CuratorsPicksParagraph>
-        <SectionSeparator />
+        <HeaderText $primaryColor data-test-id="curators-picks-header">
+          Showcase
+        </HeaderText>
+        <SectionHeaderSeparator />
         {currentShowcase.map((x) => (
           <div key={x.id}>
             {currentShowcase.indexOf(x) !== 0 && <ShowcaseSeparator />}

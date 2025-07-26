@@ -19,15 +19,11 @@ export const HomepageHeader = styled.h2`
   justify-self: center;
   font-size: clamp(1rem, 3vw + 0.25rem, 1.5rem);
   font-weight: 500;
+  color: var(--title-orange);
 `;
 
 export const HomepageParagraph = styled.p`
   text-align: left;
-  font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);
-`;
-
-export const CuratorsPicksParagraph = styled.p`
-  text-align: center;
   font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);
 `;
 
@@ -104,6 +100,20 @@ export const BlogButton = styled.button`
   background-size: cover;
 `;
 
+export const SectionHeaderSeparator = styled.div`
+  color: var(--title-orange);
+  border-bottom: solid;
+  min-width: 60%;
+  justify-self: center;
+
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: 35em) {
+    min-width: 30%;
+  }
+`;
+
 export const ShowcaseImage = styled.img`
   width: 90%;
   height: 90%;
@@ -122,17 +132,16 @@ export const ShowcaseSeparator = styled.div`
   margin: 0;
   color: var(--scroll-track-grey);
   border-bottom: solid;
-  min-width: 80%;
+  min-width: 120%;
   justify-self: center;
 `;
 
 export const ShowcaseItem = styled.div<{ $isMediumScreenOrLarger?: boolean }>`
-  padding: 0.5rem 0 1rem 0;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
 
   ${(props) =>
     props.$isMediumScreenOrLarger &&
@@ -140,6 +149,11 @@ export const ShowcaseItem = styled.div<{ $isMediumScreenOrLarger?: boolean }>`
       flex-direction: row;
       padding: 1rem 0;
     `}
+
+  @media (min-width: 35em) {
+    padding: 2rem;
+    gap: 3rem;
+  }
 `;
 
 export const ShowcaseText = styled.div`
