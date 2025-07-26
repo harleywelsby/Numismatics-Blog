@@ -403,7 +403,7 @@ export const CollectionData: CollectionItem[] = [
       date: '348-350 AD',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A001-Obverse.webp',
+      imagePath: '/Images/Collection/A001-Obverse.webp',
       description: 'Diademed bust of Constantius II facing right.',
       legend: 'DN CONSTANTIVS PF AVG',
       legendDetails: {
@@ -413,7 +413,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A001-Reverse.webp',
+      imagePath: '/Images/Collection/A001-Reverse.webp',
       description: 'Soldier with spear lunging over barbarian on horseback.',
       legend: 'FEL TEMP REPARATIO',
       legendDetails: {
@@ -442,7 +442,7 @@ export const CollectionData: CollectionItem[] = [
       date: '336-337 AD',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A002-Obverse.webp',
+      imagePath: '/Images/Collection/A002-Obverse.webp',
       description: 'Diademed bust of Constans facing left.',
       legend: 'FL CONSTANS NOB CAES',
       legendDetails: {
@@ -452,7 +452,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A002-Reverse.webp',
+      imagePath: '/Images/Collection/A002-Reverse.webp',
       description:
         'Military standard flanked by two cuirassed soldiers with spears. "CONS" mint mark in exergue."',
       legend: 'GLORIA EXERCITVS',
@@ -482,7 +482,7 @@ export const CollectionData: CollectionItem[] = [
       date: '378-388 AD',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A003-Obverse.webp',
+      imagePath: '/Images/Collection/A003-Obverse.webp',
       description: 'Diademed bust of Valentinian facing right.',
       legend: 'DN VALENTINIANVS PF AVG',
       legendDetails: {
@@ -492,7 +492,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A003-Reverse.webp',
+      imagePath: '/Images/Collection/A003-Reverse.webp',
       description: 'Wreath containing text. "SMAQ" mint mark in exergue.',
       legend: 'VOT X MVLT XX',
       legendDetails: {
@@ -522,7 +522,7 @@ export const CollectionData: CollectionItem[] = [
       date: '307-337 AD',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A004-Obverse.webp',
+      imagePath: '/Images/Collection/A004-Obverse.webp',
       description: 'Diademed and cuirassed bust of Constantine facing right.',
       legend: 'CONSTANTINVS MAX AVG',
       legendDetails: {
@@ -532,7 +532,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A004-Reverse.webp',
+      imagePath: '/Images/Collection/A004-Reverse.webp',
       description:
         'Two military standards, flanked by a soldier on each side. Mint mark "RBP" in exergue.',
       legend: 'GLORIA EXERCITVS',
@@ -564,7 +564,7 @@ export const CollectionData: CollectionItem[] = [
       date: '214 AD',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A007-Obverse.webp',
+      imagePath: '/Images/Collection/A007-Obverse.webp',
       description: 'Diademed bust of Caracalla facing right.',
       legend: 'ANTONINVS PIVS AVG GERM',
       legendDetails: {
@@ -575,7 +575,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A007-Reverse.webp',
+      imagePath: '/Images/Collection/A007-Reverse.webp',
       description: 'Apollo, shirtless, seated left, holding olive branch and leaning on lyre.',
       legend: 'PM TRP XVII COS IIII PP',
       legendDetails: {
@@ -606,7 +606,7 @@ export const CollectionData: CollectionItem[] = [
       date: '210 AD',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A008-Obverse.webp',
+      imagePath: '/Images/Collection/A008-Obverse.webp',
       description: 'Diademed bust of Severus facing right.',
       legend: 'SEVERVS PIVS AVG',
       legendDetails: {
@@ -616,7 +616,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A008-Reverse.webp',
+      imagePath: '/Images/Collection/A008-Reverse.webp',
       description:
         "Jupiter, naked, holding thunderbolt and sceptre. Two children flanking representing Severus' sons Caracalla and Geta. ",
       legend: 'PM TRP XVIII COS III PP',
@@ -650,7 +650,7 @@ export const CollectionData: CollectionItem[] = [
       date: '203-208 AD',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A011-Obverse.webp',
+      imagePath: '/Images/Collection/A011-Obverse.webp',
       description: 'Bust of Geta facing right.',
       legend: 'P SEPTIMIVS GETA CAES',
       legendDetails: {
@@ -660,7 +660,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A011-Reverse.webp',
+      imagePath: '/Images/Collection/A011-Reverse.webp',
       description: 'Providentia, draped, standing left, holding wand over globe and sceptre.',
       legend: 'PROVID DEORVM',
       legendDetails: {
@@ -691,7 +691,7 @@ export const CollectionData: CollectionItem[] = [
       date: '211-217 AD',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A013-Obverse.webp',
+      imagePath: '/Images/Collection/A013-Obverse.webp',
       description: 'Bust of Julia Domna, draped, facing right.',
       legend: 'IVLIA PIA FELIX AVG',
       legendDetails: {
@@ -701,7 +701,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A013-Reverse.webp',
+      imagePath: '/Images/Collection/A013-Reverse.webp',
       description: 'Vesta, standing left holding Palladium and sceptre.',
       legend: 'VESTA',
       legendDetails: {
@@ -733,7 +733,7 @@ export const CollectionData: CollectionItem[] = [
       date: '270-275 AD',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A016-Obverse.webp',
+      imagePath: '/Images/Collection/A016-Obverse.webp',
       description: 'Crowned Aurelian facing right.',
       legend: 'IMP CL DOM AVRELIANVS AVG',
       legendDetails: {
@@ -743,7 +743,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A016-Reverse.webp',
+      imagePath: '/Images/Collection/A016-Reverse.webp',
       description:
         'Securitas, standing with legs crossed, holding sceptre and leaning on column. "XI" (denomination) to right.',
       legend: 'SECURITAS AVG',
@@ -773,7 +773,7 @@ export const CollectionData: CollectionItem[] = [
       date: '218-222 AD',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A017-Obverse.webp',
+      imagePath: '/Images/Collection/A017-Obverse.webp',
       description: 'Diademed and cuirassed bust of Elagabalus facing right.',
       legend: 'IMP CAES ANTONINVS AVG',
       legendDetails: {
@@ -784,7 +784,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A017-Reverse.webp',
+      imagePath: '/Images/Collection/A017-Reverse.webp',
       description: 'Victory advancing right with wreath and trophy.',
       legend: 'VICTOR ANTONINI AVG',
       legendDetails: {
@@ -814,12 +814,12 @@ export const CollectionData: CollectionItem[] = [
       date: '300-295 BC',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A018-Obverse.webp',
+      imagePath: '/Images/Collection/A018-Obverse.webp',
       description:
         'Posthumous issue of Alexander the Great types. Bust of Heracles facing right, wearing lion skin headdress.',
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A018-Reverse.webp',
+      imagePath: '/Images/Collection/A018-Reverse.webp',
       description:
         'Zeus, enthroned and holding a sceptre and eagle. Monogram mint mark in left field, and two test cuts in the exergue.',
       legend: 'ΣΕΛΕΥΚΟΥ ΒΑΣΙΛΕΩΣ',
@@ -850,7 +850,7 @@ export const CollectionData: CollectionItem[] = [
       date: '231 AD',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A019-Obverse.webp',
+      imagePath: '/Images/Collection/A019-Obverse.webp',
       description: 'Diademed bust of Severus Alexander facing right.',
       legend: 'IMP SEV ALEXAND AVG',
       legendDetails: {
@@ -860,7 +860,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A019-Reverse.webp',
+      imagePath: '/Images/Collection/A019-Reverse.webp',
       description: 'Fides seated left, holding vexillum and signum.',
       legend: 'FIDES MILITVM',
       legendDetails: {
@@ -890,7 +890,7 @@ export const CollectionData: CollectionItem[] = [
       date: '116 AD',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A020-Obverse.webp',
+      imagePath: '/Images/Collection/A020-Obverse.webp',
       description: 'Diademed bust of Trajan facing right.',
       legend: 'IMP CAES NER TRAIANO OPTIMO AVG GER DAC',
       legendDetails: {
@@ -901,7 +901,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A020-Reverse.webp',
+      imagePath: '/Images/Collection/A020-Reverse.webp',
       description: 'Genius, standing left holding patera and grain ears.',
       legend: 'PM TRP COS VI PP SPQR',
       legendDetails: {
@@ -933,7 +933,7 @@ export const CollectionData: CollectionItem[] = [
       date: '261 AD',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A021-Obverse.webp',
+      imagePath: '/Images/Collection/A021-Obverse.webp',
       description: 'Bust of Postumus facing right, wearing radiate crown.',
       legend: 'IMP C POSTVMVS PF AVG',
       legendDetails: {
@@ -943,7 +943,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A021-Reverse.webp',
+      imagePath: '/Images/Collection/A021-Reverse.webp',
       description: 'Moneta, standing left holding scales and cornucopiae.',
       legend: 'MONETA AVG',
       legendDetails: {
@@ -971,7 +971,7 @@ export const CollectionData: CollectionItem[] = [
     authority: 'Roman Empire',
     mint: { location: 'Thessalonika', date: '342-348 AD' },
     obverse: {
-      imagePath: '/Images/Collection/V2/A023-Obverse.webp',
+      imagePath: '/Images/Collection/A023-Obverse.webp',
       description: 'Diademed bust of Constans facing right.',
       legend: 'CONSTANS PF AVG',
       legendDetails: {
@@ -981,7 +981,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A023-Reverse.webp',
+      imagePath: '/Images/Collection/A023-Reverse.webp',
       description: 'Two victories holding wreaths toward each other. Mint mark "TSE" in exergue.',
       legend: 'VICTORIAE DD AVGG Q NN',
       legendDetails: {
@@ -1010,7 +1010,7 @@ export const CollectionData: CollectionItem[] = [
       date: '257-258 AD',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A024-Obverse.webp',
+      imagePath: '/Images/Collection/A024-Obverse.webp',
       description: 'Bust of Gallienus facing right, wearing radiate crown.',
       legend: 'GALLIENVS PF AVG',
       legendDetails: {
@@ -1020,7 +1020,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A024-Reverse.webp',
+      imagePath: '/Images/Collection/A024-Reverse.webp',
       description: 'Two captives tied to a trophy of arms.',
       legend: 'GERMANICVS MAX V',
       legendDetails: {
@@ -1050,7 +1050,7 @@ export const CollectionData: CollectionItem[] = [
       date: '168-169 AD',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A025-Obverse.webp',
+      imagePath: '/Images/Collection/A025-Obverse.webp',
       description: 'Diademed bust of Marcus Aurelius facing right.',
       legend: 'M ANTONINVS AVG TRP XXIII',
       legendDetails: {
@@ -1061,7 +1061,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A025-Reverse.webp',
+      imagePath: '/Images/Collection/A025-Reverse.webp',
       description:
         'Felicitas, draped, standing forward with head to left, holding short caduceus and long scepter.',
       legend: 'FELICITAS AVG COS III',
@@ -1093,11 +1093,11 @@ export const CollectionData: CollectionItem[] = [
       date: '310-301 BC',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A026-Obverse.webp',
+      imagePath: '/Images/Collection/A026-Obverse.webp',
       description: 'Head of Heracles facing right, wearing lion skin headdress.',
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A026-Reverse.webp',
+      imagePath: '/Images/Collection/A026-Reverse.webp',
       description:
         'Zeus, enthroned and holding sceptre and eagle. Griffin mint mark in left field, with monogram of Π and Ι below.',
       legend: 'ΑΛΕΞΑΝΔΡΟΥ',
@@ -1127,7 +1127,7 @@ export const CollectionData: CollectionItem[] = [
       date: '159-160 AD',
     },
     obverse: {
-      imagePath: '/Images/Collection/V2/A027-Obverse.webp',
+      imagePath: '/Images/Collection/A027-Obverse.webp',
       description: 'Diademed bust of Antoninus facing right.',
       legend: 'ANTONINVS AVG PIVS PP TRP XXIII',
       legendDetails: {
@@ -1138,7 +1138,7 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reverse: {
-      imagePath: '/Images/Collection/V2/A027-Reverse.webp',
+      imagePath: '/Images/Collection/A027-Reverse.webp',
       description: 'Fortuna, draped, standing right, holding rudder and cornucopiae.',
       legend: 'FORTVNA COS IIII',
       legendDetails: {

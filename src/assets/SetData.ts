@@ -11,31 +11,31 @@ export const SetData: CoinSet[] = [
         name: 'Augustus',
         secondLine: '27 BC - 14 AD',
         completed: false,
-        imageUrl: '/Images/Sets/JulioClaudians/Augustus.webp',
+        imageUrl: '/Images/Drawings/Augustus.webp',
       },
       {
         name: 'Tiberius',
         secondLine: '14-37 AD',
         completed: false,
-        imageUrl: '/Images/Sets/JulioClaudians/Tiberius.webp',
+        imageUrl: '/Images/Drawings/Tiberius.webp',
       },
       {
         name: 'Caligula',
         secondLine: '37-41 AD',
         completed: false,
-        imageUrl: '/Images/Sets/JulioClaudians/Caligula.webp',
+        imageUrl: '/Images/Drawings/Caligula.webp',
       },
       {
         name: 'Claudius',
         secondLine: '41-54 AD',
         completed: false,
-        imageUrl: '/Images/Sets/JulioClaudians/Claudius.webp',
+        imageUrl: '/Images/Drawings/Claudius.webp',
       },
       {
         name: 'Nero',
         secondLine: '54-68 AD',
         completed: false,
-        imageUrl: '/Images/Sets/JulioClaudians/Nero.webp',
+        imageUrl: '/Images/Drawings/Nero.webp',
       },
     ],
   },
@@ -49,7 +49,7 @@ export const SetData: CoinSet[] = [
         name: 'Nerva',
         secondLine: '96-98 AD',
         completed: false,
-        imageUrl: '/Images/Sets/5GoodEmperors/Nerva.webp',
+        imageUrl: '/Images/Drawings/Nerva.webp',
       },
       {
         name: 'Trajan',
@@ -64,7 +64,7 @@ export const SetData: CoinSet[] = [
         name: 'Hadrian',
         secondLine: '117-138 AD',
         completed: false,
-        imageUrl: '/Images/Sets/5GoodEmperors/Hadrian.webp',
+        imageUrl: '/Images/Drawings/Hadrian.webp',
       },
       {
         name: 'Antoninus Pius',
@@ -130,12 +130,12 @@ export const SetData: CoinSet[] = [
       {
         name: 'Julia Maesa',
         completed: false,
-        imageUrl: '/Images/Sets/SeveranSilver/JuliaMaesa.webp',
+        imageUrl: '/Images/Drawings/JuliaMaesa.webp',
       },
       {
         name: 'Julia Soaemias',
         completed: false,
-        imageUrl: '/Images/Sets/SeveranSilver/JuliaSoaemias.webp',
+        imageUrl: '/Images/Drawings/JuliaSoaemias.webp',
       },
       {
         name: 'Elagabalus',
@@ -149,7 +149,7 @@ export const SetData: CoinSet[] = [
       {
         name: 'Julia Mamaea',
         completed: false,
-        imageUrl: '/Images/Sets/SeveranSilver/JuliaMamaea.webp',
+        imageUrl: '/Images/Drawings/JuliaMamaea.webp',
       },
       {
         name: 'Severus Alexander',
@@ -187,7 +187,7 @@ export const SetData: CoinSet[] = [
       {
         name: 'Claudius II',
         completed: false,
-        imageUrl: '/Images/Sets/ThirdCenturyCrisis/ClaudiusII.webp',
+        imageUrl: '/Images/Drawings/ClaudiusII.webp',
       },
       {
         name: 'Aurelian',
@@ -200,7 +200,7 @@ export const SetData: CoinSet[] = [
       {
         name: 'Diocletian',
         completed: false,
-        imageUrl: '/Images/Sets/ThirdCenturyCrisis/Diocletian.webp',
+        imageUrl: '/Images/Drawings/Diocletian.webp',
       },
     ],
   },
@@ -214,7 +214,7 @@ export const SetData: CoinSet[] = [
         name: 'Constantius I',
         secondLine: '305-306 AD',
         completed: false,
-        imageUrl: '/Images/Sets/Constantinians/ConstantiusChlorus.webp',
+        imageUrl: '/Images/Drawings/ConstantiusChlorus.webp',
       },
       {
         name: 'Constantine I',
@@ -228,13 +228,13 @@ export const SetData: CoinSet[] = [
       {
         name: 'Crispus',
         completed: false,
-        imageUrl: '/Images/Sets/Constantinians/Crispus.webp',
+        imageUrl: '/Images/Drawings/Crispus.webp',
       },
       {
         name: 'Constantine II',
         secondLine: '337-340 AD',
         completed: false,
-        imageUrl: '/Images/Sets/Constantinians/ConstantineII.webp',
+        imageUrl: '/Images/Drawings/ConstantineII.webp',
       },
       {
         name: 'Constantius II',
@@ -258,7 +258,7 @@ export const SetData: CoinSet[] = [
         name: 'Julian',
         secondLine: '361-363 AD',
         completed: false,
-        imageUrl: '/Images/Sets/Constantinians/Julian.webp',
+        imageUrl: '/Images/Drawings/Julian.webp',
       },
     ],
   },
@@ -272,13 +272,13 @@ export const SetData: CoinSet[] = [
         name: 'Alexander III "The Great"',
         secondLine: 'Macedon, 336-323 BC',
         completed: false,
-        imageUrl: '/Images/Sets/SuccessorsOfAlexander/AlexanderZeus.webp',
+        imageUrl: '/Images/Drawings/AlexanderZeus.webp',
       },
       {
         name: 'Ptolemy I',
         secondLine: 'Egypt, 325-285 BC',
         completed: false,
-        imageUrl: '/Images/Sets/SuccessorsOfAlexander/PtolemyI.webp',
+        imageUrl: '/Images/Drawings/PtolemyI.webp',
       },
       {
         name: 'Antigonus I',
@@ -302,13 +302,13 @@ export const SetData: CoinSet[] = [
         name: 'Cassander',
         secondLine: 'Macedonia, 305-297 BC',
         completed: false,
-        imageUrl: '/Images/Sets/SuccessorsOfAlexander/Heracles.webp',
+        imageUrl: '/Images/Drawings/Heracles.webp',
       },
       {
         name: 'Lysimachus',
         secondLine: 'Thrace, 306-281 BC',
         completed: false,
-        imageUrl: '/Images/Sets/SuccessorsOfAlexander/Lysimachos.webp',
+        imageUrl: '/Images/Drawings/Lysimachos.webp',
       },
     ],
   },
@@ -329,32 +329,32 @@ export const SetData: CoinSet[] = [
       {
         name: 'Poseidon',
         completed: false,
-        imageUrl: '/Images/Sets/TwelveOlympians/Poseidon.webp',
+        imageUrl: '/Images/Drawings/Poseidon.webp',
       },
       {
         name: 'Hera',
         completed: false,
-        imageUrl: '/Images/Sets/TwelveOlympians/Hera.webp',
+        imageUrl: '/Images/Drawings/Hera.webp',
       },
       {
         name: 'Demeter',
         completed: false,
-        imageUrl: '/Images/Sets/TwelveOlympians/Demeter.webp',
+        imageUrl: '/Images/Drawings/Demeter.webp',
       },
       {
         name: 'Aphrodite',
         completed: false,
-        imageUrl: '/Images/Sets/TwelveOlympians/Aphrodite.webp',
+        imageUrl: '/Images/Drawings/Aphrodite.webp',
       },
       {
         name: 'Athena',
         completed: false,
-        imageUrl: '/Images/Sets/TwelveOlympians/Athena.webp',
+        imageUrl: '/Images/Drawings/Athena.webp',
       },
       {
         name: 'Artemis',
         completed: false,
-        imageUrl: '/Images/Sets/TwelveOlympians/Artemis.webp',
+        imageUrl: '/Images/Drawings/Artemis.webp',
       },
       {
         name: 'Apollo',
@@ -367,22 +367,22 @@ export const SetData: CoinSet[] = [
       {
         name: 'Ares',
         completed: false,
-        imageUrl: '/Images/Sets/TwelveOlympians/Ares.webp',
+        imageUrl: '/Images/Drawings/Ares.webp',
       },
       {
         name: 'Hephaestus',
         completed: false,
-        imageUrl: '/Images/Sets/TwelveOlympians/Hephaestus.webp',
+        imageUrl: '/Images/Drawings/Hephaestus.webp',
       },
       {
         name: 'Hermes',
         completed: false,
-        imageUrl: '/Images/Sets/TwelveOlympians/Hermes.webp',
+        imageUrl: '/Images/Drawings/Hermes.webp',
       },
       {
         name: 'Dionysus',
         completed: false,
-        imageUrl: '/Images/Sets/TwelveOlympians/Dionysus.webp',
+        imageUrl: '/Images/Drawings/Dionysus.webp',
       },
     ],
   },
@@ -396,7 +396,7 @@ export const SetData: CoinSet[] = [
         name: 'Achaemenid Empire',
         secondLine: '550-330 BC',
         completed: false,
-        imageUrl: '/Images/Sets/AncientPersia/Achaemenid.webp',
+        imageUrl: '/Images/Drawings/Achaemenid.webp',
       },
       {
         name: 'Seleucid Empire',
@@ -411,14 +411,14 @@ export const SetData: CoinSet[] = [
         name: 'Parthian Empire',
         secondLine: '247 BC - 224 AD',
         completed: false,
-        imageUrl: '/Images/Sets/AncientPersia/Parthia.webp',
+        imageUrl: '/Images/Drawings/Parthia.webp',
       },
 
       {
         name: 'Sasanian Empire',
         secondLine: '224-651 AD',
         completed: false,
-        imageUrl: '/Images/Sets/AncientPersia/Sassania.webp',
+        imageUrl: '/Images/Drawings/Sassania.webp',
       },
     ],
   },
