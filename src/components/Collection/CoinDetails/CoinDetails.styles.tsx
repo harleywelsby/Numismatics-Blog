@@ -286,10 +286,16 @@ export const LegendText = styled.p`
   }
 `;
 
-export const TranslationGrid = styled.div`
+export const TranslationGrid = styled.div<{ $center?: boolean }>`
   display: grid;
   grid-template-columns: 20% 80%;
   gap: 1rem 0.5rem;
+
+  ${(props) =>
+    props.$center &&
+    css`
+      grid-template-columns: 40% 60%;
+    `}
 
   @media (min-width: 35em) {
     gap: 1rem;
@@ -298,6 +304,12 @@ export const TranslationGrid = styled.div`
   @media (min-width: 100em) {
     grid-template-columns: 30% 70%;
     gap: 1rem 0;
+
+    ${(props) =>
+      props.$center &&
+      css`
+        grid-template-columns: 45% 55%;
+      `}
   }
 `;
 

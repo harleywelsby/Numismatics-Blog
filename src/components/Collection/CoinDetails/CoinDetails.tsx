@@ -85,12 +85,14 @@ const ObverseReverseSection = ({ coin, isSmallScreen }: ObverseReverseData) => {
         <DescriptionHeaderText>Reverse</DescriptionHeaderText>
         <ObverseReverseDescriptionText>{coin.reverse.description}</ObverseReverseDescriptionText>
       </DescriptionSection>
-      {coin.obverse.legend && (
+      {coin.obverse.legend ? (
         <LegendSection
           legend={coin.obverse.legend}
           legendDetails={coin.obverse.legendDetails}
           isSmallScreen={isSmallScreen}
         />
+      ) : (
+        <div />
       )}
       {coin.reverse.legend && (
         <LegendSection
@@ -105,6 +107,7 @@ const ObverseReverseSection = ({ coin, isSmallScreen }: ObverseReverseData) => {
 
 const LegendSection = ({ legend, legendDetails, isSmallScreen }: LegendData) => {
   const hasTranslations = legendDetails && legendDetails.original && legendDetails.english;
+  const isLessThanThreeWords = legend.split(' ').length < 3;
 
   return (
     <DescriptionSection>
@@ -114,7 +117,7 @@ const LegendSection = ({ legend, legendDetails, isSmallScreen }: LegendData) => 
       </LegendText>
       {hasTranslations && (
         <>
-          <TranslationGrid>
+          <TranslationGrid $center={isLessThanThreeWords}>
             <TranslationText $rightAlign>
               <b>{`${CapitalizeFirstLetter(legendDetails.language)}:`}</b>
             </TranslationText>
