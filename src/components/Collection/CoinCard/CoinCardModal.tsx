@@ -35,14 +35,16 @@ export const CoinCardModal = ({
 }: CoinCardModalProps) => {
   const navigate = useNavigate();
 
+  const routeUrl = closeRerouteOverride || Routes.Collection;
+
   const handleModalClose = () => {
     setShowModal(false);
-    navigate(closeRerouteOverride || Routes.Collection);
+    navigate(routeUrl);
   };
 
   const handleSeeMore = () => {
     setShowModal(false);
-    window.history.replaceState(null, '', Routes.Collection);
+    window.history.replaceState(null, '', routeUrl);
     navigate(Routes.CollectionItemDetails.replace(':itemId', `${coin.id}`));
   };
 

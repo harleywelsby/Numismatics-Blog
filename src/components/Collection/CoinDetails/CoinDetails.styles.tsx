@@ -123,7 +123,7 @@ export const HeaderSeparator = styled.div<{ $noSpacing?: boolean }>`
 
 // Section Header
 
-export const SectionHeaderText = styled.h2`
+export const SectionHeaderText = styled.h2<{ $noSpacing?: boolean }>`
   color: var(--title-orange);
   font-family: 'Times New Roman', Times, serif;
   font-size: clamp(2rem, 1vw + 0.5rem, 3rem);
@@ -131,6 +131,12 @@ export const SectionHeaderText = styled.h2`
 
   margin: 1rem;
   padding: 0;
+
+  ${(props) =>
+    props.$noSpacing &&
+    css`
+      margin: 0;
+    `}
 `;
 
 export const SectionHeaderSeparator = styled.div`
@@ -151,6 +157,8 @@ export const SectionHeaderSeparator = styled.div`
 export const SubtitleText = styled.p`
   font-size: clamp(1.2rem, 1vw + 0.5rem, 1.5rem);
   text-align: center;
+  margin: 0 0 1rem 0;
+  color: var(--subtitle-grey);
 `;
 
 // Other Section Styles
@@ -200,12 +208,19 @@ export const DescriptionHeaderText = styled.h3`
   }
 `;
 
-export const DescriptionText = styled.p<{ $withTopPadding?: boolean }>`
+export const DescriptionText = styled.p<{ $withTopPadding?: boolean; $rightAlign?: boolean }>`
   width: 100%;
   font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
 
   text-align: left;
   justify-self: center;
+
+  ${(props) =>
+    props.$rightAlign &&
+    css`
+      text-align: right;
+      justify-self: right;
+    `}
 
   ${(props) =>
     props.$withTopPadding &&
@@ -225,7 +240,7 @@ export const ObverseReverseDescriptionText = styled.p<{ $withTopPadding?: boolea
   width: 100%;
   font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
 
-  text-align: left;
+  text-align: center;
   justify-self: center;
 
   ${(props) =>
@@ -267,5 +282,15 @@ export const LegendText = styled.p`
 
   @media (min-width: 35em) {
     padding: 0 2rem;
+  }
+`;
+
+export const TranslationGrid = styled.div`
+  display: grid;
+  grid-template-columns: 20% 80%;
+  gap: 1rem 0.5rem;
+
+  @media (min-width: 35em) {
+    gap: 1rem;
   }
 `;

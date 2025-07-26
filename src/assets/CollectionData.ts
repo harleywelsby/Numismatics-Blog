@@ -1076,7 +1076,7 @@ export const CollectionData: CollectionItem[] = [
       url: 'http://numismatics.org/ocre/id/ric.3.m_aur.203',
     },
     characters: ['Felicitas'],
-    enableSeeMore: false,
+    enableSeeMore: true,
   },
   // 26
   {

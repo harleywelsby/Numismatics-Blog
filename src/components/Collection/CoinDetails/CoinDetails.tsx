@@ -16,6 +16,7 @@ import {
   SectionImage,
   SectionSeparator,
   SubtitleText,
+  TranslationGrid,
   VariantGrid,
   VariantTitle,
   VariantValue,
@@ -35,7 +36,7 @@ const CapitalizeFirstLetter = (str: string) => {
 const SectionHeader = ({ title, subTitle }: { title: string; subTitle?: string }) => {
   return (
     <>
-      <SectionHeaderText>{title}</SectionHeaderText>
+      <SectionHeaderText $noSpacing={!!subTitle}>{title}</SectionHeaderText>
       {subTitle && <SubtitleText>{subTitle}</SubtitleText>}
       <SectionHeaderSeparator />
     </>
@@ -112,14 +113,16 @@ const LegendSection = ({ legend, legendDetails, isSmallScreen }: LegendData) => 
       </LegendText>
       {hasTranslations && (
         <>
-          <DescriptionText>
-            <b>{`${CapitalizeFirstLetter(legendDetails.language)}:`}</b> {legendDetails.original}
-          </DescriptionText>
-          <br />
-          <DescriptionText>
-            <b>English:</b> {legendDetails.english}
-          </DescriptionText>
-          <br />
+          <TranslationGrid>
+            <DescriptionText $rightAlign>
+              <b>{`${CapitalizeFirstLetter(legendDetails.language)}:`}</b>
+            </DescriptionText>
+            <DescriptionText>{legendDetails.original}</DescriptionText>
+            <DescriptionText $rightAlign>
+              <b>English:</b>
+            </DescriptionText>
+            <DescriptionText>{legendDetails.english}</DescriptionText>
+          </TranslationGrid>
           {legendDetails.description && (
             <DescriptionText $withTopPadding>{legendDetails.description}</DescriptionText>
           )}
@@ -133,7 +136,10 @@ const LegendSection = ({ legend, legendDetails, isSmallScreen }: LegendData) => 
 const RulerSection = ({ coin, rulerDetails }: RulerData) => {
   return (
     <>
-      <SectionHeader title={coin.ruler.name} />
+      <SectionHeader
+        title={coin.ruler.name}
+        subTitle={`${rulerDetails.title}, ${coin.ruler.reign}`}
+      />
       <SectionImage src={rulerDetails?.imagePath} alt={rulerDetails?.ruler.name} />
       {rulerDetails?.descriptionParagraphs.map((paragraph, index) => (
         <React.Fragment key={index}>

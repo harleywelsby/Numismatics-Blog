@@ -93,6 +93,7 @@ type Ruler = {
 
 export type RulerDetails = {
   ruler: Ruler;
+  title: string;
   imagePath: string;
   descriptionParagraphs: string[];
 };
