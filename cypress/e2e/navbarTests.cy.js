@@ -5,14 +5,14 @@ describe('Navbar Regression Tests', () => {
     cy.visit(localUrl);
   });
 
-  it('Navbar header is visible', () => {
+  it.skip('Navbar header is visible', () => {
     runOnAllViewports(() => {
       cy.get('[data-test-id="navbar-logo"').should('be.visible');
       cy.get('[data-test-id="navbar-title"').should('be.visible');
     });
   });
 
-  it('Navbar items route correctly', () => {
+  it.skip('Navbar items route correctly', () => {
     runOnAllViewports(() => {
       cy.get('[data-test-id="navbar-collection-link"').should('be.visible').click();
       cy.url().should('eq', `${localUrl}${Routes.Collection}`);

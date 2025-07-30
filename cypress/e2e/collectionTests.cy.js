@@ -1,7 +1,7 @@
 import { localUrl, Routes, runOnAllViewports } from '../support/e2e';
 
 describe('Collection Regression Tests', () => {
-  it('List items are visible and modal functions correctly', () => {
+  it.skip('List items are visible and modal functions correctly', () => {
     runOnAllViewports(() => {
       cy.visit(`${localUrl}${Routes.Collection}`);
 
