@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import {
   FilterSection,
   FilterItem,
@@ -20,6 +20,7 @@ import { SortType } from './Collection.types';
 import { PageWrapper, HeaderText, HeaderSeparator } from '../../shared/styles/sharedStyles';
 import { NavigationContext } from '../NavigationContext/NavigationContext';
 import { Routes } from '../../shared/utils/router';
+import { CollectionFilterStateContext } from './CollectionFilterState/CollectionFilterStateContext';
 
 export const CollectionV2 = () => {
   const { setSelectedRoute } = useContext(NavigationContext);
@@ -27,9 +28,14 @@ export const CollectionV2 = () => {
     setSelectedRoute(Routes.Collection);
   }, [setSelectedRoute]);
 
-  const [authorityFilter, setAuthorityFilter] = useState('All');
-  const [sortType, setSortType] = useState(SortType.Latest);
-  const [hideLowGrade, setHideLowGrade] = useState(true);
+  const {
+    authorityFilter,
+    setAuthorityFilter,
+    sortType,
+    setSortType,
+    hideLowGrade,
+    setHideLowGrade,
+  } = useContext(CollectionFilterStateContext);
 
   // Prepare the collection data
   const filteredCollectionData = ApplyDataFilters(CollectionData, authorityFilter, hideLowGrade);

@@ -5,15 +5,18 @@ import { Analytics } from '@vercel/analytics/react';
 import { NavigationContextProvider } from './components/NavigationContext/NavigationContextProvider';
 import { Footer } from './components/Footer/Footer';
 import { SetContextProvider } from './components/Sets/SetContextProvider';
+import { CollectionFilterStateContextProvider } from './components/Collection/CollectionFilterState/CollectionFilterStateContextProvider.';
 
 function App() {
   return (
     <NavigationContextProvider>
       <SetContextProvider>
-        <Navbar />
-        <Outlet />
-        <Footer />
-        <Analytics />
+        <CollectionFilterStateContextProvider>
+          <Navbar />
+          <Outlet />
+          <Footer />
+          <Analytics />
+        </CollectionFilterStateContextProvider>
       </SetContextProvider>
     </NavigationContextProvider>
   );
