@@ -7,6 +7,7 @@ import {
   ShowcaseDescription,
   ShowcaseItem,
   ShowcaseSeparator,
+  ShowcaseSubtitle,
   ShowcaseText,
   ShowcaseTitle,
   TextWrapper,
@@ -89,9 +90,10 @@ export const Home = () => {
                 <ShowcaseTitle $isMediumScreenOrLarger={isMediumScreenOrLarger}>
                   {x.title}
                 </ShowcaseTitle>
-                <ShowcaseDescription>
+                <ShowcaseSubtitle>
                   {x.mint.date}, {x.mint.location}
-                </ShowcaseDescription>
+                </ShowcaseSubtitle>
+
                 <ShowcaseDescription>{getShowcaseDescription(x.id)}</ShowcaseDescription>
               </ShowcaseText>
             </ShowcaseItem>

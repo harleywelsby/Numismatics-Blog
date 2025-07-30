@@ -164,13 +164,23 @@ export const ShowcaseText = styled.div`
 
 export const ShowcaseTitle = styled.h3<{ $isMediumScreenOrLarger?: boolean }>`
   text-align: center;
-  margin: 0.5rem 0;
+  margin: 0.5rem 0 0 0;
 
   ${(props) =>
     props.$isMediumScreenOrLarger &&
     css`
       text-align: left;
     `}
+`;
+
+export const ShowcaseSubtitle = styled.h4`
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+  font-weight: 400;
+
+  @media (min-width: 35em) {
+    text-align: left;
+  }
 `;
 
 export const ShowcaseDescription = styled.div`
