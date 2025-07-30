@@ -237,8 +237,7 @@ export const CollectionDataLegacy: CollectionItemV1[] = [
     mintLocation: 'Siscia',
     mintDate: '364-375 AD',
     obverseDescription: 'Diademed bust of Valentinian facing right. "DN VALENTINIANVS PF AVG"',
-    reverseDescription:
-      'Military-dressed emperor advancing right, holding labarum and dragging captive. "BSISC" mint mark in exergue. "GLORIA ROMANORVM"',
+    reverseDescription: 'Victory advancing left',
     catalogueNumber: 'RIC IX #14A',
   },
   {
@@ -634,8 +633,47 @@ export const CollectionData: CollectionItem[] = [
     characters: ['Jupiter', 'Caracalla & Geta'],
   },
   // TODO: 9
-  // TODO: 10
-  // TODO: 11
+  // 10
+  {
+    id: 10,
+    grade: Grade.Good,
+    title: 'Valentinian I Nummus',
+    ruler: {
+      name: 'Valentinian I',
+      reign: '364-375 AD',
+    },
+    authority: 'Roman Empire',
+    mint: {
+      location: 'Siscia',
+      date: '364-367 AD',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/A010-Obverse.webp',
+      description: 'Diademed bust of Valentinian facing right.',
+      legend: 'DN VALENTINIANVS PF AVG',
+      legendDetails: {
+        language: 'latin',
+        original: 'Dominus Noster Valentinianus Pius Felix Augustus',
+        english: 'Our Lord Valentinian, the Dutiful and Happy Emperor',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/A010-Reverse.webp',
+      description:
+        'Victory advancing left, holding wreath. "*A" mint mark left of Victory. "DΔSISC" mint mark in exergue.',
+      legend: 'SECVRITAS REIPVBLICAE',
+      legendDetails: {
+        language: 'latin',
+        original: 'Securitas Reipublicae',
+        english: 'The Security of the Republic of Rome',
+      },
+    },
+    reference: {
+      catalogueNumber: 'RIC IX #7A',
+    },
+    characters: ['Victory'],
+  },
+  // 11
   {
     id: 11,
     grade: Grade.ExtremelyFine,
@@ -675,7 +713,46 @@ export const CollectionData: CollectionItem[] = [
     },
     characters: ['Providentia'],
   },
-  // TODO: 12
+  // 12
+  {
+    id: 12,
+    grade: Grade.Good,
+    title: 'Constantine I Nummus',
+    ruler: {
+      name: 'Constantine I "The Great"',
+      reign: '306-337 AD',
+    },
+    authority: 'Roman Empire',
+    mint: {
+      location: 'Nicomedia',
+      date: '324-329 AD',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/A012-Obverse.webp',
+      description: 'Diademed bust of Constantine.',
+      legend: 'CONSTANTIVS AVG',
+      legendDetails: {
+        language: 'latin',
+        original: 'Constantinus Augustus',
+        english: 'Emperor Constantine',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/A012-Reverse.webp',
+      description:
+        'Military camp gates with 2 towers either side, and a star above. "NB" mint mark in exergue.',
+      legend: 'PROVIDENTIA AVGG',
+      legendDetails: {
+        language: 'latin',
+        original: 'Providentia Augustorum',
+        english: 'The Providence of the two Emperors',
+      },
+    },
+    reference: {
+      catalogueNumber: 'RIC VII #90',
+    },
+    characters: ['Camp Gates'],
+  },
   // 13
   {
     id: 13,
@@ -717,7 +794,47 @@ export const CollectionData: CollectionItem[] = [
     characters: ['Julia Domna', 'Vesta'],
   },
   // TODO: 14
-  // TODO: 15
+  // 15
+  {
+    id: 15,
+    grade: Grade.Good,
+    title: 'Valentinian I Nummus',
+    ruler: {
+      name: 'Valentinian I',
+      reign: '364-375 AD',
+    },
+    authority: 'Roman Empire',
+    mint: {
+      location: 'Siscia (2nd Officina)',
+      date: '364-375 AD',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/A015-Obverse.webp',
+      description: 'Diademed bust of Valentinian facing right.',
+      legend: 'DN VALENTINIANVS PF AVG',
+      legendDetails: {
+        language: 'latin',
+        original: 'Dominus Noster Valentinianus Pius Felix Augustus',
+        english: 'Our Lord Valentinian, the Dutiful and Happy Emperor',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/A015-Reverse.webp',
+      description:
+        'Valentinian in military dress advancing right, holding labarum and dragging a captive. BSISC mint mark in exergue.',
+      legend: 'GLORIA ROMANORVM',
+      legendDetails: {
+        language: 'latin',
+        original: 'Gloria Romanorum',
+        english: 'The Glory of the Romans',
+      },
+    },
+    reference: {
+      catalogueNumber: 'RIC IX #14A',
+      url: 'https://numismatics.org/ocre/id/ric.9.sis.14A',
+    },
+    characters: [],
+  },
   // 16
   {
     id: 16,
