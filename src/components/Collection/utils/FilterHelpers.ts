@@ -22,10 +22,23 @@ export const GetAuthorityGroups = (authorities: string[]): AuthorityGroup[] => {
   );
 };
 
+const HandleSearch = (data: CollectionItem[], search: string): CollectionItem[] => {
+  return data.filter(
+    (item) =>
+      item.title.toLowerCase().includes(search.toLowerCase()) ||
+      item.obverse.description.toLowerCase().includes(search.toLowerCase()) ||
+      item.obverse.legend?.toLowerCase().includes(search.toLowerCase()) ||
+      item.reverse.description.toLowerCase().includes(search.toLowerCase()) ||
+      item.reverse.legend?.toLowerCase().includes(search.toLowerCase()) ||
+      item.characters.some((character) => character.toLowerCase().includes(search.toLowerCase())),
+  );
+};
+
 export const ApplyDataFilters = (
   data: CollectionItem[],
   authorityFilter: string,
   hideLowGrade: boolean,
+  search: string,
 ) => {
   let filteredData = data;
 
@@ -38,6 +51,10 @@ export const ApplyDataFilters = (
 
   if (hideLowGrade) {
     filteredData = filteredData.filter((x) => x.grade >= 4); // Very Fine (VF) or better
+  }
+
+  if (search) {
+    filteredData = HandleSearch(filteredData, search);
   }
 
   return filteredData;

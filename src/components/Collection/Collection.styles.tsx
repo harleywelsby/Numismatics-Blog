@@ -9,14 +9,6 @@ export const CoinCardGrid = styled.div<{ $columnsOverride?: string }>`
     css`
       grid-template-columns: ${props.$columnsOverride};
     `}
-
-  @media (max-width: 100em) {
-    grid-template-columns: 50% 50%;
-
-    @media (max-width: 65em) {
-      grid-template-columns: 100%;
-    }
-  }
 `;
 
 // Filters
@@ -55,6 +47,10 @@ export const FilterSelectBox = styled.select`
   min-width: 12rem;
   padding: 0.5rem 0.2rem;
   border-radius: 5px;
+
+  @media (min-width: 35em) {
+    min-width: 8rem;
+  }
 `;
 
 export const FilterCheckboxWrapper = styled.div`
@@ -70,4 +66,33 @@ export const FilterCheckbox = styled.input`
   justify-self: center;
   align-self: center;
   padding: 1rem;
+`;
+
+export const SearchBox = styled.input`
+  margin: 0.5rem 0 0 0;
+  padding: 0.8rem 0.2rem;
+  border-radius: 10px;
+  width: 85%;
+
+  @media (min-width: 35em) {
+    min-width: 20rem;
+    padding: 0.8rem 0.5rem;
+    width: 12rem;
+  }
+`;
+
+export const FilterAccordionHeader = styled.h2`
+  margin: 0;
+  padding: 0;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  font-weight: bold;
+  color: var(--white);
+`;
+
+export const AccordionSeparator = styled.div`
+  margin: 2rem 0 1rem 0;
+  border-bottom: solid;
+  min-width: 60%;
+  justify-self: center;
+  color: var(--scroll-track-grey);
 `;
