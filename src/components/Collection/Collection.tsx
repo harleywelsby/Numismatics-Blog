@@ -58,7 +58,7 @@ export const CollectionV2 = () => {
   SortCollectionData(filteredCollectionData, sortType);
 
   // Dynamically fetch the filter options
-  const authorityFilterOptions = GetAuthorityGroups(filteredCollectionData.map((x) => x.authority));
+  const authorityFilterOptions = GetAuthorityGroups(CollectionData.map((x) => x.authority));
 
   // If only 1 or 2 items are in the list, adjust the columns.
   const getColumnOverride = () => {
@@ -74,7 +74,7 @@ export const CollectionV2 = () => {
       case 1:
         return '100%';
       case 2:
-        return '50% 50%';
+        return isSmallScreen ? columns : '50% 50%';
       default:
         return columns;
     }

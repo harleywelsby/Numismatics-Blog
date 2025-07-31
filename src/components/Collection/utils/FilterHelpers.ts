@@ -23,14 +23,16 @@ export const GetAuthorityGroups = (authorities: string[]): AuthorityGroup[] => {
 };
 
 const HandleSearch = (data: CollectionItem[], search: string): CollectionItem[] => {
+  const query = search.toLowerCase().trim();
+
   return data.filter(
     (item) =>
-      item.title.toLowerCase().includes(search.toLowerCase()) ||
-      item.obverse.description.toLowerCase().includes(search.toLowerCase()) ||
-      item.obverse.legend?.toLowerCase().includes(search.toLowerCase()) ||
-      item.reverse.description.toLowerCase().includes(search.toLowerCase()) ||
-      item.reverse.legend?.toLowerCase().includes(search.toLowerCase()) ||
-      item.characters.some((character) => character.toLowerCase().includes(search.toLowerCase())),
+      item.title.toLowerCase().includes(query) ||
+      item.obverse.description.toLowerCase().includes(query) ||
+      item.obverse.legend?.toLowerCase().includes(query) ||
+      item.reverse.description.toLowerCase().includes(query) ||
+      item.reverse.legend?.toLowerCase().includes(query) ||
+      item.characters.some((character) => character.toLowerCase().includes(query)),
   );
 };
 
@@ -73,13 +75,6 @@ export const SortCollectionData = (data: CollectionItem[], sortType: SortType) =
         return getCleanMintDate(a.mint.date) - getCleanMintDate(b.mint.date);
       case SortType.MintDateDesc:
         return getCleanMintDate(b.mint.date) - getCleanMintDate(a.mint.date);
-      case SortType.Rulers:
-        if (a.ruler < b.ruler) {
-          return -1;
-        } else if (a.ruler > b.ruler) {
-          return 1;
-        }
-        return 0;
       case SortType.Best:
         return b.grade - a.grade;
       case SortType.Latest:
@@ -96,5 +91,4 @@ export const ActiveSortTypes: SortType[] = [
   SortType.Best,
   SortType.MintDateAsc,
   SortType.MintDateDesc,
-  SortType.Rulers,
 ];
