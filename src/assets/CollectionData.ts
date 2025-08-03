@@ -164,7 +164,7 @@ export const CollectionData: CollectionItem[] = [
   {
     id: 5,
     grade: Grade.VeryFine,
-    title: 'Alexander III Depiction',
+    title: 'Alexander III Portrait Coin',
     ruler: {
       name: 'Alexander III "The Great"',
       reign: '336-323 BC',
