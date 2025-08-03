@@ -44,6 +44,10 @@ export const ApplyDataFilters = (
 ) => {
   let filteredData = data;
 
+  if (search) {
+    return HandleSearch(filteredData, search);
+  }
+
   const currentAuthorityGroup = AuthorityGroups.find((x) => x.name === authorityFilter);
   if (authorityFilter !== 'All' && currentAuthorityGroup) {
     filteredData = filteredData.filter((x) =>
@@ -53,10 +57,6 @@ export const ApplyDataFilters = (
 
   if (hideLowGrade) {
     filteredData = filteredData.filter((x) => x.grade >= 4); // Very Fine (VF) or better
-  }
-
-  if (search) {
-    filteredData = HandleSearch(filteredData, search);
   }
 
   return filteredData;

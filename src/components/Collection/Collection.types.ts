@@ -1,22 +1,3 @@
-// TODO: Remove once the last of the V1 data is migrated.
-export type CollectionItemV1 = {
-  id: number;
-  grade: Grade;
-  title: string;
-  imgPath: string;
-  ruler: string;
-  authority: string;
-  mintLocation: string;
-  mintDate: string;
-  obverseDescription: string;
-  reverseDescription: string;
-  catalogueNumber: string;
-  // Optional: Only if one exists.
-  blogPostLink?: string;
-  featuredRanking?: number;
-  enableSeeMore?: boolean;
-};
-
 export type AuthorityGroup = {
   name: string;
   includedAuthorities: string[];

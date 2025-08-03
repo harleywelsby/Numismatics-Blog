@@ -1,390 +1,4 @@
-import { CollectionItemV1, CollectionItem, Grade } from '../components/Collection/Collection.types';
-
-export const CollectionDataLegacy: CollectionItemV1[] = [
-  {
-    id: 18,
-    grade: Grade.VeryFine,
-    title: 'Seleucid I Tetradrachm',
-    imgPath: '/Images/Collection/AlexanderTetradrachm.webp',
-    ruler: 'Seleucus I (305-281 BC)',
-    authority: 'Seleucid Empire',
-    mintLocation: 'Seleucia on the Tigris, Babylon',
-    mintDate: '300-295 BC',
-    obverseDescription:
-      'Posthumous issue of Alexander the Great types. Bust of Heracles facing right, wearing lion skin headdress.',
-    reverseDescription:
-      'Zeus, enthroned and holding a sceptre and eagle. Monogram mint mark in left field, and two test cuts in the exergue. "ΣΕΛΕΥΚΟΥ ΒΑΣΙΛΕΩΣ"',
-    catalogueNumber: 'SC 117.4',
-  },
-  {
-    id: 8,
-    grade: Grade.VeryFine,
-    title: 'Septimius Severus Denarius',
-    imgPath: '/Images/Collection/A008-SeptimiusSeverus.webp',
-    ruler: 'Septimius Severus (193-211 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Rome',
-    mintDate: '210 AD',
-    obverseDescription: 'Diademed bust of Severus facing right. "SEVERVS PIVS AVG"',
-    reverseDescription:
-      'Jupiter, naked, holding thunderbolt and sceptre. Two children flanking representing Severus\' sons Caracalla and Geta. "PM TRP XVIII COS III PP"',
-    catalogueNumber: 'RIC IV #233',
-    featuredRanking: 1,
-  },
-  {
-    id: 13,
-    grade: Grade.VeryFine,
-    title: 'Julia Domna Denarius',
-    imgPath: '/Images/Collection/A013-JuliaDomna.webp',
-    ruler: 'Caracalla (198-217 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Rome',
-    mintDate: '211-217 AD',
-    obverseDescription: 'Bust of Julia Domna, draped, facing right. "IVLIA PIA FELIX AVG"',
-    reverseDescription: 'Vesta, standing left holding Palladium and sceptre. "VESTA"',
-    catalogueNumber: 'RIC IV #390',
-    featuredRanking: 6,
-  },
-  {
-    id: 11,
-    grade: Grade.ExtremelyFine,
-    title: 'Geta Denarius',
-    imgPath: '/Images/Collection/A011-Geta.webp',
-    ruler: 'Septimius Geta (209-211 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Rome',
-    mintDate: '203-208 AD',
-    obverseDescription: 'Bust of Geta facing right. "P SEPTIMIVS GETA CAES"',
-    reverseDescription:
-      'Providentia, draped, standing left, holding wand over globe and sceptre. "PROVID DEORVM"',
-    catalogueNumber: 'RIC IV.1 #51',
-  },
-  {
-    id: 7,
-    grade: Grade.VeryFine,
-    title: 'Caracalla Denarius',
-    imgPath: '/Images/Collection/A007-Caracalla.webp',
-    ruler: 'Caracalla (198-217 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Rome',
-    mintDate: '214 AD',
-    obverseDescription: 'Diademed bust of Caracalla facing right. "ANTONINVS PIVS AVG GERM"',
-    reverseDescription:
-      'Apollo, shirtless, seated left, holding olive branch and leaning on lyre. "PM TRP XVII COS IIII PP"',
-    catalogueNumber: 'RIC IV #238A',
-  },
-  {
-    id: 17,
-    grade: Grade.AsStruck,
-    title: 'Elagabalus Denarius',
-    imgPath: '/Images/Collection/A017-Elagabalus.webp',
-    ruler: 'Elagabalus (218-222 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Rome',
-    mintDate: '218-222 AD',
-    obverseDescription:
-      'Diademed and cuirassed bust of Elagabalus facing right. "IMP CAES ANTONINVS AVG"',
-    reverseDescription: 'Victory advancing right with wreath and trophy. "VICTOR ANTONINI AVG"',
-    catalogueNumber: 'RIC IV.2 #153',
-    featuredRanking: 5,
-  },
-  {
-    id: 4,
-    grade: Grade.ExtremelyFine,
-    title: 'Constantine I Nummus',
-    imgPath: '/Images/Collection/A004-Constantine.webp',
-    ruler: 'Constantine I "The Great" (306-337 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Rome',
-    mintDate: '307-337 AD',
-    obverseDescription:
-      'Diademed and cuirassed bust of Constantine facing right. "CONSTANTINVS MAX AVG"',
-    reverseDescription:
-      'Two military standards, flanked by a soldier on each side. Mint mark "RBP" in exergue. "GLORIA EXERCITVS"',
-    catalogueNumber: 'RIC VII #335',
-  },
-  {
-    id: 5,
-    grade: Grade.VeryFine,
-    title: 'Alexander The Great Diobol',
-    imgPath: '/Images/Collection/AlexanderDiobol.webp',
-    ruler: 'Alexander III "The Great" (336-323 BC)',
-    authority: 'Kingdom of Macedon',
-    mintLocation: 'Kaunos, Karia',
-    mintDate: '300-200 BC',
-    obverseDescription: 'Diademed bust of Alexander III "The Great"',
-    reverseDescription: 'Two cornucopiae bound together. "K A"',
-    catalogueNumber: 'SNG Helsinki I #76',
-  },
-  {
-    id: 6,
-    grade: Grade.VeryFine,
-    title: 'Septimius Severus Denarius',
-    imgPath: '/Images/Collection/SeverusSalusDenarius.webp',
-    ruler: 'Septimius Severus (193-211 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Rome',
-    mintDate: '197-198 AD',
-    obverseDescription: 'Diademed bust of Severus facing right. "L SEPT SEV PERT AVG IMP X"',
-    reverseDescription:
-      'Salus, seated left, feeding serpent on an altar from a patera. "SALVTI AVGG"',
-    catalogueNumber: 'RIC IV #119A',
-  },
-  {
-    id: 9,
-    grade: Grade.Good,
-    title: 'Claudius As',
-    imgPath: '/Images/Collection/ClaudiusAs.webp',
-    ruler: 'Claudius (41-50 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Rome',
-    mintDate: '41-50 AD',
-    obverseDescription: 'Bust of Claudius facing left. "TI CLAVDIVS CAESAR AVG PM TRP IMP"',
-    reverseDescription: 'Libertas, draped, holding pileus in right hand. "LIBERTAS AVGVSTA SC"',
-    catalogueNumber: 'RIC I #97',
-  },
-  {
-    id: 1,
-    grade: Grade.Fine,
-    title: 'Constantius II Nummus',
-    imgPath: '/Images/Collection/ConstantiusIINummus.webp',
-    ruler: 'Constantius II (337-361 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Nicomedia',
-    mintDate: '348-350 AD',
-    obverseDescription: 'Diademed bust of Constantius II facing right. "DN CONSTANTIVS PFG AVG"',
-    reverseDescription:
-      'Soldier with spear lunging over barbarian on horseback. "FEL TEMP REPARATIO"',
-    catalogueNumber: 'RIC VIII #189',
-  },
-  {
-    id: 14,
-    grade: Grade.VeryGood,
-    title: 'William III Shilling',
-    imgPath: '/Images/Collection/WilliamIIIShilling.webp',
-    ruler: 'William III (1689-1702 AD)',
-    authority: 'United Kingdom',
-    mintLocation: 'England',
-    mintDate: '1696 AD',
-    obverseDescription: 'Bust of William III facing right. "GVLIELMVS III DEI GRA"',
-    reverseDescription:
-      'Crowned shields of each kingdom of the union (Britain, France and Ireland) around central Nassau Lion. "MAG BR FRA ET HIB REX 1696"',
-    catalogueNumber: 'KM #485.1',
-  },
-  {
-    id: 16,
-    grade: Grade.Good,
-    title: 'Aurelian Antoninianus',
-    imgPath: '/Images/Collection/A016-Aurelian.webp',
-    ruler: 'Aurelian (270-275 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Rome',
-    mintDate: '270-275 AD',
-    obverseDescription: 'Crowned Aurelian facing right, "IMP CL DOM AVRELIANVS AVG"',
-    reverseDescription:
-      'Securitas, standing with legs crossed, holding sceptre and leaning on column. "XI" (denomination) to right. "SECURITAS AVG"',
-    catalogueNumber: 'RIC V #38',
-  },
-  {
-    id: 12,
-    grade: Grade.Good,
-    title: 'Constantine I Nummus',
-    imgPath: '/Images/Collection/ConstantineCampGates.webp',
-    ruler: 'Constantine I "The Great" (306-337 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Nicomedia',
-    mintDate: '324-329 AD',
-    obverseDescription: 'Diademed bust of Constantine. "CONSTANTIVS AVG"',
-    reverseDescription:
-      'Military camp gates with 2 towers either side, and a star above. "NB" mint mark in exergue. "PROVIDENTIA AVGG"',
-    catalogueNumber: 'RIC VII #90',
-  },
-  {
-    id: 2,
-    grade: Grade.Good,
-    title: 'Constans Nummus',
-    imgPath: '/Images/Collection/ConstansNummus.webp',
-    ruler: 'Constans (337-350 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Constantinople',
-    mintDate: '336-337 AD',
-    obverseDescription: 'Diademed bust of Constans facing left. "FL CONSTANS NOB CAES"',
-    reverseDescription:
-      'Military standard flanked by two cuirassed soldiers with spears. "CONS" mint mark in exergue. "GLORIA EXERCITVS"',
-    catalogueNumber: 'RIC VII #140',
-  },
-  {
-    id: 15,
-    grade: Grade.Good,
-    title: 'Valentinian I Nummus',
-    imgPath: '/Images/Collection/ValentinianVictory.webp',
-    ruler: 'Valentinian I (364-375 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Siscia',
-    mintDate: '364-367 AD',
-    obverseDescription: 'Diademed bust of Valentinian facing right. "DN VALENTINIANVS PF AVG"',
-    reverseDescription:
-      'Victory advancing left, holding wreath. "*A" mint mark left of Victory. "DΔSISC" mint mark in exergue. "SECVRITAS REIPVBLICAE"',
-    catalogueNumber: 'RIC IX #7A',
-  },
-  {
-    id: 10,
-    grade: Grade.Good,
-    title: 'Valentinian I Nummus',
-    imgPath: '/Images/Collection/ValentinianCaptive.webp',
-    ruler: 'Valentinian I (364-375 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Siscia',
-    mintDate: '364-375 AD',
-    obverseDescription: 'Diademed bust of Valentinian facing right. "DN VALENTINIANVS PF AVG"',
-    reverseDescription: 'Victory advancing left',
-    catalogueNumber: 'RIC IX #14A',
-  },
-  {
-    id: 3,
-    grade: Grade.VeryGood,
-    title: 'Valentinian II Nummus',
-    imgPath: '/Images/Collection/ValentinianIINummus.webp',
-    ruler: 'Valentinian II (375-392 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Aquileia',
-    mintDate: '378-388 AD',
-    obverseDescription: 'Diademed bust of Valentinian facing right. "DN VALENTINIANVS PF AVG"',
-    reverseDescription: 'Wreath containing text. "SMAQ" mint mark in exergue. "VOT X MVLT XX"',
-    catalogueNumber: 'RIC IX #19',
-  },
-  {
-    id: 19,
-    grade: Grade.VeryFine,
-    title: 'Severus Alexander Denarius',
-    imgPath: '/Images/Collection/SevAlexanderDenarius.webp',
-    ruler: 'Severus Alexander (222-235 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Rome',
-    mintDate: '231 AD',
-    obverseDescription: 'Diademed bust of Severus Alexander facing right. "IMP SEV ALEXAND AVG"',
-    reverseDescription: 'Fides seated left, holding vexillum and signum, "FIDES MILITVM"',
-    catalogueNumber: 'RIC IV #193',
-  },
-  {
-    id: 20,
-    grade: Grade.VeryFine,
-    title: 'Trajan Denarius',
-    imgPath: '/Images/Collection/TrajanDenarius.webp',
-    ruler: 'Trajan (98-117 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Rome',
-    mintDate: '116 AD',
-    obverseDescription:
-      'Diademed bust of Trajan facing right. "IMP CAES NER TRAIANO OPTIMO AVG GER DAC"',
-    reverseDescription:
-      'Genius, standing left holding patera and grain ears, "PM TRP COS VI PP SPQR"',
-    catalogueNumber: 'RIC II #347',
-  },
-  {
-    id: 21,
-    grade: Grade.VeryFine,
-    title: 'Postumus Antonininanus',
-    imgPath: '/Images/Collection/A021-Postumus.webp',
-    ruler: 'Postumus (260-269 AD)',
-    authority: 'Gallic Empire',
-    mintLocation: 'Colonia Agrippinensis',
-    mintDate: '261 AD',
-    obverseDescription:
-      'Bust of Postumus facing right, wearing radiate crown. "IMP C POSTVMVS PF AVG"',
-    reverseDescription: 'Moneta, standing left holding scales and cornucopiae. "MONETA AVG"',
-    catalogueNumber: 'RIC #75',
-  },
-  {
-    id: 22,
-    grade: Grade.Good,
-    title: 'Licinius II Nummus',
-    imgPath: '/Images/Collection/A022-LiciniusII.webp',
-    ruler: 'Licinius I (308-324 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Siscia',
-    mintDate: '320 AD',
-    obverseDescription:
-      'Diademed bust of Licinius II facing left, holding victory palladium. "LICINIVS IVN NOB CAES"',
-    reverseDescription:
-      'Two captives bound under a banner, reading "VOT X". Mint mark ΔSIS in exergue. "VIRTVS EXERCIT"',
-    catalogueNumber: 'RIC VII #114',
-  },
-  {
-    id: 23,
-    grade: Grade.Good,
-    title: 'Constans Nummus',
-    imgPath: '/Images/Collection/A023-Constans.webp',
-    ruler: 'Constans (337-350 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Thessalonika',
-    mintDate: '342-348 AD',
-    obverseDescription: 'Diademed bust of Constans facing right. "CONSTANS PF AVG"',
-    reverseDescription:
-      'Two victories holding wreaths toward eachoother. Mint mark "TSE" in exergue. "VICTORIAE DD AVGG Q NN"',
-    catalogueNumber: 'RIC VIII #101',
-  },
-  {
-    id: 24,
-    grade: Grade.VeryFine,
-    title: 'Gallienus Antoninianus',
-    imgPath: '/Images/Collection/A024-Gallienus.webp',
-    ruler: 'Gallienus (253-268 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Colonia Agrippinensis',
-    mintDate: '257-258 AD',
-    obverseDescription: 'Bust of Gallienus facing right, wearing radiate crown. "GALLIENVS PF AVG"',
-    reverseDescription: 'Two captives tied to a trophy of arms. "GERMANICVS MAX V"',
-    catalogueNumber: 'RIC V #18F',
-  },
-  {
-    id: 25,
-    grade: Grade.VeryFine,
-    title: 'Marcus Aurelius Denarius',
-    imgPath: '/Images/Collection/A025-MarcusAurelius.webp',
-    ruler: 'Marcus Aurelius (161-180 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Rome',
-    mintDate: '168-169 AD',
-    obverseDescription:
-      'Diademed bust of Marcus Aurelius facing right. "M ANTONINVS AVG TRP XXIII"',
-    reverseDescription:
-      'Felicitas, draped, standing forward with head to left, holding short caduceus and long scepter. "FELICITAS AVG COS III"',
-    catalogueNumber: 'RIC III #203',
-    featuredRanking: 2,
-  },
-  {
-    id: 26,
-    grade: Grade.VeryFine,
-    title: 'Alexander the Great Drachm',
-    imgPath: '/Images/Collection/A026-Antigonus.webp',
-    ruler: 'Antigonus I (306-301 BC)',
-    authority: 'Macedonia',
-    mintLocation: 'Teos, Ionia',
-    mintDate: '310-301 BC',
-    obverseDescription: 'Head of Heracles facing right, wearing lion skin headdress.',
-    reverseDescription:
-      'Zeus, enthroned and holding sceptre and eagle. Griffin mint mark in left field, with monogram of Π and Ι below. Reads "ΑΛΕΞΑΝΔΡΟΥ", or "Of Alexander"',
-    catalogueNumber: 'Price #2279',
-    featuredRanking: 3,
-  },
-  {
-    id: 27,
-    grade: Grade.VeryFine,
-    title: 'Antoninus Pius Denarius',
-    imgPath: '/Images/Collection/A027-Antoninus.webp',
-    ruler: 'Antoninus Pius (138-161 AD)',
-    authority: 'Roman Empire',
-    mintLocation: 'Rome',
-    mintDate: '159-160 AD',
-    obverseDescription:
-      'Diademed bust of Antoninus facing right. "ANTONINVS AVG PIVS PP TRP XXIII"',
-    reverseDescription:
-      'Fortuna, draped, standing right, holding rudder and cornucopiae. "FORTVNA COS IIII"',
-    catalogueNumber: 'RIC III #300a',
-    featuredRanking: 4,
-  },
-];
+import { CollectionItem, Grade } from '../components/Collection/Collection.types';
 
 export const CollectionData: CollectionItem[] = [
   // 1
@@ -546,8 +160,74 @@ export const CollectionData: CollectionItem[] = [
     },
     characters: ['Gloria Exercitus'],
   },
-  // TODO: 5
-  // TODO: 6
+  // 5
+  {
+    id: 5,
+    grade: Grade.VeryFine,
+    title: 'Alexander III Depiction',
+    ruler: {
+      name: 'Alexander III "The Great"',
+      reign: '336-323 BC',
+    },
+    authority: 'Kingdom of Macedon',
+    mint: {
+      location: 'Kaunos, Karia',
+      date: '300-201 BC',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/A005-Obverse.webp',
+      description: 'Diademed bust of Alexander III "The Great"',
+    },
+    reverse: {
+      imagePath: '/Images/Collection/A005-Reverse.webp',
+      description:
+        'Two cornucopiae bound together with fillet. Mint mark "K A" in fields, representing the city of Kaunos.',
+    },
+    reference: {
+      catalogueNumber: 'SNG Helsinki I #76',
+    },
+    characters: ['Alexander III', 'Cornucopia'],
+  },
+  // 6
+  {
+    id: 6,
+    grade: Grade.VeryFine,
+    title: 'Septimius Severus Denarius',
+    ruler: {
+      name: 'Septimius Severus',
+      reign: '193-211 AD',
+    },
+    authority: 'Roman Empire',
+    mint: {
+      location: 'Rome',
+      date: '197-198 AD',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/A006-Obverse.webp',
+      description: 'Diademed bust of Septimius Severus facing right.',
+      legend: 'L SEPT SEV PERT AVG IMP X',
+      legendDetails: {
+        language: 'latin',
+        original: 'Lucius Septimius Severus Pertinax Augustus Imperator X',
+        english: 'Emperor Lucius Septimius Severus Pertinax, Leader of the Army for the Tenth Year',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/A006-Reverse.webp',
+      description: 'Salus, seated left, feeding serpent on an altar from a patera.',
+      legend: 'SALVTI AVGG',
+      legendDetails: {
+        language: 'latin',
+        original: 'Salus Augustorum',
+        english: 'To the Safety of the Two Emperors (Severus and his son, Caracalla)',
+      },
+    },
+    reference: {
+      catalogueNumber: 'RIC IV #119A',
+      url: 'https://numismatics.org/ocre/id/ric.4.ss.119A',
+    },
+    characters: ['Salus'],
+  },
   // 7
   {
     id: 7,
@@ -632,7 +312,47 @@ export const CollectionData: CollectionItem[] = [
     },
     characters: ['Jupiter', 'Caracalla & Geta'],
   },
-  // TODO: 9
+  // 9
+  {
+    id: 9,
+    grade: Grade.Good,
+    title: 'Claudius As',
+    ruler: {
+      name: 'Claudius',
+      reign: '41-50 AD',
+    },
+    authority: 'Roman Empire',
+    mint: {
+      location: 'Rome',
+      date: '41-50 AD',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/A009-Obverse.webp',
+      description: 'Bust of Claudius facing left.',
+      legend: 'TI CLAVDIVS CAESAR AVG PM TRP IMP',
+      legendDetails: {
+        language: 'latin',
+        original:
+          'Tiberius Claudius Caesar Augustus Pontifex Maximus Tribunicia Potestas Imperator',
+        english:
+          'Emperor Tiberius Claudius Caesar, Head Priest, holding the Tribunician Power, Leader of the Army',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/A009-Reverse.webp',
+      description: 'Libertas, draped, holding pileus in right hand.',
+      legend: 'LIBERTAS AVGVSTA SC',
+      legendDetails: {
+        language: 'latin',
+        original: 'Libertas Augusta, Senatus Consultum',
+        english: 'The Liberty and Freedom bestowed by the Emperor, by decree of the Roman Senate',
+      },
+    },
+    reference: {
+      catalogueNumber: 'RIC I #97',
+    },
+    characters: ['Libertas'],
+  },
   // 10
   {
     id: 10,
@@ -793,7 +513,46 @@ export const CollectionData: CollectionItem[] = [
     },
     characters: ['Julia Domna', 'Vesta'],
   },
-  // TODO: 14
+  // 14
+  {
+    id: 14,
+    grade: Grade.VeryGood,
+    title: 'William III Shilling',
+    ruler: {
+      name: 'William III',
+      reign: '1689-1702 AD',
+    },
+    authority: 'United Kingdom',
+    mint: {
+      location: 'England',
+      date: '1696 AD',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/A014-Obverse.webp',
+      description: 'Bust of William III facing right.',
+      legend: 'GVLIELMVS III DEI GRA',
+      legendDetails: {
+        language: 'latin',
+        original: 'Gulielmus III Dei Gratia',
+        english: 'William III, by the Grace of God',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/A014-Reverse.webp',
+      description:
+        'Crowned shields of each kingdom of the union (Britain, France and Ireland) around central Nassau Lion.',
+      legend: 'MAG BR FRA ET HIB REX 1696',
+      legendDetails: {
+        language: 'latin',
+        original: 'Magna Britannia, Franciae et Hiberniae Rex 1696',
+        english: 'King of Britain, France and Ireland. Dated 1696 AD',
+      },
+    },
+    reference: {
+      catalogueNumber: 'KM #485.1',
+    },
+    characters: [],
+  },
   // 15
   {
     id: 15,
@@ -1075,7 +834,45 @@ export const CollectionData: CollectionItem[] = [
     },
     characters: ['Moneta'],
   },
-  // TODO: 22
+  // 22
+  {
+    id: 22,
+    grade: Grade.Good,
+    title: 'Licinius II Nummus',
+    ruler: {
+      name: 'Licinius I',
+      reign: '308-324 AD',
+    },
+    authority: 'Roman Empire',
+    mint: {
+      location: 'Siscia',
+      date: '320 AD',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/A022-Obverse.webp',
+      description: 'Diademed bust of Licinius II facing left, holding victory palladium.',
+      legend: 'LICINIVS IVN NOB CAES',
+      legendDetails: {
+        language: 'latin',
+        original: 'Licinius Iuuentis Nobilis Caesar',
+        english: 'Licinius, Junior and Noble Heir to the Throne',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/A022-Reverse.webp',
+      description: 'Two captives bound under a banner, reading "VOT X". Mint mark ΔSIS in exergue.',
+      legend: 'VIRTVS EXERCIT',
+      legendDetails: {
+        language: 'latin',
+        original: 'Virtus Exercitus',
+        english: 'The Virtue of the Army',
+      },
+    },
+    reference: {
+      catalogueNumber: 'RIC VII #114',
+    },
+    characters: ['Captives'],
+  },
   // 23
   {
     id: 23,
