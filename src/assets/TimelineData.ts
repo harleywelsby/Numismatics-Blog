@@ -25,23 +25,23 @@ export const TimelineData: TimelineListItemContent[] = [
     date: '275 BC',
     description: 'Wars of the Diadochi end',
   },
-  // {
-  //   date: '264-241 BC',
-  //   description: 'First Punic War between Rome and Carthage',
-  // },
-  // {
-  //   date: '218-202 BC',
-  //   description:
-  //     "Second Punic War between Rome and Carthage, ending with Hannibal's defeat at Zama",
-  // },
-  // {
-  //   date: '146 BC',
-  //   description: 'Rome conquers Carthage',
-  // },
   {
-    date: '264-146 BC',
-    description: 'Punic Wars between the Roman Republic and Carthage',
+    date: '264-241 BC',
+    description: 'First Punic War between Rome and Carthage',
   },
+  {
+    date: '218-202 BC',
+    description:
+      "Second Punic War between Rome and Carthage, ending with Hannibal's defeat at Zama",
+  },
+  {
+    date: '149-146 BC',
+    description: 'Third Punic War, leading to the annexation of Carthage by Rome',
+  },
+  // {
+  //   date: '264-146 BC',
+  //   description: 'Punic Wars between the Roman Republic and Carthage',
+  // },
   {
     date: '100 BC',
     description: 'Julius Caesar is born',
@@ -135,6 +135,15 @@ export const TimelineData: TimelineListItemContent[] = [
     date: '235 AD',
     description:
       'Severus Alexander is killed by his own troops, starting the Crisis of the Third Century',
+  },
+  {
+    date: '244 AD',
+    description:
+      'The Battle of Misiche ends in decisive Sassanid victory over the Romans, near modern-day Fallujah, Iraq. Gordian III is killed in battle, leading to the rise of Philip the Arab',
+  },
+  {
+    date: '249 AD',
+    description: 'Philip the Arab is killed in battle against Decius, who then assumes the throne',
   },
   {
     date: '260 AD',
