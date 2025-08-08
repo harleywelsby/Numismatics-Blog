@@ -16,18 +16,25 @@ import {
   SectionImage,
   SectionSeparator,
   SubtitleText,
-  TranslationGrid,
-  TranslationText,
+  KeyValueGrid,
+  KeyValueText,
   VariantGrid,
   VariantTitle,
   VariantValue,
   VariantWrapper,
+  PrimaryDetailsWrapper,
 } from './CoinDetails.styles';
 import { HeaderText } from '../../../shared/styles/sharedStyles';
 import { CollectionData } from '../../../assets/CollectionData';
 import { useMediaQuery } from 'react-responsive';
 import { Characters, Rulers } from '../../../assets/CharacterData';
-import { CharacterData, LegendData, ObverseReverseData, RulerData } from './CoinDetails.types';
+import {
+  CharacterData,
+  LegendData,
+  ObverseReverseData,
+  PrimaryDetailsData,
+  RulerData,
+} from './CoinDetails.types';
 import React from 'react';
 import { LegendDetails } from '../Collection.types';
 
@@ -42,6 +49,41 @@ const SectionHeader = ({ title, subTitle }: { title: string; subTitle?: string }
       {subTitle && <SubtitleText>{subTitle}</SubtitleText>}
       <SectionHeaderSeparator />
     </>
+  );
+};
+
+const PrimaryDetailsSection = ({ coin, isSmallScreen }: PrimaryDetailsData) => {
+  const rulerTitle = coin.ruler.alternateTitle ?? `Ruler`;
+  return (
+    <PrimaryDetailsWrapper>
+      <KeyValueGrid $center={!isSmallScreen}>
+        <KeyValueText $rightAlign>
+          <b>{`${rulerTitle}: `}</b>
+        </KeyValueText>
+        <KeyValueText>
+          {`${coin.ruler.name} (${coin.ruler.alternateTitle ? '' : 'r. '}${coin.ruler.reign})`}
+        </KeyValueText>
+        <KeyValueText $rightAlign>
+          <b>Authority: </b>
+        </KeyValueText>
+        <KeyValueText>{coin.authority}</KeyValueText>
+        <KeyValueText $rightAlign>
+          <b>Minted: </b>
+        </KeyValueText>
+        <KeyValueText>{`${coin.mint.location} (${coin.mint.date})`}</KeyValueText>
+        <KeyValueText $rightAlign>
+          <b>Ref: </b>
+        </KeyValueText>
+        <KeyValueText>
+          <a href={coin.reference.url} target="_blank" rel="noopener noreferrer">
+            {coin.reference.catalogueNumber}
+          </a>
+        </KeyValueText>
+      </KeyValueGrid>
+      <br />
+      <SectionSeparator />
+      {!isSmallScreen && <br />}
+    </PrimaryDetailsWrapper>
   );
 };
 
@@ -123,16 +165,16 @@ const LegendSection = ({ legend, legendDetails, isSmallScreen }: LegendData) => 
         <LegendText>
           <b>{legend}</b>
         </LegendText>
-        <TranslationGrid $center={isLessThanThreeWords}>
-          <TranslationText $rightAlign>
+        <KeyValueGrid $center={isLessThanThreeWords}>
+          <KeyValueText $rightAlign>
             <b>{`${CapitalizeFirstLetter(legendDetails.language)}:`}</b>
-          </TranslationText>
-          <TranslationText>{legendDetails.original}</TranslationText>
-          <TranslationText $rightAlign>
+          </KeyValueText>
+          <KeyValueText>{legendDetails.original}</KeyValueText>
+          <KeyValueText $rightAlign>
             <b>English:</b>
-          </TranslationText>
-          <TranslationText>{legendDetails.english}</TranslationText>
-        </TranslationGrid>
+          </KeyValueText>
+          <KeyValueText>{legendDetails.english}</KeyValueText>
+        </KeyValueGrid>
         {legendDetails.description && (
           <DescriptionText $withTopPadding>{legendDetails.description}</DescriptionText>
         )}
@@ -150,10 +192,13 @@ const LegendSection = ({ legend, legendDetails, isSmallScreen }: LegendData) => 
       )}
       {hasTranslations && <Translations legend={legend} legendDetails={legendDetails} />}
       {hasSecondaryLegend && (
-        <Translations
-          legend={legendDetails.secondaryLegend!}
-          legendDetails={legendDetails.secondaryLegendDetails!}
-        />
+        <>
+          <br />
+          <Translations
+            legend={legendDetails.secondaryLegend!}
+            legendDetails={legendDetails.secondaryLegendDetails!}
+          />
+        </>
       )}
       {!isSmallScreen && <br />}
     </DescriptionSection>
@@ -239,6 +284,7 @@ export const CoinDetails = () => {
     <CoinDetailsPageWrapper>
       <HeaderText $primaryColor>{coin.title}</HeaderText>
       <HeaderSeparator />
+      <PrimaryDetailsSection coin={coin} isSmallScreen={isSmallScreen} />
       <ObverseReverseSection coin={coin} isSmallScreen={isSmallScreen} />
       {hasMoreSections && <SectionSeparator />}
       {coin.moreDetails?.descriptionParagraphs && (

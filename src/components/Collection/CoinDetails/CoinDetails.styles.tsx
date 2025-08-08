@@ -267,7 +267,7 @@ export const LegendHeaderText = styled.h3`
   text-align: center;
   justify-self: center;
   margin: 0;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
 
   @media (min-width: 35em) {
     padding: 0 2rem;
@@ -278,7 +278,7 @@ export const LegendText = styled.p`
   font-size: clamp(0.8rem, 1vw + 0.5rem, 1.2rem);
   text-align: center;
   justify-self: center;
-  margin: 1rem;
+  margin: 0.5rem 1rem 1rem 1rem;
   padding: 0 1rem;
 
   @media (min-width: 35em) {
@@ -286,9 +286,9 @@ export const LegendText = styled.p`
   }
 `;
 
-export const TranslationGrid = styled.div<{ $center?: boolean }>`
+export const KeyValueGrid = styled.div<{ $center?: boolean }>`
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 30% 70%;
   gap: 1rem 0.5rem;
 
   ${(props) =>
@@ -313,7 +313,7 @@ export const TranslationGrid = styled.div<{ $center?: boolean }>`
   }
 `;
 
-export const TranslationText = styled.p<{ $withTopPadding?: boolean; $rightAlign?: boolean }>`
+export const KeyValueText = styled.p<{ $withTopPadding?: boolean; $rightAlign?: boolean }>`
   width: 100%;
   font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
 
@@ -338,5 +338,13 @@ export const TranslationText = styled.p<{ $withTopPadding?: boolean; $rightAlign
 
   @media (min-width: 100em) {
     width: 90%;
+  }
+`;
+
+export const PrimaryDetailsWrapper = styled.div`
+  padding: 2rem 1rem 0 1rem;
+
+  @media (min-width: 35em) {
+    padding: 1rem;
   }
 `;

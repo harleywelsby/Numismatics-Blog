@@ -21,3 +21,8 @@ export interface CharacterData {
   character?: CharacterDetails;
   isSmallScreen: boolean;
 }
+
+export interface PrimaryDetailsData {
+  coin: CollectionItem;
+  isSmallScreen: boolean;
+}
