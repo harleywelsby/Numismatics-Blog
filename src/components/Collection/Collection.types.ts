@@ -50,6 +50,8 @@ export type LegendDetails = {
   original: string;
   english: string;
   description?: string; // Optional description for the legend.
+  secondaryLegend?: string; // Optional secondary legend, for mint marks or bilingual legends.
+  secondaryLegendDetails?: LegendDetails;
 };
 
 type Reference = {
@@ -70,6 +72,7 @@ type MoreDetails = {
 type Ruler = {
   name: string;
   reign: string;
+  alternateTitle?: string; // Optional: for primary figures who aren't actually rulers, e.g., Republican moneyers.
 };
 
 export type RulerDetails = {

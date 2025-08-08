@@ -204,7 +204,7 @@ export const CollectionData: CollectionItem[] = [
     },
     obverse: {
       imagePath: '/Images/Collection/A006-Obverse.webp',
-      description: 'Diademed bust of Septimius Severus facing right.',
+      description: 'Laureate bust of Septimius Severus facing right.',
       legend: 'L SEPT SEV PERT AVG IMP X',
       legendDetails: {
         language: 'latin',
@@ -244,7 +244,7 @@ export const CollectionData: CollectionItem[] = [
     },
     obverse: {
       imagePath: '/Images/Collection/A007-Obverse.webp',
-      description: 'Diademed bust of Caracalla facing right.',
+      description: 'Laureate bust of Caracalla facing right.',
       legend: 'ANTONINVS PIVS AVG GERM',
       legendDetails: {
         language: 'latin',
@@ -286,7 +286,7 @@ export const CollectionData: CollectionItem[] = [
     },
     obverse: {
       imagePath: '/Images/Collection/A008-Obverse.webp',
-      description: 'Diademed bust of Severus facing right.',
+      description: 'Laureate bust of Severus facing right.',
       legend: 'SEVERVS PIVS AVG',
       legendDetails: {
         language: 'latin',
@@ -650,7 +650,7 @@ export const CollectionData: CollectionItem[] = [
     },
     obverse: {
       imagePath: '/Images/Collection/A017-Obverse.webp',
-      description: 'Diademed and cuirassed bust of Elagabalus facing right.',
+      description: 'Laureate and cuirassed bust of Elagabalus facing right.',
       legend: 'IMP CAES ANTONINVS AVG',
       legendDetails: {
         language: 'latin',
@@ -727,7 +727,7 @@ export const CollectionData: CollectionItem[] = [
     },
     obverse: {
       imagePath: '/Images/Collection/A019-Obverse.webp',
-      description: 'Diademed bust of Severus Alexander facing right.',
+      description: 'Laureate bust of Severus Alexander facing right.',
       legend: 'IMP SEV ALEXAND AVG',
       legendDetails: {
         language: 'latin',
@@ -767,7 +767,7 @@ export const CollectionData: CollectionItem[] = [
     },
     obverse: {
       imagePath: '/Images/Collection/A020-Obverse.webp',
-      description: 'Diademed bust of Trajan facing right.',
+      description: 'Laureate bust of Trajan facing right.',
       legend: 'IMP CAES NER TRAIANO OPTIMO AVG GER DAC',
       legendDetails: {
         language: 'latin',
@@ -965,7 +965,7 @@ export const CollectionData: CollectionItem[] = [
     },
     obverse: {
       imagePath: '/Images/Collection/A025-Obverse.webp',
-      description: 'Diademed bust of Marcus Aurelius facing right.',
+      description: 'Laureate bust of Marcus Aurelius facing right.',
       legend: 'M ANTONINVS AVG TRP XXIII',
       legendDetails: {
         language: 'latin',
@@ -1042,7 +1042,7 @@ export const CollectionData: CollectionItem[] = [
     },
     obverse: {
       imagePath: '/Images/Collection/A027-Obverse.webp',
-      description: 'Diademed bust of Antoninus facing right.',
+      description: 'Laureate bust of Antoninus facing right.',
       legend: 'ANTONINVS AVG PIVS PP TRP XXIII',
       legendDetails: {
         language: 'latin',
@@ -1066,5 +1066,99 @@ export const CollectionData: CollectionItem[] = [
       url: 'http://numismatics.org/ocre/id/ric.3.ant.300A',
     },
     characters: ['Fortuna'],
+  },
+  // 28
+  {
+    id: 28,
+    grade: Grade.VeryFine,
+    title: 'Roma/Biga Republican Denarius',
+    ruler: {
+      name: 'Pinarius Natta',
+      reign: '155 BC',
+      alternateTitle: 'Moneyer',
+    },
+    authority: 'Roman Republic',
+    mint: {
+      location: 'Rome',
+      date: '155 BC',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/A028-Obverse.webp',
+      description: 'Helmeted head of Roma facing right.',
+      legend: 'X',
+      legendDetails: {
+        language: 'latin',
+        original: 'X',
+        english: 'Ten, as in "Ten Asses" (the denomination of the coin)',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/A028-Reverse.webp',
+      description:
+        'Victory driving a galloping biga (two-horse chariot) right, holding whip and reins.',
+      legend: 'NAT(TA)',
+      legendDetails: {
+        language: 'latin',
+        original: 'Natta',
+        english:
+          'Natta (the moneyer who issued the coin, with their last two letters as a monogram)',
+        secondaryLegend: 'ROMA',
+        secondaryLegendDetails: {
+          language: 'latin',
+          original: 'Roma',
+          english: 'Rome',
+        },
+      },
+    },
+    reference: {
+      catalogueNumber: 'RSC Pinaria #1',
+    },
+    characters: ['Roma', 'Victory', 'Biga'],
+  },
+  // 29
+  {
+    id: 29,
+    grade: Grade.VeryFine,
+    title: 'Philip I Antioch Tetradrachm',
+    ruler: {
+      name: 'Philip I "The Arab"',
+      reign: '244-249 AD',
+    },
+    authority: 'Roman Empire',
+    mint: {
+      location: 'Rome',
+      date: '248-249 AD',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/A029-Obverse.webp',
+      description: 'Laureate, draped and cuirassed bust of Philip I facing right',
+      legend: 'ΑΥΤΟΚ Κ Μ ΙΟΥΛΙ ΦΙΛΙΠΠΟС СΕΒ',
+      legendDetails: {
+        language: 'greek',
+        original: 'Αυτοκρατορ Καιсαρ Μαρκο Ιουλιοс Φιλιπποс Сεβαсτοс',
+        english: 'Leader of the Army, Heir to the Throne, Emperor Marcus Julius Philippus',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/A029-Reverse.webp',
+      description: 'Eagle standing left, wings spread, holding wreath in beak.',
+      legend: 'ΔΗΜΑΡΧ ΕΞΟΥСΙΑС ΥΠΑ ΤΟ Δ',
+      legendDetails: {
+        language: 'greek',
+        original: 'Δημαρχικηc Εξουсιαс Υπατοс Το Τεταρτο',
+        english: 'Tribunician Power and Consul for the Fourth Time',
+        secondaryLegend: 'ANTIOXIA SC',
+        secondaryLegendDetails: {
+          language: 'latin',
+          original: 'Antiochia, Senatus Consultum',
+          english: 'From the City of Antioch, by decree of the Senate',
+        },
+      },
+    },
+    reference: {
+      catalogueNumber: 'Prieur #444',
+      url: 'https://en.numista.com/catalogue/pieces74067.html',
+    },
+    characters: ['Philip I', 'Eagle'],
   },
 ];

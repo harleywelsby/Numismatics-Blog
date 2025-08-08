@@ -29,6 +29,7 @@ import { useMediaQuery } from 'react-responsive';
 import { Characters, Rulers } from '../../../assets/CharacterData';
 import { CharacterData, LegendData, ObverseReverseData, RulerData } from './CoinDetails.types';
 import React from 'react';
+import { LegendDetails } from '../Collection.types';
 
 const CapitalizeFirstLetter = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -108,29 +109,51 @@ const ObverseReverseSection = ({ coin, isSmallScreen }: ObverseReverseData) => {
 const LegendSection = ({ legend, legendDetails, isSmallScreen }: LegendData) => {
   const hasTranslations = legendDetails && legendDetails.original && legendDetails.english;
   const isLessThanThreeWords = legend.split(' ').length < 3;
+  const hasSecondaryLegend = legendDetails?.secondaryLegend && legendDetails.secondaryLegendDetails;
+
+  const Translations = ({
+    legend,
+    legendDetails,
+  }: {
+    legend: string;
+    legendDetails: LegendDetails;
+  }) => {
+    return (
+      <>
+        <LegendText>
+          <b>{legend}</b>
+        </LegendText>
+        <TranslationGrid $center={isLessThanThreeWords}>
+          <TranslationText $rightAlign>
+            <b>{`${CapitalizeFirstLetter(legendDetails.language)}:`}</b>
+          </TranslationText>
+          <TranslationText>{legendDetails.original}</TranslationText>
+          <TranslationText $rightAlign>
+            <b>English:</b>
+          </TranslationText>
+          <TranslationText>{legendDetails.english}</TranslationText>
+        </TranslationGrid>
+        {legendDetails.description && (
+          <DescriptionText $withTopPadding>{legendDetails.description}</DescriptionText>
+        )}
+      </>
+    );
+  };
 
   return (
     <DescriptionSection>
       <LegendHeaderText>Legend</LegendHeaderText>
-      <LegendText>
-        <b>{legend}</b>
-      </LegendText>
-      {hasTranslations && (
-        <>
-          <TranslationGrid $center={isLessThanThreeWords}>
-            <TranslationText $rightAlign>
-              <b>{`${CapitalizeFirstLetter(legendDetails.language)}:`}</b>
-            </TranslationText>
-            <TranslationText>{legendDetails.original}</TranslationText>
-            <TranslationText $rightAlign>
-              <b>English:</b>
-            </TranslationText>
-            <TranslationText>{legendDetails.english}</TranslationText>
-          </TranslationGrid>
-          {legendDetails.description && (
-            <DescriptionText $withTopPadding>{legendDetails.description}</DescriptionText>
-          )}
-        </>
+      {!hasTranslations && (
+        <LegendText>
+          <b>{legend}</b>
+        </LegendText>
+      )}
+      {hasTranslations && <Translations legend={legend} legendDetails={legendDetails} />}
+      {hasSecondaryLegend && (
+        <Translations
+          legend={legendDetails.secondaryLegend!}
+          legendDetails={legendDetails.secondaryLegendDetails!}
+        />
       )}
       {!isSmallScreen && <br />}
     </DescriptionSection>

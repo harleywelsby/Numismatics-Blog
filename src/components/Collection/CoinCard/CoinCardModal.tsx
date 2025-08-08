@@ -47,6 +47,8 @@ export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalPr
 
   const enableSeeMore = ENABLE_SEE_MORE_OVERRIDE || coin.enableSeeMore;
 
+  const rulerTitle = coin.ruler.alternateTitle ?? `Ruler`;
+
   return (
     <Modal open={showModal} onClose={handleModalClose}>
       <ModalContent data-test-id={`coin-card-${coin.id}-modal-content`}>
@@ -58,8 +60,8 @@ export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalPr
           <ModalHeader>{coin.title}</ModalHeader>
           <ModalBodyWrapper>
             <ModalText>
-              <b>Ruler: </b>
-              {`${coin.ruler.name} (r. ${coin.ruler.reign})`}
+              <b>{`${rulerTitle}: `}</b>
+              {`${coin.ruler.name} (${coin.ruler.alternateTitle ? '' : 'r. '}${coin.ruler.reign})`}
             </ModalText>
             <ModalText>
               <b>Authority: </b>

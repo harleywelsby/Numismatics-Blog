@@ -7,8 +7,8 @@ export const AuthorityGroups: AuthorityGroup[] = [
     includedAuthorities: ['Kingdom of Macedon', 'Seleucid Empire', 'Macedonia'],
   },
   {
-    name: 'Roman Empire',
-    includedAuthorities: ['Roman Empire', 'Gallic Empire'],
+    name: 'Ancient Rome',
+    includedAuthorities: ['Roman Republic', 'Roman Empire', 'Gallic Empire'],
   },
   {
     name: 'United Kingdom',
