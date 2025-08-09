@@ -11,6 +11,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '337-361 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Nummus',
     mint: {
       location: 'Nicomedia',
       date: '348-350 AD',
@@ -50,6 +51,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '337-350 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Nummus',
     mint: {
       location: 'Constantinople',
       date: '336-337 AD',
@@ -90,6 +92,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '375-392 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Nummus',
     mint: {
       location: 'Aquileia',
       date: '378-388 AD',
@@ -130,6 +133,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '306-337 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Nummus',
     mint: {
       location: 'Rome',
       date: '307-337 AD',
@@ -170,6 +174,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '336-323 BC',
     },
     authority: 'Kingdom of Macedon',
+    denomination: 'Diobol',
     mint: {
       location: 'Kaunos, Karia',
       date: '300-201 BC',
@@ -198,6 +203,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '193-211 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Denarius',
     mint: {
       location: 'Rome',
       date: '197-198 AD',
@@ -238,6 +244,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '198-217 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Denarius',
     mint: {
       location: 'Rome',
       date: '214 AD',
@@ -280,6 +287,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '193-211 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Denarius',
     mint: {
       location: 'Rome',
       date: '210 AD',
@@ -322,6 +330,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '41-50 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'As',
     mint: {
       location: 'Rome',
       date: '41-50 AD',
@@ -363,6 +372,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '364-375 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Nummus',
     mint: {
       location: 'Siscia',
       date: '364-367 AD',
@@ -403,6 +413,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '209-211 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Denarius',
     mint: {
       location: 'Rome',
       date: '203-208 AD',
@@ -432,6 +443,9 @@ export const CollectionData: CollectionItem[] = [
       url: 'http://numismatics.org/ocre/id/ric.4.ge.51',
     },
     characters: ['Providentia'],
+    moreDetails: {
+      mentionedIn: ['e3278fa9-5e60-4109-8643-18c36d559662'],
+    },
   },
   // 12
   {
@@ -443,6 +457,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '306-337 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Nummus',
     mint: {
       location: 'Nicomedia',
       date: '324-329 AD',
@@ -483,6 +498,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '198-217 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Denarius',
     mint: {
       location: 'Rome',
       date: '211-217 AD',
@@ -523,6 +539,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '1689-1702 AD',
     },
     authority: 'United Kingdom',
+    denomination: 'Shilling',
     mint: {
       location: 'England',
       date: '1696 AD',
@@ -563,6 +580,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '364-375 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Nummus',
     mint: {
       location: 'Siscia (2nd Officina)',
       date: '364-375 AD',
@@ -604,6 +622,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '270-275 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Antoninianus',
     mint: {
       location: 'Rome',
       date: '270-275 AD',
@@ -644,6 +663,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '218-222 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Denarius',
     mint: {
       location: 'Rome',
       date: '218-222 AD',
@@ -685,6 +705,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '305-281 BC',
     },
     authority: 'Seleucid Empire',
+    denomination: 'Tetradrachm',
     mint: {
       location: 'Seleucia on the Tigris, Babylon',
       date: '300-295 BC',
@@ -721,6 +742,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '222-235 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Denarius',
     mint: {
       location: 'Rome',
       date: '231 AD',
@@ -761,6 +783,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '98-117 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Denarius',
     mint: {
       location: 'Rome',
       date: '116 AD',
@@ -804,6 +827,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '260-269 AD',
     },
     authority: 'Gallic Empire',
+    denomination: 'Antoninianus',
     mint: {
       location: 'Colonia Agrippinensis',
       date: '261 AD',
@@ -844,6 +868,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '308-324 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Nummus',
     mint: {
       location: 'Siscia',
       date: '320 AD',
@@ -883,6 +908,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '337-350 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Nummus',
     mint: { location: 'Thessalonika', date: '342-348 AD' },
     obverse: {
       imagePath: '/Images/Collection/A023-Obverse.webp',
@@ -919,6 +945,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '253-268 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Antoninianus',
     mint: {
       location: 'Colonia Agrippinensis',
       date: '257-258 AD',
@@ -959,6 +986,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '161-180 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Denarius',
     mint: {
       location: 'Rome',
       date: '168-169 AD',
@@ -1002,6 +1030,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '306-301 BC',
     },
     authority: 'Macedonia',
+    denomination: 'Drachm',
     mint: {
       location: 'Teos, Ionia',
       date: '310-301 BC',
@@ -1036,6 +1065,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '138-161 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Denarius',
     mint: {
       location: 'Rome',
       date: '159-160 AD',
@@ -1078,6 +1108,7 @@ export const CollectionData: CollectionItem[] = [
       alternateTitle: 'Moneyer',
     },
     authority: 'Roman Republic',
+    denomination: 'Denarius',
     mint: {
       location: 'Rome',
       date: '155 BC',
@@ -1125,6 +1156,7 @@ export const CollectionData: CollectionItem[] = [
       reign: '244-249 AD',
     },
     authority: 'Roman Empire',
+    denomination: 'Tetradrachm',
     mint: {
       location: 'Rome',
       date: '248-249 AD',

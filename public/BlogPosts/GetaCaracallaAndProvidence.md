@@ -1,6 +1,6 @@
 One of my best-preserved Roman denarii depicts Geta (209-211 AD), and the goddess Providentia. The type was struck from 203-208 under the co-emperorship of Geta's father and brother, Septimius Severus (193-211) and Caracalla (198-217). Not only does this coin feature an incredible portrait of Geta, but it also tells a fascinating story of internal conflict and intrigue in the Severan Dynasty.
 
-||/Images/Collection/A011-Geta.webp||
+||/Images/Collection/A011-Obverse.webp||
 
 Taking power in 193, Septimius Severus struck a significant number of coins depicting his sons Caracalla and Geta. His intention was to display his family to the public as the rightful imperial family and concrete their right to succession after his death. When the emperor (or "Augustus") declares their heir, this is done by assigning them the title "Caesar". On the obverse legend of the denarius above, we can read "P SEPTIMIVS GETA CAES", or "Publius Septimius Geta, Caesar". This indicates that Geta was set to inherit the title of Augustus upon his father's death.
 

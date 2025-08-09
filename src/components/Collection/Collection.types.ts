@@ -29,6 +29,7 @@ export type CollectionItem = {
   title: string;
   ruler: Ruler;
   authority: string;
+  denomination: string;
   mint: Mint;
   obverse: CoinFace;
   reverse: CoinFace;
@@ -66,7 +67,7 @@ type Mint = {
 
 type MoreDetails = {
   descriptionParagraphs?: string[]; // Additional description for the details page.
-  mentionedIn?: string[]; // Array of blog post links this coin features in.
+  mentionedIn?: string[]; // Array of blog post IDs this coin features in.
 };
 
 type Ruler = {

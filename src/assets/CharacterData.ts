@@ -33,6 +33,22 @@ export const Rulers: RulerDetails[] = [
       'During his reign, Antoninus built numerous temples and theaters, and heavily promoted science and the arts. He was a skilled administrator and especially effective at directing construction. Remarkably, he was able to massively expand the availability of free drinking water in Rome and the provinces, as well as build numerous bridges and roads, while still leaving behind an enormous treasury.',
     ],
   },
+  {
+    ruler: {
+      name: 'Philip I "The Arab"',
+      reign: '244-249 AD',
+    },
+    title: 'Roman Emperor',
+    imagePath: '/Images/Characters/PhilipTheArab.webp',
+    descriptionParagraphs: [
+      'Marcus Julius Philippus, commonly known as Philip I or Philip the Arab, was Roman Emperor from 244 to 249 AD.',
+      'Philip’s brother Priscus was an important official under the previous emperor, Gordian III. In 243, Gordian III’s Praetorian Prefect died under unclear circumstances, and Philip was given the position. Gordian was later killed in battle against the Sasanian Empire in February 244, allowing Philip to rise to the throne.',
+      'Philip’s reign marked an unusually calm period in the middle of the Crisis of the Third Century. He quickly negotiated peace with the Sasanians, kept good relations with the Senate, and generally managed the Empire effectively.',
+      'Philip also completed numerous public works. He ordered significant development of his home town, renaming it Philippopolis. According to Roman legend, his reign also marks one thousand years of Roman rule, if you follow the tradition that Romulus founded Rome in 753 BC. To commemorate the event, Philip hosted a spectacular festival. In the Colosseum, over 1,000 gladiators were killed in the festivities, along with hundreds of exotic animals - most notably hippos, leopards, lions, giraffes and at least one rhinoceros.',
+      'In late 248, during the unrest of the Crisis of the Third Century, several usurpers claimed the throne and attempted to overthrow Philip. Although he wished to resign, the Senate insisted Philip could quell the rebellion. Impressed with the support of one particular senator, Decius, Philip dispatched him to the provinces with a portion of the Army.',
+      'Decius was able to settle the unrest, but shortly afterward, his army proclaimed him Emperor. He met Philip near modern-day Verona, Italy, and killed Philip in battle, ending his reign and ascending to the throne.',
+    ],
+  },
 ];
 
 export const Characters: CharacterDetails[] = [

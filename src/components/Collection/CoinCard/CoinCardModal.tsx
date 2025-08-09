@@ -68,6 +68,10 @@ export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalPr
               {coin.authority}
             </ModalText>
             <ModalText>
+              <b>Denomination: </b>
+              {coin.denomination}
+            </ModalText>
+            <ModalText>
               <b>Minted: </b>
               {`${coin.mint.location} (${coin.mint.date})`}
             </ModalText>

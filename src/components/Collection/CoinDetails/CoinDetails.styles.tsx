@@ -348,3 +348,28 @@ export const PrimaryDetailsWrapper = styled.div`
     padding: 1rem;
   }
 `;
+
+export const OpenModalButton = styled.button`
+  /* Remove default button styling */
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  outline: inherit;
+  cursor: pointer;
+
+  color: var(--title-orange);
+
+  padding: 0 0.2rem;
+  margin: 0;
+
+  justify-self: center;
+  align-self: center;
+
+  @media (min-width: 35em) {
+    &:hover {
+      filter: brightness(50%);
+      transition: 0.5s;
+    }
+  }
+`;

@@ -118,7 +118,7 @@ export const Navbar = () => {
                 Timeline
               </NavbarLink>
             </li>
-            <li>
+            {/* <li>
               <NavbarLink
                 to={Routes.Blog}
                 onClick={() => handleListItemClick(Routes.Blog)}
@@ -126,7 +126,7 @@ export const Navbar = () => {
               >
                 Blog
               </NavbarLink>
-            </li>
+            </li> */}
           </NavbarList>
         )}
         {isSidebarShowing && <BlurredBackground onClick={() => setShowSidebar(false)} />}
