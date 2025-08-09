@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import {
   CoinDetailsPageWrapper,
   CoinImage,
@@ -57,7 +57,11 @@ const SectionHeader = ({ title, subTitle }: { title: string; subTitle?: string }
 };
 
 const PrimaryDetailsSection = ({ coin, isSmallScreen }: PrimaryDetailsData) => {
-  const [showDenominationModal, setShowDenominationModal] = useState(true);
+  // TODO: Temporary to test the new modal
+  const [searchParams] = useSearchParams();
+  const showModalButton = searchParams.get('beta') === 'true';
+
+  const [showDenominationModal, setShowDenominationModal] = useState(false);
   const rulerTitle = coin.ruler.alternateTitle ?? `Ruler`;
 
   return (
@@ -78,12 +82,14 @@ const PrimaryDetailsSection = ({ coin, isSmallScreen }: PrimaryDetailsData) => {
         </KeyValueText>
         <KeyValueText>
           {coin.denomination}{' '}
-          {/* <OpenModalButton
-            onClick={() => setShowDenominationModal(true)}
-            data-test-id={`denomination-modal-open`}
-          >
-            <FontAwesomeIcon icon={faCircleQuestion} size="1x" />
-          </OpenModalButton> */}
+          {showModalButton && (
+            <OpenModalButton
+              onClick={() => setShowDenominationModal(true)}
+              data-test-id={`denomination-modal-open`}
+            >
+              <FontAwesomeIcon icon={faCircleQuestion} size="1x" />
+            </OpenModalButton>
+          )}
         </KeyValueText>
         <KeyValueText $rightAlign>
           <b>Minted: </b>
