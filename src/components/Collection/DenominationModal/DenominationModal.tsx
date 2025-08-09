@@ -2,10 +2,8 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Modal } from '@mui/material';
 
-import { CollectionItem } from '../Collection.types';
 import {
   CloseModalButton,
-  DenominationImage,
   DenominationSection,
   DenominationText,
   Description,
@@ -13,71 +11,20 @@ import {
   ModalContent,
   SectionHeaderText,
   Subtext,
+  SectionHeaderSeparator,
+  CoinImage,
 } from './DenominationModal.styles';
-import { HeaderSeparator, HeaderText } from '../../../shared/styles/sharedStyles';
 import { useMediaQuery } from 'react-responsive';
-import { SectionHeaderSeparator, SectionSeparator } from '../CoinDetails/CoinDetails.styles';
-
-interface DenominationModalProps {
-  selectedCoin: CollectionItem;
-  showModal: boolean;
-  setShowModal: (show: boolean) => void;
-}
-
-type Denomination = {
-  name: string;
-  value: string;
-  imageOverride?: string;
-};
-
-type CurrencySystemMetadata = {
-  name: string;
-  description: string;
-  denominations: Denomination[];
-};
-
-// Note Obols have been excluded, as the collection likely won't feature any small bronze denominations.
-const AtticStandardMetadata: CurrencySystemMetadata = {
-  name: 'Attic Standard',
-  description:
-    "The Attic Standard was the primary currency system in Ancient Greece. When Rome conquered the Greeks, they allowed them to continue using their existing standards (as long as they featured the Emperor's image).",
-  denominations: [
-    { name: 'Decadrachm', value: '10 Drachmae' },
-    {
-      name: 'Tetradrachm',
-      value: '4 Drachmae',
-      imageOverride: '/Images/Collection/A018-Obverse.webp',
-    },
-    { name: 'Didrachm', value: '2 Drachmae' },
-    { name: 'Drachm', value: '1 Drachma', imageOverride: '/Images/Collection/A026-Obverse.webp' },
-    { name: 'Hemidrachm', value: '1/2 Drachma' },
-  ],
-};
-
-const RomanImperialStandardMetadata: CurrencySystemMetadata = {
-  name: 'Roman Imperial Standard',
-  description:
-    "The Imperial Standard varied over time. For most of Rome's history, the Denarius was the primary coin used for trade and commerce. This was gradually replaced by the Antoninianus due to rising inflation.",
-  denominations: [
-    { name: 'Aureus', value: '25 Denarii' },
-    { name: 'Antoninianus', value: '2 Denarii' },
-    { name: 'Denarius', value: '1 Denarius' },
-    { name: 'Sestertius', value: '1/4 Denarius' },
-    { name: 'Dupondius', value: '1/8 Denarius' },
-    { name: 'As', value: '1/16 Denarius' },
-  ],
-};
-
-const LateRomanStandardMetadata: CurrencySystemMetadata = {
-  name: 'Late Roman Standard',
-  description:
-    'After the reforms of Diocletian and Constantine, the various smaller denominations were replaced by a single type of small bronze coin, dubbed the "Nummus" or "Follis".',
-  denominations: [
-    { name: 'Solidus', value: '180 Nummi' },
-    { name: 'Siliqua', value: '15 Nummi' },
-    { name: 'Nummus', value: '1 Nummus' },
-  ],
-};
+import {
+  CurrencySystemMetadata,
+  Denomination,
+  DenominationModalProps,
+} from './DenominationModal.types';
+import {
+  AtticStandardMetadata,
+  LateRomanStandardMetadata,
+  RomanImperialStandardMetadata,
+} from '../../../assets/DenominationData';
 
 const GetCurrencySystem = (selectedDenomination: string): CurrencySystemMetadata | null => {
   if (AtticStandardMetadata.denominations.some((denom) => denom.name === selectedDenomination)) {
@@ -96,6 +43,7 @@ const GetCurrencySystem = (selectedDenomination: string): CurrencySystemMetadata
 
 const DenominationItem = ({
   denomination,
+  isSelected,
   isSmallScreen,
 }: {
   denomination: Denomination;
@@ -103,11 +51,11 @@ const DenominationItem = ({
   isSmallScreen: boolean;
 }) => {
   return (
-    <ItemWrapper>
-      <DenominationImage
+    <ItemWrapper isSelected={isSelected}>
+      <CoinImage
         src={denomination.imageOverride || `/Images/Denominations/${denomination.name}.webp`}
         alt={denomination.name}
-        width={isSmallScreen ? '100px' : '150px'}
+        width={isSmallScreen ? '70px' : '150px'}
       />
       <DenominationText>{denomination.name}</DenominationText>
       <Subtext>{denomination.value}</Subtext>
@@ -138,22 +86,9 @@ export const DenominationModal = ({
   return (
     <Modal open={showModal} onClose={handleModalClose}>
       <ModalContent data-test-id={`denomination-modal-content`}>
-        {!isSmallScreen && (
-          <>
-            <HeaderText>Ancient Coin Denominations</HeaderText>
-            <HeaderSeparator $noSpacing={!isSmallScreen} />
-            <Description>
-              Ancient Greece and Rome used a variety of coin denominations throughout Antiquity.
-              This guide <b>significantly</b> generalizes the complex, ever-changing monetary
-              systems of these civilizations for the sake of simplicity.
-            </Description>
-            <Description>{currencySystem.description}</Description>
-            <SectionSeparator />
-          </>
-        )}
-
         <SectionHeaderText>{currencySystem.name}</SectionHeaderText>
         <SectionHeaderSeparator />
+        {!isSmallScreen && <Description>{currencySystem.description}</Description>}
         <DenominationSection>
           {currencySystem?.denominations.map((denomination) => (
             <DenominationItem

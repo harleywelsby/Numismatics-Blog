@@ -19,8 +19,8 @@ export const ModalContent = styled.div`
 
   width: 80%;
 
-  @media (min-width: 35em) {
-    width: 50%;
+  @media (min-width: 60em) {
+    width: 60%;
   }
 `;
 
@@ -49,6 +49,7 @@ export const CloseModalButton = styled.button`
 
 export const DenominationSection = styled.div`
   padding-top: 2rem;
+  gap: 0.5rem;
 
   display: flex;
   flex-wrap: wrap;
@@ -56,41 +57,70 @@ export const DenominationSection = styled.div`
   justify-content: center;
 
   @media (min-width: 35em) {
-    gap: 1.5rem;
+    gap: 1rem;
     padding: 1rem;
     max-width: 80%;
   }
 `;
 
-export const ItemWrapper = styled.div`
-  padding: 0.5rem;
+export const ItemWrapper = styled.div<{ isSelected?: boolean }>`
+  border: 1px solid var(--scroll-track-grey);
+  border-radius: 10px;
+  align-items: center;
+  padding: 0.4rem;
+
+  ${(props) =>
+    props.isSelected &&
+    css`
+      border-color: var(--title-orange);
+      background-color: rgba(255, 165, 0, 0.2);
+    `}
 `;
 
-export const DenominationImage = styled.img`
-  padding: 0.5rem 0;
+export const CoinImage = styled.img`
+  justify-self: center;
+  align-self: center;
+  padding: 0.5rem;
 `;
 
 export const DenominationText = styled.p`
   text-align: center;
   font-weight: bold;
   margin: 0;
+
+  font-size: clamp(0.875rem, 1vw + 0.5rem, 1.2rem);
 `;
 
 export const Subtext = styled.p`
   text-align: center;
   margin: 0;
+
+  font-size: clamp(0.75rem, 1vw + 0.25rem, 1rem);
 `;
 
 export const Description = styled.p`
   text-align: left;
   font-size: clamp(0.8rem, 2vw + 0.25rem, 1rem);
   padding: 0 1rem;
+
+  @media (max-width: 35em) {
+    margin: 0;
+    padding: 1rem 0 0 0;
+  }
+
+  @media (min-width: 60em) {
+    width: 80%;
+  }
+
+  @media (min-width: 100em) {
+    width: 50%;
+  }
 `;
 
 export const SectionHeaderText = styled.h2<{ $noSpacing?: boolean }>`
   color: var(--title-orange);
   font-family: 'Times New Roman', Times, serif;
-  font-size: clamp(2rem, 1vw + 0.5rem, 2rem);
+  font-size: clamp(1.3rem, 2vw + 0.5rem, 2rem);
   text-align: center;
 
   margin: 1rem;
@@ -101,4 +131,19 @@ export const SectionHeaderText = styled.h2<{ $noSpacing?: boolean }>`
     css`
       margin: 0;
     `}
+`;
+
+export const SectionHeaderSeparator = styled.div`
+  color: var(--title-orange);
+  border-bottom: solid;
+  min-width: 60%;
+  justify-self: center;
+
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: 35em) {
+    min-width: 40%;
+    margin-bottom: 1rem;
+  }
 `;

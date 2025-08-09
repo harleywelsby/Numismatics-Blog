@@ -1,4 +1,4 @@
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import {
   CoinDetailsPageWrapper,
   CoinImage,
@@ -41,6 +41,7 @@ import { LegendDetails } from '../Collection.types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
 import { DenominationModal } from '../DenominationModal/DenominationModal';
+import { hasDenominationData } from '../../../assets/DenominationData';
 
 const CapitalizeFirstLetter = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -57,10 +58,7 @@ const SectionHeader = ({ title, subTitle }: { title: string; subTitle?: string }
 };
 
 const PrimaryDetailsSection = ({ coin, isSmallScreen }: PrimaryDetailsData) => {
-  // TODO: Temporary to test the new modal
-  const [searchParams] = useSearchParams();
-  const showModalButton = searchParams.get('beta') === 'true';
-
+  const showModalButton = hasDenominationData(coin.denomination);
   const [showDenominationModal, setShowDenominationModal] = useState(false);
   const rulerTitle = coin.ruler.alternateTitle ?? `Ruler`;
 
