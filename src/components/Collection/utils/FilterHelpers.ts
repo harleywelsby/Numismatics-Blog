@@ -32,7 +32,9 @@ const HandleSearch = (data: CollectionItem[], search: string): CollectionItem[] 
       item.obverse.legend?.toLowerCase().includes(query) ||
       item.reverse.description.toLowerCase().includes(query) ||
       item.reverse.legend?.toLowerCase().includes(query) ||
-      item.characters.some((character) => character.toLowerCase().includes(query)),
+      item.characters.some((character) => character.toLowerCase().includes(query)) ||
+      item.mint.location?.toLowerCase().includes(query) ||
+      item.denomination.toLowerCase().includes(query),
   );
 };
 
