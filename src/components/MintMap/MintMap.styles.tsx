@@ -1,5 +1,5 @@
 import { MapContainer } from 'react-leaflet';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const MapWrapper = styled(MapContainer)`
   height: 600px;
@@ -31,4 +31,41 @@ export const SectionSeparator = styled.div`
   justify-self: center;
 `;
 
-export const MarkerButton = styled.button``;
+export const FilterSection = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+`;
+
+export const FilterButton = styled.button<{ $selected?: boolean }>`
+  /* Remove default button styling */
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  outline: inherit;
+  cursor: pointer;
+
+  border-bottom: solid transparent;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: var(--soft-white);
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+
+  ${(props) =>
+    props.$selected &&
+    css`
+      color: var(--title-orange);
+      border-bottom: solid;
+    `}
+
+  &:hover {
+    color: var(--title-orange);
+    border-bottom: solid;
+  }
+`;
