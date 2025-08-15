@@ -1158,7 +1158,7 @@ export const CollectionData: CollectionItem[] = [
     authority: 'Roman Empire',
     denomination: 'Tetradrachm',
     mint: {
-      location: 'Rome',
+      location: 'Antioch',
       date: '248-249 AD',
     },
     obverse: {

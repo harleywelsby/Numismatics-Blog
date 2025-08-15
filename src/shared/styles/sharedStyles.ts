@@ -25,7 +25,7 @@ export const HeaderText = styled.h1<{ $primaryColor?: boolean }>`
   justify-self: center;
 `;
 
-export const HeaderSeparator = styled.div<{ $noSpacing?: boolean }>`
+export const HeaderSeparator = styled.div<{ $noSpacing?: boolean; $primaryColor?: boolean }>`
   border-bottom: solid;
   min-width: 40vw;
   justify-self: center;
@@ -40,6 +40,12 @@ export const HeaderSeparator = styled.div<{ $noSpacing?: boolean }>`
         margin-bottom: 0;
       `}
   }
+
+  ${(props) =>
+    props.$primaryColor &&
+    css`
+      color: var(--title-orange);
+    `}
 `;
 
 export const MobileOnlySpacer = styled.div`

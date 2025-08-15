@@ -46,10 +46,12 @@ export const CardText = styled.h2`
 `;
 
 export const CoinImageWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 0.2rem;
   padding-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.2rem;
+  justify-content: center;
+  align-items: center;
 `;
 
 // Modal

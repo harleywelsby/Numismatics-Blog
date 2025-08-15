@@ -8,6 +8,7 @@ import { Sets } from '../../components/Sets/Sets';
 import { TimelinePage } from '../../components/Timeline/TimelinePage';
 import { CollectionV2 } from '../../components/Collection/Collection';
 import { CoinDetails } from '../../components/Collection/CoinDetails/CoinDetails';
+import { MintMap } from '../../components/MintMap/MintMap';
 
 export const getBlogPostRoute = (postId: string) => {
   return Routes.BlogPost.replace(':postId', postId);
@@ -21,7 +22,7 @@ export const Routes = {
   CollectionItemDetails: '/collection/:itemId',
   Sets: '/sets',
   Timeline: '/timeline',
-
+  MintMap: '/mint-map',
   Error: '*',
 };
 
@@ -38,6 +39,7 @@ export const router = createBrowserRouter([
       { path: Routes.BlogPost, element: <BlogPost /> },
       { path: Routes.Sets, element: <Sets /> },
       { path: Routes.Timeline, element: <TimelinePage /> },
+      { path: Routes.MintMap, element: <MintMap /> },
     ],
   },
 ]);

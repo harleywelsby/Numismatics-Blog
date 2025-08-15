@@ -28,6 +28,7 @@ import { useMediaQuery } from 'react-responsive';
 import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { getColumnOverride } from './utils/GridHelpers';
 
 export const CollectionV2 = () => {
   const isSmallScreen = useMediaQuery({ maxWidth: '65em' });
@@ -59,26 +60,6 @@ export const CollectionV2 = () => {
 
   // Dynamically fetch the filter options
   const authorityFilterOptions = GetAuthorityGroups(CollectionData.map((x) => x.authority));
-
-  // If only 1 or 2 items are in the list, adjust the columns.
-  const getColumnOverride = () => {
-    let columns = '33% 33% 33%';
-
-    if (isSmallScreen) {
-      columns = '100%';
-    } else if (isMediumScreen) {
-      columns = '50% 50%';
-    }
-
-    switch (filteredCollectionData.length) {
-      case 1:
-        return '100%';
-      case 2:
-        return isSmallScreen ? columns : '50% 50%';
-      default:
-        return columns;
-    }
-  };
 
   return (
     <PageWrapper>
@@ -154,7 +135,13 @@ export const CollectionV2 = () => {
         </AccordionDetails>
       </Accordion>
       <AccordionSeparator />
-      <CoinCardGrid $columnsOverride={getColumnOverride()}>
+      <CoinCardGrid
+        $columnsOverride={getColumnOverride(
+          isSmallScreen,
+          isMediumScreen,
+          filteredCollectionData.length,
+        )}
+      >
         {filteredCollectionData.map((x) => (
           <CoinCard key={x.id} coin={x} />
         ))}

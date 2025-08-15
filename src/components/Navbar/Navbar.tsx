@@ -118,6 +118,16 @@ export const Navbar = () => {
                 Timeline
               </NavbarLink>
             </li>
+            <li>
+              <NavbarLink
+                data-test-id="navbar-mint-map-link"
+                to={Routes.MintMap}
+                onClick={() => handleListItemClick(Routes.MintMap)}
+                $selected={selectedRoute === Routes.MintMap}
+              >
+                Mint Map
+              </NavbarLink>
+            </li>
             {/* <li>
               <NavbarLink
                 to={Routes.Blog}
