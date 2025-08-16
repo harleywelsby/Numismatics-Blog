@@ -7,6 +7,10 @@ export const MapWrapper = styled(MapContainer)`
   border-radius: 10px;
   justify-self: center;
 
+  @media (max-width: 35em) {
+    height: 400px;
+  }
+
   @media (min-width: 100em) {
     width: 60vw;
   }
