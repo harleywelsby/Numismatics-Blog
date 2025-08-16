@@ -2,7 +2,7 @@ import { HeaderSeparator, HeaderText, PageWrapper } from '../../shared/styles/sh
 import { CollectionData } from '../../assets/CollectionData';
 import { useMediaQuery } from 'react-responsive';
 import { Routes } from '../../shared/utils/router';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { NavigationContext } from '../NavigationContext/NavigationContext';
 import { Marker, Popup, TileLayer } from 'react-leaflet';
 import {
@@ -34,6 +34,7 @@ export const MintMap = () => {
   const [selectedMint, setSelectedMint] = useState<Mint | null>(null);
   const isSmallScreen = useMediaQuery({ maxWidth: '65em' });
   const isMediumScreen = useMediaQuery({ minWidth: '65em', maxWidth: '100em' });
+  const coinSection = useRef<HTMLHeadingElement | null>(null);
 
   const { setSelectedRoute } = useContext(NavigationContext);
   useEffect(() => {
@@ -42,9 +43,19 @@ export const MintMap = () => {
 
   const handleSelectMint = (mint: Mint) => {
     setSelectedMint(mint);
+    // Ensure the section has been rendered first
+    setTimeout(() => {
+      if (isSmallScreen) {
+        console.log(`coinSection: ${coinSection.current?.offsetTop}`);
+        window.scrollTo({
+          top: coinSection.current?.offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    }, 10);
   };
 
-  let filteredData = CollectionData;
+  let filteredData = CollectionData.sort((a, b) => b.id - a.id);
 
   const currentAuthorityGroup = MintMapAuthorityGroups.find((x) => x.name === selectedFilter);
   if (selectedFilter !== 'All' && currentAuthorityGroup) {
@@ -106,7 +117,9 @@ export const MintMap = () => {
       {selectedMint && (
         <>
           <SectionSeparator />
-          <HeaderText $primaryColor>{selectedMint.name}</HeaderText>
+          <HeaderText ref={coinSection} $primaryColor>
+            {selectedMint.name}
+          </HeaderText>
           <HeaderSeparator $primaryColor />
           <CoinCardGrid
             $columnsOverride={getColumnOverride(
