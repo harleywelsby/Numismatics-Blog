@@ -2,7 +2,7 @@ import { HeaderSeparator, HeaderText, PageWrapper } from '../../shared/styles/sh
 import { CollectionData } from '../../assets/CollectionData';
 import { useMediaQuery } from 'react-responsive';
 import { Routes } from '../../shared/utils/router';
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { NavigationContext } from '../NavigationContext/NavigationContext';
 import { Marker, Popup, TileLayer } from 'react-leaflet';
 import {
@@ -11,13 +11,21 @@ import {
   HeaderParagraph,
   MapWrapper,
   SectionSeparator,
+  Spacer,
 } from './MintMap.styles';
 import { Mint } from './MintMap.types';
-import { CoinCardGrid } from '../Collection/Collection.styles';
+import {
+  CoinCardGrid,
+  FilterItem,
+  FilterLabel,
+  FilterSelectBox,
+} from '../Collection/Collection.styles';
 import { CoinCard } from '../Collection/CoinCard/CoinCard';
 import { getColumnOverride } from '../Collection/utils/GridHelpers';
 import { MintData, MintMapAuthorityGroups } from '../../assets/MintMapData';
-import { CollectionItem } from '../Collection/Collection.types';
+import { CollectionItem, SortType } from '../Collection/Collection.types';
+import { ActiveSortTypes, SortCollectionData } from '../Collection/utils/FilterHelpers';
+import { MintMapStateContext } from './MintMapState/MintMapStateContext';
 
 const coinMintMatches = (selectedMint: Mint | null, coin: CollectionItem) => {
   if (!selectedMint) {
@@ -30,11 +38,17 @@ const coinMintMatches = (selectedMint: Mint | null, coin: CollectionItem) => {
 };
 
 export const MintMap = () => {
-  const [selectedFilter, setSelectedFilter] = useState<string>('All');
-  const [selectedMint, setSelectedMint] = useState<Mint | null>(null);
   const isSmallScreen = useMediaQuery({ maxWidth: '65em' });
   const isMediumScreen = useMediaQuery({ minWidth: '65em', maxWidth: '100em' });
   const coinSection = useRef<HTMLHeadingElement | null>(null);
+  const {
+    selectedMint,
+    setSelectedMint,
+    sortType,
+    setSortType,
+    authorityFilter,
+    setAuthorityFilter,
+  } = useContext(MintMapStateContext);
 
   const { setSelectedRoute } = useContext(NavigationContext);
   useEffect(() => {
@@ -57,8 +71,8 @@ export const MintMap = () => {
 
   let filteredData = CollectionData.sort((a, b) => b.id - a.id);
 
-  const currentAuthorityGroup = MintMapAuthorityGroups.find((x) => x.name === selectedFilter);
-  if (selectedFilter !== 'All' && currentAuthorityGroup) {
+  const currentAuthorityGroup = MintMapAuthorityGroups.find((x) => x.name === authorityFilter);
+  if (authorityFilter !== 'All' && currentAuthorityGroup) {
     filteredData = filteredData.filter((x) =>
       currentAuthorityGroup.includedAuthorities.includes(x.authority),
     );
@@ -69,6 +83,8 @@ export const MintMap = () => {
     return coinMintMatches(selectedMint, coin);
   });
 
+  const sortedCollectionData = SortCollectionData(collectionFilteredByMint, sortType);
+
   return (
     <PageWrapper>
       <HeaderText>Mint Map</HeaderText>
@@ -78,18 +94,21 @@ export const MintMap = () => {
         learn more about the mint, and the coins minted there.
       </HeaderParagraph>
       <FilterSection>
-        <FilterButton $selected={selectedFilter === 'All'} onClick={() => setSelectedFilter('All')}>
+        <FilterButton
+          $selected={authorityFilter === 'All'}
+          onClick={() => setAuthorityFilter('All')}
+        >
           All
         </FilterButton>
         <FilterButton
-          $selected={selectedFilter === 'Ancient Rome'}
-          onClick={() => setSelectedFilter('Ancient Rome')}
+          $selected={authorityFilter === 'Ancient Rome'}
+          onClick={() => setAuthorityFilter('Ancient Rome')}
         >
           Ancient Rome
         </FilterButton>
         <FilterButton
-          $selected={selectedFilter === 'Ancient Greece'}
-          onClick={() => setSelectedFilter('Ancient Greece')}
+          $selected={authorityFilter === 'Ancient Greece'}
+          onClick={() => setAuthorityFilter('Ancient Greece')}
         >
           Ancient Greece
         </FilterButton>
@@ -114,13 +133,31 @@ export const MintMap = () => {
             ),
         )}
       </MapWrapper>
-      {selectedMint && (
+      {selectedMint ? (
         <>
           <SectionSeparator />
           <HeaderText ref={coinSection} $primaryColor>
             {selectedMint.name}
           </HeaderText>
           <HeaderSeparator $primaryColor />
+          {sortedCollectionData.length > 3 && (
+            <FilterSection>
+              <FilterItem>
+                <FilterLabel>Sort by:</FilterLabel>
+                <FilterSelectBox
+                  name="sortType"
+                  value={sortType}
+                  onChange={(e) => setSortType(e.target.value as SortType)}
+                >
+                  {ActiveSortTypes.map((type) => (
+                    <option key={type} value={type}>
+                      {type}
+                    </option>
+                  ))}
+                </FilterSelectBox>
+              </FilterItem>
+            </FilterSection>
+          )}
           <CoinCardGrid
             $columnsOverride={getColumnOverride(
               isSmallScreen,
@@ -128,11 +165,13 @@ export const MintMap = () => {
               collectionFilteredByMint.length,
             )}
           >
-            {collectionFilteredByMint.map((x) => (
+            {sortedCollectionData.map((x) => (
               <CoinCard key={x.id} coin={x} />
             ))}
           </CoinCardGrid>
         </>
+      ) : (
+        <Spacer />
       )}
     </PageWrapper>
   );

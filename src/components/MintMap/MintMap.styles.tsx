@@ -40,7 +40,11 @@ export const FilterSection = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem;
+
+  @media (min-width: 35em) {
+    margin-top: 0;
+  }
 `;
 
 export const FilterButton = styled.button<{ $selected?: boolean }>`
@@ -72,4 +76,23 @@ export const FilterButton = styled.button<{ $selected?: boolean }>`
     color: var(--title-orange);
     border-bottom: solid;
   }
+`;
+
+// TODO: Not in use
+export const SliderWrapper = styled.div`
+  padding: 0 10vw 1rem;
+  justify-content: center;
+  display: flex;
+
+  .MuiSlider-root {
+    color: var(--title-orange);
+  }
+
+  @media (min-width: 35em) {
+    padding: 0.5rem 20vw 1rem;
+  }
+`;
+
+export const Spacer = styled.div`
+  height: 100px;
 `;

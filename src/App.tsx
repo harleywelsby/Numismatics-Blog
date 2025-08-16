@@ -6,16 +6,19 @@ import { NavigationContextProvider } from './components/NavigationContext/Naviga
 import { Footer } from './components/Footer/Footer';
 import { SetContextProvider } from './components/Sets/SetContextProvider';
 import { CollectionFilterStateContextProvider } from './components/Collection/CollectionFilterState/CollectionFilterStateContextProvider.';
+import { MintMapStateContextProvider } from './components/MintMap/MintMapState/MintMapStateContextProvider';
 
 function App() {
   return (
     <NavigationContextProvider>
       <SetContextProvider>
         <CollectionFilterStateContextProvider>
-          <Navbar />
-          <Outlet />
-          <Footer />
-          <Analytics />
+          <MintMapStateContextProvider>
+            <Navbar />
+            <Outlet />
+            <Footer />
+            <Analytics />
+          </MintMapStateContextProvider>
         </CollectionFilterStateContextProvider>
       </SetContextProvider>
     </NavigationContextProvider>
