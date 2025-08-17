@@ -4,46 +4,18 @@ import {
   HomepageParagraph,
   SectionHeaderSeparator,
   SectionSeparator,
-  ShowcaseDescription,
-  ShowcaseItem,
-  ShowcaseSeparator,
-  ShowcaseSubtitle,
-  ShowcaseText,
-  ShowcaseTitle,
   TextWrapper,
 } from './Home.styles';
-import { CollectionData } from '../../assets/CollectionData';
-import { useMediaQuery } from 'react-responsive';
 import { Routes } from '../../shared/utils/router';
-import { CoinCard } from '../Collection/CoinCard/CoinCard';
 import { useContext, useEffect } from 'react';
 import { NavigationContext } from '../NavigationContext/NavigationContext';
-
-const currentShowcaseIds = [26, 17, 25];
-const showcaseDescriptions: Record<number, string> = {
-  26: "This drachm was struck by Antigonus I 'The One-Eyed', one of Alexander the Great's generals and successors. The reverse reads 'ΑΛΕΞΑΝΔΡΟΥ', meaning 'of Alexander'. Antigonus died in combat in 301 BC at age 81, while fighting against a coalition of Alexander's other generals.",
-  17: 'Elagabalus rose to power at age 14, after his grandmother, Julia Maesa, orchestrated a coup against the emperor Macrinus. The reverse features Victory, and reads "VICTOR ANTONINI AVG", meaning "Victory to Emperor Antoninus" (Elagabalus is a nickname, after the sun god he worshipped). This type commemorated his victory over Macrinus in the Battle of Antioch, and restoration of his dynasty to the throne.',
-  25: `The last of the "Five Good Emperors", Marcus Aurelius is best known for his contributions to Stoic philosophy, most notably "Meditations". This coin features the personification of happiness, Felicitas, on the reverse. Here, Felicitas likely represents one's "inner happiness", a key tenet of Stoicism.`,
-};
-
-const getShowcaseDescription = (id: number): string => {
-  return showcaseDescriptions[id] || 'No description available.';
-};
+import { Showcase } from '../Showcase/Showcase';
 
 export const Home = () => {
   const { setSelectedRoute } = useContext(NavigationContext);
   useEffect(() => {
     setSelectedRoute(Routes.Home);
   }, [setSelectedRoute]);
-
-  const currentShowcase = CollectionData.filter((x) => currentShowcaseIds.includes(x.id)).sort(
-    (a, b) => b.id - a.id,
-  );
-
-  const isMediumScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
-  const showcaseSizeOverride = isMediumScreenOrLarger
-    ? { width: 200, height: 200 }
-    : { width: 125, height: 125 };
 
   return (
     <PageWrapper>
@@ -72,33 +44,7 @@ export const Home = () => {
           Showcase
         </HeaderText>
         <SectionHeaderSeparator />
-        {currentShowcase.map((x) => (
-          <div key={x.id}>
-            {currentShowcase.indexOf(x) !== 0 && <ShowcaseSeparator />}
-            <ShowcaseItem $isMediumScreenOrLarger={isMediumScreenOrLarger}>
-              <CoinCard
-                coin={x}
-                options={{
-                  hideTitle: true,
-                  sizeOverride: showcaseSizeOverride,
-                  noPadding: true,
-                  modalRerouteOverride: Routes.Home,
-                  disableRedirect: true,
-                }}
-              />
-              <ShowcaseText>
-                <ShowcaseTitle $isMediumScreenOrLarger={isMediumScreenOrLarger}>
-                  {x.title}
-                </ShowcaseTitle>
-                <ShowcaseSubtitle>
-                  {x.mint.date}, {x.mint.location}
-                </ShowcaseSubtitle>
-
-                <ShowcaseDescription>{getShowcaseDescription(x.id)}</ShowcaseDescription>
-              </ShowcaseText>
-            </ShowcaseItem>
-          </div>
-        ))}
+        <Showcase />
       </TextWrapper>
     </PageWrapper>
   );
