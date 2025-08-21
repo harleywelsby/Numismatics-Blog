@@ -79,4 +79,13 @@ export const Characters: CharacterDetails[] = [
       },
     ],
   },
+  {
+    name: 'Julia Domna',
+    imagePath: '/Images/Characters/JuliaDomna.webp',
+    descriptionParagraphs: [
+      'Julia Domna was the wife of Emperor Septimius Severus (r. 193-211 AD), and mother of the later Emperors Caracalla and Geta. Domna was born in modern-day Syria to a noble Arab family of priests of the deity Elagabalus (not to be confused with Emperor Elagabalus, who was named after the deity). She married Severus in 187, who was then a provincial governor.',
+      'Unlike any previous imperial wives, Domna accompanied Severus on military campaigns and even lodged with the soldiers in the camps. She was popular and well respected among the troops, eventually receiving the honorary title “Mother of the Invincible Camps”.',
+      'On her husband’s death, Domna assumed the title “Julia Pia Felix Augusta”, or “Julia, Dutiful and Fortunate Empress”. It’s believed this was a strategic move to show that Julia had “absorbed” Severus’ traits and was continuing his work. Shortly afterward, her son Caracalla killed his younger brother Geta and became sole Emperor of Rome. Under Caracalla, Domna took on more administrative duties and often fulfilled many tasks of the Emperor on his behalf.',
+    ],
+  },
 ];

@@ -694,6 +694,16 @@ export const CollectionData: CollectionItem[] = [
       url: 'http://numismatics.org/ocre/id/ric.4.el.153',
     },
     characters: ['Victory'],
+    moreDetails: {
+      descriptionParagraphs: [
+        'This coin was likely struck to commemorate Elagabalus’ victory against the reigning Emperor Macrinus at the Battle of Antioch (218), resulting in his rise to the Imperial throne.',
+        'For context, Macrinus rose to the throne in 217 after the assassination of Elagabalus’ cousin, the previous Emperor Caracalla. Caracalla gave massive pay increases to the soldiers that Rome simply couldn’t afford, which were reversed by Macrinus, causing significant discontent among the soldiers.',
+        'Elagabalus’ wealthy grandmother Julia Maesa used this opportunity to promote him as the rightful heir to the throne, resulting in the Gallic Third Legion proclaiming him Emperor in May 218. In response, Macrinus sent his general Ulpius Julianus to quell the rebellion with a small cavalry unit. The cavalry defected and sent Ulpius’ head back to Macrinus in Antioch.',
+        'Less than a month later, the battle took place. As Elagabalus was only 14 years old at the time, his army was commanded by his tutor Gannys. Early into the battle, Macrinus’ Praetorian Guard broke Gannys’ lines, causing his soldiers to flee. Julia Maesa and Julia Soaemias (Elagabalus’ mother) personally joined the fray and rallied the forces back into battle. The troops renewed the assault with new morale, and began to win the battle. Macrinus sensed defeat and fled the battle, later being captured and killed, thus securing Elagabalus’ victory and ascension to the throne.',
+        'This coin is also graded as “As Struck”, meaning that it likely looks exactly as it did when it left the mint, and has been perfectly preserved all these years. Often, people ask how a coin could stay in such perfect condition for so long. While we can never be sure, the most common reason is believed to be from abandoned personal savings.',
+        'Being an issue of Victory commemorating a battle, it’s very likely that this coin was struck to pay a soldier in the Roman army. On payment, some soldiers would bury their denarii in a safe location for later retrieval (hence leaving the coins in a pristine, uncirculated state). Once the denarii were buried, they would leave for war and retrieve their earnings on return. Unfortunately, not all soldiers returned.',
+      ],
+    },
   },
   // 18
   {

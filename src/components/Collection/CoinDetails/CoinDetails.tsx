@@ -318,7 +318,7 @@ export const CoinDetails = () => {
       {hasMoreSections && <SectionSeparator />}
       {coin.moreDetails?.descriptionParagraphs && (
         <>
-          <SectionHeader title="Interpretation" />
+          <SectionHeader title="What Makes this Coin Special?" />
           {isSmallScreen && <br />}
           <DescriptionSection>
             {coin.moreDetails.descriptionParagraphs.map((paragraph, index) => (
@@ -329,7 +329,7 @@ export const CoinDetails = () => {
             ))}
           </DescriptionSection>
           {!isSmallScreen && <br />}
-          <SectionSeparator />
+          {(rulerDetails || showCharacterDetails) && <SectionSeparator />}
         </>
       )}
       {rulerDetails && (
