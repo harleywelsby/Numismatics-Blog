@@ -4,7 +4,6 @@ export const ShowcaseCard = styled.div`
   margin: 2rem 0;
   padding: 2rem 1rem;
 
-  height: 700px;
   border-radius: 10px;
 
   background-color: var(--deep-black);
@@ -12,10 +11,6 @@ export const ShowcaseCard = styled.div`
   justify-content: center;
   align-items: center;
   justify-self: center;
-
-  @media (max-width: 35em) {
-    height: 600px;
-  }
 
   @media (min-width: 100em) {
     width: 60%;
@@ -61,16 +56,6 @@ export const Subtitle = styled.p`
   }
 `;
 
-export const DescriptionText = styled.p`
-  font-size: 1.2rem;
-  text-align: left;
-  margin: 0 1rem 1rem 1rem;
-
-  @media (max-width: 35em) {
-    font-size: 1rem;
-  }
-`;
-
 export const StepButtonStack = styled.div`
   display: flex;
   justify-content: center;
@@ -95,4 +80,28 @@ export const StepButton = styled.button<{ isSelected: boolean }>`
     css`
       background-color: var(--title-orange);
     `}
+`;
+
+export const DetailsButton = styled.button`
+  background-color: var(--deep-black);
+  color: var(--white);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: clamp(0.5rem, 3vw + 0.1rem, 1rem);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--scroll-track-grey);
+  }
+`;
+
+export const DetailsButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 `;
