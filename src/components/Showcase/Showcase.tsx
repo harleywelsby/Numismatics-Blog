@@ -69,6 +69,11 @@ export const Showcase = () => {
     setItemHasBeenClicked(true);
   };
 
+  const handleDetailsButtonClick = () => {
+    setShowModal(true);
+    setItemHasBeenClicked(true);
+  };
+
   return (
     <ShowcaseCard>
       <ImageWrapper id="image">
@@ -95,7 +100,7 @@ export const Showcase = () => {
         ))}
       </StepButtonStack>
       <DetailsButtonWrapper>
-        <DetailsButton onClick={() => setShowModal(true)}>View Details</DetailsButton>
+        <DetailsButton onClick={handleDetailsButtonClick}>View Details</DetailsButton>
       </DetailsButtonWrapper>
       <CoinCardModal
         coin={currentShowcase[currentItem]}
