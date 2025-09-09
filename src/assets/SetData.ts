@@ -2,19 +2,55 @@ import { CoinSet } from '../components/Sets/Sets.Types';
 
 export const SetData: CoinSet[] = [
   {
-    name: 'The Founding of Rome',
+    name: 'The Birth of Rome',
     active: true,
     category: 'Rome',
-    description:
-      "Learning about Rome's history is one thing, but what did they think of their own history? This set showcases important events in Roman tradition, as depicted by later Romans.",
-    items: [],
+    descriptionParagraphs: [
+      "Learning about Rome's history is one thing, but what did they think of their own history? This set showcases important events in Roman tradition, either with a piece from the time, or as depicted by later Romans.",
+    ],
+    items: [
+      {
+        name: 'Aeneas Flees Troy',
+        completed: false,
+        imageUrl: '/Images/Drawings/Aeneas.webp',
+      },
+      {
+        name: 'Romulus & Remus',
+        completed: false,
+        imageUrl: '/Images/Drawings/RomulusAndRemus.webp',
+      },
+      {
+        name: 'Abduction of',
+        secondLine: 'the Sabines',
+        completed: false,
+        imageUrl: '/Images/Drawings/Sabines.webp',
+      },
+      {
+        name: 'The Fate of',
+        secondLine: 'Tarpeia',
+        completed: false,
+        imageUrl: '/Images/Drawings/Tarpeia.webp',
+      },
+      {
+        name: 'Victory over',
+        secondLine: 'Carthage',
+        completed: false,
+        imageUrl: '/Images/Drawings/Carthage.webp',
+      },
+      {
+        name: 'Battle of Actium',
+        completed: false,
+        imageUrl: '/Images/Drawings/BattleOfActium.webp',
+      },
+    ],
   },
   {
     name: 'The Julio-Claudian Dynasty',
     active: false,
     category: 'Rome',
-    description:
+    descriptionParagraphs: [
       'This set aims to collect a portrait coin of each emperor from the first Roman dynasty and descendants of Caesar, the Julio-Claudians, who ruled Rome from 27 BC to 68 AD.',
+    ],
     items: [
       {
         name: 'Augustus',
@@ -52,8 +88,9 @@ export const SetData: CoinSet[] = [
     name: 'The 5 Good Emperors',
     active: true,
     category: 'Rome',
-    description:
+    descriptionParagraphs: [
       'The "5 Good Emperors" reigned from 96 to 180 AD, in what is often considered the Golden Age of Rome. All 5 Emperors showed incredible strength and leadership, solidifying Rome\'s power and influence. Each coin in this set will feature a portrait of one of the emperors, and the personification of a Roman virtue on the reverse that I believe fits their character.',
+    ],
     items: [
       {
         name: 'Nerva',
@@ -100,8 +137,10 @@ export const SetData: CoinSet[] = [
     name: 'Severan Silver',
     active: true,
     category: 'Rome',
-    description:
-      'The murder of Emperor Commodus in 192 AD resulted in a bloody civil war between several claimants to the Roman throne, known as the “Year of the 5 Emperors”. Septimius Severus arose victorious, and his sons and nephews would continue to rule well after his death. The Severan Dynasty is remembered for their scandalous behaviour (Caracalla murdering his brother Geta, Elagabalus marrying a Vestal Virgin), but also for their extremely powerful women. Notably, Julia Domna lodged with the soldiers on campaign and was revered by the troops as the “Mother of the Invincible Camps”. When the throne was briefly usurped by Macrinus in 217, her sister Julia Maesa led a successful coup to restore the dynasty, even personally taking up arms at the Battle of Antioch.',
+    descriptionParagraphs: [
+      'The murder of Emperor Commodus in 192 AD resulted in a bloody civil war between several claimants to the Roman throne, known as the “Year of the 5 Emperors”. Septimius Severus arose victorious, and his sons and nephews would continue to rule well after his death.',
+      'The Severan Dynasty is remembered for their scandalous behaviour (Caracalla murdering his brother Geta, Elagabalus marrying a Vestal Virgin), but also for their extremely powerful women. Notably, Julia Domna lodged with the soldiers on campaign and was revered by the troops as the “Mother of the Invincible Camps”. When the throne was briefly usurped by Macrinus in 217, her sister Julia Maesa led a successful coup to restore the dynasty, even personally taking up arms at the Battle of Antioch.',
+    ],
     items: [
       {
         name: 'Septimius Severus',
@@ -177,8 +216,9 @@ export const SetData: CoinSet[] = [
     name: 'The Crisis of the Third Century',
     active: false,
     category: 'Rome',
-    description:
+    descriptionParagraphs: [
       'After the death of Severus Alexander in 235 AD, Rome nearly collapsed in what is known as the "Crisis of the Third Century". This time was a brutal span of civil wars, barbarian invasions, peasant rebellions, and political instability. This set aims to collect a portrait coin of every major figure in the Crisis.',
+    ],
     items: [
       {
         name: 'Gallienus',
@@ -220,8 +260,9 @@ export const SetData: CoinSet[] = [
     name: 'The Constantinian Dynasty',
     active: false,
     category: 'Rome',
-    description:
+    descriptionParagraphs: [
       'The Constantinian Dynasty ruled Rome from 305 to 363 AD, beginning with Constantine I "The Great" instilling Christianity as the official religion of Rome, and ending with his descendant Julian "The Apostate", who made efforts to revert the Empire to Paganism. This set aims to collect a portrait of each of the major figures of the dynasty.',
+    ],
     items: [
       {
         name: 'Constantius I',
@@ -279,8 +320,9 @@ export const SetData: CoinSet[] = [
     name: 'Alexander and his Generals',
     active: true,
     category: 'Greek',
-    description:
+    descriptionParagraphs: [
       "Alexander the Great was one of the greatest military leaders of all time. After his untimely death, his empire split between his generals, known as the Diadochi. These successors continued to strike coins in Alexander's name, in the famous Heracles/Zeus type. This set aims to collect a lifetime coin of Alexander the Great, and each of his successors.",
+    ],
     items: [
       {
         name: 'Alexander III "The Great"',
@@ -330,8 +372,9 @@ export const SetData: CoinSet[] = [
     name: 'The Twelve Olympians',
     active: false,
     category: 'Greek',
-    description:
+    descriptionParagraphs: [
       'This set aims to collect a depiction of each of the Twelve Olympian Gods. This includes both busts and full figures, on any form of ancient coinage.',
+    ],
     items: [
       {
         name: 'Zeus',
@@ -405,8 +448,9 @@ export const SetData: CoinSet[] = [
     name: 'Kings of Persia',
     active: false,
     category: 'Near East',
-    description:
+    descriptionParagraphs: [
       "During Rome's height, the many dynasties of Persia were an ever-present neighbour, and often rival. During this time, the region developed its own unique coinage standards and artistic styles. This set aims to collect a coin from each of the dynasties of Ancient Persia, from the Achaemenids to the Sassanids.",
+    ],
     items: [
       {
         name: 'Achaemenid Empire',
