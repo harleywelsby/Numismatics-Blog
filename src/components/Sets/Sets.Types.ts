@@ -2,6 +2,7 @@ export type CoinSet = {
   name: string;
   description: string;
   category: string;
+  active: boolean;
   items: SetItem[];
 };
 

@@ -22,6 +22,7 @@ import { CoinSet, SetStatus } from './Sets.Types';
 import { SingleSetItem } from './SingleSetItem';
 import { Routes } from '../../shared/utils/router';
 import { NavigationContext } from '../NavigationContext/NavigationContext';
+import { ENABLE_SET_ACCORDIONS, ENABLE_SET_CATEGORIES } from '../../config';
 
 // TODO: This should be resolved dynamically from the SetData.
 const getSetCategories = () => {
@@ -69,11 +70,15 @@ export const Sets = () => {
 
   const ListOfSets = (sets: CoinSet[]) => {
     return sets.map((set) => {
+      if (!set.active) {
+        return;
+      }
+
       const setStatus = getSetStatus(set);
       return (
-        <SetAccordionWrapper key={set.name}>
+        <SetAccordionWrapper key={set.name} $withBottomPadding={!ENABLE_SET_ACCORDIONS}>
           <Accordion
-            expanded={setContext.openSets.includes(set.name)}
+            expanded={!ENABLE_SET_ACCORDIONS || setContext.openSets.includes(set.name)}
             onChange={() => handleSetChange(set.name)}
             sx={{
               color: 'var(--white)',
@@ -85,7 +90,11 @@ export const Sets = () => {
             }}
           >
             <AccordionSummary
-              expandIcon={<FontAwesomeIcon icon={faChevronDown} color="white" size="2x" />}
+              expandIcon={
+                ENABLE_SET_ACCORDIONS && (
+                  <FontAwesomeIcon icon={faChevronDown} color="white" size="2x" />
+                )
+              }
               sx={{ padding: '0.5rem 1rem' }}
             >
               <SetAccordionHeader>
@@ -115,19 +124,21 @@ export const Sets = () => {
       <HeaderParagraphWrapper>
         <HeaderParagraph>
           This page tracks the "sets" of coins that the Niho Collection aims to complete. These sets
-          track historical moments, dynasties and themes in the collection by combining several
-          coins into a "bigger picture" to better understand the context behind them.
+          track historical moments, dynasties and themes, and act as the primary goals for the
+          future of the collection.
         </HeaderParagraph>
       </HeaderParagraphWrapper>
       <SetsHeaderSeparator />
-      {getSetCategories().map((category) => (
-        <div key={category.name}>
-          <HeaderText>{category.name}</HeaderText>
-          <HeaderSeparator />
-          {!isMediumScreenOrLarger && <br />}
-          {ListOfSets(category.sets)}
-        </div>
-      ))}
+      {ENABLE_SET_CATEGORIES
+        ? getSetCategories().map((category) => (
+            <div key={category.name}>
+              <HeaderText>{category.name}</HeaderText>
+              <HeaderSeparator />
+              {!isMediumScreenOrLarger && <br />}
+              {ListOfSets(category.sets)}
+            </div>
+          ))
+        : ListOfSets(SetData)}
     </PageWrapper>
   );
 };

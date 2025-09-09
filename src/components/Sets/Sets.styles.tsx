@@ -29,8 +29,14 @@ export const SetsHeaderSeparator = styled.div`
  *             Accordion           *
  ***********************************/
 
-export const SetAccordionWrapper = styled.div`
+export const SetAccordionWrapper = styled.div<{ $withBottomPadding?: boolean }>`
   padding: 0.2rem;
+
+  ${(props) =>
+    props.$withBottomPadding &&
+    css`
+      padding-bottom: 1rem;
+    `}
 `;
 
 /***********************************

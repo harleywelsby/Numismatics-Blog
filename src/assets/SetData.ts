@@ -2,7 +2,16 @@ import { CoinSet } from '../components/Sets/Sets.Types';
 
 export const SetData: CoinSet[] = [
   {
+    name: 'The Founding of Rome',
+    active: true,
+    category: 'Rome',
+    description:
+      "Learning about Rome's history is one thing, but what did they think of their own history? This set showcases important events in Roman tradition, as depicted by later Romans.",
+    items: [],
+  },
+  {
     name: 'The Julio-Claudian Dynasty',
+    active: false,
     category: 'Rome',
     description:
       'This set aims to collect a portrait coin of each emperor from the first Roman dynasty and descendants of Caesar, the Julio-Claudians, who ruled Rome from 27 BC to 68 AD.',
@@ -41,9 +50,10 @@ export const SetData: CoinSet[] = [
   },
   {
     name: 'The 5 Good Emperors',
+    active: true,
     category: 'Rome',
     description:
-      'This set aims to collect one coin of each of the "5 Good Emperors", who reigned from 96 to 180 AD.  These emperor\'s reigns are often considered to be the Golden Age of Rome. Each coin in this set will feature a portrait of one of the emperors, and the personification of a different Roman virtue on the reverse.',
+      'The "5 Good Emperors" reigned from 96 to 180 AD, in what is often considered the Golden Age of Rome. All 5 Emperors showed incredible strength and leadership, solidifying Rome\'s power and influence. Each coin in this set will feature a portrait of one of the emperors, and the personification of a Roman virtue on the reverse that I believe fits their character.',
     items: [
       {
         name: 'Nerva',
@@ -88,9 +98,10 @@ export const SetData: CoinSet[] = [
   },
   {
     name: 'Severan Silver',
+    active: true,
     category: 'Rome',
     description:
-      'This set aims to collect a silver denomination portrait of every member of the Severan Dynasty, who ruled Rome from 193 to 235 AD. The Severans are known not only for their scandalous behaviour (Caracalla murdering his brother Geta, Elagabalus marrying a Vestal Virgin), but also for their extremely powerful women, such as Julia Domna and her sister Julia Maesa. Julia Domna was revered as the "Mother of the Invincible Camps", travelling with the soldiers on campain. When Caracalla was assassinated, Julia Maesa led a coup to bring her grandson Elagabalus to the throne.',
+      'The murder of Emperor Commodus in 192 AD resulted in a bloody civil war between several claimants to the Roman throne, known as the “Year of the 5 Emperors”. Septimius Severus arose victorious, and his sons and nephews would continue to rule well after his death. The Severan Dynasty is remembered for their scandalous behaviour (Caracalla murdering his brother Geta, Elagabalus marrying a Vestal Virgin), but also for their extremely powerful women. Notably, Julia Domna lodged with the soldiers on campaign and was revered by the troops as the “Mother of the Invincible Camps”. When the throne was briefly usurped by Macrinus in 217, her sister Julia Maesa led a successful coup to restore the dynasty, even personally taking up arms at the Battle of Antioch.',
     items: [
       {
         name: 'Septimius Severus',
@@ -164,6 +175,7 @@ export const SetData: CoinSet[] = [
   },
   {
     name: 'The Crisis of the Third Century',
+    active: false,
     category: 'Rome',
     description:
       'After the death of Severus Alexander in 235 AD, Rome nearly collapsed in what is known as the "Crisis of the Third Century". This time was a brutal span of civil wars, barbarian invasions, peasant rebellions, and political instability. This set aims to collect a portrait coin of every major figure in the Crisis.',
@@ -206,6 +218,7 @@ export const SetData: CoinSet[] = [
   },
   {
     name: 'The Constantinian Dynasty',
+    active: false,
     category: 'Rome',
     description:
       'The Constantinian Dynasty ruled Rome from 305 to 363 AD, beginning with Constantine I "The Great" instilling Christianity as the official religion of Rome, and ending with his descendant Julian "The Apostate", who made efforts to revert the Empire to Paganism. This set aims to collect a portrait of each of the major figures of the dynasty.',
@@ -264,6 +277,7 @@ export const SetData: CoinSet[] = [
   },
   {
     name: 'Alexander and his Generals',
+    active: true,
     category: 'Greek',
     description:
       "Alexander the Great was one of the greatest military leaders of all time. After his untimely death, his empire split between his generals, known as the Diadochi. These successors continued to strike coins in Alexander's name, in the famous Heracles/Zeus type. This set aims to collect a lifetime coin of Alexander the Great, and each of his successors.",
@@ -314,6 +328,7 @@ export const SetData: CoinSet[] = [
   },
   {
     name: 'The Twelve Olympians',
+    active: false,
     category: 'Greek',
     description:
       'This set aims to collect a depiction of each of the Twelve Olympian Gods. This includes both busts and full figures, on any form of ancient coinage.',
@@ -388,6 +403,7 @@ export const SetData: CoinSet[] = [
   },
   {
     name: 'Kings of Persia',
+    active: false,
     category: 'Near East',
     description:
       "During Rome's height, the many dynasties of Persia were an ever-present neighbour, and often rival. During this time, the region developed its own unique coinage standards and artistic styles. This set aims to collect a coin from each of the dynasties of Ancient Persia, from the Achaemenids to the Sassanids.",
