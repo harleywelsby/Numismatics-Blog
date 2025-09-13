@@ -131,6 +131,11 @@ export const ModalImageWrapper = styled.div`
   width: 50%;
   gap: 0.2rem;
   display: flex;
+
+  @media (max-width: 35em) {
+    width: 80%;
+    flex-direction: column;
+  }
 `;
 
 export const ModalImage = styled.img`

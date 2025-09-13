@@ -21,6 +21,7 @@ import {
 } from './CoinCard.styles';
 import { useContext } from 'react';
 import { NavigationContext } from '../../NavigationContext/NavigationContext';
+import { useMediaQuery } from 'react-responsive';
 
 interface CoinCardModalProps {
   coin: CollectionItem;
@@ -34,6 +35,7 @@ const ENABLE_SEE_MORE_OVERRIDE = true;
 export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalProps) => {
   const { setSelectedRoute } = useContext(NavigationContext);
   const navigate = useNavigate();
+  const isSmallScreen = useMediaQuery({ query: '(max-width: 35em)' });
 
   const handleModalClose = () => {
     setShowModal(false);
@@ -52,63 +54,72 @@ export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalPr
   return (
     <Modal open={showModal} onClose={handleModalClose}>
       <ModalContent data-test-id={`coin-card-${coin.id}-modal-content`}>
+        {isSmallScreen && <ModalHeader>{coin.title}</ModalHeader>}
         <ModalImageWrapper>
           <ModalImage src={getFullImagePath(coin.obverse.imagePath)} loading="lazy" />
           <ModalImage src={getFullImagePath(coin.reverse.imagePath)} loading="lazy" />
         </ModalImageWrapper>
-        <ModalTextWrapper>
-          <ModalHeader>{coin.title}</ModalHeader>
-          <ModalBodyWrapper>
-            <ModalText>
-              <b>{`${rulerTitle}: `}</b>
-              {`${coin.ruler.name} (${coin.ruler.alternateTitle ? '' : 'r. '}${coin.ruler.reign})`}
-            </ModalText>
-            <ModalText>
-              <b>Authority: </b>
-              {coin.authority}
-            </ModalText>
-            <ModalText>
-              <b>Denomination: </b>
-              {coin.denomination}
-            </ModalText>
-            <ModalText>
-              <b>Minted: </b>
-              {`${coin.mint.location} (${coin.mint.date})`}
-            </ModalText>
-            {!enableSeeMore && (
-              <>
-                <ModalText>
-                  <b>Obv: </b>
-                  {coin.obverse.description}
-                </ModalText>
-                <ModalText>
-                  <b>Obverse Legend: </b>
-                  {`"${coin.obverse.legend}"`}
-                </ModalText>
-                <ModalText>
-                  <b>Rev: </b>
-                  {coin.reverse.description}
-                </ModalText>
-                <ModalText>
-                  <b>Reverse Legend: </b>
-                  {`"${coin.reverse.legend}"`}
-                </ModalText>
-              </>
-            )}
-            <ModalText>
-              <b>Ref: </b>
-              <a href={coin.reference.url} target="_blank" rel="noopener noreferrer">
-                {coin.reference.catalogueNumber}
-              </a>
-            </ModalText>
-            {enableSeeMore && (
-              <SeeMoreButtonWrapper>
-                <SeeMoreButton onClick={handleSeeMore}>See More</SeeMoreButton>
-                <NewPill>New!</NewPill>
-              </SeeMoreButtonWrapper>
-            )}
-          </ModalBodyWrapper>
-        </ModalTextWrapper>
+        {!isSmallScreen && (
+          <ModalTextWrapper>
+            <ModalHeader>{coin.title}</ModalHeader>
+            <ModalBodyWrapper>
+              <ModalText>
+                <b>{`${rulerTitle}: `}</b>
+                {`${coin.ruler.name} (${coin.ruler.alternateTitle ? '' : 'r. '}${coin.ruler.reign})`}
+              </ModalText>
+              <ModalText>
+                <b>Authority: </b>
+                {coin.authority}
+              </ModalText>
+              <ModalText>
+                <b>Denomination: </b>
+                {coin.denomination}
+              </ModalText>
+              <ModalText>
+                <b>Minted: </b>
+                {`${coin.mint.location} (${coin.mint.date})`}
+              </ModalText>
+              {!enableSeeMore && (
+                <>
+                  <ModalText>
+                    <b>Obv: </b>
+                    {coin.obverse.description}
+                  </ModalText>
+                  <ModalText>
+                    <b>Obverse Legend: </b>
+                    {`"${coin.obverse.legend}"`}
+                  </ModalText>
+                  <ModalText>
+                    <b>Rev: </b>
+                    {coin.reverse.description}
+                  </ModalText>
+                  <ModalText>
+                    <b>Reverse Legend: </b>
+                    {`"${coin.reverse.legend}"`}
+                  </ModalText>
+                </>
+              )}
+              <ModalText>
+                <b>Ref: </b>
+                <a href={coin.reference.url} target="_blank" rel="noopener noreferrer">
+                  {coin.reference.catalogueNumber}
+                </a>
+              </ModalText>
+              {enableSeeMore && (
+                <SeeMoreButtonWrapper>
+                  <SeeMoreButton onClick={handleSeeMore}>See More</SeeMoreButton>
+                  <NewPill>New!</NewPill>
+                </SeeMoreButtonWrapper>
+              )}
+            </ModalBodyWrapper>
+          </ModalTextWrapper>
+        )}
+        {isSmallScreen && (
+          <SeeMoreButtonWrapper>
+            <SeeMoreButton onClick={handleSeeMore}>See More</SeeMoreButton>
+            <NewPill>New!</NewPill>
+          </SeeMoreButtonWrapper>
+        )}
         <CloseModalButton
           onClick={handleModalClose}
           data-test-id={`coin-card-${coin.id}-modal-close`}
