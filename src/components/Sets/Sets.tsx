@@ -107,7 +107,7 @@ export const Sets = () => {
             </AccordionSummary>
             <AccordionDetails sx={{ padding: '0', paddingBottom: '1rem' }}>
               {set.descriptionParagraphs.map((paragraph) => (
-                <SetDescription>{paragraph}</SetDescription>
+                <SetDescription key={paragraph}>{paragraph}</SetDescription>
               ))}
               <SetSeparator />
               <SetItemsWrapper>

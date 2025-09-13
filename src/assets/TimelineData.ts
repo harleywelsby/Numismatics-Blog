@@ -9,10 +9,14 @@ export const TimelineData: TimelineListItemContent[] = [
     date: '600 BC',
     description: 'Coinage is invented in Lydia (modern-day Turkey)',
   },
-  // {
-  //   date: '336 BC',
-  //   description: 'Alexander the Great succeeds his father, Philip II, as King of Macedon',
-  // },
+  {
+    date: '509 BC',
+    description: 'The Roman monarchy is overthrown, establishing the Roman Republic',
+  },
+  {
+    date: '336 BC',
+    description: 'Alexander the Great succeeds his father, Philip II, as King of Macedon',
+  },
   {
     date: '323 BC',
     description: 'Death of Alexander the Great',
@@ -30,21 +34,29 @@ export const TimelineData: TimelineListItemContent[] = [
     description: 'First Punic War between Rome and Carthage',
   },
   {
-    date: '218-202 BC',
+    date: '218 BC',
+    description: 'Second Punic War begins with Hannibal crossing the Alps',
+  },
+  {
+    date: '216 BC',
     description:
-      "Second Punic War between Rome and Carthage, ending with Hannibal's defeat at Zama",
+      'Hannibal defeats Rome at the Battle of Cannae, killing 20% of their male population',
+  },
+  {
+    date: '202 BC',
+    description: 'Second Punic War ends with Hannibal’s defeat at Zama',
   },
   {
     date: '149-146 BC',
     description: 'Third Punic War, leading to the annexation of Carthage by Rome',
   },
-  // {
-  //   date: '264-146 BC',
-  //   description: 'Punic Wars between the Roman Republic and Carthage',
-  // },
   {
     date: '100 BC',
     description: 'Julius Caesar is born',
+  },
+  {
+    date: '91-87 BC',
+    description: "Rome's allies revolt and are defeated, known as the Social War",
   },
   {
     date: '49 BC',
@@ -104,6 +116,11 @@ export const TimelineData: TimelineListItemContent[] = [
   {
     date: '180 AD',
     description: 'The Antonine Plague ends, having killed an estimated 5 million Romans',
+  },
+  {
+    date: '181 AD',
+    description: 'New Zealand: The Taupo eruption occurs',
+    isWorldHistory: true,
   },
   {
     date: '192-193 AD',
@@ -216,5 +233,37 @@ export const TimelineData: TimelineListItemContent[] = [
   {
     date: '476 AD',
     description: 'The Western Roman Empire falls',
+  },
+  {
+    date: '476-1000 AD',
+    description: 'Early Medieval Period',
+  },
+  {
+    date: '1000-1300 AD',
+    description: 'High Medieval Period',
+  },
+  {
+    date: '1280-1300 AD',
+    description: 'Maori ancestors arrive in New Zealand',
+    isWorldHistory: true,
+  },
+  {
+    date: '1300-1500 AD',
+    description: 'Late Medieval Period',
+  },
+  {
+    date: '1453 AD',
+    description:
+      'Constantinople falls to the Ottomans, marking the end of the Eastern Roman (Byzantine) Empire',
+  },
+  {
+    date: '1492 AD',
+    description: 'Christopher Columbus sails to the Americas',
+    isWorldHistory: true,
+  },
+  {
+    date: '1642 AD',
+    description: 'Europeans arrive in New Zealand',
+    isWorldHistory: true,
   },
 ];

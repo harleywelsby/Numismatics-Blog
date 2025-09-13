@@ -1,10 +1,9 @@
-export const getCleanMintDate = (mintDate: string) => {
+export const getCleanMintDate = (mintDate: string, useHighestInRange?: boolean) => {
   let result = mintDate;
 
-  // If there's a range of dates, take the lowest possible.
   if (mintDate.includes('-')) {
     const splitDates = result.split('-');
-    result = splitDates[0];
+    result = useHighestInRange ? splitDates[1] : splitDates[0];
   }
 
   // Remove all non-numeric characters.

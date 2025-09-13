@@ -1,3 +1,4 @@
+import { Tooltip } from '@mui/material';
 import styled from 'styled-components';
 
 export const HeaderParagraph = styled.p`
@@ -67,3 +68,5 @@ export const SectionSeparator = styled.div`
     max-width: 60%;
   }
 `;
+
+export const TimelineTooltip = styled(Tooltip)``;
