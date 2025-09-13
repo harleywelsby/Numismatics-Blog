@@ -1,22 +1,10 @@
+import { Timeline } from '@mui/lab';
+import { BackToTopButton, HeaderSeparator, HeaderText } from '../../shared/styles/sharedStyles';
 import {
-  Timeline,
-  TimelineConnector,
-  TimelineContent,
-  TimelineDot,
-  TimelineItem,
-  TimelineSeparator,
-} from '@mui/lab';
-import { HeaderSeparator, HeaderText } from '../../shared/styles/sharedStyles';
-import {
-  DateText,
-  DescriptionText,
   HeaderParagraph,
   SectionSeparator,
   SliderHeader,
   SliderWrapper,
-  TimelineCoinWrapper,
-  TimelineContentWrapper,
-  TimelineTooltip,
   TimelineWrapper,
 } from './TimelinePage.styles';
 import { TimelineData } from '../../assets/TimelineData';
@@ -25,7 +13,6 @@ import { getCleanMintDate, getDateWithExtension } from '../../shared/utils/dateH
 import { ScreenSize } from '../../shared/types';
 import { useMediaQuery } from 'react-responsive';
 import { Routes } from '../../shared/utils/router';
-import { CoinCard } from '../Collection/CoinCard/CoinCard';
 import { TimelineListItemContent } from './TimelinePage.types';
 import { useContext, useEffect, useState } from 'react';
 import { NavigationContext } from '../NavigationContext/NavigationContext';
@@ -36,42 +23,10 @@ import {
 } from '../Collection/Collection.styles';
 import { Slider } from '@mui/material';
 import { TIMELINE_SLIDER_RESET_MINMAX } from '../../config';
-
-const formatWithCommas = (num: number) => {
-  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-};
-
-const SortByDate = (a: TimelineListItemContent, b: TimelineListItemContent) => {
-  return getCleanMintDate(a.date) - getCleanMintDate(b.date);
-};
-
-const getImageDimensions = (screenSize: ScreenSize) => {
-  switch (screenSize) {
-    case ScreenSize.Small:
-      return { width: 90, height: 90 };
-    case ScreenSize.Medium:
-    case ScreenSize.Large:
-      return { width: 150, height: 150 };
-  }
-};
-
-const getTimeDifference = (date: string) => {
-  const dateRange = [getCleanMintDate(date)];
-  if (date.includes('-')) {
-    dateRange.push(getCleanMintDate(date, true));
-  }
-
-  // If we have an exact date, return the flat difference.
-  if (dateRange.length === 1) {
-    return `${formatWithCommas(new Date().getFullYear() - dateRange[0])} years ago`;
-  }
-
-  // Otherwise with a range, note the whole range.
-  const firstDiff = new Date().getFullYear() - dateRange[0];
-  const secondDiff = new Date().getFullYear() - dateRange[1];
-
-  return `${formatWithCommas(firstDiff)} - ${formatWithCommas(secondDiff)} years ago`;
-};
+import { getTimelinePosition, SortByDate } from './TimelineHelpers';
+import { TimelineListItem } from './TimelineListItem';
+import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Exclude certain collection items from the timeline.
 // Currently, this is used to exclude an early modern coin that's part of the collection,
@@ -88,6 +43,7 @@ export const TimelinePage = () => {
 
   const isMediumScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
   const isLargeScreen = useMediaQuery({ query: '(min-width: 86em)' });
+
   // Default to small (mobile). If the screen is at least a 'medium' size,
   // then check the size and adjust accordingly.
   let screenSize = ScreenSize.Small;
@@ -101,6 +57,7 @@ export const TimelinePage = () => {
     collectionItem: item,
   }));
 
+  // Sort timeline data by date, including all collection items.
   const sortedTimelineData = [...TimelineData, ...collectionData].sort(SortByDate);
   sortedTimelineData.push({
     date: `${new Date().getFullYear()} AD`,
@@ -108,6 +65,7 @@ export const TimelinePage = () => {
     isWorldHistory: true,
   });
 
+  // Setup the slider.
   const [sliderValue, setSliderValue] = useState([
     getCleanMintDate(sortedTimelineData[0].date),
     getCleanMintDate(sortedTimelineData[sortedTimelineData.length - 1].date),
@@ -161,57 +119,24 @@ export const TimelinePage = () => {
     }
   };
 
-  const TimelineListItem = ({ item }: { item: TimelineListItemContent }) => {
-    const hasCollectionItem = !!item.collectionItem;
-    const imageDimensions = getImageDimensions(screenSize);
-
-    const isWorldHistory =
-      item.isWorldHistory || worldCollectionItems.includes(item.collectionItem?.id ?? -1);
-
-    const isEvenIndex = sortedTimelineData.indexOf(item) % 2 === 0;
-    const tooltipPlacement = isEvenIndex ? 'left' : 'right';
-
-    return (
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot color={isWorldHistory ? 'warning' : 'grey'} />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent color={isWorldHistory ? 'warning' : undefined}>
-          <TimelineContentWrapper>
-            <TimelineTooltip
-              placement={tooltipPlacement}
-              arrow
-              title={getTimeDifference(item.date)}
-            >
-              <DateText>{`${item.date} ${isWorldHistory ? '(World)' : ''}`}</DateText>
-            </TimelineTooltip>
-            <DescriptionText>
-              {item.description}
-              {hasCollectionItem && ' struck'}
-            </DescriptionText>
-            {hasCollectionItem && (
-              <TimelineCoinWrapper>
-                <CoinCard
-                  coin={item.collectionItem!}
-                  options={{
-                    hideTitle: true,
-                    sizeOverride: imageDimensions,
-                    noPadding: true,
-                    disableRedirect: true,
-                    modalRerouteOverride: Routes.Timeline,
-                  }}
-                />
-              </TimelineCoinWrapper>
-            )}
-          </TimelineContentWrapper>
-        </TimelineContent>
-      </TimelineItem>
-    );
-  };
+  const [showBackToTopButton, setShowBackToTopButton] = useState(false);
+  useEffect(() => {
+    window.onscroll = () => {
+      setShowBackToTopButton(
+        document.body.scrollTop > 50 || document.documentElement.scrollTop > 50,
+      );
+    };
+  }, []);
 
   return (
     <>
+      {showBackToTopButton && (
+        <BackToTopButton onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          {/* @ts-expect-error Icon types are busted, but this works */}
+          <FontAwesomeIcon icon={faAngleDoubleUp} />
+          Back to Top
+        </BackToTopButton>
+      )}
       <HeaderText>Collection Timeline</HeaderText>
       <HeaderSeparator />
       <HeaderParagraph>
@@ -255,12 +180,15 @@ export const TimelinePage = () => {
       </FilterCheckboxWrapper>
       <SectionSeparator />
       <TimelineWrapper>
-        <Timeline position={isMediumScreenOrLarger ? 'alternate' : 'right'}>
+        <Timeline position={getTimelinePosition(isMediumScreenOrLarger)}>
           {sortedTimelineData.map((item) =>
             shouldShowItem(item, showWorldHistory) ? (
               <TimelineListItem
                 key={`${item.date}-${item.description.substring(0, 3)}`}
                 item={item}
+                screenSize={screenSize}
+                sortedTimelineData={sortedTimelineData}
+                worldCollectionItems={worldCollectionItems}
               />
             ) : null,
           )}

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { zIndex } from './styleConstants';
 
 export const PageWrapper = styled.div`
   max-width: 1800px;
@@ -59,4 +60,32 @@ export const MobileOnlySpacer = styled.div`
 export const FullSizeImage = styled.img`
   width: 100%;
   height: 100%;
+`;
+
+export const BackToTopButton = styled.button`
+  position: fixed;
+  z-index: ${zIndex.AlwaysAtFront};
+
+  top: 20px;
+  left: 20px;
+  @media (max-width: 35em) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  padding: 0.5rem 1.5rem;
+  border: 1px solid;
+  border-radius: 5px;
+  gap: 0.5rem;
+  display: flex;
+  align-items: center;
+
+  background-color: var(--deep-black);
+  color: var(--soft-white);
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--scroll-track-grey);
+  }
 `;

@@ -20,14 +20,19 @@ import {
 import { CoinCard } from './CoinCard/CoinCard';
 import { CollectionData } from '../../assets/CollectionData';
 import { SortType } from './Collection.types';
-import { PageWrapper, HeaderText, HeaderSeparator } from '../../shared/styles/sharedStyles';
+import {
+  PageWrapper,
+  HeaderText,
+  HeaderSeparator,
+  BackToTopButton,
+} from '../../shared/styles/sharedStyles';
 import { NavigationContext } from '../NavigationContext/NavigationContext';
 import { Routes } from '../../shared/utils/router';
 import { CollectionFilterStateContext } from './CollectionFilterState/CollectionFilterStateContext';
 import { useMediaQuery } from 'react-responsive';
 import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDoubleUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { getColumnOverride } from './utils/GridHelpers';
 
 export const CollectionV2 = () => {
@@ -61,8 +66,24 @@ export const CollectionV2 = () => {
   // Dynamically fetch the filter options
   const authorityFilterOptions = GetAuthorityGroups(CollectionData.map((x) => x.authority));
 
+  const [showBackToTopButton, setShowBackToTopButton] = useState(false);
+  useEffect(() => {
+    window.onscroll = () => {
+      setShowBackToTopButton(
+        document.body.scrollTop > 50 || document.documentElement.scrollTop > 50,
+      );
+    };
+  }, []);
+
   return (
     <PageWrapper>
+      {showBackToTopButton && (
+        <BackToTopButton onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          {/* @ts-expect-error Icon types are busted, but this works */}
+          <FontAwesomeIcon icon={faAngleDoubleUp} />
+          Back to Top
+        </BackToTopButton>
+      )}
       <HeaderText>The Collection</HeaderText>
       <HeaderSeparator $noSpacing />
       <FilterSection>
