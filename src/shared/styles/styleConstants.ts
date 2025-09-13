@@ -1,4 +1,4 @@
 export const zIndex = {
-  AlwaysAtFront: 999,
-  AlwaysAtBack: -999,
+  AlwaysAtFront: 9999,
+  AlwaysAtBack: -9999,
 };
