@@ -92,7 +92,10 @@ export const Sets = () => {
             <AccordionSummary
               expandIcon={
                 ENABLE_SET_ACCORDIONS && (
-                  <FontAwesomeIcon icon={faChevronDown} color="white" size="2x" />
+                  <>
+                    {/* @ts-expect-error Icon types are busted, but it works */}
+                    <FontAwesomeIcon icon={faChevronDown} color="white" size="2x" />
+                  </>
                 )
               }
               sx={{ padding: '0.5rem 1rem' }}

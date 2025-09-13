@@ -85,7 +85,12 @@ export const CollectionV2 = () => {
         }}
       >
         <AccordionSummary
-          expandIcon={<FontAwesomeIcon icon={faChevronDown} color="white" size="2x" />}
+          expandIcon={
+            <>
+              {/* @ts-expect-error Icon types are busted, but it works */}
+              <FontAwesomeIcon icon={faChevronDown} color="white" size="2x" />
+            </>
+          }
           sx={{ padding: '0rem 1rem' }}
         >
           <FilterAccordionHeader>Filter Options</FilterAccordionHeader>

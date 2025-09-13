@@ -100,6 +100,7 @@ export const DenominationModal = ({
           ))}
         </DenominationSection>
         <CloseModalButton onClick={handleModalClose} data-test-id={`denomination-modal-close`}>
+          {/* @ts-expect-error Icon types are busted, but it works */}
           <FontAwesomeIcon icon={faXmark} size="2x" />
         </CloseModalButton>
       </ModalContent>

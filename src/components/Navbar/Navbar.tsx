@@ -67,6 +67,7 @@ export const Navbar = () => {
           {!isBigScreen && (
             <HamburgerIconWrapper>
               <FontAwesomeIcon
+                // @ts-expect-error Icon types are busted, but it works
                 icon={faBars}
                 onClick={() => setShowSidebar(!showSidebar)}
                 data-test-id="navbar-hamburger-icon"
