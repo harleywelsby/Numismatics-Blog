@@ -67,8 +67,17 @@ export const TimelineData: TimelineListItemContent[] = [
     description: 'Assassination of Julius Caesar',
   },
   {
+    date: '31 BC',
+    description: 'Octavian defeats Mark Antony at the Battle of Actium',
+  },
+  {
+    date: '30 BC',
+    description: 'Octavian invades Egypt, resulting in the deaths of Mark Antony and Cleopatra',
+  },
+  {
     date: '27 BC',
-    description: 'The Roman Republic becomes the Roman Empire under the first emperor, Augustus',
+    description:
+      'Octavian becomes the first Roman Emperor under the name Augustus, marking the end of the Republican period',
   },
   {
     date: '30-33 AD',
@@ -118,11 +127,6 @@ export const TimelineData: TimelineListItemContent[] = [
     description: 'The Antonine Plague ends, having killed an estimated 5 million Romans',
   },
   {
-    date: '181 AD',
-    description: 'New Zealand: The Taupo eruption occurs',
-    isWorldHistory: true,
-  },
-  {
     date: '192-193 AD',
     description:
       'Civil war begins in Rome after the murder of Emperor Commodus, leading to the rise of Septimius Severus',
@@ -147,6 +151,12 @@ export const TimelineData: TimelineListItemContent[] = [
   {
     date: '218 AD',
     description: 'Emperor Macrinus is overthrown by Elagabalus at the Battle of Antioch',
+  },
+  {
+    date: '222 - 242 AD',
+    description:
+      'New Zealand: Taupo erupts, fully forming the lake. One of the largest eruptions in the last 5,000 years',
+    isWorldHistory: true,
   },
   {
     date: '235 AD',
@@ -250,6 +260,11 @@ export const TimelineData: TimelineListItemContent[] = [
   {
     date: '1300-1500 AD',
     description: 'Late Medieval Period',
+  },
+  {
+    date: '1400-1450 AD',
+    description: 'The Moa goes extinct (estimated)',
+    isWorldHistory: true,
   },
   {
     date: '1453 AD',
