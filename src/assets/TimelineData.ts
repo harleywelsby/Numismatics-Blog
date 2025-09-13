@@ -266,4 +266,14 @@ export const TimelineData: TimelineListItemContent[] = [
     description: 'Europeans arrive in New Zealand',
     isWorldHistory: true,
   },
+  {
+    date: '1840 AD',
+    description: 'The Treaty of Waitangi is signed',
+    isWorldHistory: true,
+  },
+  {
+    date: '1947 AD',
+    description: 'New Zealand becomes fully autonomous as a country',
+    isWorldHistory: true,
+  },
 ];

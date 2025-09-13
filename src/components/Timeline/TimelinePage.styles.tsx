@@ -68,4 +68,30 @@ export const SectionSeparator = styled.div`
   }
 `;
 
+// TODO: Remove if custom style isn't needed
 export const TimelineTooltip = styled(Tooltip)``;
+
+export const SliderHeader = styled.h2`
+  font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);
+  text-align: left;
+  max-width: 80%;
+  justify-self: center;
+
+  padding: 0;
+  margin: 2rem 0 0.5rem 0;
+
+  @media (max-width: 35em) {
+    margin: 0.5rem 0;
+  }
+`;
+
+export const SliderWrapper = styled.div`
+  width: 70%;
+  justify-self: center;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+
+  @media (max-width: 35em) {
+    margin-top: 2rem;
+  }
+`;

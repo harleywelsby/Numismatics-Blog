@@ -12,3 +12,7 @@ export const getCleanMintDate = (mintDate: string, useHighestInRange?: boolean) 
   // Convert to a number (AD = positive, BC = negative) and return.
   return mintDate.includes('BC') ? -result : +result;
 };
+
+export const getDateWithExtension = (date: number) => {
+  return date > 0 ? `${date} AD` : `${Math.abs(date)} BC`;
+};
