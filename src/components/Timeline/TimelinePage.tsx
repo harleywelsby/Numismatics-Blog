@@ -113,6 +113,9 @@ export const TimelinePage = () => {
 
     const isWorldHistory = item.isWorldHistory;
 
+    const isEvenIndex = sortedTimelineData.indexOf(item) % 2 === 0;
+    const tooltipPlacement = isEvenIndex ? 'left' : 'right';
+
     return (
       <TimelineItem>
         <TimelineSeparator>
@@ -120,29 +123,33 @@ export const TimelinePage = () => {
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent color={isWorldHistory ? 'warning' : undefined}>
-          <TimelineTooltip placement="top" arrow title={getTimeDifference(item.date)}>
-            <TimelineContentWrapper>
+          <TimelineContentWrapper>
+            <TimelineTooltip
+              placement={tooltipPlacement}
+              arrow
+              title={getTimeDifference(item.date)}
+            >
               <DateText>{`${item.date} ${isWorldHistory ? '(World)' : ''}`}</DateText>
-              <DescriptionText>
-                {item.description}
-                {hasCollectionItem && ' struck'}
-              </DescriptionText>
-              {hasCollectionItem && (
-                <TimelineCoinWrapper>
-                  <CoinCard
-                    coin={item.collectionItem!}
-                    options={{
-                      hideTitle: true,
-                      sizeOverride: imageDimensions,
-                      noPadding: true,
-                      disableRedirect: true,
-                      modalRerouteOverride: Routes.Timeline,
-                    }}
-                  />
-                </TimelineCoinWrapper>
-              )}
-            </TimelineContentWrapper>
-          </TimelineTooltip>
+            </TimelineTooltip>
+            <DescriptionText>
+              {item.description}
+              {hasCollectionItem && ' struck'}
+            </DescriptionText>
+            {hasCollectionItem && (
+              <TimelineCoinWrapper>
+                <CoinCard
+                  coin={item.collectionItem!}
+                  options={{
+                    hideTitle: true,
+                    sizeOverride: imageDimensions,
+                    noPadding: true,
+                    disableRedirect: true,
+                    modalRerouteOverride: Routes.Timeline,
+                  }}
+                />
+              </TimelineCoinWrapper>
+            )}
+          </TimelineContentWrapper>
         </TimelineContent>
       </TimelineItem>
     );
