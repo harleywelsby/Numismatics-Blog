@@ -128,9 +128,9 @@ export const TitleWrapper = styled.div`
 
   @media (max-width: 35em) {
     padding-top: 0.5rem;
-    width: 100%;
+    width: 95%;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
     gap: 2vw;
   }
@@ -150,4 +150,39 @@ export const HamburgerIconWrapper = styled.div`
   align-items: center;
   padding: 1rem;
   margin-top: 0.8rem;
+`;
+
+export const NavbarDropdown = styled.button<{ $selected?: boolean }>`
+  /* Remove default button styling */
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  outline: inherit;
+  cursor: pointer;
+
+  text-decoration: none;
+  color: var(--soft-white);
+  font-weight: 500;
+  font-size: 1.2rem;
+
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 35em) {
+    font-size: clamp(0.5rem, 3vw + 0.7rem, 4rem);
+  }
+
+  ${(props) =>
+    props.$selected &&
+    css`
+      color: var(--title-orange);
+      border-bottom: solid;
+    `}
+
+  &:hover {
+    color: var(--title-orange);
+  }
 `;
