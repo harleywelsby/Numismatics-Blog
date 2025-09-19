@@ -115,6 +115,34 @@ export const Navbar = () => {
     );
   };
 
+  const isCollectionSelected =
+    selectedRoute.includes(Routes.Collection) ||
+    selectedRoute.includes(Routes.Sets) ||
+    selectedRoute.includes(Routes.Timeline) ||
+    selectedRoute.includes(Routes.MintMap);
+
+  const DropdownMenuItem = ({ route, label }: { route: string; label: string }) => {
+    return (
+      <MenuItem
+        onClick={() => handleListItemClick(route, true)}
+        sx={{
+          color: 'var(--soft-white)',
+          '&:hover': {
+            backgroundColor: 'var(--soft-white)',
+            color: 'var(--deep-black)',
+          },
+          ...(selectedRoute.includes(route)
+            ? {
+                color: 'var(--title-orange)',
+              }
+            : {}),
+        }}
+      >
+        {label}
+      </MenuItem>
+    );
+  };
+
   return (
     <>
       <NavbarWrapper>
@@ -156,7 +184,11 @@ export const Navbar = () => {
             </li>
             {ENABLE_NAVBAR_DROPDOWNS && isBigScreen ? (
               <li>
-                <NavbarDropdown onClick={handleCollectionDropdownClick}>
+                <NavbarDropdown
+                  onClick={handleCollectionDropdownClick}
+                  $selected={isCollectionSelected}
+                  $isDropdownShowing={showCollectionDropdown}
+                >
                   Collection
                   {/* @ts-expect-error Icon types are busted, but it works */}
                   <FontAwesomeIcon icon={faChevronDown} size="1x" />
@@ -166,17 +198,16 @@ export const Navbar = () => {
                   anchorEl={anchorElement}
                   open={showCollectionDropdown}
                   onClose={() => setShowCollectionDropdown(false)}
+                  sx={{
+                    '& .MuiPaper-root': {
+                      backgroundColor: 'var(--deep-black)',
+                    },
+                  }}
                 >
-                  <MenuItem onClick={() => handleListItemClick(Routes.Collection, true)}>
-                    Gallery
-                  </MenuItem>
-                  <MenuItem onClick={() => handleListItemClick(Routes.Sets, true)}>Sets</MenuItem>
-                  <MenuItem onClick={() => handleListItemClick(Routes.Timeline, true)}>
-                    Timeline
-                  </MenuItem>
-                  <MenuItem onClick={() => handleListItemClick(Routes.MintMap, true)}>
-                    Mint Map
-                  </MenuItem>
+                  <DropdownMenuItem route={Routes.Collection} label="Gallery" />
+                  <DropdownMenuItem route={Routes.Sets} label="Sets" />
+                  <DropdownMenuItem route={Routes.Timeline} label="Timeline" />
+                  <DropdownMenuItem route={Routes.MintMap} label="Mint Map" />
                 </Menu>
               </li>
             ) : (

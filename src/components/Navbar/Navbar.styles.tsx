@@ -152,7 +152,10 @@ export const HamburgerIconWrapper = styled.div`
   margin-top: 0.8rem;
 `;
 
-export const NavbarDropdown = styled.button<{ $selected?: boolean }>`
+export const NavbarDropdown = styled.button<{
+  $selected?: boolean;
+  $isDropdownShowing?: boolean;
+}>`
   /* Remove default button styling */
   background: none;
   color: inherit;
@@ -165,6 +168,8 @@ export const NavbarDropdown = styled.button<{ $selected?: boolean }>`
   color: var(--soft-white);
   font-weight: 500;
   font-size: 1.2rem;
+  margin: -0.3rem 0 0 0;
+  padding: 0.3rem;
 
   display: flex;
   gap: 0.5rem;
@@ -180,6 +185,12 @@ export const NavbarDropdown = styled.button<{ $selected?: boolean }>`
     css`
       color: var(--title-orange);
       border-bottom: solid;
+    `}
+
+  ${(props) =>
+    props.$isDropdownShowing &&
+    css`
+      color: var(--title-orange);
     `}
 
   &:hover {
