@@ -59,6 +59,10 @@ export const TimelineData: TimelineListItemContent[] = [
     description: "Rome's allies revolt and are defeated, known as the Social War",
   },
   {
+    date: '88 BC',
+    description: 'The Roman Consul Sulla marches on Rome, sparking civil war',
+  },
+  {
     date: '49 BC',
     description: 'Civil war begins in Rome between Julius Caesar and Pompey',
   },
