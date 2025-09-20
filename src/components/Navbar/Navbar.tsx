@@ -19,13 +19,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { Menu, MenuItem } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { ENABLE_NAVBAR_DROPDOWNS } from '../../config';
+import { ENABLE_BID_CALCULATOR, ENABLE_NAVBAR_DROPDOWNS } from '../../config';
 
 export const Navbar = () => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 35em)' });
   const { selectedRoute, setSelectedRoute } = useContext(NavigationContext);
   const [showSidebar, setShowSidebar] = useState(isBigScreen);
   const [showCollectionDropdown, setShowCollectionDropdown] = useState(false);
+  const [showToolsDropdown, setShowToolsDropdown] = useState(false);
   const navigate = useNavigate();
 
   // Sidebar is only shown on small screens when the hamburger icon is clicked
@@ -46,9 +47,8 @@ export const Navbar = () => {
     }
 
     // Close any dropdown menus
-    if (showCollectionDropdown) {
-      setShowCollectionDropdown(false);
-    }
+    setShowCollectionDropdown(false);
+    setShowToolsDropdown(false);
   };
 
   const logoSize = isBigScreen ? 200 : 70;
@@ -63,9 +63,17 @@ export const Navbar = () => {
   );
 
   const [anchorElement, setAnchorElement] = useState<null | HTMLElement>(null);
-  const handleCollectionDropdownClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleDropdownClick = (
+    event: React.MouseEvent<HTMLButtonElement>,
+    dropdownType: 'collection' | 'tools',
+  ) => {
     setAnchorElement(event.currentTarget);
-    setShowCollectionDropdown(!showCollectionDropdown);
+
+    if (dropdownType === 'collection') {
+      setShowCollectionDropdown(!showCollectionDropdown);
+    } else {
+      setShowToolsDropdown(!showToolsDropdown);
+    }
   };
 
   const CollectionNavbarItems = () => {
@@ -115,11 +123,30 @@ export const Navbar = () => {
     );
   };
 
+  const ToolsNavbarItems = () => {
+    return (
+      <>
+        <li>
+          <NavbarLink
+            data-test-id="navbar-bid-calc-link"
+            to={Routes.BidCalculator}
+            onClick={() => handleListItemClick(Routes.BidCalculator)}
+            $selected={selectedRoute.includes(Routes.BidCalculator)}
+          >
+            Bid Calculator
+          </NavbarLink>
+        </li>
+      </>
+    );
+  };
+
   const isCollectionSelected =
     selectedRoute.includes(Routes.Collection) ||
     selectedRoute.includes(Routes.Sets) ||
     selectedRoute.includes(Routes.Timeline) ||
     selectedRoute.includes(Routes.MintMap);
+
+  const isToolsSelected = selectedRoute.includes(Routes.BidCalculator);
 
   const DropdownMenuItem = ({ route, label }: { route: string; label: string }) => {
     return (
@@ -183,35 +210,66 @@ export const Navbar = () => {
               </NavbarLink>
             </li>
             {ENABLE_NAVBAR_DROPDOWNS && isBigScreen ? (
-              <li>
-                <NavbarDropdown
-                  onClick={handleCollectionDropdownClick}
-                  $selected={isCollectionSelected}
-                  $isDropdownShowing={showCollectionDropdown}
-                >
-                  Collection
-                  {/* @ts-expect-error Icon types are busted, but it works */}
-                  <FontAwesomeIcon icon={faChevronDown} size="1x" />
-                </NavbarDropdown>
-                <Menu
-                  id="basic-menu"
-                  anchorEl={anchorElement}
-                  open={showCollectionDropdown}
-                  onClose={() => setShowCollectionDropdown(false)}
-                  sx={{
-                    '& .MuiPaper-root': {
-                      backgroundColor: 'var(--deep-black)',
-                    },
-                  }}
-                >
-                  <DropdownMenuItem route={Routes.Collection} label="Gallery" />
-                  <DropdownMenuItem route={Routes.Sets} label="Sets" />
-                  <DropdownMenuItem route={Routes.Timeline} label="Timeline" />
-                  <DropdownMenuItem route={Routes.MintMap} label="Mint Map" />
-                </Menu>
-              </li>
+              <>
+                <li>
+                  <NavbarDropdown
+                    onClick={(event) => handleDropdownClick(event, 'collection')}
+                    $selected={isCollectionSelected}
+                    $isDropdownShowing={showCollectionDropdown}
+                  >
+                    Collection
+                    {/* @ts-expect-error Icon types are busted, but it works */}
+                    <FontAwesomeIcon icon={faChevronDown} size="1x" />
+                  </NavbarDropdown>
+                  <Menu
+                    id="basic-menu"
+                    anchorEl={anchorElement}
+                    open={showCollectionDropdown}
+                    onClose={() => setShowCollectionDropdown(false)}
+                    sx={{
+                      '& .MuiPaper-root': {
+                        backgroundColor: 'var(--deep-black)',
+                      },
+                    }}
+                  >
+                    <DropdownMenuItem route={Routes.Collection} label="Gallery" />
+                    <DropdownMenuItem route={Routes.Sets} label="Sets" />
+                    <DropdownMenuItem route={Routes.Timeline} label="Timeline" />
+                    <DropdownMenuItem route={Routes.MintMap} label="Mint Map" />
+                  </Menu>
+                </li>
+                {ENABLE_BID_CALCULATOR && (
+                  <li>
+                    <NavbarDropdown
+                      onClick={(event) => handleDropdownClick(event, 'tools')}
+                      $selected={isToolsSelected}
+                      $isDropdownShowing={showToolsDropdown}
+                    >
+                      Tools
+                      {/* @ts-expect-error Icon types are busted, but it works */}
+                      <FontAwesomeIcon icon={faChevronDown} size="1x" />
+                    </NavbarDropdown>
+                    <Menu
+                      id="basic-menu"
+                      anchorEl={anchorElement}
+                      open={showToolsDropdown}
+                      onClose={() => setShowToolsDropdown(false)}
+                      sx={{
+                        '& .MuiPaper-root': {
+                          backgroundColor: 'var(--deep-black)',
+                        },
+                      }}
+                    >
+                      <DropdownMenuItem route={Routes.BidCalculator} label="Bid Calculator" />
+                    </Menu>
+                  </li>
+                )}
+              </>
             ) : (
-              <CollectionNavbarItems />
+              <>
+                <CollectionNavbarItems />
+                {ENABLE_BID_CALCULATOR && <ToolsNavbarItems />}
+              </>
             )}
             {/* <li>
               <NavbarLink

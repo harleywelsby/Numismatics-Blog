@@ -9,6 +9,7 @@ import { TimelinePage } from '../../components/Timeline/TimelinePage';
 import { CollectionV2 } from '../../components/Collection/Collection';
 import { CoinDetails } from '../../components/Collection/CoinDetails/CoinDetails';
 import { MintMap } from '../../components/MintMap/MintMap';
+import { BidCalculator } from '../../components/BidCalculator/BidCalculator';
 
 export const getBlogPostRoute = (postId: string) => {
   return Routes.BlogPost.replace(':postId', postId);
@@ -18,11 +19,12 @@ export const Routes = {
   Home: '/',
   Blog: '/blog',
   BlogPost: '/blog/:postId',
-  Collection: '/collection',
+  Collection: '/collection/gallery',
   CollectionItemDetails: '/collection/:itemId',
-  Sets: '/sets',
-  Timeline: '/timeline',
-  MintMap: '/mint-map',
+  Sets: '/collection/sets',
+  Timeline: '/collection/timeline',
+  MintMap: '/collection/mint-map',
+  BidCalculator: '/tools/bid-calculator',
   Error: '*',
 };
 
@@ -40,6 +42,7 @@ export const router = createBrowserRouter([
       { path: Routes.Sets, element: <Sets /> },
       { path: Routes.Timeline, element: <TimelinePage /> },
       { path: Routes.MintMap, element: <MintMap /> },
+      { path: Routes.BidCalculator, element: <BidCalculator /> },
     ],
   },
 ]);
