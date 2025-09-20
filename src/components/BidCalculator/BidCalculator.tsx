@@ -17,6 +17,10 @@ import {
   TextBoxLabel,
   TotalText,
 } from './BidCalculator.styles';
+import { ENABLE_BID_CALCULATOR } from '../../config';
+import { useNavigate } from 'react-router-dom';
+import { Routes } from '../../shared/utils/router';
+import { ErrorPage } from '../ErrorPage/ErrorPage';
 
 type AuctionPreset = {
   name: string;
@@ -79,6 +83,12 @@ export const BidCalculator = () => {
   const [taxOnFees, setTaxOnFees] = useState<number | null>(null);
   const [paymentFee, setPaymentFee] = useState<number | null>(null);
   const [otherCosts, setOtherCosts] = useState<number[]>([]);
+  const navigate = useNavigate();
+
+  if (!ENABLE_BID_CALCULATOR) {
+    navigate(Routes.Error);
+    return <ErrorPage />;
+  }
 
   const handleReset = () => {
     setBidAmount(null);
