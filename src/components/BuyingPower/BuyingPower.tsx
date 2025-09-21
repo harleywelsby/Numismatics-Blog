@@ -35,6 +35,7 @@ export const BuyingPower = () => {
       <HeaderSeparator /> */}
       <HeaderText>Goods Prices</HeaderText>
       <HeaderSeparator />
+      <HeaderParagraph>1st Century - Early 3rd Century AD</HeaderParagraph>
       <GoodsPriceSection>
         {GoodsPrices.map((goodsPrice) => (
           <GoodsPriceCard key={goodsPrice.name} {...goodsPrice} />
