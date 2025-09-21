@@ -43,9 +43,9 @@ export const NavbarList = styled.ul`
     flex-direction: column;
 
     justify-content: flex-start;
-    text-align: left;
+    text-align: right;
 
-    padding: 2rem;
+    padding: 1.5rem 1rem;
     gap: 1.5rem;
 
     background-image: url(${getFullImagePath('/Images/SidebarBackground.webp')});
@@ -71,7 +71,8 @@ export const NavbarLink = styled(Link)<{ $selected?: boolean }>`
   padding: 0.3rem;
 
   @media (max-width: 35em) {
-    font-size: clamp(0.5rem, 3vw + 0.7rem, 4rem);
+    font-size: clamp(0.5rem, 2vw + 0.7rem, 4rem);
+    line-height: 1;
   }
 
   ${(props) =>
