@@ -10,6 +10,7 @@ import { CollectionV2 } from '../../components/Collection/Collection';
 import { CoinDetails } from '../../components/Collection/CoinDetails/CoinDetails';
 import { MintMap } from '../../components/MintMap/MintMap';
 import { BidCalculator } from '../../components/BidCalculator/BidCalculator';
+import { BuyingPower } from '../../components/BuyingPower/BuyingPower';
 
 export const getBlogPostRoute = (postId: string) => {
   return Routes.BlogPost.replace(':postId', postId);
@@ -24,6 +25,7 @@ export const Routes = {
   Sets: '/collection/sets',
   Timeline: '/collection/timeline',
   MintMap: '/collection/mint-map',
+  BuyingPower: '/collection/buying-power',
   BidCalculator: '/tools/bid-calculator',
   Error: '*',
 };
@@ -43,6 +45,7 @@ export const router = createBrowserRouter([
       { path: Routes.Timeline, element: <TimelinePage /> },
       { path: Routes.MintMap, element: <MintMap /> },
       { path: Routes.BidCalculator, element: <BidCalculator /> },
+      { path: Routes.BuyingPower, element: <BuyingPower /> },
     ],
   },
 ]);

@@ -119,6 +119,16 @@ export const Navbar = () => {
             Mint Map
           </NavbarLink>
         </li>
+        <li>
+          <NavbarLink
+            data-test-id="navbar-buying-power-link"
+            to={Routes.BuyingPower}
+            onClick={() => handleListItemClick(Routes.BuyingPower)}
+            $selected={selectedRoute === Routes.BuyingPower}
+          >
+            Buying Power
+          </NavbarLink>
+        </li>
       </>
     );
   };
@@ -236,6 +246,7 @@ export const Navbar = () => {
                     <DropdownMenuItem route={Routes.Sets} label="Sets" />
                     <DropdownMenuItem route={Routes.Timeline} label="Timeline" />
                     <DropdownMenuItem route={Routes.MintMap} label="Mint Map" />
+                    <DropdownMenuItem route={Routes.BuyingPower} label="Buying Power" />
                   </Menu>
                 </li>
                 {ENABLE_BID_CALCULATOR && (
