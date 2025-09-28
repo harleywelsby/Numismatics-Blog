@@ -1062,6 +1062,7 @@ export const CollectionData: CollectionItem[] = [
     },
     reference: {
       catalogueNumber: 'Price #2279',
+      url: 'https://numismatics.org/pella/id/price.2279',
     },
     characters: ['Heracles', 'Zeus'],
   },
@@ -1114,14 +1115,14 @@ export const CollectionData: CollectionItem[] = [
     title: 'Roma/Biga Republican Denarius',
     ruler: {
       name: 'Pinarius Natta',
-      reign: '155 BC',
+      reign: '149 BC',
       alternateTitle: 'Moneyer',
     },
     authority: 'Roman Republic',
     denomination: 'Denarius',
     mint: {
       location: 'Rome',
-      date: '155 BC',
+      date: '149 BC',
     },
     obverse: {
       imagePath: '/Images/Collection/A028-Obverse.webp',
@@ -1152,7 +1153,8 @@ export const CollectionData: CollectionItem[] = [
       },
     },
     reference: {
-      catalogueNumber: 'RSC Pinaria #1',
+      catalogueNumber: 'RRC 208/1',
+      url: 'https://numismatics.org/crro/id/rrc-208.1',
     },
     characters: ['Roma', 'Victory', 'Biga'],
   },

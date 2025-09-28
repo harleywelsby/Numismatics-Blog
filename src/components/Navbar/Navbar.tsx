@@ -119,7 +119,7 @@ export const Navbar = () => {
             Mint Map
           </NavbarLink>
         </li>
-        <li>
+        {/* <li>
           <NavbarLink
             data-test-id="navbar-buying-power-link"
             to={Routes.BuyingPower}
@@ -128,7 +128,7 @@ export const Navbar = () => {
           >
             Buying Power
           </NavbarLink>
-        </li>
+        </li> */}
       </>
     );
   };
@@ -246,7 +246,7 @@ export const Navbar = () => {
                     <DropdownMenuItem route={Routes.Sets} label="Sets" />
                     <DropdownMenuItem route={Routes.Timeline} label="Timeline" />
                     <DropdownMenuItem route={Routes.MintMap} label="Mint Map" />
-                    <DropdownMenuItem route={Routes.BuyingPower} label="Buying Power" />
+                    {/* <DropdownMenuItem route={Routes.BuyingPower} label="Buying Power" /> */}
                   </Menu>
                 </li>
                 {ENABLE_BID_CALCULATOR && (
