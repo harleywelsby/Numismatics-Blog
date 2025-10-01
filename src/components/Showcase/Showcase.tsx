@@ -13,7 +13,7 @@ import {
 } from './Showcase.styles';
 import { CoinCardModal } from '../Collection/CoinCard/CoinCardModal';
 
-const currentShowcaseIds = [28, 26, 25];
+const currentShowcaseIds = [30, 26, 25];
 const currentShowcase = CollectionData.filter((x) => currentShowcaseIds.includes(x.id)).sort(
   (a, b) => b.id - a.id,
 );

@@ -69,7 +69,7 @@ const PrimaryDetailsSection = ({ coin, isSmallScreen }: PrimaryDetailsData) => {
           <b>{`${rulerTitle}: `}</b>
         </KeyValueText>
         <KeyValueText>
-          {`${coin.ruler.name} (${coin.ruler.alternateTitle ? '' : 'r. '}${coin.ruler.reign})`}
+          {`${coin.ruler.name} ${coin.ruler.reign ? `(${coin.ruler.alternateTitle ? '' : 'r. '}${coin.ruler.reign})` : ''}`}
         </KeyValueText>
         <KeyValueText $rightAlign>
           <b>Authority: </b>

@@ -68,4 +68,9 @@ export const MintData: Mint[] = [
     name: 'Constantinople',
     description: 'The Mint of Constantinople',
   },
+  {
+    position: [30.5454360924888, 47.95200036149205],
+    name: 'al-Basra',
+    description: 'The Mint of al-Basra',
+  },
 ];
