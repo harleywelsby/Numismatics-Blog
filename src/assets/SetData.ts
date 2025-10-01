@@ -28,14 +28,20 @@ export const SetData: CoinSet[] = [
       {
         name: 'The Fate of',
         secondLine: 'Tarpeia',
-        completed: false,
-        imageUrl: '/Images/Drawings/Tarpeia.webp',
+        completed: true,
+        linkedCollectionItem: {
+          id: 31,
+          face: 'reverse',
+        },
       },
       {
         name: 'Victory over',
         secondLine: 'Carthage',
         completed: false,
-        imageUrl: '/Images/Drawings/Carthage.webp',
+        linkedCollectionItem: {
+          id: 30,
+          face: 'reverse',
+        },
       },
       {
         name: 'Battle of Actium',

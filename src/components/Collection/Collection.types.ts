@@ -47,7 +47,7 @@ type CoinFace = {
 };
 
 export type LegendDetails = {
-  language: 'latin' | 'greek';
+  language: 'latin' | 'greek' | 'pahlavi';
   original: string;
   english: string;
   description?: string; // Optional description for the legend.
@@ -72,7 +72,7 @@ type MoreDetails = {
 
 type Ruler = {
   name: string;
-  reign: string;
+  reign?: string;
   alternateTitle?: string; // Optional: for primary figures who aren't actually rulers, e.g., Republican moneyers.
 };
 

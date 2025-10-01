@@ -1205,4 +1205,131 @@ export const CollectionData: CollectionItem[] = [
     },
     characters: ['Philip I', 'Eagle'],
   },
+  // 30
+  {
+    id: 30,
+    grade: Grade.VeryFine,
+    title: '2nd Punic War Victoriatus',
+    ruler: {
+      name: 'Anonymous',
+    },
+    authority: 'Roman Republic',
+    denomination: 'Victoriatus',
+    mint: {
+      location: 'Rome',
+      date: '207 BC',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/A030-Obverse.webp',
+      description: 'Laureate head of Jupiter right',
+    },
+    reverse: {
+      imagePath: '/Images/Collection/A030-Reverse.webp',
+      description:
+        'Victory standing front right, placing wreath on trophy of Carthaginian hoplite armour',
+      legend: 'ROMA',
+      legendDetails: {
+        language: 'latin',
+        original: 'Roma',
+        english: 'Rome',
+      },
+    },
+    reference: {
+      catalogueNumber: 'RRC 57/1',
+      url: 'http://numismatics.org/crro/id/rrc-57.1',
+    },
+    characters: ['Jupiter', 'Victory', 'Trophy'],
+  },
+  // 31
+  {
+    id: 31,
+    grade: Grade.VeryFine,
+    title: 'Myth of Tarpeia Denarius',
+    ruler: {
+      name: 'L. Titurius L.f. Sabinus',
+      reign: '89 BC',
+      alternateTitle: 'Moneyer',
+    },
+    authority: 'Roman Republic',
+    denomination: 'Denarius',
+    mint: {
+      location: 'Rome',
+      date: '89 BC',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/A031-Obverse.webp',
+      description:
+        'Bare-headed King Titus Tatius of the Sabines right, palm frond in lower right field',
+      legend: 'SABIN',
+      legendDetails: {
+        language: 'latin',
+        original: 'Sabinus',
+        english: 'Sabinus, the moneyer',
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/A031-Reverse.webp',
+      description:
+        'Tarpeia buried in shields, 2 soldiers either side casting their shields at her. Crescent and star above. "L TITVRI"',
+      legend: 'ROMA',
+      legendDetails: {
+        language: 'latin',
+        original: 'L TITURI',
+        english: 'Lucius Titurius',
+      },
+    },
+    reference: {
+      catalogueNumber: 'RRC 344/2b',
+      url: 'http://numismatics.org/crro/id/rrc-344.2',
+    },
+    characters: ['Titus Tatius', 'Tarpeia'],
+  },
+  // 32
+  {
+    id: 32,
+    grade: Grade.ExtremelyFine,
+    title: 'Umayyad Arab-Sasanian Drachm',
+    ruler: {
+      name: "Yazid I ibn Mu'awiya",
+      reign: '680-683 AD',
+    },
+    authority: 'Umayyad Caliphate',
+    denomination: 'Drachm',
+    mint: {
+      location: 'al-Basra, Iraq',
+      date: '681-682 AD',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/A032-Obverse.webp',
+      description:
+        'Figure resembling Sasanian ruler Khosrau II right, wearing elaborate mural crown',
+      legend: 'p̄zwt ʾwbytʾlʾ Y zyyʾtʾn’',
+      legendDetails: {
+        language: 'pahlavi',
+        original: 'p̄zwt ʾwbytʾlʾ Y zyyʾtʾn’',
+        english: 'May his glory increase, Governer Ubayd Allah ibn Ziyad. bism Allah',
+        secondaryLegend: 'bism Allāh',
+        secondaryLegendDetails: {
+          language: 'pahlavi',
+          original: 'bism Allāh',
+          english: 'In the name of God',
+        },
+      },
+    },
+    reverse: {
+      imagePath: '/Images/Collection/A032-Reverse.webp',
+      description:
+        'Fire altar with ribbons, flanked by 2 attendants; above altar, star and crescent',
+      legend: 'bcl',
+      legendDetails: {
+        language: 'pahlavi',
+        original: 'bcl',
+        english: 'al-Basra (Mint location)',
+      },
+    },
+    reference: {
+      catalogueNumber: 'Album 12',
+    },
+    characters: ['Khosrau II', 'Fire Altar'],
+  },
 ];

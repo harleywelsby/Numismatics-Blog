@@ -65,7 +65,7 @@ export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalPr
             <ModalBodyWrapper>
               <ModalText>
                 <b>{`${rulerTitle}: `}</b>
-                {`${coin.ruler.name} (${coin.ruler.alternateTitle ? '' : 'r. '}${coin.ruler.reign})`}
+                {`${coin.ruler.name} ${coin.ruler.reign ? `(${coin.ruler.alternateTitle ? '' : 'r. '}${coin.ruler.reign})` : ''}`}
               </ModalText>
               <ModalText>
                 <b>Authority: </b>
