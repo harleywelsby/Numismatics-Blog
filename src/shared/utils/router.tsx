@@ -20,7 +20,7 @@ export const Routes = {
   Home: '/',
   Blog: '/blog',
   BlogPost: '/blog/:postId',
-  Collection: '/collection/gallery',
+  Collection: '/collection',
   CollectionItemDetails: '/collection/:itemId',
   Sets: '/collection/sets',
   Timeline: '/collection/timeline',

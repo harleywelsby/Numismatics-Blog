@@ -37,7 +37,7 @@ export const SetData: CoinSet[] = [
       {
         name: 'Victory over',
         secondLine: 'Carthage',
-        completed: false,
+        completed: true,
         linkedCollectionItem: {
           id: 30,
           face: 'reverse',
