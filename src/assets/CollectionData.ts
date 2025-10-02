@@ -1288,7 +1288,7 @@ export const CollectionData: CollectionItem[] = [
   {
     id: 32,
     grade: Grade.ExtremelyFine,
-    title: 'Umayyad Arab-Sasanian Drachm',
+    title: 'Umayyad Caliphate Drachm',
     ruler: {
       name: "Yazid I ibn Mu'awiya",
       reign: '680-683 AD',
