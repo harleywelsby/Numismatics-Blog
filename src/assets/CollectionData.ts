@@ -1307,7 +1307,7 @@ export const CollectionData: CollectionItem[] = [
       legendDetails: {
         language: 'pahlavi',
         original: 'p̄zwt ʾwbytʾlʾ Y zyyʾtʾn’',
-        english: 'May his glory increase, Governer Ubayd Allah ibn Ziyad. bism Allah',
+        english: 'May his glory increase, Governor Ubayd Allah ibn Ziyad',
         secondaryLegend: 'bism Allāh',
         secondaryLegendDetails: {
           language: 'pahlavi',
@@ -1331,5 +1331,41 @@ export const CollectionData: CollectionItem[] = [
       catalogueNumber: 'Album 12',
     },
     characters: ['Khosrau II', 'Fire Altar'],
+  },
+  // 33
+  {
+    id: 33,
+    grade: Grade.VeryFine,
+    title: 'Pegasus Denarius',
+    ruler: {
+      name: 'Quintus Titius',
+      alternateTitle: 'Moneyer',
+      reign: '90 BC',
+    },
+    authority: 'Roman Republic',
+    denomination: 'Denarius',
+    mint: {
+      location: 'Rome',
+      date: '90 BC',
+    },
+    obverse: {
+      imagePath: '/Images/Collection/A033-Obverse.webp',
+      description: 'Head of young Liber right, wearing an ivy wreath',
+    },
+    reverse: {
+      imagePath: '/Images/Collection/A033-Reverse.webp',
+      description: 'Leaping Pegasus right, above moneyer mark inside tablet',
+      legend: 'Q TITI',
+      legendDetails: {
+        language: 'latin',
+        original: 'Q TITI',
+        english: 'Quintus Titius',
+      },
+    },
+    reference: {
+      catalogueNumber: 'RRC 341/2',
+      url: 'http://numismatics.org/crro/id/rrc-341.2',
+    },
+    characters: ['Liber', 'Pegasus'],
   },
 ];
