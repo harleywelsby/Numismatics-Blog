@@ -40,6 +40,8 @@ const getCategoriesByAuthority = (authority: Authority) => {
     case Authority.Macedonia:
     case Authority.SeleucidEmpire:
       return [TimelineItemCategory.AncientGreece];
+    case Authority.UmayyadCaliphate:
+      return [TimelineItemCategory.NearEast];
     default:
       return [TimelineItemCategory.World];
   }
@@ -220,6 +222,7 @@ export const TimelinePage = () => {
             // Ignore Greece/World (not enough events)
             if (
               category === TimelineItemCategory.AncientGreece ||
+              category === TimelineItemCategory.Medieval ||
               category === TimelineItemCategory.World
             ) {
               return null;

@@ -5,6 +5,8 @@ export enum TimelineItemCategory {
   AncientGreece = 'Ancient Greece',
   RomanRepublic = 'Roman Republic',
   RomanEmpire = 'Roman Empire',
+  NearEast = 'Near East',
+  Medieval = 'Medieval',
   World = 'World',
 }
 

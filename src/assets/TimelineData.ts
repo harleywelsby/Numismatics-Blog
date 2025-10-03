@@ -362,17 +362,17 @@ export const TimelineData: TimelineListItemContent[] = [
   {
     date: '476-1000 AD',
     description: 'Early Medieval Period',
-    categories: [TimelineItemCategory.World],
+    categories: [TimelineItemCategory.Medieval],
   },
   {
     date: '661 AD',
     description: 'The Umayyad Caliphate breaks away from Sassanid Persia',
-    categories: [TimelineItemCategory.World],
+    categories: [TimelineItemCategory.NearEast],
   },
   {
     date: '1000-1300 AD',
     description: 'High Medieval Period',
-    categories: [TimelineItemCategory.World],
+    categories: [TimelineItemCategory.Medieval],
   },
   {
     date: '1280-1300 AD',
@@ -382,7 +382,7 @@ export const TimelineData: TimelineListItemContent[] = [
   {
     date: '1300-1500 AD',
     description: 'Late Medieval Period',
-    categories: [TimelineItemCategory.World],
+    categories: [TimelineItemCategory.Medieval],
   },
   {
     date: '1400-1450 AD',

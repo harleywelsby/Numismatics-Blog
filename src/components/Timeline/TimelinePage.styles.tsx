@@ -34,6 +34,7 @@ export const DateText = styled.p`
 export const DescriptionText = styled.p`
   margin: 0;
   padding: 0;
+  color: var(--soft-white);
 `;
 
 export const TimelineWrapper = styled.div`
