@@ -13,13 +13,14 @@ import { getCleanMintDate, getDateWithExtension } from '../../shared/utils/dateH
 import { ScreenSize } from '../../shared/types';
 import { useMediaQuery } from 'react-responsive';
 import { Routes } from '../../shared/utils/router';
-import { TimelineListItemContent } from './TimelinePage.types';
+import { TimelineItemCategory, TimelineListItemContent } from './TimelinePage.types';
 import { useContext, useEffect, useState } from 'react';
 import { NavigationContext } from '../NavigationContext/NavigationContext';
 import {
   FilterCheckbox,
   FilterCheckboxWrapper,
   FilterLabel,
+  FilterSelectBox,
 } from '../Collection/Collection.styles';
 import { Slider } from '@mui/material';
 import { TIMELINE_SLIDER_RESET_MINMAX } from '../../config';
@@ -27,11 +28,27 @@ import { getTimelinePosition, SortByDate } from './TimelineHelpers';
 import { TimelineListItem } from './TimelineListItem';
 import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Authority } from '../Collection/Collection.types';
 
 // Exclude certain collection items from the timeline.
 // Currently, this is used to exclude an early modern coin that's part of the collection,
 // but not relevant for the timeline which focuses on ancient history.
 const worldCollectionItems = [14];
+
+const getCategoriesByAuthority = (authority: Authority) => {
+  switch (authority) {
+    case Authority.RomanRepublic:
+      return [TimelineItemCategory.RomanRepublic];
+    case Authority.RomanEmpire:
+    case Authority.GallicEmpire:
+      return [TimelineItemCategory.RomanEmpire];
+    case Authority.Macedonia:
+    case Authority.SeleucidEmpire:
+      return [TimelineItemCategory.AncientGreece];
+    default:
+      return [TimelineItemCategory.World];
+  }
+};
 
 export const TimelinePage = () => {
   const { setSelectedRoute } = useContext(NavigationContext);
@@ -40,6 +57,7 @@ export const TimelinePage = () => {
   }, [setSelectedRoute]);
 
   const [showWorldHistory, setShowWorldHistory] = useState(true);
+  const [focus, setFocus] = useState(TimelineItemCategory.All);
 
   const isMediumScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
   const isLargeScreen = useMediaQuery({ query: '(min-width: 86em)' });
@@ -54,6 +72,7 @@ export const TimelinePage = () => {
   const collectionData: TimelineListItemContent[] = CollectionData.map((item) => ({
     date: item.mint.date,
     description: item.title,
+    categories: getCategoriesByAuthority(item.authority),
     collectionItem: item,
   }));
 
@@ -62,7 +81,7 @@ export const TimelinePage = () => {
   sortedTimelineData.push({
     date: `${new Date().getFullYear()} AD`,
     description: 'You are here!',
-    isWorldHistory: true,
+    categories: [TimelineItemCategory.World],
   });
 
   // Setup the slider.
@@ -73,17 +92,32 @@ export const TimelinePage = () => {
   const [sliderMinMax, setSliderMinMax] = useState(sliderValue);
 
   const shouldShowItem = (item: TimelineListItemContent, showWorldHistory: boolean) => {
+    const isWorldItem = item.categories.includes(TimelineItemCategory.World);
+    const isSetToAll = focus === TimelineItemCategory.All;
+
+    // If Ignore World Items is enabled, and this is a world item, ignore it.
     if (
       !showWorldHistory &&
-      (item.isWorldHistory || worldCollectionItems.includes(item.collectionItem?.id ?? -1))
+      (isWorldItem || worldCollectionItems.includes(item.collectionItem?.id ?? -1))
     ) {
       return false;
     }
 
+    // If the item is outside the slider range, ignore it.
     if (
       getCleanMintDate(item.date) < sliderValue[0] ||
       getCleanMintDate(item.date) > sliderValue[1]
     ) {
+      return false;
+    }
+
+    // Always return if set to "All".
+    if (isSetToAll) {
+      return true;
+    }
+
+    // If the item is in the focus category, return true.
+    if (!item.categories.includes(focus)) {
       return false;
     }
 
@@ -99,8 +133,12 @@ export const TimelinePage = () => {
 
     if (!event.target.checked) {
       // Get the first & last items that are not "world" items.
-      const firstItem = sortedTimelineData.find((item) => !item.isWorldHistory);
-      const lastItem = sortedTimelineData.reverse().find((item) => !item.isWorldHistory);
+      const firstItem = sortedTimelineData.find(
+        (item) => !item.categories.includes(TimelineItemCategory.World),
+      );
+      const lastItem = sortedTimelineData
+        .reverse()
+        .find((item) => !item.categories.includes(TimelineItemCategory.World));
 
       // Set slider minmax to first and last item.
       setSliderMinMax([getCleanMintDate(firstItem!.date), getCleanMintDate(lastItem!.date)]);
@@ -177,6 +215,31 @@ export const TimelinePage = () => {
           onChange={handleCheckboxChange}
         />
         <FilterLabel>Show World History Events</FilterLabel>
+      </FilterCheckboxWrapper>
+      <br />
+      <FilterCheckboxWrapper>
+        <FilterLabel>Focus on:</FilterLabel>
+        <FilterSelectBox
+          name="focus"
+          value={focus}
+          onChange={(e) => setFocus(e.target.value as TimelineItemCategory)}
+        >
+          {Object.values(TimelineItemCategory).map((category) => {
+            // Ignore Greece/World (not enough events)
+            if (
+              category === TimelineItemCategory.AncientGreece ||
+              category === TimelineItemCategory.World
+            ) {
+              return null;
+            }
+
+            return (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            );
+          })}
+        </FilterSelectBox>
       </FilterCheckboxWrapper>
       <SectionSeparator />
       <TimelineWrapper>

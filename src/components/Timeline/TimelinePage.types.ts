@@ -1,8 +1,16 @@
 import { CollectionItem } from '../Collection/Collection.types';
 
+export enum TimelineItemCategory {
+  All = 'All',
+  AncientGreece = 'Ancient Greece',
+  RomanRepublic = 'Roman Republic',
+  RomanEmpire = 'Roman Empire',
+  World = 'World',
+}
+
 export type TimelineListItemContent = {
   date: string;
   description: string;
+  categories: TimelineItemCategory[];
   collectionItem?: CollectionItem;
-  isWorldHistory?: boolean; // If true, the item isn't necessarily related to Greek/Roman coins, and instead provided for context.
 };
