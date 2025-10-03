@@ -118,7 +118,6 @@ export const MintMap = () => {
           attribution='Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | &copy; <a href="https://carto.com/">CARTO</a>'
           url="https://a.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}@2x.png"
         />
-
         {MintData.map(
           (mint) =>
             collectionFilteredByAuthority.some((coin) => coinMintMatches(mint, coin)) && (
@@ -127,7 +126,7 @@ export const MintMap = () => {
                 eventHandlers={{ click: () => handleSelectMint(mint) }}
               >
                 <Popup>
-                  <b>{mint.name}</b> <br /> {mint.description}
+                  <b>{mint.name}</b>
                 </Popup>
               </Marker>
             ),
@@ -140,6 +139,7 @@ export const MintMap = () => {
             {selectedMint.name}
           </HeaderText>
           <HeaderSeparator $primaryColor />
+          <HeaderParagraph $leftAlign>{selectedMint.description}</HeaderParagraph>
           {sortedCollectionData.length > 3 && (
             <FilterSection>
               <FilterItem>

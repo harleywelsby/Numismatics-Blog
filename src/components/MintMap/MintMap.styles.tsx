@@ -16,11 +16,17 @@ export const MapWrapper = styled(MapContainer)`
   }
 `;
 
-export const HeaderParagraph = styled.p`
+export const HeaderParagraph = styled.p<{ $leftAlign?: boolean }>`
   text-align: center;
   font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);
   justify-self: center;
   max-width: 50%;
+
+  ${(props) =>
+    props.$leftAlign &&
+    css`
+      text-align: left;
+    `}
 
   @media (max-width: 100em) {
     max-width: 80%;
@@ -62,8 +68,9 @@ export const FilterButton = styled.button<{ $selected?: boolean }>`
   text-decoration: none;
   color: var(--soft-white);
   font-weight: 500;
-  font-size: 1.2rem;
   padding: 0.5rem;
+
+  font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);
 
   ${(props) =>
     props.$selected &&
