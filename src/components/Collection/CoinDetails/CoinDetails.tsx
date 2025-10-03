@@ -24,6 +24,7 @@ import {
   VariantWrapper,
   PrimaryDetailsWrapper,
   OpenModalButton,
+  ProvenanceSectionHeader,
 } from './CoinDetails.styles';
 import { HeaderText } from '../../../shared/styles/sharedStyles';
 import { CollectionData } from '../../../assets/CollectionData';
@@ -37,11 +38,19 @@ import {
   RulerData,
 } from './CoinDetails.types';
 import React, { useState } from 'react';
-import { LegendDetails } from '../Collection.types';
+import { CollectionItem, LegendDetails } from '../Collection.types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
 import { DenominationModal } from '../DenominationModal/DenominationModal';
 import { hasDenominationData } from '../../../assets/DenominationData';
+import {
+  Timeline,
+  TimelineConnector,
+  TimelineContent,
+  TimelineDot,
+  TimelineItem,
+  TimelineSeparator,
+} from '@mui/lab';
 
 const CapitalizeFirstLetter = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -103,6 +112,7 @@ const PrimaryDetailsSection = ({ coin, isSmallScreen }: PrimaryDetailsData) => {
           </a>
         </KeyValueText>
       </KeyValueGrid>
+      {coin.provenance && <ProvenanceSection coin={coin} />}
       <br />
       <SectionSeparator />
       {!isSmallScreen && <br />}
@@ -114,6 +124,36 @@ const PrimaryDetailsSection = ({ coin, isSmallScreen }: PrimaryDetailsData) => {
         />
       )}
     </PrimaryDetailsWrapper>
+  );
+};
+
+const ProvenanceSection = ({ coin }: { coin: CollectionItem }) => {
+  if (!coin.provenance) {
+    return null;
+  }
+
+  return (
+    <DescriptionSection>
+      <ProvenanceSectionHeader>Provenance</ProvenanceSectionHeader>
+      <Timeline position="right" sx={{ marginRight: '200px' }}>
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>{coin.provenance.vendorOrOwner}</TimelineContent>
+        </TimelineItem>
+        {coin.provenance?.history?.map((item) => (
+          <TimelineItem>
+            <TimelineSeparator>
+              <TimelineDot />
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent>{item.vendorOrOwner}</TimelineContent>
+          </TimelineItem>
+        ))}
+      </Timeline>
+    </DescriptionSection>
   );
 };
 

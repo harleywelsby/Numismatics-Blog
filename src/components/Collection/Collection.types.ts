@@ -1,7 +1,29 @@
 export type AuthorityGroup = {
   name: string;
-  includedAuthorities: string[];
+  includedAuthorities: Authority[];
 };
+
+export enum Authority {
+  RomanEmpire = 'Roman Empire',
+  Macedonia = 'Macedonia',
+  UnitedKingdom = 'United Kingdom',
+  SeleucidEmpire = 'Seleucid Empire',
+  GallicEmpire = 'Gallic Empire',
+  RomanRepublic = 'Roman Republic',
+  UmayyadCaliphate = 'Umayyad Caliphate',
+}
+
+export enum Denomination {
+  Nummus = 'Nummus',
+  Diobol = 'Diobol',
+  As = 'As',
+  Denarius = 'Denarius',
+  Shilling = 'Shilling',
+  Antoninianus = 'Antoninianus',
+  Tetradrachm = 'Tetradrachm',
+  Drachm = 'Drachm',
+  Victoriatus = 'Victoriatus',
+}
 
 export enum SortType {
   Featured = 'Featured',
@@ -28,14 +50,15 @@ export type CollectionItem = {
   grade: Grade;
   title: string;
   ruler: Ruler;
-  authority: string;
-  denomination: string;
+  authority: Authority;
+  denomination: Denomination;
   mint: Mint;
   obverse: CoinFace;
   reverse: CoinFace;
   reference: Reference;
   characters: string[];
   enableSeeMore?: boolean;
+  provenance?: Provenance;
   moreDetails?: MoreDetails;
 };
 
@@ -102,4 +125,12 @@ export type CoinCardOptions = {
   noPadding?: boolean;
   modalRerouteOverride?: string;
   disableRedirect?: boolean;
+};
+
+type Provenance = {
+  vendorOrOwner: string;
+  event?: string;
+  date?: Date;
+  link?: string;
+  history?: Provenance[];
 };

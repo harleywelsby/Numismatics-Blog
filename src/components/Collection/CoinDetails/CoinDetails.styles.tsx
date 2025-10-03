@@ -373,3 +373,14 @@ export const OpenModalButton = styled.button`
     }
   }
 `;
+
+export const ProvenanceSectionHeader = styled.h3`
+  font-size: clamp(1.2rem, 1vw + 0.5rem, 1.8rem);
+  text-align: center;
+  justify-self: center;
+  margin: 1.5rem 0 0 0;
+
+  @media (min-width: 35em) {
+    padding: 0 2rem;
+  }
+`;

@@ -1,4 +1,9 @@
-import { CollectionItem, Grade } from '../components/Collection/Collection.types';
+import {
+  Authority,
+  CollectionItem,
+  Denomination,
+  Grade,
+} from '../components/Collection/Collection.types';
 
 export const CollectionData: CollectionItem[] = [
   // 1
@@ -10,8 +15,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Constantius II',
       reign: '337-361 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Nummus',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Nummus,
     mint: {
       location: 'Nicomedia',
       date: '348-350 AD',
@@ -50,8 +55,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Constans',
       reign: '337-350 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Nummus',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Nummus,
     mint: {
       location: 'Constantinople',
       date: '336-337 AD',
@@ -91,8 +96,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Valentinian II',
       reign: '375-392 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Nummus',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Nummus,
     mint: {
       location: 'Aquileia',
       date: '378-388 AD',
@@ -132,8 +137,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Constantine I "The Great"',
       reign: '306-337 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Nummus',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Nummus,
     mint: {
       location: 'Rome',
       date: '307-337 AD',
@@ -173,8 +178,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Alexander III "The Great"',
       reign: '336-323 BC',
     },
-    authority: 'Kingdom of Macedon',
-    denomination: 'Diobol',
+    authority: Authority.Macedonia,
+    denomination: Denomination.Diobol,
     mint: {
       location: 'Kaunos, Karia',
       date: '300-201 BC',
@@ -202,8 +207,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Septimius Severus',
       reign: '193-211 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Denarius',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Denarius,
     mint: {
       location: 'Rome',
       date: '197-198 AD',
@@ -243,8 +248,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Caracalla',
       reign: '198-217 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Denarius',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Denarius,
     mint: {
       location: 'Rome',
       date: '214 AD',
@@ -286,8 +291,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Septimius Severus',
       reign: '193-211 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Denarius',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Denarius,
     mint: {
       location: 'Rome',
       date: '210 AD',
@@ -329,8 +334,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Claudius',
       reign: '41-50 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'As',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.As,
     mint: {
       location: 'Rome',
       date: '41-50 AD',
@@ -371,8 +376,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Valentinian I',
       reign: '364-375 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Nummus',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Nummus,
     mint: {
       location: 'Siscia',
       date: '364-367 AD',
@@ -412,8 +417,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Septimius Geta',
       reign: '209-211 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Denarius',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Denarius,
     mint: {
       location: 'Rome',
       date: '203-208 AD',
@@ -456,8 +461,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Constantine I "The Great"',
       reign: '306-337 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Nummus',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Nummus,
     mint: {
       location: 'Nicomedia',
       date: '324-329 AD',
@@ -497,8 +502,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Caracalla',
       reign: '198-217 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Denarius',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Denarius,
     mint: {
       location: 'Rome',
       date: '211-217 AD',
@@ -538,8 +543,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'William III',
       reign: '1689-1702 AD',
     },
-    authority: 'United Kingdom',
-    denomination: 'Shilling',
+    authority: Authority.UnitedKingdom,
+    denomination: Denomination.Shilling,
     mint: {
       location: 'England',
       date: '1696 AD',
@@ -579,8 +584,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Valentinian I',
       reign: '364-375 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Nummus',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Nummus,
     mint: {
       location: 'Siscia (2nd Officina)',
       date: '364-375 AD',
@@ -621,8 +626,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Aurelian',
       reign: '270-275 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Antoninianus',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Antoninianus,
     mint: {
       location: 'Rome',
       date: '270-275 AD',
@@ -662,8 +667,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Elagabalus',
       reign: '218-222 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Denarius',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Denarius,
     mint: {
       location: 'Rome',
       date: '218-222 AD',
@@ -714,8 +719,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Seleucus I',
       reign: '305-281 BC',
     },
-    authority: 'Seleucid Empire',
-    denomination: 'Tetradrachm',
+    authority: Authority.SeleucidEmpire,
+    denomination: Denomination.Tetradrachm,
     mint: {
       location: 'Seleucia on the Tigris, Babylon',
       date: '300-295 BC',
@@ -751,8 +756,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Severus Alexander',
       reign: '222-235 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Denarius',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Denarius,
     mint: {
       location: 'Rome',
       date: '231 AD',
@@ -792,8 +797,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Trajan',
       reign: '98-117 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Denarius',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Denarius,
     mint: {
       location: 'Rome',
       date: '116 AD',
@@ -836,8 +841,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Postumus',
       reign: '260-269 AD',
     },
-    authority: 'Gallic Empire',
-    denomination: 'Antoninianus',
+    authority: Authority.GallicEmpire,
+    denomination: Denomination.Antoninianus,
     mint: {
       location: 'Colonia Agrippinensis',
       date: '261 AD',
@@ -877,8 +882,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Licinius I',
       reign: '308-324 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Nummus',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Nummus,
     mint: {
       location: 'Siscia',
       date: '320 AD',
@@ -917,8 +922,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Constans',
       reign: '337-350 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Nummus',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Nummus,
     mint: { location: 'Thessalonika', date: '342-348 AD' },
     obverse: {
       imagePath: '/Images/Collection/A023-Obverse.webp',
@@ -954,8 +959,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Gallienus',
       reign: '253-268 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Antoninianus',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Antoninianus,
     mint: {
       location: 'Colonia Agrippinensis',
       date: '257-258 AD',
@@ -995,8 +1000,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Marcus Aurelius',
       reign: '161-180 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Denarius',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Denarius,
     mint: {
       location: 'Rome',
       date: '168-169 AD',
@@ -1039,8 +1044,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Antigonus I',
       reign: '306-301 BC',
     },
-    authority: 'Macedonia',
-    denomination: 'Drachm',
+    authority: Authority.Macedonia,
+    denomination: Denomination.Drachm,
     mint: {
       location: 'Teos, Ionia',
       date: '310-301 BC',
@@ -1075,8 +1080,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Antoninus Pius',
       reign: '138-161 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Denarius',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Denarius,
     mint: {
       location: 'Rome',
       date: '159-160 AD',
@@ -1118,8 +1123,8 @@ export const CollectionData: CollectionItem[] = [
       reign: '149 BC',
       alternateTitle: 'Moneyer',
     },
-    authority: 'Roman Republic',
-    denomination: 'Denarius',
+    authority: Authority.RomanRepublic,
+    denomination: Denomination.Denarius,
     mint: {
       location: 'Rome',
       date: '149 BC',
@@ -1167,8 +1172,8 @@ export const CollectionData: CollectionItem[] = [
       name: 'Philip I "The Arab"',
       reign: '244-249 AD',
     },
-    authority: 'Roman Empire',
-    denomination: 'Tetradrachm',
+    authority: Authority.RomanEmpire,
+    denomination: Denomination.Tetradrachm,
     mint: {
       location: 'Antioch',
       date: '248-249 AD',
@@ -1213,8 +1218,8 @@ export const CollectionData: CollectionItem[] = [
     ruler: {
       name: 'Anonymous',
     },
-    authority: 'Roman Republic',
-    denomination: 'Victoriatus',
+    authority: Authority.RomanRepublic,
+    denomination: Denomination.Victoriatus,
     mint: {
       location: 'Rome',
       date: '207 BC',
@@ -1250,8 +1255,8 @@ export const CollectionData: CollectionItem[] = [
       reign: '89 BC',
       alternateTitle: 'Moneyer',
     },
-    authority: 'Roman Republic',
-    denomination: 'Denarius',
+    authority: Authority.RomanRepublic,
+    denomination: Denomination.Denarius,
     mint: {
       location: 'Rome',
       date: '89 BC',
@@ -1293,8 +1298,8 @@ export const CollectionData: CollectionItem[] = [
       name: "Yazid I ibn Mu'awiya",
       reign: '680-683 AD',
     },
-    authority: 'Umayyad Caliphate',
-    denomination: 'Drachm',
+    authority: Authority.UmayyadCaliphate,
+    denomination: Denomination.Drachm,
     mint: {
       location: 'al-Basra, Iraq',
       date: '681-682 AD',
@@ -1342,8 +1347,8 @@ export const CollectionData: CollectionItem[] = [
       alternateTitle: 'Moneyer',
       reign: '90 BC',
     },
-    authority: 'Roman Republic',
-    denomination: 'Denarius',
+    authority: Authority.RomanRepublic,
+    denomination: Denomination.Denarius,
     mint: {
       location: 'Rome',
       date: '90 BC',
