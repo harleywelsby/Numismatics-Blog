@@ -30,11 +30,6 @@ import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Authority } from '../Collection/Collection.types';
 
-// Exclude certain collection items from the timeline.
-// Currently, this is used to exclude an early modern coin that's part of the collection,
-// but not relevant for the timeline which focuses on ancient history.
-const worldCollectionItems = [14];
-
 const getCategoriesByAuthority = (authority: Authority) => {
   switch (authority) {
     case Authority.RomanRepublic:
@@ -96,10 +91,7 @@ export const TimelinePage = () => {
     const isSetToAll = focus === TimelineItemCategory.All;
 
     // If Ignore World Items is enabled, and this is a world item, ignore it.
-    if (
-      !showWorldHistory &&
-      (isWorldItem || worldCollectionItems.includes(item.collectionItem?.id ?? -1))
-    ) {
+    if (!showWorldHistory && isWorldItem) {
       return false;
     }
 
@@ -251,7 +243,6 @@ export const TimelinePage = () => {
                 item={item}
                 screenSize={screenSize}
                 sortedTimelineData={sortedTimelineData}
-                worldCollectionItems={worldCollectionItems}
               />
             ) : null,
           )}

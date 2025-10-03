@@ -98,7 +98,7 @@ export const TimelineData: TimelineListItemContent[] = [
   },
   {
     date: '49 BC',
-    description: 'Civil war begins in Rome between Julius Caesar and Pompey',
+    description: 'Julius Caesar becomes Dictator of the Roman Republic',
     categories: [TimelineItemCategory.RomanRepublic],
   },
   {
@@ -127,11 +127,12 @@ export const TimelineData: TimelineListItemContent[] = [
     description: 'The Crucifixion of Jesus',
     categories: [TimelineItemCategory.RomanEmpire],
   },
-  // {
-  //   date: '68 AD',
-  //   description:
-  //     'The Julio-Claudian dynasty ends with the death of Nero, leading to the rise of the Flavian dynasty',
-  // },
+  {
+    date: '68 AD',
+    description:
+      'The Julio-Claudian dynasty ends with the death of Nero, leading to the rise of the Flavian dynasty',
+    categories: [TimelineItemCategory.RomanEmpire],
+  },
   {
     date: '79 AD',
     description: 'Pompeii is destroyed by the eruption of Mount Vesuvius',
@@ -142,14 +143,25 @@ export const TimelineData: TimelineListItemContent[] = [
     description: 'The Colosseum is completed under Emperor Titus',
     categories: [TimelineItemCategory.RomanEmpire],
   },
-  // {
-  //   date: '96 AD',
-  //   description:
-  //     'Emperor Domitian is assassinated, leading to the end of the Flavian dynasty and the beginning of the Nerva-Antonine dynasty',
-  // },
+  {
+    date: '96 AD',
+    description:
+      'Emperor Domitian is assassinated, and the Senator Nerva takes the throne as the first of the 5 Good Emperors',
+    categories: [TimelineItemCategory.RomanEmpire],
+  },
+  {
+    date: '98 AD',
+    description: 'Emperor Nerva dies, leaving Rome to the new Emperor Trajan',
+    categories: [TimelineItemCategory.RomanEmpire],
+  },
   {
     date: '117 AD',
     description: 'Rome reaches its largest territorial extent under Emperor Trajan',
+    categories: [TimelineItemCategory.RomanEmpire],
+  },
+  {
+    date: '117 AD',
+    description: 'Emperor Trajan dies, leaving Rome to the new Emperor Hadrian',
     categories: [TimelineItemCategory.RomanEmpire],
   },
   {
@@ -163,9 +175,14 @@ export const TimelineData: TimelineListItemContent[] = [
     categories: [TimelineItemCategory.RomanEmpire],
   },
   {
+    date: '138 AD',
+    description: 'Emperor Hadrian dies, leaving Rome to the new Emperor Antoninus Pius',
+    categories: [TimelineItemCategory.RomanEmpire],
+  },
+  {
     date: '161 AD',
     description:
-      'Death of Antoninus Pius, marking the first full reign of a Roman Emperor without Rome fighting a war (23 years)',
+      'Death of Antoninus Pius, marking the first full reign of a Roman Emperor without Rome fighting a war (23 years). Marcus Aurelius and Lucius Verus inherit the throne as joint Emperors',
     categories: [TimelineItemCategory.RomanEmpire],
   },
   {
@@ -179,6 +196,11 @@ export const TimelineData: TimelineListItemContent[] = [
     categories: [TimelineItemCategory.RomanEmpire],
   },
   {
+    date: '180 AD',
+    description: 'Marcus Aurelius dies, leaving Rome to his son Commodus',
+    categories: [TimelineItemCategory.RomanEmpire],
+  },
+  {
     date: '192-193 AD',
     description:
       'Civil war begins in Rome after the murder of Emperor Commodus, leading to the rise of Septimius Severus',
@@ -187,7 +209,17 @@ export const TimelineData: TimelineListItemContent[] = [
   {
     date: '197 AD',
     description:
-      'Septimius Severus defeats Albinus at the Battle of Lugdunum, the largest and bloodiest battle ever fought between Roman forces',
+      'Severus defeats Albinus at the Battle of Lugdunum, the largest and bloodiest battle ever fought between Roman forces',
+    categories: [TimelineItemCategory.RomanEmpire],
+  },
+  {
+    date: '198 AD',
+    description: 'Caracalla becomes joint Emperor with his father Septimius Severus',
+    categories: [TimelineItemCategory.RomanEmpire],
+  },
+  {
+    date: '209 AD',
+    description: 'Geta becomes joint Emperor with Severus and Caracalla',
     categories: [TimelineItemCategory.RomanEmpire],
   },
   {
@@ -211,6 +243,12 @@ export const TimelineData: TimelineListItemContent[] = [
     categories: [TimelineItemCategory.RomanEmpire],
   },
   {
+    date: '222 AD',
+    description:
+      'Emperor Elagabalus is killed by his own troops, leading to his cousin Severus Alexander taking the throne',
+    categories: [TimelineItemCategory.RomanEmpire],
+  },
+  {
     date: '222 - 242 AD',
     description:
       'New Zealand: Taupo erupts, fully forming the lake. One of the largest eruptions in the last 5,000 years',
@@ -225,7 +263,7 @@ export const TimelineData: TimelineListItemContent[] = [
   {
     date: '244 AD',
     description:
-      'The Battle of Misiche ends in decisive Sassanid victory over the Romans, near modern-day Fallujah, Iraq. Gordian III is killed in battle, leading to the rise of Philip the Arab',
+      'The Sassanid Persians defeat and kill Emperor Gordian III in battle in Iraq, leading to the rise of Philip the Arab',
     categories: [TimelineItemCategory.RomanEmpire],
   },
   {
@@ -324,6 +362,11 @@ export const TimelineData: TimelineListItemContent[] = [
   {
     date: '476-1000 AD',
     description: 'Early Medieval Period',
+    categories: [TimelineItemCategory.World],
+  },
+  {
+    date: '661 AD',
+    description: 'The Umayyad Caliphate breaks away from Sassanid Persia',
     categories: [TimelineItemCategory.World],
   },
   {

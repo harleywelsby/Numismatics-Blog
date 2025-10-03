@@ -14,7 +14,7 @@ import {
   DescriptionText,
   TimelineCoinWrapper,
 } from './TimelinePage.styles';
-import { TimelineListItemContent } from './TimelinePage.types';
+import { TimelineItemCategory, TimelineListItemContent } from './TimelinePage.types';
 import { Routes } from '../../shared/utils/router';
 import { ScreenSize } from '../../shared/types';
 
@@ -22,20 +22,17 @@ interface TimelineListItemProps {
   item: TimelineListItemContent;
   screenSize: ScreenSize;
   sortedTimelineData: TimelineListItemContent[];
-  worldCollectionItems: number[];
 }
 
 export const TimelineListItem = ({
   item,
   screenSize,
   sortedTimelineData,
-  worldCollectionItems,
 }: TimelineListItemProps) => {
   const hasCollectionItem = !!item.collectionItem;
   const imageDimensions = getImageDimensions(screenSize);
 
-  const isWorldHistory =
-    item.isWorldHistory || worldCollectionItems.includes(item.collectionItem?.id ?? -1);
+  const isWorldHistory = item.categories.includes(TimelineItemCategory.World);
 
   const isEvenIndex = sortedTimelineData.indexOf(item) % 2 === 0;
   const tooltipPlacement = isEvenIndex ? 'left' : 'right';
