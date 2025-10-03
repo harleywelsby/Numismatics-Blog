@@ -1,18 +1,18 @@
 import { getCleanMintDate } from '../../../shared/utils/dateHelper';
-import { AuthorityGroup, CollectionItem, SortType } from '../Collection.types';
+import { Authority, AuthorityGroup, CollectionItem, SortType } from '../Collection.types';
 
 export const AuthorityGroups: AuthorityGroup[] = [
   {
     name: 'Ancient Greece',
-    includedAuthorities: ['Kingdom of Macedon', 'Seleucid Empire', 'Macedonia'],
+    includedAuthorities: [Authority.Macedonia, Authority.SeleucidEmpire],
   },
   {
     name: 'Ancient Rome',
-    includedAuthorities: ['Roman Republic', 'Roman Empire', 'Gallic Empire'],
+    includedAuthorities: [Authority.RomanRepublic, Authority.RomanEmpire, Authority.GallicEmpire],
   },
   {
     name: 'United Kingdom',
-    includedAuthorities: ['United Kingdom'],
+    includedAuthorities: [Authority.UnitedKingdom],
   },
 ];
 
