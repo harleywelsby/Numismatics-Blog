@@ -26,6 +26,7 @@ import { MintData, MintMapAuthorityGroups } from '../../assets/MintMapData';
 import { CollectionItem, SortType } from '../Collection/Collection.types';
 import { ActiveSortTypes, SortCollectionData } from '../Collection/utils/FilterHelpers';
 import { MintMapStateContext } from './MintMapState/MintMapStateContext';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const coinMintMatches = (selectedMint: Mint | null, coin: CollectionItem) => {
   if (!selectedMint) {
@@ -38,6 +39,9 @@ const coinMintMatches = (selectedMint: Mint | null, coin: CollectionItem) => {
 };
 
 export const MintMap = () => {
+  const [searchParams] = useSearchParams();
+  const selected = searchParams.get('selected');
+
   const isSmallScreen = useMediaQuery({ maxWidth: '65em' });
   const isMediumScreen = useMediaQuery({ minWidth: '65em', maxWidth: '100em' });
   const coinSection = useRef<HTMLHeadingElement | null>(null);
@@ -49,6 +53,17 @@ export const MintMap = () => {
     authorityFilter,
     setAuthorityFilter,
   } = useContext(MintMapStateContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (selected) {
+      setSelectedMint(MintData.find((x) => x.name === selected) ?? null);
+      window.scrollTo({
+        top: coinSection.current?.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  }, [selected, setSelectedMint]);
 
   const { setSelectedRoute } = useContext(NavigationContext);
   useEffect(() => {
@@ -57,6 +72,8 @@ export const MintMap = () => {
 
   const handleSelectMint = (mint: Mint) => {
     setSelectedMint(mint);
+    navigate(`${Routes.MintMap}?selected=${mint.name}`);
+
     // Ensure the section has been rendered first
     setTimeout(() => {
       if (isSmallScreen) {

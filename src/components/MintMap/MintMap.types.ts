@@ -1,8 +1,8 @@
 import { LatLngExpression } from 'leaflet';
-import { Authority } from '../Collection/Collection.types';
+import { Authority, MintLocation } from '../Collection/Collection.types';
 
 export type Mint = {
-  name: string;
+  name: MintLocation;
   position: LatLngExpression;
   authorities: Authority[];
   description: string;

@@ -2,7 +2,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Modal } from '@mui/material';
 
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CollectionItem } from '../Collection.types';
 import { getFullImagePath } from '../../../shared/utils/imageHelper';
 import { Routes } from '../../../shared/utils/router';
@@ -77,7 +77,10 @@ export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalPr
               </ModalText>
               <ModalText>
                 <b>Minted: </b>
-                {`${coin.mint.location} (${coin.mint.date})`}
+                <Link to={Routes.MintMap + `?selected=${coin.mint.location}`}>
+                  {coin.mint.location}
+                </Link>
+                {` (${coin.mint.date})`}
               </ModalText>
               {!enableSeeMore && (
                 <>

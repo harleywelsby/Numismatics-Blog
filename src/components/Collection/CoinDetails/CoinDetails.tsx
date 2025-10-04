@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import {
   CoinDetailsPageWrapper,
   CoinImage,
@@ -51,6 +51,7 @@ import {
   TimelineItem,
   TimelineSeparator,
 } from '@mui/lab';
+import { Routes } from '../../../shared/utils/router';
 
 const CapitalizeFirstLetter = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -102,7 +103,10 @@ const PrimaryDetailsSection = ({ coin, isSmallScreen }: PrimaryDetailsData) => {
         <KeyValueText $rightAlign>
           <b>Minted: </b>
         </KeyValueText>
-        <KeyValueText>{`${coin.mint.location} (${coin.mint.date})`}</KeyValueText>
+        <KeyValueText>
+          <Link to={Routes.MintMap + `?selected=${coin.mint.location}`}>{coin.mint.location}</Link>
+          {` (${coin.mint.date})`}
+        </KeyValueText>
         <KeyValueText $rightAlign>
           <b>Ref: </b>
         </KeyValueText>

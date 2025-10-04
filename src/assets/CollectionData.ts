@@ -3,6 +3,7 @@ import {
   CollectionItem,
   Denomination,
   Grade,
+  MintLocation,
 } from '../components/Collection/Collection.types';
 
 export const CollectionData: CollectionItem[] = [
@@ -18,7 +19,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Nummus,
     mint: {
-      location: 'Nicomedia',
+      location: MintLocation.Nicomedia,
       date: '348-350 AD',
     },
     obverse: {
@@ -58,7 +59,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Nummus,
     mint: {
-      location: 'Constantinople',
+      location: MintLocation.Constantinople,
       date: '336-337 AD',
     },
     obverse: {
@@ -99,7 +100,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Nummus,
     mint: {
-      location: 'Aquileia',
+      location: MintLocation.Aquileia,
       date: '378-388 AD',
     },
     obverse: {
@@ -140,7 +141,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Nummus,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '307-337 AD',
     },
     obverse: {
@@ -181,7 +182,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.Macedonia,
     denomination: Denomination.Diobol,
     mint: {
-      location: 'Kaunos, Karia',
+      location: MintLocation.Kaunos,
       date: '300-201 BC',
     },
     obverse: {
@@ -210,7 +211,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Denarius,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '197-198 AD',
     },
     obverse: {
@@ -251,7 +252,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Denarius,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '214 AD',
     },
     obverse: {
@@ -294,7 +295,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Denarius,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '210 AD',
     },
     obverse: {
@@ -337,7 +338,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.As,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '41-50 AD',
     },
     obverse: {
@@ -379,7 +380,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Nummus,
     mint: {
-      location: 'Siscia',
+      location: MintLocation.Siscia,
       date: '364-367 AD',
     },
     obverse: {
@@ -420,7 +421,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Denarius,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '203-208 AD',
     },
     obverse: {
@@ -464,7 +465,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Nummus,
     mint: {
-      location: 'Nicomedia',
+      location: MintLocation.Nicomedia,
       date: '324-329 AD',
     },
     obverse: {
@@ -505,7 +506,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Denarius,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '211-217 AD',
     },
     obverse: {
@@ -546,7 +547,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.UnitedKingdom,
     denomination: Denomination.Shilling,
     mint: {
-      location: 'England',
+      location: MintLocation.England,
       date: '1696 AD',
     },
     obverse: {
@@ -587,7 +588,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Nummus,
     mint: {
-      location: 'Siscia (2nd Officina)',
+      location: MintLocation.Siscia,
       date: '364-375 AD',
     },
     obverse: {
@@ -629,7 +630,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Antoninianus,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '270-275 AD',
     },
     obverse: {
@@ -670,7 +671,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Denarius,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '218-222 AD',
     },
     obverse: {
@@ -722,7 +723,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.SeleucidEmpire,
     denomination: Denomination.Tetradrachm,
     mint: {
-      location: 'Seleucia on the Tigris, Babylon',
+      location: MintLocation.SeleuciaOnTheTigris,
       date: '300-295 BC',
     },
     obverse: {
@@ -759,7 +760,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Denarius,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '231 AD',
     },
     obverse: {
@@ -800,7 +801,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Denarius,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '116 AD',
     },
     obverse: {
@@ -844,7 +845,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.GallicEmpire,
     denomination: Denomination.Antoninianus,
     mint: {
-      location: 'Colonia Agrippinensis',
+      location: MintLocation.ColoniaAgrippinensis,
       date: '261 AD',
     },
     obverse: {
@@ -885,7 +886,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Nummus,
     mint: {
-      location: 'Siscia',
+      location: MintLocation.Siscia,
       date: '320 AD',
     },
     obverse: {
@@ -924,7 +925,7 @@ export const CollectionData: CollectionItem[] = [
     },
     authority: Authority.RomanEmpire,
     denomination: Denomination.Nummus,
-    mint: { location: 'Thessalonika', date: '342-348 AD' },
+    mint: { location: MintLocation.Thessalonika, date: '342-348 AD' },
     obverse: {
       imagePath: '/Images/Collection/A023-Obverse.webp',
       description: 'Diademed bust of Constans facing right.',
@@ -962,7 +963,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Antoninianus,
     mint: {
-      location: 'Colonia Agrippinensis',
+      location: MintLocation.ColoniaAgrippinensis,
       date: '257-258 AD',
     },
     obverse: {
@@ -1003,7 +1004,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Denarius,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '168-169 AD',
     },
     obverse: {
@@ -1047,7 +1048,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.Macedonia,
     denomination: Denomination.Drachm,
     mint: {
-      location: 'Teos, Ionia',
+      location: MintLocation.Teos,
       date: '310-301 BC',
     },
     obverse: {
@@ -1083,7 +1084,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Denarius,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '159-160 AD',
     },
     obverse: {
@@ -1126,7 +1127,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanRepublic,
     denomination: Denomination.Denarius,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '149 BC',
     },
     obverse: {
@@ -1175,7 +1176,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanEmpire,
     denomination: Denomination.Tetradrachm,
     mint: {
-      location: 'Antioch',
+      location: MintLocation.Antioch,
       date: '248-249 AD',
     },
     obverse: {
@@ -1221,7 +1222,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanRepublic,
     denomination: Denomination.Victoriatus,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '207 BC',
     },
     obverse: {
@@ -1258,7 +1259,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanRepublic,
     denomination: Denomination.Denarius,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '89 BC',
     },
     obverse: {
@@ -1301,7 +1302,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.UmayyadCaliphate,
     denomination: Denomination.Drachm,
     mint: {
-      location: 'al-Basra, Iraq',
+      location: MintLocation.alBasra,
       date: '681-682 AD',
     },
     obverse: {
@@ -1350,7 +1351,7 @@ export const CollectionData: CollectionItem[] = [
     authority: Authority.RomanRepublic,
     denomination: Denomination.Denarius,
     mint: {
-      location: 'Rome',
+      location: MintLocation.Rome,
       date: '90 BC',
     },
     obverse: {
