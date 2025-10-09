@@ -99,7 +99,6 @@ export const BlogPost = () => {
       {screenSize === ScreenSize.Small && (
         <>
           <BlogPostBackLink to={Routes.Blog}>
-            {/* @ts-expect-error Icon types are busted, but it works */}
             <FontAwesomeIcon icon={faArrowLeft} size="1x" />
             Back
           </BlogPostBackLink>

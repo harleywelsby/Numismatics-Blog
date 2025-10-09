@@ -197,7 +197,6 @@ export const Navbar = () => {
               </InvisibleLink>
               <HamburgerIconWrapper>
                 <FontAwesomeIcon
-                  // @ts-expect-error Icon types are busted, but it works
                   icon={faBars}
                   onClick={() => setShowSidebar(!showSidebar)}
                   data-test-id="navbar-hamburger-icon"
@@ -228,7 +227,6 @@ export const Navbar = () => {
                     $isDropdownShowing={showCollectionDropdown}
                   >
                     Collection
-                    {/* @ts-expect-error Icon types are busted, but it works */}
                     <FontAwesomeIcon icon={faChevronDown} size="1x" />
                   </NavbarDropdown>
                   <Menu
@@ -257,7 +255,6 @@ export const Navbar = () => {
                       $isDropdownShowing={showToolsDropdown}
                     >
                       Tools
-                      {/* @ts-expect-error Icon types are busted, but it works */}
                       <FontAwesomeIcon icon={faChevronDown} size="1x" />
                     </NavbarDropdown>
                     <Menu

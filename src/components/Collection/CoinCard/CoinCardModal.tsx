@@ -135,7 +135,6 @@ export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalPr
           onClick={handleModalClose}
           data-test-id={`coin-card-${coin.id}-modal-close`}
         >
-          {/* @ts-expect-error Icon types are busted, but it works */}
           <FontAwesomeIcon icon={faXmark} size="2x" />
         </CloseModalButton>
       </ModalContent>

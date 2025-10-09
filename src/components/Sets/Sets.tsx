@@ -93,7 +93,6 @@ export const Sets = () => {
               expandIcon={
                 ENABLE_SET_ACCORDIONS && (
                   <>
-                    {/* @ts-expect-error Icon types are busted, but it works */}
                     <FontAwesomeIcon icon={faChevronDown} color="white" size="2x" />
                   </>
                 )

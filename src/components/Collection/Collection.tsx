@@ -79,7 +79,6 @@ export const CollectionV2 = () => {
     <PageWrapper>
       {showBackToTopButton && (
         <BackToTopButton onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          {/* @ts-expect-error Icon types are busted, but this works */}
           <FontAwesomeIcon icon={faAngleDoubleUp} />
           Back to Top
         </BackToTopButton>
@@ -106,12 +105,7 @@ export const CollectionV2 = () => {
         }}
       >
         <AccordionSummary
-          expandIcon={
-            <>
-              {/* @ts-expect-error Icon types are busted, but it works */}
-              <FontAwesomeIcon icon={faChevronDown} color="white" size="2x" />
-            </>
-          }
+          expandIcon={<FontAwesomeIcon icon={faChevronDown} color="white" size="2x" />}
           sx={{ padding: '0rem 1rem' }}
         >
           <FilterAccordionHeader>Filter Options</FilterAccordionHeader>

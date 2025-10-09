@@ -105,7 +105,6 @@ const PrimaryDetailsSection = ({ coin, leader, isSmallScreen }: PrimaryDetailsDa
               onClick={() => setShowDenominationModal(true)}
               data-test-id={`denomination-modal-open`}
             >
-              {/* @ts-expect-error Icon types are busted, but it works */}
               <FontAwesomeIcon icon={faCircleQuestion} size="1x" />
             </OpenModalButton>
           )}

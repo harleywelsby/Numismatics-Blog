@@ -164,7 +164,6 @@ export const TimelinePage = () => {
     <>
       {showBackToTopButton && (
         <BackToTopButton onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          {/* @ts-expect-error Icon types are busted, but this works */}
           <FontAwesomeIcon icon={faAngleDoubleUp} />
           Back to Top
         </BackToTopButton>
