@@ -23,10 +23,11 @@ import {
 import { CoinCard } from '../Collection/CoinCard/CoinCard';
 import { getColumnOverride } from '../Collection/utils/GridHelpers';
 import { MintData, MintMapAuthorityGroups } from '../../assets/MintMapData';
-import { CollectionItem, SortType } from '../Collection/Collection.types';
+import { SortType } from '../Collection/Collection.types';
 import { ActiveSortTypes, SortCollectionData } from '../Collection/utils/FilterHelpers';
 import { MintMapStateContext } from './MintMapState/MintMapStateContext';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { CollectionItem } from '../../shared/types/CollectionItem.types';
 
 const coinMintMatches = (selectedMint: Mint | null, coin: CollectionItem) => {
   if (!selectedMint) {

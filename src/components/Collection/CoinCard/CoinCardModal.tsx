@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Modal } from '@mui/material';
 
 import { Link, useNavigate } from 'react-router-dom';
-import { CollectionItem } from '../Collection.types';
 import { getFullImagePath } from '../../../shared/utils/imageHelper';
 import { Routes } from '../../../shared/utils/router';
 import {
@@ -22,6 +21,9 @@ import {
 import { useContext } from 'react';
 import { NavigationContext } from '../../NavigationContext/NavigationContext';
 import { useMediaQuery } from 'react-responsive';
+import { CollectionItem } from '../../../shared/types/CollectionItem.types';
+import { LeaderData } from '../../../assets/LeaderData';
+import { LeaderType } from '../Collection.types';
 
 interface CoinCardModalProps {
   coin: CollectionItem;
@@ -47,9 +49,8 @@ export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalPr
     navigate(Routes.CollectionItemDetails.replace(':itemId', `${coin.id}`));
   };
 
-  const enableSeeMore = ENABLE_SEE_MORE_OVERRIDE || coin.enableSeeMore;
-
-  const rulerTitle = coin.ruler.alternateTitle ?? `Ruler`;
+  const leader = LeaderData.find((l) => l.name === coin.leader)!;
+  const leaderTitle = leader.type === LeaderType.Moneyer ? 'Moneyer' : 'Ruler';
 
   return (
     <Modal open={showModal} onClose={handleModalClose}>
@@ -64,8 +65,15 @@ export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalPr
             <ModalHeader>{coin.title}</ModalHeader>
             <ModalBodyWrapper>
               <ModalText>
-                <b>{`${rulerTitle}: `}</b>
-                {`${coin.ruler.name} ${coin.ruler.reign ? `(${coin.ruler.alternateTitle ? '' : 'r. '}${coin.ruler.reign})` : ''}`}
+                <b>{`${leaderTitle}: `}</b>
+                {leader.url ? (
+                  <a href={leader.url} target="_blank" rel="noopener noreferrer">
+                    {leader.name}
+                  </a>
+                ) : (
+                  leader.name
+                )}
+                {` ${leader.reign ? `(${leader.type === LeaderType.Ruler ? 'r. ' : ''}${leader.reign})` : ''}`}
               </ModalText>
               <ModalText>
                 <b>Authority: </b>
@@ -82,7 +90,7 @@ export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalPr
                 </Link>
                 {` (${coin.mint.date})`}
               </ModalText>
-              {!enableSeeMore && (
+              {!ENABLE_SEE_MORE_OVERRIDE && (
                 <>
                   <ModalText>
                     <b>Obv: </b>
@@ -108,7 +116,7 @@ export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalPr
                   {coin.reference.catalogueNumber}
                 </a>
               </ModalText>
-              {enableSeeMore && (
+              {ENABLE_SEE_MORE_OVERRIDE && (
                 <SeeMoreButtonWrapper>
                   <SeeMoreButton onClick={handleSeeMore}>See More</SeeMoreButton>
                   <NewPill>New!</NewPill>

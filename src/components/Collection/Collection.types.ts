@@ -1,3 +1,5 @@
+// TODO: Most of this has been migrated, and can be removed.
+
 export type AuthorityGroup = {
   name: string;
   includedAuthorities: Authority[];
@@ -59,6 +61,43 @@ export enum MintLocation {
   England = 'England',
 }
 
+export enum LeaderName {
+  ConstantiusII = 'Constantius II',
+  Constans = 'Constans',
+  ValentinianII = 'Valentinian II',
+  ConstantineITheGreat = 'Constantine I "the Great"',
+  AlexanderIIITheGreat = 'Alexander III "the Great"',
+  SeptimiusSeverus = 'Septimius Severus',
+  Caracalla = 'Caracalla',
+  Claudius = 'Claudius',
+  ValentinianI = 'Valentinian I',
+  Geta = 'Geta',
+  JuliaDomna = 'Julia Domna',
+  WilliamIII = 'William III',
+  Aurelian = 'Aurelian',
+  Elagabalus = 'Elagabalus',
+  SeleucusI = 'Seleucus I Nicator',
+  SeverusAlexander = 'Severus Alexander',
+  Trajan = 'Trajan',
+  Postumus = 'Postumus',
+  LiciniusII = 'Licinius II',
+  Gallienus = 'Gallienus',
+  MarcusAurelius = 'Marcus Aurelius',
+  AntigonusI = 'Antigonus I Monophthalmos',
+  AntoninusPius = 'Antoninus Pius',
+  PinariusNatta = 'Pinarius Natta',
+  PhilipTheArab = 'Philip I "the Arab"',
+  Anonymous = 'Anonymous',
+  TituriusSabinus = 'L. Titurius L.f. Sabinus',
+  YazidI = "Yazid I ibn Mu'awiya",
+  QuintusTitius = 'Quintus Titius',
+}
+
+export enum LeaderType {
+  Ruler = 'Ruler',
+  Moneyer = 'Moneyer',
+}
+
 // Collection V2
 
 export type CollectionItem = {
@@ -113,6 +152,14 @@ type Ruler = {
   name: string;
   reign?: string;
   alternateTitle?: string; // Optional: for primary figures who aren't actually rulers, e.g., Republican moneyers.
+};
+
+export type LeaderDetails = {
+  name: LeaderName;
+  type: LeaderType;
+  reign?: string;
+  imagePath?: string;
+  descriptionParagraphs?: string[];
 };
 
 export type RulerDetails = {

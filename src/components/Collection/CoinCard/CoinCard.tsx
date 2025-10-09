@@ -1,10 +1,11 @@
 import { useMediaQuery } from 'react-responsive';
 import { ScreenSize } from '../../../shared/types';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { CoinCardModal } from './CoinCardModal';
 import { CardWrapper, CardText, CoinImageWrapper } from './CoinCard.styles';
-import { CoinCardOptions, CollectionItem } from '../Collection.types';
+import { CoinCardOptions } from '../Collection.types';
+import { CollectionItem } from '../../../shared/types/CollectionItem.types';
 
 const getThumbnailDimensions = (screenSize: ScreenSize) => {
   switch (screenSize) {
@@ -22,7 +23,9 @@ interface CoinCardProps {
 }
 
 export const CoinCard = ({ coin, options }: CoinCardProps) => {
-  const { itemId } = useParams();
+  // TODO: Currently unused
+  const [searchParams] = useSearchParams();
+  const itemId = searchParams.get('selected');
 
   const isMediumScreenOrLarger = useMediaQuery({ query: '(min-width: 35em)' });
   const isLargeScreen = useMediaQuery({ query: '(min-width: 86em)' });

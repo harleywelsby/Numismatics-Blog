@@ -1,4 +1,6 @@
-import { CharacterDetails, CollectionItem, LegendDetails, RulerDetails } from '../Collection.types';
+import { CollectionItem, LegendDetails } from '../../../shared/types/CollectionItem.types';
+import { Leader } from '../../../shared/types/Leader.types';
+import { CharacterDetails, RulerDetails } from '../Collection.types';
 
 export interface LegendData {
   legend: string;
@@ -12,7 +14,7 @@ export interface ObverseReverseData {
 }
 
 export interface RulerData {
-  coin: CollectionItem;
+  leader: Leader;
   rulerDetails: RulerDetails;
   showSeparator?: boolean;
 }
@@ -24,5 +26,6 @@ export interface CharacterData {
 
 export interface PrimaryDetailsData {
   coin: CollectionItem;
+  leader: Leader;
   isSmallScreen: boolean;
 }

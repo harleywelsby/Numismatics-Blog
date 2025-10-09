@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { CollectionData } from '../../assets/CollectionData';
 import { Routes } from '../../shared/utils/router';
 import { CoinCardModal } from '../Collection/CoinCard/CoinCardModal';
-import { CollectionItem } from '../Collection/Collection.types';
+import { CollectionItem } from '../../shared/types/CollectionItem.types';
 
 const validateSetItem = (setItem: SetItem) => {
   // State 1: No linked collection item.

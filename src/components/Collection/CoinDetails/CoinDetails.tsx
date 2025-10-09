@@ -38,7 +38,6 @@ import {
   RulerData,
 } from './CoinDetails.types';
 import React, { useState } from 'react';
-import { CollectionItem, LegendDetails } from '../Collection.types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
 import { DenominationModal } from '../DenominationModal/DenominationModal';
@@ -52,6 +51,10 @@ import {
   TimelineSeparator,
 } from '@mui/lab';
 import { Routes } from '../../../shared/utils/router';
+import { LeaderData } from '../../../assets/LeaderData';
+import { CollectionItem, LegendDetails } from '../../../shared/types/CollectionItem.types';
+import { LeaderType } from '../../../shared/types/Leader.types';
+import { CharacterName } from '../../../shared/types/Character.types';
 
 const CapitalizeFirstLetter = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -67,19 +70,26 @@ const SectionHeader = ({ title, subTitle }: { title: string; subTitle?: string }
   );
 };
 
-const PrimaryDetailsSection = ({ coin, isSmallScreen }: PrimaryDetailsData) => {
+const PrimaryDetailsSection = ({ coin, leader, isSmallScreen }: PrimaryDetailsData) => {
   const showModalButton = hasDenominationData(coin.denomination);
   const [showDenominationModal, setShowDenominationModal] = useState(false);
-  const rulerTitle = coin.ruler.alternateTitle ?? `Ruler`;
+  const leaderTitle = leader.type === LeaderType.Moneyer ? 'Moneyer' : 'Ruler';
 
   return (
     <PrimaryDetailsWrapper>
       <KeyValueGrid $center={!isSmallScreen}>
         <KeyValueText $rightAlign>
-          <b>{`${rulerTitle}: `}</b>
+          <b>{`${leaderTitle}: `}</b>
         </KeyValueText>
         <KeyValueText>
-          {`${coin.ruler.name} ${coin.ruler.reign ? `(${coin.ruler.alternateTitle ? '' : 'r. '}${coin.ruler.reign})` : ''}`}
+          {leader.url ? (
+            <a href={leader.url} target="_blank" rel="noopener noreferrer">
+              {leader.name}
+            </a>
+          ) : (
+            leader.name
+          )}
+          {` ${leader.reign ? `(${leader.type === LeaderType.Ruler ? 'r. ' : ''}${leader.reign})` : ''}`}
         </KeyValueText>
         <KeyValueText $rightAlign>
           <b>Authority: </b>
@@ -279,13 +289,10 @@ const LegendSection = ({ legend, legendDetails, isSmallScreen }: LegendData) => 
   );
 };
 
-const RulerSection = ({ coin, rulerDetails, showSeparator }: RulerData) => {
+const RulerSection = ({ leader, rulerDetails, showSeparator }: RulerData) => {
   return (
     <>
-      <SectionHeader
-        title={coin.ruler.name}
-        subTitle={`${rulerDetails.title}, ${coin.ruler.reign}`}
-      />
+      <SectionHeader title={leader.name} subTitle={`${rulerDetails.title}, ${leader.reign}`} />
       <SectionImage src={rulerDetails?.imagePath} alt={rulerDetails?.ruler.name} />
       {rulerDetails?.descriptionParagraphs.map((paragraph, index) => (
         <React.Fragment key={index}>
@@ -340,16 +347,15 @@ export const CoinDetails = () => {
   const { itemId } = useParams();
   const itemIdAsNumber = parseInt(itemId || '', 10);
 
-  const coin = CollectionData.find((coin) => coin.id === itemIdAsNumber);
-  const rulerDetails = Rulers.find((ruler) => ruler.ruler.name === coin?.ruler.name);
+  const coin = CollectionData.find((coin) => coin.id === itemIdAsNumber)!;
+
+  const leader = LeaderData.find((l) => l.name === coin.leader)!;
+
+  const rulerDetails = Rulers.find((ruler) => ruler.ruler.name === coin?.leader);
   const showCharacterDetails =
     coin?.characters &&
     coin.characters.length > 0 &&
-    Characters.some((c) => coin.characters.includes(c.name));
-
-  if (!coin) {
-    return;
-  }
+    Characters.some((c) => coin.characters?.includes(c.name as CharacterName)); // TODO: Make this safer
 
   const hasMoreSections =
     rulerDetails || showCharacterDetails || coin.moreDetails?.descriptionParagraphs;
@@ -358,7 +364,7 @@ export const CoinDetails = () => {
     <CoinDetailsPageWrapper>
       <HeaderText $primaryColor>{coin.title}</HeaderText>
       <HeaderSeparator />
-      <PrimaryDetailsSection coin={coin} isSmallScreen={isSmallScreen} />
+      <PrimaryDetailsSection coin={coin} leader={leader} isSmallScreen={isSmallScreen} />
       <ObverseReverseSection coin={coin} isSmallScreen={isSmallScreen} />
       {hasMoreSections && <SectionSeparator />}
       {coin.moreDetails?.descriptionParagraphs && (
@@ -379,7 +385,7 @@ export const CoinDetails = () => {
       )}
       {rulerDetails && (
         <RulerSection
-          coin={coin}
+          leader={leader}
           rulerDetails={rulerDetails}
           showSeparator={showCharacterDetails}
         />

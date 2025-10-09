@@ -1,5 +1,6 @@
+import { CollectionItem } from '../../../shared/types/CollectionItem.types';
 import { getCleanMintDate } from '../../../shared/utils/dateHelper';
-import { Authority, AuthorityGroup, CollectionItem, SortType } from '../Collection.types';
+import { Authority, AuthorityGroup, SortType } from '../Collection.types';
 
 export const AuthorityGroups: AuthorityGroup[] = [
   {
@@ -32,7 +33,7 @@ const HandleSearch = (data: CollectionItem[], search: string): CollectionItem[] 
       item.obverse.legend?.toLowerCase().includes(query) ||
       item.reverse.description.toLowerCase().includes(query) ||
       item.reverse.legend?.toLowerCase().includes(query) ||
-      item.characters.some((character) => character.toLowerCase().includes(query)) ||
+      item.characters?.some((character) => character.toLowerCase().includes(query)) ||
       item.mint.location?.toLowerCase().includes(query) ||
       item.denomination.toLowerCase().includes(query),
   );

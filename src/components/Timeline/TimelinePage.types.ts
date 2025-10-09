@@ -1,4 +1,4 @@
-import { CollectionItem } from '../Collection/Collection.types';
+import { CollectionItem } from '../../shared/types/CollectionItem.types';
 
 export enum TimelineItemCategory {
   All = 'All',

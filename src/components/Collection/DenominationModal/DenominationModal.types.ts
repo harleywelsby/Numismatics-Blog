@@ -1,4 +1,4 @@
-import { CollectionItem } from '../Collection.types';
+import { CollectionItem } from '../../../shared/types/CollectionItem.types';
 
 export interface DenominationModalProps {
   selectedCoin: CollectionItem;
