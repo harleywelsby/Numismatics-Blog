@@ -1,6 +1,6 @@
 import { EarlyImperialCoinSet } from '../../assets/BuyingPowerData';
 import { CollectionData } from '../../assets/CollectionData';
-import { CollectionItem } from '../Collection/Collection.types';
+import { CollectionItem } from '../../shared/types/CollectionItem.types';
 import {
   CoinImage,
   CoinSet,
