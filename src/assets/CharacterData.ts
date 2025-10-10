@@ -1,4 +1,4 @@
-import { CharacterDetails } from '../components/Collection/Collection.types';
+import { CharacterDetails } from '../shared/types/Character.types';
 
 export const Characters: CharacterDetails[] = [
   {

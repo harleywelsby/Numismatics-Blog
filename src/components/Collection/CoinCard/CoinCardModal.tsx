@@ -23,7 +23,7 @@ import { NavigationContext } from '../../NavigationContext/NavigationContext';
 import { useMediaQuery } from 'react-responsive';
 import { CollectionItem } from '../../../shared/types/CollectionItem.types';
 import { LeaderData } from '../../../assets/LeaderData';
-import { LeaderType } from '../Collection.types';
+import { LeaderType } from '../../../shared/types/Leader.types';
 
 interface CoinCardModalProps {
   coin: CollectionItem;

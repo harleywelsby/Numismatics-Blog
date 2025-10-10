@@ -28,7 +28,7 @@ import { getTimelinePosition, SortByDate } from './TimelineHelpers';
 import { TimelineListItem } from './TimelineListItem';
 import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Authority } from '../Collection/Collection.types';
+import { Authority } from '../../shared/types/Authority.types';
 
 const getCategoriesByAuthority = (authority: Authority) => {
   switch (authority) {

@@ -1,6 +1,8 @@
+import { Authority } from '../../../shared/types/Authority.types';
 import { CollectionItem } from '../../../shared/types/CollectionItem.types';
 import { getCleanMintDate } from '../../../shared/utils/dateHelper';
-import { Authority, AuthorityGroup, SortType } from '../Collection.types';
+import { AuthorityGroup } from '../../MintMap/MintMap.types';
+import { SortType } from '../Collection.types';
 
 export const AuthorityGroups: AuthorityGroup[] = [
   {

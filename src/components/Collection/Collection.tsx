@@ -19,7 +19,6 @@ import {
 } from './utils/FilterHelpers';
 import { CoinCard } from './CoinCard/CoinCard';
 import { CollectionData } from '../../assets/CollectionData';
-import { SortType } from './Collection.types';
 import {
   PageWrapper,
   HeaderText,
@@ -34,6 +33,7 @@ import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { getColumnOverride } from './utils/GridHelpers';
+import { SortType } from './Collection.types';
 
 export const CollectionV2 = () => {
   const isSmallScreen = useMediaQuery({ maxWidth: '65em' });

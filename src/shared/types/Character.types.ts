@@ -23,3 +23,16 @@ export enum CharacterName {
   Liber = 'Liber',
   Pegasus = 'Pegasus',
 }
+
+export type CharacterDetails = {
+  name: string;
+  imagePath?: string;
+  descriptionParagraphs: string[];
+  variants?: CharacterVariant[];
+};
+
+export type CharacterVariant = {
+  name: string;
+  description: string;
+  imagePath?: string;
+};

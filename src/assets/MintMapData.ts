@@ -1,5 +1,6 @@
-import { Authority, AuthorityGroup, MintLocation } from '../components/Collection/Collection.types';
-import { Mint } from '../components/MintMap/MintMap.types';
+import { AuthorityGroup, Mint } from '../components/MintMap/MintMap.types';
+import { Authority } from '../shared/types/Authority.types';
+import { MintLocation } from '../shared/types/Mint.types';
 
 export const MintMapAuthorityGroups: AuthorityGroup[] = [
   {
