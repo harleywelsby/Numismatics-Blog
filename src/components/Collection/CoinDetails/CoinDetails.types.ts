@@ -1,6 +1,6 @@
 import { CollectionItem, LegendDetails } from '../../../shared/types/CollectionItem.types';
 import { Leader } from '../../../shared/types/Leader.types';
-import { CharacterDetails, RulerDetails } from '../Collection.types';
+import { CharacterDetails } from '../Collection.types';
 
 export interface LegendData {
   legend: string;
@@ -15,7 +15,6 @@ export interface ObverseReverseData {
 
 export interface RulerData {
   leader: Leader;
-  rulerDetails: RulerDetails;
   showSeparator?: boolean;
 }
 

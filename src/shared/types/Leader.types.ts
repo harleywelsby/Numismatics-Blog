@@ -38,6 +38,7 @@ export enum LeaderType {
 export type Leader = {
   name: LeaderName;
   type: LeaderType;
+  title?: string;
   url?: string;
   reign?: string;
   imagePath?: string;

@@ -158,6 +158,7 @@ export type LeaderDetails = {
   name: LeaderName;
   type: LeaderType;
   reign?: string;
+  title?: string;
   imagePath?: string;
   descriptionParagraphs?: string[];
 };

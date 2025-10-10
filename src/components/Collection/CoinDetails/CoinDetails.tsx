@@ -29,7 +29,7 @@ import {
 import { HeaderText } from '../../../shared/styles/sharedStyles';
 import { CollectionData } from '../../../assets/CollectionData';
 import { useMediaQuery } from 'react-responsive';
-import { Characters, Rulers } from '../../../assets/CharacterData';
+import { Characters } from '../../../assets/CharacterData';
 import {
   CharacterData,
   LegendData,
@@ -288,12 +288,16 @@ const LegendSection = ({ legend, legendDetails, isSmallScreen }: LegendData) => 
   );
 };
 
-const RulerSection = ({ leader, rulerDetails, showSeparator }: RulerData) => {
+const RulerSection = ({ leader, showSeparator }: RulerData) => {
+  if (!leader.descriptionParagraphs) {
+    return null;
+  }
+
   return (
     <>
-      <SectionHeader title={leader.name} subTitle={`${rulerDetails.title}, ${leader.reign}`} />
-      <SectionImage src={rulerDetails?.imagePath} alt={rulerDetails?.ruler.name} />
-      {rulerDetails?.descriptionParagraphs.map((paragraph, index) => (
+      <SectionHeader title={leader.name} subTitle={`${leader.title}, ${leader.reign}`} />
+      {leader.imagePath && <SectionImage src={leader.imagePath} alt={leader.name} />}
+      {leader.descriptionParagraphs?.map((paragraph, index) => (
         <React.Fragment key={index}>
           <DescriptionText $withTopPadding={index === 0}>{paragraph}</DescriptionText>
           <br />
@@ -350,14 +354,13 @@ export const CoinDetails = () => {
 
   const leader = LeaderData.find((l) => l.name === coin.leader)!;
 
-  const rulerDetails = Rulers.find((ruler) => ruler.ruler.name === coin?.leader);
   const showCharacterDetails =
     coin?.characters &&
     coin.characters.length > 0 &&
     Characters.some((c) => coin.characters?.includes(c.name as CharacterName)); // TODO: Make this safer
 
   const hasMoreSections =
-    rulerDetails || showCharacterDetails || coin.moreDetails?.descriptionParagraphs;
+    leader.descriptionParagraphs || showCharacterDetails || coin.moreDetails?.descriptionParagraphs;
 
   return (
     <CoinDetailsPageWrapper>
@@ -379,15 +382,11 @@ export const CoinDetails = () => {
             ))}
           </DescriptionSection>
           {!isSmallScreen && <br />}
-          {(rulerDetails || showCharacterDetails) && <SectionSeparator />}
+          {(leader.descriptionParagraphs || showCharacterDetails) && <SectionSeparator />}
         </>
       )}
-      {rulerDetails && (
-        <RulerSection
-          leader={leader}
-          rulerDetails={rulerDetails}
-          showSeparator={showCharacterDetails}
-        />
+      {leader.descriptionParagraphs && (
+        <RulerSection leader={leader} showSeparator={showCharacterDetails} />
       )}
       {showCharacterDetails &&
         coin?.characters?.map((character, index) => (
