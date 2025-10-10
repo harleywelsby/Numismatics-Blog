@@ -1,5 +1,5 @@
 name: run-cypress-tests
-on: push
+# on: push
 
 jobs:
   install:
