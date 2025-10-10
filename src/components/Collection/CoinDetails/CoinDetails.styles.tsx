@@ -211,7 +211,6 @@ export const DescriptionHeaderText = styled.h3`
 `;
 
 export const DescriptionText = styled.p<{ $withTopPadding?: boolean; $rightAlign?: boolean }>`
-  width: 100%;
   font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
 
   text-align: left;
@@ -230,7 +229,7 @@ export const DescriptionText = styled.p<{ $withTopPadding?: boolean; $rightAlign
       padding-top: 2rem;
     `}
 
-  margin: 0;
+  margin: 0 1rem;
   padding: 0;
 
   @media (min-width: 100em) {
@@ -389,4 +388,8 @@ export const ProvenanceSectionHeader = styled.h3`
 export const Map = styled(MapWrapper)`
   margin: 2rem;
   width: 90%;
+
+  @media (min-width: 100em) {
+    width: 50%;
+  }
 `;
