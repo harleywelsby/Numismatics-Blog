@@ -1,6 +1,6 @@
 import './shared/styles/App.css';
 import { Navbar } from './components/Navbar/Navbar';
-import { Outlet } from 'react-router-dom';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import { NavigationContextProvider } from './components/NavigationContext/NavigationContextProvider';
 import { Footer } from './components/Footer/Footer';
@@ -14,6 +14,7 @@ function App() {
       <SetContextProvider>
         <CollectionFilterStateContextProvider>
           <MintMapStateContextProvider>
+            <ScrollRestoration />
             <Navbar />
             <Outlet />
             <Footer />
