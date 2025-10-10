@@ -20,7 +20,7 @@ const MintSection = ({ mint }: MintSectionProps) => {
 
   return (
     <>
-      <SectionHeader title="Mint Location" subTitle={mint.date} />
+      <SectionHeader title="Mint Location" subTitle={`${mint.location}, ${mint.date}`} />
       {isSmallScreen && <br />}
       <DescriptionText>{mintDetails.description}</DescriptionText>
       <Map center={mintDetails.position} zoom={6} scrollWheelZoom={false}>

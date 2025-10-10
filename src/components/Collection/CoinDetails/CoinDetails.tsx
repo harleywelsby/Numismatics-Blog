@@ -21,6 +21,7 @@ import ObverseReverseSection from './Sections/ObverseReverseSection';
 import LeaderSection from './Sections/LeaderSection';
 import CharacterSection from './Sections/CharacterSection';
 import MintSection from './Sections/MapSection';
+import VideoSection from './Sections/VideoSection';
 
 export const SectionHeader = ({ title, subTitle }: { title: string; subTitle?: string }) => {
   return (
@@ -81,6 +82,7 @@ export const CoinDetails = () => {
         coin?.characters?.map((character, index) => (
           <CharacterSection key={index} character={Characters.find((c) => c.name === character)} />
         ))}
+      {coin.moreDetails?.videoUrl && <VideoSection coin={coin} />}
     </CoinDetailsPageWrapper>
   );
 };

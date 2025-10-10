@@ -84,6 +84,7 @@ type Reference = {
 type MoreDetails = {
   descriptionParagraphs?: string[]; // Additional description for the details page.
   mentionedIn?: string[]; // Array of blog post IDs this coin features in.
+  videoUrl?: string; // Link to a video about or displaying the coin.
 };
 
 type Provenance = {

@@ -393,3 +393,13 @@ export const Map = styled(MapWrapper)`
     width: 50%;
   }
 `;
+
+export const CoinVideo = styled.iframe`
+  width: 90%;
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+
+  @media (min-width: 100em) {
+    width: 50%;
+  }
+`;
