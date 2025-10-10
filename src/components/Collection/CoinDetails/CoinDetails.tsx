@@ -20,6 +20,7 @@ import PrimaryDetailsSection from './Sections/PrimaryDetailsSection';
 import ObverseReverseSection from './Sections/ObverseReverseSection';
 import LeaderSection from './Sections/LeaderSection';
 import CharacterSection from './Sections/CharacterSection';
+import MintSection from './Sections/MapSection';
 
 export const SectionHeader = ({ title, subTitle }: { title: string; subTitle?: string }) => {
   return (
@@ -54,6 +55,8 @@ export const CoinDetails = () => {
       <HeaderSeparator />
       <PrimaryDetailsSection coin={coin} leader={leader} />
       <ObverseReverseSection coin={coin} />
+      <SectionSeparator />
+      <MintSection mint={coin.mint} />
       {hasMoreSections && <SectionSeparator />}
       {coin.moreDetails?.descriptionParagraphs && (
         <>

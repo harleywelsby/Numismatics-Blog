@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { MapWrapper } from '../../MintMap/MintMap.styles';
 
 export const CoinDetailsPageWrapper = styled.div`
   width: 95%;
@@ -383,4 +384,9 @@ export const ProvenanceSectionHeader = styled.h3`
   @media (min-width: 35em) {
     padding: 0 2rem;
   }
+`;
+
+export const Map = styled(MapWrapper)`
+  margin: 2rem;
+  width: 90%;
 `;

@@ -1,8 +1,8 @@
-import { CharacterDetails } from '../shared/types/Character.types';
+import { CharacterDetails, CharacterName } from '../shared/types/Character.types';
 
 export const Characters: CharacterDetails[] = [
   {
-    name: 'Felicitas',
+    name: CharacterName.Felicitas,
     descriptionParagraphs: [
       'Felicitas is the personification of good fortune and happiness in Roman mythology. She has four epithets, depending on the message the coin is trying to convey:',
     ],
@@ -29,7 +29,7 @@ export const Characters: CharacterDetails[] = [
     ],
   },
   {
-    name: 'Julia Domna',
+    name: CharacterName.JuliaDomna,
     imagePath: '/Images/Characters/JuliaDomna.webp',
     descriptionParagraphs: [
       'Julia Domna was the wife of Emperor Septimius Severus (r. 193-211 AD), and mother of the later Emperors Caracalla and Geta. Domna was born in modern-day Syria to a noble Arab family of priests of the deity Elagabalus (not to be confused with Emperor Elagabalus, who was named after the deity). She married Severus in 187, who was then a provincial governor.',

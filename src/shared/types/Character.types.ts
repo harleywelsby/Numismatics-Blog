@@ -25,7 +25,7 @@ export enum CharacterName {
 }
 
 export type CharacterDetails = {
-  name: string;
+  name: CharacterName;
   imagePath?: string;
   descriptionParagraphs: string[];
   variants?: CharacterVariant[];
