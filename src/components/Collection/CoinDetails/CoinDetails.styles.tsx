@@ -1,5 +1,22 @@
 import styled, { css } from 'styled-components';
-import { MapWrapper } from '../../MintMap/MintMap.styles';
+import { MapContainer } from 'react-leaflet';
+
+export const MapWrapper = styled(MapContainer)`
+  height: 600px;
+  border-radius: 10px;
+  justify-self: center;
+
+  margin: 2rem;
+  width: 90%;
+
+  @media (max-width: 35em) {
+    height: 400px;
+  }
+
+  @media (min-width: 100em) {
+    width: 50%;
+  }
+`;
 
 export const CoinDetailsPageWrapper = styled.div`
   width: 95%;
@@ -382,15 +399,6 @@ export const ProvenanceSectionHeader = styled.h3`
 
   @media (min-width: 35em) {
     padding: 0 2rem;
-  }
-`;
-
-export const Map = styled(MapWrapper)`
-  margin: 2rem;
-  width: 90%;
-
-  @media (min-width: 100em) {
-    width: 50%;
   }
 `;
 

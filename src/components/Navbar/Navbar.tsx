@@ -1,16 +1,4 @@
 import { useContext, useEffect, useState } from 'react';
-import {
-  NavbarLink,
-  NavbarList,
-  NavbarWrapper,
-  TitleText,
-  TitleWrapper,
-  LogoImage,
-  HamburgerIconWrapper,
-  BlurredBackground,
-  InvisibleLink,
-  NavbarDropdown,
-} from './Navbar.styles';
 import { Routes } from '../../shared/utils/router';
 import { useMediaQuery } from 'react-responsive';
 import { getFullImagePath } from '../../shared/utils/imageHelper';
@@ -20,6 +8,9 @@ import { faBars, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { Menu, MenuItem } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { ENABLE_BID_CALCULATOR, ENABLE_NAVBAR_DROPDOWNS } from '../../config';
+import { Link as RouterLink } from 'react-router-dom';
+import styled, { css } from 'styled-components';
+import { zIndex } from '../../shared/styles/styleConstants';
 
 export const Navbar = () => {
   const isBigScreen = useMediaQuery({ query: '(min-width: 35em)' });
@@ -80,54 +71,54 @@ export const Navbar = () => {
     return (
       <>
         <li>
-          <NavbarLink
+          <Link
             data-test-id="navbar-collection-link"
             to={Routes.Collection}
             onClick={() => handleListItemClick(Routes.Collection)}
             $selected={selectedRoute.includes(Routes.Collection)}
           >
             Collection
-          </NavbarLink>
+          </Link>
         </li>
         <li>
-          <NavbarLink
+          <Link
             data-test-id="navbar-sets-link"
             to={Routes.Sets}
             onClick={() => handleListItemClick(Routes.Sets)}
             $selected={selectedRoute === Routes.Sets}
           >
             Sets
-          </NavbarLink>
+          </Link>
         </li>
         <li>
-          <NavbarLink
+          <Link
             data-test-id="navbar-timeline-link"
             to={Routes.Timeline}
             onClick={() => handleListItemClick(Routes.Timeline)}
             $selected={selectedRoute === Routes.Timeline}
           >
             Timeline
-          </NavbarLink>
+          </Link>
         </li>
         <li>
-          <NavbarLink
+          <Link
             data-test-id="navbar-mint-map-link"
             to={Routes.MintMap}
             onClick={() => handleListItemClick(Routes.MintMap)}
             $selected={selectedRoute === Routes.MintMap}
           >
             Mint Map
-          </NavbarLink>
+          </Link>
         </li>
         {/* <li>
-          <NavbarLink
+          <Link
             data-test-id="navbar-buying-power-link"
             to={Routes.BuyingPower}
             onClick={() => handleListItemClick(Routes.BuyingPower)}
             $selected={selectedRoute === Routes.BuyingPower}
           >
             Buying Power
-          </NavbarLink>
+          </Link>
         </li> */}
       </>
     );
@@ -137,14 +128,14 @@ export const Navbar = () => {
     return (
       <>
         <li>
-          <NavbarLink
+          <Link
             data-test-id="navbar-bid-calc-link"
             to={Routes.BidCalculator}
             onClick={() => handleListItemClick(Routes.BidCalculator)}
             $selected={selectedRoute.includes(Routes.BidCalculator)}
           >
             Bid Calculator
-          </NavbarLink>
+          </Link>
         </li>
       </>
     );
@@ -209,26 +200,26 @@ export const Navbar = () => {
         {showSidebar && (
           <NavbarList className="navbar-list">
             <li>
-              <NavbarLink
+              <Link
                 data-test-id="navbar-home-link"
                 to={Routes.Home}
                 onClick={() => handleListItemClick(Routes.Home)}
                 $selected={selectedRoute === Routes.Home}
               >
                 Home
-              </NavbarLink>
+              </Link>
             </li>
             {ENABLE_NAVBAR_DROPDOWNS && isBigScreen ? (
               <>
                 <li>
-                  <NavbarDropdown
+                  <DropdownButton
                     onClick={(event) => handleDropdownClick(event, 'collection')}
                     $selected={isCollectionSelected}
                     $isDropdownShowing={showCollectionDropdown}
                   >
                     Collection
                     <FontAwesomeIcon icon={faChevronDown} size="1x" />
-                  </NavbarDropdown>
+                  </DropdownButton>
                   <Menu
                     id="basic-menu"
                     anchorEl={anchorElement}
@@ -249,14 +240,14 @@ export const Navbar = () => {
                 </li>
                 {ENABLE_BID_CALCULATOR && (
                   <li>
-                    <NavbarDropdown
+                    <DropdownButton
                       onClick={(event) => handleDropdownClick(event, 'tools')}
                       $selected={isToolsSelected}
                       $isDropdownShowing={showToolsDropdown}
                     >
                       Tools
                       <FontAwesomeIcon icon={faChevronDown} size="1x" />
-                    </NavbarDropdown>
+                    </DropdownButton>
                     <Menu
                       id="basic-menu"
                       anchorEl={anchorElement}
@@ -280,13 +271,13 @@ export const Navbar = () => {
               </>
             )}
             {/* <li>
-              <NavbarLink
+              <Link
                 to={Routes.Blog}
                 onClick={() => handleListItemClick(Routes.Blog)}
                 $selected={selectedRoute.includes(Routes.Blog)}
               >
                 Blog
-              </NavbarLink>
+              </Link>
             </li> */}
           </NavbarList>
         )}
@@ -295,3 +286,182 @@ export const Navbar = () => {
     </>
   );
 };
+
+const NavbarWrapper = styled.nav`
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+
+  background-color: var(--deep-black);
+  min-width: 100%;
+
+  z-index: ${zIndex.AlwaysAtFront};
+
+  margin-bottom: 2rem;
+  padding-bottom: clamp(0.2rem, 3vh + 0.5rem, 2rem);
+
+  @media (max-width: 35em) {
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+  }
+`;
+
+const InvisibleLink = styled(RouterLink)`
+  text-decoration: none;
+`;
+
+const NavbarList = styled.ul`
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+
+  @media (max-width: 35em) {
+    position: fixed;
+    inset: 0 0 0 45%;
+    background: var(--scroll-track-grey);
+    flex-direction: column;
+
+    justify-content: flex-start;
+    text-align: right;
+
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+
+    background-image: url(${getFullImagePath('/Images/SidebarBackground.webp')});
+    background-size: cover;
+    background-position: center;
+
+    z-index: ${zIndex.AlwaysAtFront};
+  }
+`;
+
+const BlurredBackground = styled.div`
+  position: fixed;
+  inset: 0 55% 0 0;
+  backdrop-filter: blur(5px);
+  z-index: ${zIndex.AlwaysAtFront - 1};
+`;
+
+const Link = styled(RouterLink)<{ $selected?: boolean }>`
+  text-decoration: none;
+  color: var(--soft-white);
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.3rem;
+
+  @media (max-width: 35em) {
+    font-size: clamp(0.5rem, 2vw + 0.7rem, 4rem);
+    line-height: 1;
+  }
+
+  ${(props) =>
+    props.$selected &&
+    css`
+      color: var(--title-orange);
+      border-bottom: solid;
+    `}
+
+  &:hover {
+    color: var(--title-orange);
+    border-bottom: solid;
+  }
+`;
+
+const TitleText = styled.h1`
+  font-size: 3rem;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0 1rem 1rem 1rem;
+  color: var(--soft-white);
+
+  @media (max-width: 35em) {
+    font-size: clamp(1.5rem, 3vw + 0.25rem, 4rem);
+    padding: 1rem 0rem 0.5rem 0.2rem;
+  }
+`;
+const TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+
+  @media (max-width: 35em) {
+    padding-top: 0.5rem;
+    width: 95%;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    gap: 2vw;
+  }
+`;
+
+const LogoImage = styled.img`
+  padding: 1.5rem;
+
+  @media (max-width: 35em) {
+    padding: 0.5rem 0 0 0;
+  }
+`;
+
+const HamburgerIconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 0.8rem;
+`;
+
+const DropdownButton = styled.button<{
+  $selected?: boolean;
+  $isDropdownShowing?: boolean;
+}>`
+  /* Remove default button styling */
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  outline: inherit;
+  cursor: pointer;
+
+  text-decoration: none;
+  color: var(--soft-white);
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin: -0.3rem 0 0 0;
+  padding: 0.3rem;
+
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 35em) {
+    font-size: clamp(0.5rem, 3vw + 0.7rem, 4rem);
+  }
+
+  ${(props) =>
+    props.$selected &&
+    css`
+      color: var(--title-orange);
+      border-bottom: solid;
+    `}
+
+  ${(props) =>
+    props.$isDropdownShowing &&
+    css`
+      color: var(--title-orange);
+    `}
+
+  &:hover {
+    color: var(--title-orange);
+  }
+`;
