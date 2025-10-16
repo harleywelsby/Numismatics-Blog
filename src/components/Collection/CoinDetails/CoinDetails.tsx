@@ -45,7 +45,7 @@ export const CoinDetails = () => {
   const showCharacterDetails =
     coin?.characters &&
     coin.characters.length > 0 &&
-    Characters.some((c) => coin.characters?.includes(c.name as CharacterName)); // TODO: Make this safer
+    Characters.some((c) => coin.characters?.includes(c.name as CharacterName));
 
   const hasMoreSections =
     leader.descriptionParagraphs || showCharacterDetails || coin.moreDetails?.descriptionParagraphs;

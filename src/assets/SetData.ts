@@ -1,4 +1,4 @@
-import { CoinSet } from '../components/Sets/Sets.types';
+import { CoinSet } from '../components/Sets/Sets.typess';
 
 export const SetData: CoinSet[] = [
   {

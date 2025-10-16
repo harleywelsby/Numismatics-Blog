@@ -6,7 +6,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { useMediaQuery } from 'react-responsive';
 import { useContext, useEffect } from 'react';
 import { SetContext } from './SetContext';
-import { CoinSet, SetStatus } from './Sets.types';
+import { CoinSet, SetStatus } from './Sets.typess';
 import { SingleSetItem } from './SingleSetItem';
 import { Routes } from '../../shared/utils/router';
 import { NavigationContext } from '../NavigationContext/NavigationContext';
