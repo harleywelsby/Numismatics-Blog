@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { Menu, MenuItem } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { ENABLE_BID_CALCULATOR, ENABLE_NAVBAR_DROPDOWNS } from '../../config';
+import { ENABLE_BID_CALCULATOR, ENABLE_NAVBAR_DROPDOWNS, ENABLE_BLOG } from '../../config';
 import { Link as RouterLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { zIndex } from '../../shared/styles/styleConstants';
@@ -19,6 +19,8 @@ export const Navbar = () => {
   const [showCollectionDropdown, setShowCollectionDropdown] = useState(false);
   const [showToolsDropdown, setShowToolsDropdown] = useState(false);
   const navigate = useNavigate();
+
+  const enableDropdowns = ENABLE_NAVBAR_DROPDOWNS || ENABLE_BLOG;
 
   // Sidebar is only shown on small screens when the hamburger icon is clicked
   const isSidebarShowing = !isBigScreen && showSidebar;
@@ -209,7 +211,7 @@ export const Navbar = () => {
                 Home
               </Link>
             </li>
-            {ENABLE_NAVBAR_DROPDOWNS && isBigScreen ? (
+            {enableDropdowns && isBigScreen ? (
               <>
                 <li>
                   <DropdownButton
@@ -270,15 +272,17 @@ export const Navbar = () => {
                 {ENABLE_BID_CALCULATOR && <ToolsNavbarItems />}
               </>
             )}
-            {/* <li>
-              <Link
-                to={Routes.Blog}
-                onClick={() => handleListItemClick(Routes.Blog)}
-                $selected={selectedRoute.includes(Routes.Blog)}
-              >
-                Blog
-              </Link>
-            </li> */}
+            {ENABLE_BLOG && (
+              <li>
+                <Link
+                  to={Routes.Blog}
+                  onClick={() => handleListItemClick(Routes.Blog)}
+                  $selected={selectedRoute.includes(Routes.Blog)}
+                >
+                  Blog
+                </Link>
+              </li>
+            )}
           </NavbarList>
         )}
         {isSidebarShowing && <BlurredBackground onClick={() => setShowSidebar(false)} />}
