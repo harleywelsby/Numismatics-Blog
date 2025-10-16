@@ -1,12 +1,5 @@
 import { Timeline } from '@mui/lab';
 import { BackToTopButton, HeaderSeparator, HeaderText } from '../../shared/styles/sharedStyles';
-import {
-  HeaderParagraph,
-  SectionSeparator,
-  SliderHeader,
-  SliderWrapper,
-  TimelineWrapper,
-} from './TimelinePage.styles';
 import { TimelineData } from '../../assets/TimelineData';
 import { CollectionData } from '../../assets/CollectionData';
 import { getCleanMintDate, getDateWithExtension } from '../../shared/utils/dateHelper';
@@ -29,6 +22,7 @@ import { TimelineListItem } from './TimelineListItem';
 import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Authority } from '../../shared/types/Authority.types';
+import styled from 'styled-components';
 
 const getCategoriesByAuthority = (authority: Authority) => {
   switch (authority) {
@@ -253,3 +247,70 @@ export const TimelinePage = () => {
     </>
   );
 };
+
+const HeaderParagraph = styled.p`
+  font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);
+  text-align: left;
+  max-width: 80%;
+  justify-self: center;
+
+  @media (min-width: 86em) {
+    max-width: 60%;
+  }
+`;
+
+const TimelineWrapper = styled.div`
+  max-width: 70%;
+  justify-self: center;
+
+  @media (max-width: 35em) {
+    max-width: 95%;
+
+    ::before {
+      display: none;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+`;
+const SectionSeparator = styled.div`
+  margin: 2rem 0 0 0;
+  color: var(--scroll-track-grey);
+  border-bottom: solid;
+  min-width: 80%;
+  justify-self: center;
+
+  @media (min-width: 86em) {
+    max-width: 60%;
+  }
+`;
+
+const SliderHeader = styled.h2`
+  font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);
+  text-align: left;
+  max-width: 80%;
+  justify-self: center;
+
+  padding: 0;
+  margin: 2rem 0 0.5rem 0;
+
+  @media (max-width: 35em) {
+    margin: 0.5rem 0;
+  }
+`;
+
+const SliderWrapper = styled.div`
+  width: 70%;
+  justify-self: center;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+
+  @media (max-width: 35em) {
+    margin-top: 2rem;
+  }
+`;

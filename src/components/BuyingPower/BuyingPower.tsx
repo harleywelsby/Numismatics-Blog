@@ -1,14 +1,7 @@
 import { HeaderSeparator, HeaderText, PageWrapper } from '../../shared/styles/sharedStyles';
-import {
-  GoodsPriceSection,
-  HeaderParagraph,
-  Separator,
-  SourceLink,
-  SourceList,
-  SourceListItem,
-} from './BuyingPower.styles';
 import { GoodsPriceCard } from './GoodsPriceCard';
 import { GoodsPrices } from '../../assets/BuyingPowerData';
+import styled, { css } from 'styled-components';
 
 export const BuyingPower = () => {
   return (
@@ -72,3 +65,54 @@ export const BuyingPower = () => {
     </PageWrapper>
   );
 };
+
+const HeaderParagraph = styled.p`
+  justify-self: center;
+  text-align: left;
+  font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);
+  max-width: 60%;
+
+  @media (max-width: 35em) {
+    max-width: 80%;
+  }
+`;
+
+const Separator = styled.div<{ $marginOverride?: string }>`
+  border-bottom: solid;
+  justify-self: center;
+  width: 60vw;
+  color: var(--scroll-track-grey);
+
+  ${(props) =>
+    props.$marginOverride &&
+    css`
+      margin: ${props.$marginOverride};
+    `}
+`;
+
+const SourceList = styled.ul`
+  justify-self: center;
+`;
+
+const SourceListItem = styled.li`
+  text-align: left;
+`;
+
+const SourceLink = styled.a`
+  color: var(--white);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const GoodsPriceSection = styled.div`
+  margin: 1rem 0 4rem 0;
+  max-width: 50vw;
+  justify-self: center;
+
+  @media (max-width: 35em) {
+    max-width: 90%;
+  }
+`;

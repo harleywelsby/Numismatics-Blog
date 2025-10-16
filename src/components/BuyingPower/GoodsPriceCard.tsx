@@ -1,13 +1,7 @@
+import styled, { css } from 'styled-components';
 import { EarlyImperialCoinSet } from '../../assets/BuyingPowerData';
 import { CollectionData } from '../../assets/CollectionData';
 import { CollectionItem } from '../../shared/types/CollectionItem.types';
-import {
-  CoinImage,
-  CoinSet,
-  GoodsHeader,
-  GoodsHeaderWrapper,
-  GoodsPriceWrapper,
-} from './BuyingPower.styles';
 import { GoodsDateRange, GoodsPrice } from './BuyingPower.types';
 
 const getRandomCoinImage = (coins: CollectionItem[]) => {
@@ -55,3 +49,47 @@ export const GoodsPriceCard = (goodsPrice: GoodsPrice) => {
     </GoodsPriceWrapper>
   );
 };
+
+const GoodsPriceWrapper = styled.div`
+  max-width: 60vw;
+  justify-self: left;
+
+  @media (max-width: 35em) {
+    max-width: 90%;
+  }
+`;
+
+const GoodsHeaderWrapper = styled.div`
+  display: flex;
+  gap: 0.8rem;
+
+  @media (max-width: 35em) {
+    gap: 0.5rem;
+  }
+`;
+
+const GoodsHeader = styled.h2<{ $isSecondary?: boolean }>`
+  font-size: clamp(0.8rem, 3vw + 0.25rem, 1.2rem);
+  color: ${(props) => (props.$isSecondary ? 'var(--subtitle-grey)' : 'var(--white)')};
+`;
+
+const CoinSet = styled.div`
+  display: flex;
+  justify-content: left;
+  max-width: 80vw;
+  flex-wrap: wrap;
+
+  margin-bottom: 3rem;
+`;
+
+const CoinImage = styled.img<{ $zIndexOverride?: number }>`
+  width: 100px;
+  margin-right: -2rem;
+  margin-bottom: -2rem;
+
+  ${(props) =>
+    props.$zIndexOverride &&
+    css`
+      z-index: ${props.$zIndexOverride};
+    `}
+`;

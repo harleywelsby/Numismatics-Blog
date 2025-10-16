@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Routes } from '../../shared/utils/router';
 import { NavigationContext } from '../NavigationContext/NavigationContext';
-import { FooterWrapper } from './Footer.styles';
+import styled from 'styled-components';
 
 export const Footer = () => {
   const { selectedRoute } = useContext(NavigationContext);
@@ -21,3 +21,11 @@ export const Footer = () => {
     </FooterWrapper>
   );
 };
+
+const FooterWrapper = styled.footer`
+  padding: 0.5rem;
+  margin-top: 2rem;
+  min-height: 2rem;
+
+  background-color: var(--deep-black);
+`;

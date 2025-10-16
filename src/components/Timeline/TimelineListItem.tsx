@@ -7,16 +7,11 @@ import {
 } from '@mui/lab';
 import { CoinCard } from '../Collection/CoinCard/CoinCard';
 import { getImageDimensions, getTimeDifference } from './TimelineHelpers';
-import {
-  TimelineContentWrapper,
-  TimelineTooltip,
-  DateText,
-  DescriptionText,
-  TimelineCoinWrapper,
-} from './TimelinePage.styles';
 import { TimelineItemCategory, TimelineListItemContent } from './TimelinePage.types';
 import { Routes } from '../../shared/utils/router';
 import { ScreenSize } from '../../shared/types';
+import { Tooltip } from '@mui/material';
+import styled from 'styled-components';
 
 interface TimelineListItemProps {
   item: TimelineListItemContent;
@@ -45,9 +40,9 @@ export const TimelineListItem = ({
       </TimelineSeparator>
       <TimelineContent color={isWorldHistory ? 'warning' : undefined}>
         <TimelineContentWrapper>
-          <TimelineTooltip placement={tooltipPlacement} arrow title={getTimeDifference(item.date)}>
+          <Tooltip placement={tooltipPlacement} arrow title={getTimeDifference(item.date)}>
             <DateText>{`${item.date} ${isWorldHistory ? '(World)' : ''}`}</DateText>
-          </TimelineTooltip>
+          </Tooltip>
           <DescriptionText>
             {item.description}
             {hasCollectionItem && ' struck'}
@@ -71,3 +66,28 @@ export const TimelineListItem = ({
     </TimelineItem>
   );
 };
+
+const TimelineContentWrapper = styled.div`
+  margin: 0;
+  padding: 0 0 2rem 0;
+
+  @media (max-width: 35em) {
+    padding: 0 0 1rem 0;
+  }
+`;
+
+const TimelineCoinWrapper = styled.div`
+  padding: 1rem 0 0 0;
+`;
+
+const DateText = styled.p`
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+`;
+
+const DescriptionText = styled.p`
+  margin: 0;
+  padding: 0;
+  color: var(--soft-white);
+`;

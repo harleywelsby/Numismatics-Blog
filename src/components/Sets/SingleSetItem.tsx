@@ -1,5 +1,4 @@
-import { SetItem, SingleSetItemProps } from './Sets.Types';
-import { SetItemImage, SetItemName, SetItemWrapper } from './Sets.styles';
+import { SetItem, SingleSetItemProps } from './Sets.types';
 import { ScreenSize } from '../../shared/types';
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
@@ -7,6 +6,7 @@ import { CollectionData } from '../../assets/CollectionData';
 import { Routes } from '../../shared/utils/router';
 import { CoinCardModal } from '../Collection/CoinCard/CoinCardModal';
 import { CollectionItem } from '../../shared/types/CollectionItem.types';
+import styled, { css } from 'styled-components';
 
 const validateSetItem = (setItem: SetItem) => {
   // State 1: No linked collection item.
@@ -96,3 +96,33 @@ export const SingleSetItem = ({ setItem }: SingleSetItemProps) => {
     </SetItemWrapper>
   );
 };
+
+const SetItemWrapper = styled.div`
+  padding: 0.5rem;
+`;
+
+const SetItemName = styled.p`
+  font-size: clamp(0.8rem, 2vw + 0.25rem, 1.1rem);
+  margin: 0;
+  min-width: 5rem;
+
+  @media (max-width: 35em) {
+    max-width: 50%;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+  }
+`;
+
+const SetItemImage = styled.img<{ isComplete?: boolean }>`
+  ${(props) =>
+    props.isComplete &&
+    css`
+      cursor: pointer;
+      &:hover {
+        filter: brightness(50%);
+        transform: scale(1.05);
+        transition: 0.5s;
+      }
+    `}
+`;
