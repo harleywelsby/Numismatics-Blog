@@ -1,4 +1,4 @@
-import { SetItem, SingleSetItemProps } from './Sets.typess';
+import { SetItem, SingleSetItemProps } from './Sets.types';
 import { ScreenSize } from '../../shared/types';
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
