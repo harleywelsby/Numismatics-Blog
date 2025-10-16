@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 export const CardWrapper = styled.button<{ $noPadding?: boolean }>`
@@ -123,6 +124,14 @@ export const ModalHeader = styled.h2`
 export const ModalText = styled.p`
   margin: 0.8rem 0;
   font-size: clamp(0.5rem, 3vw + 0.1rem, 1rem);
+`;
+
+export const ModalAnchor = styled.a`
+  color: var(--title-orange);
+`;
+
+export const ModalLink = styled(Link)`
+  color: var(--title-orange);
 `;
 
 export const ModalImageWrapper = styled.div`

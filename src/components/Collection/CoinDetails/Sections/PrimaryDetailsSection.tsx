@@ -1,6 +1,6 @@
 import { Leader, LeaderType } from '../../../../shared/types/Leader.types';
 import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link as ReactRouterLink } from 'react-router-dom';
 import {
   DescriptionSection,
   SectionSeparator,
@@ -25,6 +25,7 @@ import { CollectionItem } from '../../../../shared/types/CollectionItem.types';
 import { hasDenominationData } from '../../../../assets/DenominationData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useMediaQuery } from 'react-responsive';
+import styled from 'styled-components';
 
 /**
  * Displays the provenance trail of the given coin.
@@ -81,9 +82,9 @@ const PrimaryDetailsSection = ({ coin, leader }: PrimaryDetailsSectionProps) => 
         </KeyValueText>
         <KeyValueText>
           {leader.url ? (
-            <a href={leader.url} target="_blank" rel="noopener noreferrer">
+            <Anchor href={leader.url} target="_blank" rel="noopener noreferrer">
               {leader.name}
-            </a>
+            </Anchor>
           ) : (
             leader.name
           )}
@@ -118,9 +119,9 @@ const PrimaryDetailsSection = ({ coin, leader }: PrimaryDetailsSectionProps) => 
           <b>Ref: </b>
         </KeyValueText>
         <KeyValueText>
-          <a href={coin.reference.url} target="_blank" rel="noopener noreferrer">
+          <Anchor href={coin.reference.url} target="_blank" rel="noopener noreferrer">
             {coin.reference.catalogueNumber}
-          </a>
+          </Anchor>
         </KeyValueText>
       </KeyValueGrid>
       {coin.provenance && <ProvenanceSection coin={coin} />}
@@ -139,3 +140,11 @@ const PrimaryDetailsSection = ({ coin, leader }: PrimaryDetailsSectionProps) => 
 };
 
 export default PrimaryDetailsSection;
+
+const Anchor = styled.a`
+  color: var(--title-orange);
+`;
+
+const Link = styled(ReactRouterLink)`
+  color: var(--title-orange);
+`;

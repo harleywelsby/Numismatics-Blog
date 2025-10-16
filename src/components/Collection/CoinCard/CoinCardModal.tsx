@@ -2,16 +2,18 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Modal } from '@mui/material';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { getFullImagePath } from '../../../shared/utils/imageHelper';
 import { Routes } from '../../../shared/utils/router';
 import {
   CloseModalButton,
+  ModalAnchor,
   ModalBodyWrapper,
   ModalContent,
   ModalHeader,
   ModalImage,
   ModalImageWrapper,
+  ModalLink,
   ModalText,
   ModalTextWrapper,
   NewPill,
@@ -67,9 +69,9 @@ export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalPr
               <ModalText>
                 <b>{`${leaderTitle}: `}</b>
                 {leader.url ? (
-                  <a href={leader.url} target="_blank" rel="noopener noreferrer">
+                  <ModalAnchor href={leader.url} target="_blank" rel="noopener noreferrer">
                     {leader.name}
-                  </a>
+                  </ModalAnchor>
                 ) : (
                   leader.name
                 )}
@@ -85,9 +87,9 @@ export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalPr
               </ModalText>
               <ModalText>
                 <b>Minted: </b>
-                <Link to={Routes.MintMap + `?selected=${coin.mint.location}`}>
+                <ModalLink to={Routes.MintMap + `?selected=${coin.mint.location}`}>
                   {coin.mint.location}
-                </Link>
+                </ModalLink>
                 {` (${coin.mint.date})`}
               </ModalText>
               {!ENABLE_SEE_MORE_OVERRIDE && (
@@ -112,9 +114,9 @@ export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalPr
               )}
               <ModalText>
                 <b>Ref: </b>
-                <a href={coin.reference.url} target="_blank" rel="noopener noreferrer">
+                <ModalAnchor href={coin.reference.url} target="_blank" rel="noopener noreferrer">
                   {coin.reference.catalogueNumber}
-                </a>
+                </ModalAnchor>
               </ModalText>
               {ENABLE_SEE_MORE_OVERRIDE && (
                 <SeeMoreButtonWrapper>
