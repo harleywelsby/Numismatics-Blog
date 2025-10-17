@@ -114,9 +114,13 @@ export const CoinCardModal = ({ coin, showModal, setShowModal }: CoinCardModalPr
               )}
               <ModalText>
                 <b>Ref: </b>
-                <ModalAnchor href={coin.reference.url} target="_blank" rel="noopener noreferrer">
-                  {coin.reference.catalogueNumber}
-                </ModalAnchor>
+                {coin.reference.url ? (
+                  <ModalAnchor href={coin.reference.url} target="_blank" rel="noopener noreferrer">
+                    {coin.reference.catalogueNumber}
+                  </ModalAnchor>
+                ) : (
+                  coin.reference.catalogueNumber
+                )}
               </ModalText>
               {ENABLE_SEE_MORE_OVERRIDE && (
                 <SeeMoreButtonWrapper>

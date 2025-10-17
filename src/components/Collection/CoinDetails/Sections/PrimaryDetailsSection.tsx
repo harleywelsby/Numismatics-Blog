@@ -119,9 +119,13 @@ const PrimaryDetailsSection = ({ coin, leader }: PrimaryDetailsSectionProps) => 
           <b>Ref: </b>
         </KeyValueText>
         <KeyValueText>
-          <Anchor href={coin.reference.url} target="_blank" rel="noopener noreferrer">
-            {coin.reference.catalogueNumber}
-          </Anchor>
+          {coin.reference.url ? (
+            <Anchor href={coin.reference.url} target="_blank" rel="noopener noreferrer">
+              {coin.reference.catalogueNumber}
+            </Anchor>
+          ) : (
+            coin.reference.catalogueNumber
+          )}
         </KeyValueText>
       </KeyValueGrid>
       {coin.provenance && <ProvenanceSection coin={coin} />}
