@@ -83,8 +83,8 @@ export const CollectionV2 = () => {
           Back to Top
         </BackToTopButton>
       )}
-      <HeaderText>The Collection</HeaderText>
-      <HeaderSeparator $noSpacing />
+      <HeaderText $primaryColor>The Collection</HeaderText>
+      <HeaderSeparator $primaryColor $noSpacing />
       <FilterSection>
         <SearchBox
           type="text"

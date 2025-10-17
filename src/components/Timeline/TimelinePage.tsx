@@ -162,8 +162,8 @@ export const TimelinePage = () => {
           Back to Top
         </BackToTopButton>
       )}
-      <HeaderText>Collection Timeline</HeaderText>
-      <HeaderSeparator />
+      <HeaderText $primaryColor>Collection Timeline</HeaderText>
+      <HeaderSeparator $primaryColor />
       <HeaderParagraph>
         This page tracks the Niho Collection in chronological order, in the context of the
         historical events of the time. Often, it's difficult to understand the exact place in time a

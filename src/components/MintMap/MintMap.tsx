@@ -99,8 +99,8 @@ export const MintMap = () => {
 
   return (
     <PageWrapper>
-      <HeaderText>Mint Map</HeaderText>
-      <HeaderSeparator />
+      <HeaderText $primaryColor>Mint Map</HeaderText>
+      <HeaderSeparator $primaryColor />
       <HeaderParagraph>
         This page tracks the mint location of the coins in the Niho Collection. Select a pin to
         learn more about the mint, and the coins minted there.

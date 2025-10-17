@@ -149,8 +149,6 @@ export const Navbar = () => {
     selectedRoute.includes(Routes.Timeline) ||
     selectedRoute.includes(Routes.MintMap);
 
-  const isToolsSelected = selectedRoute.includes(Routes.BidCalculator);
-
   const DropdownMenuItem = ({ route, label }: { route: string; label: string }) => {
     return (
       <MenuItem
@@ -237,34 +235,9 @@ export const Navbar = () => {
                     <DropdownMenuItem route={Routes.Sets} label="Sets" />
                     <DropdownMenuItem route={Routes.Timeline} label="Timeline" />
                     <DropdownMenuItem route={Routes.MintMap} label="Mint Map" />
-                    {/* <DropdownMenuItem route={Routes.BuyingPower} label="Buying Power" /> */}
+                    {/* TODO <DropdownMenuItem route={Routes.BuyingPower} label="Buying Power" /> */}
                   </Menu>
                 </li>
-                {ENABLE_BID_CALCULATOR && (
-                  <li>
-                    <DropdownButton
-                      onClick={(event) => handleDropdownClick(event, 'tools')}
-                      $selected={isToolsSelected}
-                      $isDropdownShowing={showToolsDropdown}
-                    >
-                      Tools
-                      <FontAwesomeIcon icon={faChevronDown} size="1x" />
-                    </DropdownButton>
-                    <Menu
-                      id="basic-menu"
-                      anchorEl={anchorElement}
-                      open={showToolsDropdown}
-                      onClose={() => setShowToolsDropdown(false)}
-                      sx={{
-                        '& .MuiPaper-root': {
-                          backgroundColor: 'var(--deep-black)',
-                        },
-                      }}
-                    >
-                      <DropdownMenuItem route={Routes.BidCalculator} label="Bid Calculator" />
-                    </Menu>
-                  </li>
-                )}
               </>
             ) : (
               <>
@@ -372,7 +345,6 @@ const Link = styled(RouterLink)<{ $selected?: boolean }>`
 
   &:hover {
     color: var(--title-orange);
-    border-bottom: solid;
   }
 `;
 
@@ -441,7 +413,7 @@ const DropdownButton = styled.button<{
   font-weight: 500;
   font-size: 1.2rem;
   margin: -0.3rem 0 0 0;
-  padding: 0.3rem;
+  padding: 0.3rem 0.3rem 0.5rem 0.3rem;
 
   display: flex;
   gap: 0.5rem;
@@ -457,6 +429,7 @@ const DropdownButton = styled.button<{
     css`
       color: var(--title-orange);
       border-bottom: solid;
+      padding: 0.3rem;
     `}
 
   ${(props) =>

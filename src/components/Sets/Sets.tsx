@@ -124,8 +124,8 @@ export const Sets = () => {
 
   return (
     <PageWrapper>
-      <HeaderText>Collection Sets</HeaderText>
-      <HeaderSeparator $noSpacing />
+      <HeaderText $primaryColor>Collection Sets</HeaderText>
+      <HeaderSeparator $noSpacing $primaryColor />
       <HeaderParagraphWrapper>
         <HeaderParagraph>
           This page tracks the "sets" of coins that the Niho Collection aims to complete. These sets
