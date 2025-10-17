@@ -2,11 +2,11 @@ import { CoinSet } from '../components/Sets/Sets.types';
 
 export const SetData: CoinSet[] = [
   {
-    name: 'The Birth of Rome',
+    name: 'Myths of Rome',
     active: true,
     category: 'Rome',
     descriptionParagraphs: [
-      "Learning about Rome's history is one thing, but what did they think of their own history? This set showcases important events in Roman tradition, either with a piece from the time, or as depicted by later Romans.",
+      'It\'s one thing to learn about Rome under a modern lens, but often it\'s fascinating to see how the Romans viewed their own "history". The lines were sometimes blurred between myth and reality, but if it was important enough to put on a coin... they must have really cared about it.',
     ],
     items: [
       {
@@ -34,6 +34,16 @@ export const SetData: CoinSet[] = [
           face: 'reverse',
         },
       },
+    ],
+  },
+  {
+    name: 'Rise of an Empire',
+    active: false,
+    category: 'Rome',
+    descriptionParagraphs: [
+      "Rome wasn't built in a day. This set showcases crucial events in early Roman history would lay the foundations for the greatest Western power in history.",
+    ],
+    items: [
       {
         name: 'Victory over',
         secondLine: 'Carthage',
