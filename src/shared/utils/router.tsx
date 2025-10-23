@@ -1,6 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { Home } from '../../components/Home/Home';
-import { Blog } from '../../components/Blog/Blog-vNext';
 import App from '../../App';
 import { ErrorPage } from '../../components/ErrorPage/ErrorPage';
 import { BlogPost } from '../../components/Blog/BlogPost';
@@ -11,6 +10,7 @@ import { CoinDetails } from '../../components/Collection/CoinDetails/CoinDetails
 import { MintMap } from '../../components/MintMap/MintMap';
 import { BidCalculator } from '../../components/BidCalculator/BidCalculator';
 import { BuyingPower } from '../../components/BuyingPower/BuyingPower';
+import { Blog } from '../../components/Blog/Blog';
 
 export const getBlogPostRoute = (postId: string) => {
   return Routes.BlogPost.replace(':postId', postId);

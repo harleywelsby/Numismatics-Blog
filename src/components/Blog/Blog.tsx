@@ -1,10 +1,10 @@
 import { useContext, useEffect } from 'react';
-import { BlogPostSummaryData } from '../../assets/BlogPostSummaryData';
 import { HeaderSeparator, HeaderText, PageWrapper } from '../../shared/styles/sharedStyles';
 import { Routes } from '../../shared/utils/router';
 import { NavigationContext } from '../NavigationContext/NavigationContext';
-import { PostGrid } from './Blog.styles';
+import styled from 'styled-components';
 import { PostSummary } from './PostSummary';
+import { BlogPostSummaryData } from '../../assets/BlogPostSummaryData';
 
 export const Blog = () => {
   const { setSelectedRoute } = useContext(NavigationContext);
@@ -12,23 +12,29 @@ export const Blog = () => {
     setSelectedRoute(Routes.Blog);
   }, [setSelectedRoute]);
 
+  // Dummy posts for testing
+  const posts = [...BlogPostSummaryData]; //, ...BlogPostSummaryData, ...BlogPostSummaryData];
+
   return (
     <PageWrapper>
-      <HeaderText>Blog</HeaderText>
-      <HeaderSeparator />
-      <PostGrid>
-        {BlogPostSummaryData.map((summary) => (
-          <PostSummary
-            key={summary.postId}
-            postId={summary.postId}
-            title={summary.title}
-            imagePath={summary.imagePath}
-            imageAltText={summary.imageAltText}
-            filePath={summary.filePath}
-            imageCredit={summary.imageCredit ?? null}
-          />
+      <HeaderText $primaryColor>Blog</HeaderText>
+      <HeaderSeparator $primaryColor />
+      <PostList>
+        {posts.map((post) => (
+          <PostSummary key={post.postId} {...post} />
         ))}
-      </PostGrid>
+      </PostList>
+      <br />
     </PageWrapper>
   );
 };
+
+const PostList = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (max-width: 920px) {
+    grid-template-columns: 1fr;
+  }
+`;

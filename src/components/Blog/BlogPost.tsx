@@ -7,21 +7,16 @@ import {
 } from '../../shared/styles/sharedStyles';
 import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { BlogPostSummaryData } from '../../assets/BlogPostSummaryData';
 import { useMediaQuery } from 'react-responsive';
 import { ScreenSize } from '../../shared/types';
-import {
-  BlogPostBackLink,
-  BlogPostImageCaption,
-  BlogPostImageWrapper,
-  BlogPostSection,
-} from './Blog.styles';
 import { ImageCaptionData } from '../../assets/ImageCaptionData';
 import { BlogPostImage } from './Blog.types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Routes } from '../../shared/utils/router';
+import styled from 'styled-components';
 
 export const BlogPost = () => {
   const { postId } = useParams();
@@ -113,3 +108,56 @@ export const BlogPost = () => {
     </PageWrapper>
   );
 };
+
+const BlogPostSection = styled.div`
+  max-width: 90%;
+  align-self: center;
+  justify-self: center;
+
+  text-align: left;
+
+  @media (min-width: 100em) {
+    max-width: 60%;
+  }
+`;
+
+const BlogPostImageWrapper = styled.div`
+  justify-self: center;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+`;
+
+const BlogPostImageCaption = styled.p`
+  text-align: center;
+  font-size: clamp(0.5rem, 3vw + 0.25rem, 0.8rem);
+
+  padding: 0.2rem 0 0 0;
+  margin: 0;
+`;
+
+const BlogPostBackLink = styled(Link)`
+  /* Remove default styling */
+  text-decoration: none;
+  color: inherit;
+
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 1rem;
+
+  @media (min-width: 35em) {
+    &:hover {
+      filter: brightness(50%);
+      transition: 0.5s;
+    }
+
+    padding: 0.5rem 2rem;
+  }
+`;
